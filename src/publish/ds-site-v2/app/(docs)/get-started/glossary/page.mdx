@@ -1,0 +1,93 @@
+export const metadata = {
+  title: 'Glossary',
+  description: "Plain-English definitions of every term you'll hear across the BrightChamps design system: canonical, drift, TDR, ΔE, surface, token, and more.",
+}
+
+# Glossary
+
+Every term you'll run into across the BrightChamps design system, explained like you'd explain it to a curious 14-year-old. If something isn't here, it probably deserves to be — tell us.
+
+<dl>
+
+<dt id="canonical">canonical</dt>
+<dd>A token the design system has officially approved. If you need a color, typeface, or spacing value, pick a canonical one. Other tokens are either candidates (under review) or deprecated (kept only for the audit trail).</dd>
+
+<dt id="candidate">candidate</dt>
+<dd>A token that's been seen in the real product but not yet approved as canonical. It's a holding area — the design team looks at it, decides whether to promote it or drop it.</dd>
+
+<dt id="deprecated">deprecated</dt>
+<dd>A token we no longer recommend. We don't delete it — deletion would break products still using it — so we mark it deprecated and give people a window to migrate to the replacement.</dd>
+
+<dt id="token">token</dt>
+<dd>A named design value. Instead of hard-coding the color #4e3bc2 in fifty places, you use the token color/brand/primary. If the brand color ever changes, you update the token once and every place that referenced it updates automatically.</dd>
+
+<dt id="design-token">design token</dt>
+<dd>Same as token. "Design token" is the more formal name used in specifications like DTCG.</dd>
+
+<dt id="semantic-alias">semantic alias</dt>
+<dd>A token whose value is "go look at this other token." For example fgColor/brand isn't a color itself — it points at color/brand/primary. Aliases let us name things by their job (text-in-brand-context) rather than their raw value (a specific hex).</dd>
+
+<dt id="css-variable">CSS variable</dt>
+<dd>A runtime slot in a stylesheet, written like --bc-color-brand-primary: #4e3bc2. Product code reads it via var(--bc-color-brand-primary). When the system switches themes (light / dark), the variable changes value and everything using it updates.</dd>
+
+<dt id="ledger">ledger</dt>
+<dd>The single JSON file (ledger/tokens.json) that is the source of truth for every token. Nothing else is canonical. Every published artifact — this site, the CSS variables, the Figma styles — is derived from the ledger.</dd>
+
+<dt id="extraction">extraction</dt>
+<dd>The process of reading tokens out of somewhere (usually a Figma file or a live app's DOM). Extractors don't edit the ledger — they produce raw data that the ledger builder later synthesizes.</dd>
+
+<dt id="dom">DOM</dt>
+<dd>"Document Object Model." The tree of HTML elements a browser actually renders. When we measure what the product really looks like to users, we measure the DOM, not the source code.</dd>
+
+<dt id="figma">Figma</dt>
+<dd>The design tool where designers build screens and component libraries. BrightChamps has Figma files for landing, student, and teacher surfaces. Figma is authoritative for design intent; the DOM is authoritative for what ships.</dd>
+
+<dt id="surface">surface</dt>
+<dd>A distinct product area with its own URL tree and its own Figma file. BrightChamps has four — landing, student app, teacher app, admin dashboard. Drift is measured per surface.</dd>
+
+<dt id="drift">drift</dt>
+<dd>The gap between what was designed (Figma) and what actually ships (DOM). If the Figma calls for #4e3bc2 and the live app renders #4d3bc2, that's a drift. The system flags drift for a human to decide — never auto-resolves it.</dd>
+
+<dt id="delta-e">ΔE (delta-E)</dt>
+<dd>A number that says how different two colors look to a human eye. ΔE 0 means identical, ΔE 2 means barely distinguishable, ΔE 10+ means clearly different colors. We use it to decide whether two extracted hex values are the same color drifted or genuinely different.</dd>
+
+<dt id="hue">hue</dt>
+<dd>Which basic color a shade belongs to — red, orange, yellow, green, blue, purple, or a mix. Hue is measured in degrees on a 360° color wheel. Two shades of "purple" can have very different lightness but share a hue around 260°.</dd>
+
+<dt id="luminance">luminance</dt>
+<dd>How bright a color is, from 0 (pure black) to 1 (pure white). It's different from hue — a pure red and a pure blue can have similar luminance while looking completely different. Luminance drives whether text on a background is readable.</dd>
+
+<dt id="confidence">confidence</dt>
+<dd>A 0.0-to-1.0 score the system attaches to every token. 0.9 or higher means canonical (approved). 0.4 to 0.89 means candidate (under review). Below 0.4 means deprecated. The number is shorthand — the tier it lands in is what matters.</dd>
+
+<dt id="cluster">cluster</dt>
+<dd>A group of near-identical colors that the system merges into one canonical. When the Figma file has #ffffff, #fefefe, #fafafa, and 16 other near-whites, we cluster them into one canonical white; the variants become deprecated tokens that point at the canonical.</dd>
+
+<dt id="baseline">baseline</dt>
+<dd>A saved snapshot of what Figma looked like at a specific point in time. The next drift scan compares the new Figma state against the baseline to detect what's changed. Baselines let us distinguish "a designer made a change" from "the DOM drifted away from what Figma already said."</dd>
+
+<dt id="status-match">match</dt>
+<dd>A drift report status — the DOM value matches a canonical token. The system is shipping what it says it ships.</dd>
+
+<dt id="status-drift">drift (status)</dt>
+<dd>A drift report status — the DOM value is close to a canonical but not identical. A designer needs to decide whether to snap the DOM to the canonical, or update the canonical to match the DOM.</dd>
+
+<dt id="status-missing">missing</dt>
+<dd>A drift report status — a canonical token exists in the system but was never seen on any page we crawled. Either we didn't crawl the page that uses it, or it's canonical in name only.</dd>
+
+<dt id="status-unknown">unknown</dt>
+<dd>A drift report status — the DOM has a color, font, or size that isn't close to any canonical token. Either the app is using something off-system, or the system has a gap that needs filling.</dd>
+
+<dt id="system-gap">system-gap</dt>
+<dd>A subtype of unknown, specifically for translucent colors (alpha hex like #33333340) that the Figma source never captured. The fix is usually to add it to the system rather than remove it from the DOM.</dd>
+
+<dt id="tdr">TDR (Token Decision Record)</dt>
+<dd>A short document explaining a specific design-system decision — what we changed, why, and what the consequences are. Numbered TDR-0001, TDR-0002, etc. Same idea as an ADR (Architecture Decision Record), but for token-level choices.</dd>
+
+<dt id="wcag">WCAG</dt>
+<dd>"Web Content Accessibility Guidelines." The web's accessibility standard, published by the W3C. Its contrast rules (AA needs 4.5:1 for body text, 3:1 for large text) are the baseline the BrightChamps color system must hit, because children use our products and can't always compensate for bad contrast.</dd>
+
+<dt id="apca">APCA</dt>
+<dd>"Accessible Perceptual Contrast Algorithm." A newer contrast formula designed to predict readability more accurately than WCAG on modern screens. Still a draft standard — we report both WCAG and APCA numbers so nothing falls through the cracks.</dd>
+
+</dl>

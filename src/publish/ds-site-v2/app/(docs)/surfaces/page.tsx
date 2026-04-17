@@ -1,0 +1,165 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { RightTOC } from '@/components/chrome/RightTOC'
+import { loadLatestDrift } from '@/lib/drift'
+import { loadComponents, loadIcons, loadStates } from '@/lib/surface-data'
+import { Terminal, Shield, AlertTriangle, HelpCircle, ArrowRight, Layers, Image, MousePointer } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Surfaces',
+  description: 'Health dashboard for every BrightChamps surface — match rate, drift, component inventory, icon audit, interactive states.',
+}
+
+const TOC = [
+  { id: 'student',  label: 'Student app', level: 2 as const },
+  { id: 'landing',  label: 'Landing',     level: 2 as const },
+  { id: 'teacher',  label: 'Teacher app', level: 2 as const },
+  { id: 'admin',    label: 'Admin',       level: 2 as const },
+]
+
+function ProgressBar({ value, total, color, label }: { value: number; total: number; color: string; label: string }) {
+  const pct = total > 0 ? (value / total) * 100 : 0
+  return (
+    <div className="flex items-center gap-3">
+      <span className="w-16 text-[12px] font-semibold text-chrome-text-subtle">{label}</span>
+      <div className="flex-1 h-2 bg-chrome-surface-sunken rounded-full overflow-hidden">
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: color }} />
+      </div>
+      <span className="w-12 text-right font-mono text-[12px] font-semibold text-chrome-text tabular-nums">{value}</span>
+    </div>
+  )
+}
+
+function EmptyCard({ id, label, description, cmd }: { id?: string; label: string; description: string; cmd: string }) {
+  return (
+    <article id={id} className="scroll-mt-24 rounded-card border border-chrome-border p-6 bg-[repeating-linear-gradient(45deg,var(--chrome-surface)_0,var(--chrome-surface)_6px,var(--chrome-surface-sunken)_6px,var(--chrome-surface-sunken)_12px)]">
+      <div className="flex items-center justify-between mb-1">
+        <h3 className="text-h4 text-chrome-text-subtle">{label}</h3>
+        <span className="text-[11px] font-bold text-chrome-text-subtlest uppercase tracking-[0.06em]">Not extracted</span>
+      </div>
+      <p className="text-body-s text-chrome-text-subtlest">{description}</p>
+      <div className="mt-4 rounded-md border border-chrome-border bg-chrome-surface p-3">
+        <div className="flex items-center gap-2 mb-1.5">
+          <Terminal size={12} className="text-chrome-text-subtlest" />
+          <span className="text-[10px] font-bold text-chrome-text-subtlest uppercase tracking-[0.06em]">Run to populate</span>
+        </div>
+        <code className="block text-[12px] font-mono text-chrome-accent">{cmd}</code>
+      </div>
+    </article>
+  )
+}
+
+export default function SurfacesPage() {
+  const drift = loadLatestDrift()
+  const components = loadComponents()
+  const icons = loadIcons()
+  const states = loadStates()
+  const criticalCount = drift ? (drift.unknown + drift.systemGap) : 0
+  const statesChanged = states.filter(s => s.changed).length
+
+  return (
+    <div className="flex">
+      <article className="min-w-0 flex-1 max-w-[960px]">
+        <div className="text-overline text-chrome-text-subtlest mb-2">Surfaces</div>
+        <h1 className="text-h1 text-chrome-text">Surfaces</h1>
+        <p className="mt-3 max-w-[62ch] text-body-l text-chrome-text-subtle">
+          Health dashboard for every BrightChamps surface. The student surface is fully extracted;
+          landing, teacher, and admin are pending.
+        </p>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          {/* ─── Student (live) ──────────────────────────────── */}
+          <article id="student" className="scroll-mt-24 rounded-card border border-chrome-border bg-chrome-surface-raised p-6 lg:col-span-2">
+            <div className="flex items-center justify-between mb-1">
+              <h3 className="text-h3 text-chrome-text">Student app</h3>
+              {drift && (
+                <span className={'inline-flex rounded-full px-3 py-1 text-[13px] font-bold ' + (drift.matchPct >= 60 ? 'bg-[rgba(36,194,110,0.14)] text-[#16803c]' : drift.matchPct >= 40 ? 'bg-[rgba(255,187,58,0.18)] text-[#8a5e00]' : 'bg-[rgba(240,41,77,0.12)] text-[#a31836]')}>
+                  {drift.matchPct}% match
+                </span>
+              )}
+            </div>
+            <p className="text-body-s text-chrome-text-subtle">champ.brightchamps.com · 7 URLs · Last extracted {drift?.date ?? 'unknown'}</p>
+
+            {drift && (
+              <>
+                <div className="mt-5 grid gap-3 sm:grid-cols-4">
+                  <div className="rounded-md border border-chrome-border bg-chrome-surface px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <Shield size={14} className="text-[var(--bc-brand-green)]" />
+                      <span className="font-mono text-[18px] font-bold text-chrome-text">{drift.match}</span>
+                    </div>
+                    <div className="text-[11px] font-semibold text-chrome-text-subtlest uppercase tracking-[0.06em]">Match</div>
+                  </div>
+                  <div className="rounded-md border border-chrome-border bg-chrome-surface px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <AlertTriangle size={14} className="text-[#c07a00]" />
+                      <span className="font-mono text-[18px] font-bold text-chrome-text">{drift.drift}</span>
+                    </div>
+                    <div className="text-[11px] font-semibold text-chrome-text-subtlest uppercase tracking-[0.06em]">Drift</div>
+                  </div>
+                  <div className="rounded-md border border-chrome-border bg-chrome-surface px-4 py-3">
+                    <span className="font-mono text-[18px] font-bold text-chrome-text">{drift.missing}</span>
+                    <div className="text-[11px] font-semibold text-chrome-text-subtlest uppercase tracking-[0.06em]">Missing</div>
+                  </div>
+                  <div className="rounded-md border border-chrome-border bg-chrome-surface px-4 py-3">
+                    <div className="flex items-center gap-2">
+                      <HelpCircle size={14} className="text-[var(--bc-brand-red)]" />
+                      <span className="font-mono text-[18px] font-bold text-chrome-text">{drift.unknown}</span>
+                    </div>
+                    <div className="text-[11px] font-semibold text-chrome-text-subtlest uppercase tracking-[0.06em]">Unknown</div>
+                  </div>
+                </div>
+
+                <div className="mt-5 space-y-2.5">
+                  <ProgressBar value={drift.match}   total={drift.totalItems} color="var(--bc-brand-green)" label="Match" />
+                  <ProgressBar value={drift.drift}   total={drift.totalItems} color="#ffbb3a" label="Drift" />
+                  <ProgressBar value={drift.missing} total={drift.totalItems} color="#8499ae" label="Missing" />
+                  <ProgressBar value={drift.unknown} total={drift.totalItems} color="var(--bc-brand-red)" label="Unknown" />
+                </div>
+
+                <div className="mt-5 flex items-center gap-2 text-[12px] text-chrome-text-subtlest">
+                  <span>Critical issues: <strong className="text-[var(--bc-brand-red)]">{criticalCount}</strong></span>
+                  <span>·</span>
+                  <span>Report: {drift.date} · {drift.totalItems.toLocaleString()} items</span>
+                </div>
+              </>
+            )}
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <Link href="/surfaces/student/components/" className="flex items-center gap-3 rounded-md border border-chrome-border bg-chrome-surface px-4 py-3 text-body text-chrome-text hover:border-chrome-accent transition group">
+                <Layers size={16} className="text-chrome-text-subtlest group-hover:text-chrome-accent" />
+                <div className="flex-1">
+                  <div className="font-semibold">{components.length} components</div>
+                  <div className="text-[11px] text-chrome-text-subtlest">All need spec</div>
+                </div>
+                <ArrowRight size={14} className="text-chrome-text-subtlest group-hover:text-chrome-accent" />
+              </Link>
+              <Link href="/surfaces/student/icons/" className="flex items-center gap-3 rounded-md border border-chrome-border bg-chrome-surface px-4 py-3 text-body text-chrome-text hover:border-chrome-accent transition group">
+                <Image size={16} className="text-chrome-text-subtlest group-hover:text-chrome-accent" />
+                <div className="flex-1">
+                  <div className="font-semibold">{icons.length} icons</div>
+                  <div className="text-[11px] text-chrome-text-subtlest">No icon system</div>
+                </div>
+                <ArrowRight size={14} className="text-chrome-text-subtlest group-hover:text-chrome-accent" />
+              </Link>
+              <Link href="/surfaces/student/states/" className="flex items-center gap-3 rounded-md border border-chrome-border bg-chrome-surface px-4 py-3 text-body text-chrome-text hover:border-chrome-accent transition group">
+                <MousePointer size={16} className="text-chrome-text-subtlest group-hover:text-chrome-accent" />
+                <div className="flex-1">
+                  <div className="font-semibold">{statesChanged}/{states.length} hover</div>
+                  <div className="text-[11px] text-chrome-text-subtlest">{Math.round((statesChanged / states.length) * 100)}% coverage</div>
+                </div>
+                <ArrowRight size={14} className="text-chrome-text-subtlest group-hover:text-chrome-accent" />
+              </Link>
+            </div>
+          </article>
+
+          {/* ─── Empty surfaces ──────────────────────────────── */}
+          <EmptyCard id="landing" label="Landing pages" description="brightchamps.com · public marketing site" cmd="npm run extract:dom -- --surface=landing" />
+          <EmptyCard id="teacher" label="Teacher app" description="Teacher dashboard and lesson management" cmd="npm run extract:dom -- --surface=teacher" />
+          <EmptyCard id="admin" label="Admin dashboard" description="Internal admin — no Figma source, DOM is source of truth" cmd="npm run extract:dom -- --surface=admin" />
+        </div>
+      </article>
+      <RightTOC items={TOC} />
+    </div>
+  )
+}

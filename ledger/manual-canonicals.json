@@ -1,0 +1,146 @@
+[
+  {
+    "name": "color/overlay/dark",
+    "value": "#33333340",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Translucent overlay. Added manually because the student Figma file had no effect styles. Seen in live DOM as modal backdrops / section dividers."
+  },
+  {
+    "name": "color/overlay/subtle",
+    "value": "#0000001a",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Subtle black overlay at 10% alpha. Added manually. Seen in live DOM as soft shadows / card surfaces."
+  },
+  {
+    "name": "color/overlay/white-80",
+    "value": "#ffffffcc",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "White at 80% alpha. Used for overlays and disabled states. System-gap discovered in 2026-04-16 drift report."
+  },
+  {
+    "name": "color/surface/lavender-70",
+    "value": "#edebf9b2",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Lavender at ~70% alpha. Used as card surface color. System-gap discovered in 2026-04-16 drift report."
+  },
+  {
+    "name": "typography.17",
+    "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":400,\"fontSize\":16,\"lineHeightPx\":19.2,\"letterSpacing\":0}",
+    "type": "typography",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.95,
+    "notes": "Body regular — Nunito 16px/400. Confirmed system gap, not candidate: canonical scale had 16/500, 16/600, 16/700, 16/800 but not plain body regular. Added 2026-04-16 from drift report."
+  },
+  {
+    "name": "color/interactive/tab-active",
+    "value": "#4a3fb4",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.85,
+    "notes": "Active state background for the feed tab toggle (togglebutton_activePaid). Identified via authenticated DOM inspection 2026-04-16. Previously flagged as unknown color; reclassified as intentional UI state color."
+  },
+  {
+    "name": "radius/pill",
+    "value": "30px",
+    "type": "radius",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.85,
+    "notes": "Pill-shape border radius used by the feed tab toggle. Not in the frequency-ranked radius canonicals. Identified via authenticated DOM inspection 2026-04-16."
+  },
+  {
+    "name": "color/overlay/white-20",
+    "value": "#ffffff33",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "White at 20% alpha. System-gap from 2026-04-16 drift report."
+  },
+  {
+    "name": "color/overlay/white-40",
+    "value": "#ffffff66",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "White at 40% alpha. System-gap from 2026-04-16 drift report."
+  },
+  {
+    "name": "color/overlay/white-72",
+    "value": "#ffffffb8",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "White at 72% alpha. System-gap from 2026-04-16 drift report."
+  },
+  {
+    "name": "color/surface/lavender-50",
+    "value": "#e5e0f680",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Lavender surface at 50% alpha. System-gap from 2026-04-16 drift report."
+  },
+  {
+    "name": "color/surface/mist-40",
+    "value": "#ebebeb66",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Mist gray surface at 40% alpha. System-gap from 2026-04-16 drift report."
+  },
+  {
+    "name": "color/overlay/near-black-10",
+    "value": "#0a0d0f1a",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Near-black overlay at 10% alpha. System-gap from 2026-04-16 drift report."
+  },
+  {
+    "name": "color/overlay/dark-10",
+    "value": "#3333331a",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Dark gray overlay at 10% alpha. System-gap from 2026-04-16 drift report."
+  },
+  {
+    "name": "color/overlay/slate-28",
+    "value": "#222a3347",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Slate overlay at 28% alpha — matches canonical slate #222a33. System-gap from 2026-04-16 drift report."
+  },
+  {
+    "name": "color/overlay/purple-10",
+    "value": "#7453d71a",
+    "type": "color",
+    "source": "dom",
+    "surface": "student",
+    "confidence": 0.8,
+    "notes": "Purple overlay at 10% alpha. System-gap from 2026-04-16 drift report."
+  }
+]

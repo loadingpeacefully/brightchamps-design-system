@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Auto-generated design tokens from ledger/tokens.json (prefix --bc-*). */
+@import './tokens.css';
+
+/* ─── Chrome + brand tokens (Part B.1) ───────────────────────────────────── */
+
+:root,
+[data-theme='light'] {
+  /* Site UI chrome — light mode */
+  --chrome-surface:          #ffffff;
+  --chrome-surface-raised:   #fafbfc;
+  --chrome-surface-sunken:   #f4f5f7;
+  --chrome-surface-overlay:  #ffffff;
+  --chrome-border:           #e1e4e8;
+  --chrome-border-bold:      #c1c7d0;
+  --chrome-border-focused:   #4e3bc2;
+  --chrome-text:             #0b1324;
+  --chrome-text-subtle:      #5b6474;
+  --chrome-text-subtlest:    #8993a4;
+  --chrome-text-inverse:     #ffffff;
+  --chrome-accent:           #4e3bc2;
+  --chrome-accent-subtle:    #ede9fa;
+  --chrome-accent-hovered:   #3f2eae;
+  --chrome-highlight:        #ffd900;
+
+  /* Header has its own scope — stays dark in both themes by spec (dark header/white content) */
+  --chrome-header-bg:        #0b1020;
+  --chrome-header-fg:        #ffffff;
+  --chrome-header-fg-subtle: rgba(255,255,255,0.6);
+  --chrome-header-border:    rgba(255,255,255,0.06);
+  --chrome-header-chip-bg:   rgba(255,255,255,0.06);
+  --chrome-header-chip-border: rgba(255,255,255,0.12);
+
+  /* Brand tokens (exposed to doc pages so they can reference the source of truth) */
+  --bc-brand-primary:        #4e3bc2;
+  --bc-brand-accent:         #6651e4;
+  --bc-brand-indigo:         #1a237e;
+  --bc-brand-yellow:         #ffd900;
+  --bc-brand-red:            #f0294d;
+  --bc-brand-green:          #24c26e;
+}
+
+[data-theme='dark'] {
+  --chrome-surface:          #0b1020;
+  --chrome-surface-raised:   #11172b;
+  --chrome-surface-sunken:   #080d1b;
+  --chrome-surface-overlay:  #151c32;
+  --chrome-border:           #252c44;
+  --chrome-border-bold:      #3a4360;
+  --chrome-border-focused:   #9b8cff;
+  --chrome-text:             #e6edf3;
+  --chrome-text-subtle:      #a4adc2;
+  --chrome-text-subtlest:    #6c7690;
+  --chrome-text-inverse:     #0b1020;
+  --chrome-accent:           #9b8cff;
+  --chrome-accent-subtle:    #1e1a3a;
+  --chrome-accent-hovered:   #b5a9ff;
+  --chrome-highlight:        #ffd900;
+
+  --chrome-header-bg:        #050814;
+  --chrome-header-fg:        #ffffff;
+  --chrome-header-fg-subtle: rgba(255,255,255,0.55);
+  --chrome-header-border:    rgba(255,255,255,0.05);
+  --chrome-header-chip-bg:   rgba(255,255,255,0.06);
+  --chrome-header-chip-border: rgba(255,255,255,0.1);
+}
+
+[data-theme='hc-light'] {
+  --chrome-surface: #ffffff;
+  --chrome-surface-raised: #ffffff;
+  --chrome-surface-sunken: #f0f0f0;
+  --chrome-border: #000000;
+  --chrome-border-bold: #000000;
+  --chrome-border-focused: #2a1f6e;
+  --chrome-text: #000000;
+  --chrome-text-subtle: #000000;
+  --chrome-text-subtlest: #1a1a1a;
+  --chrome-accent: #2a1f6e;
+  --chrome-accent-subtle: #e8e5f5;
+}
+
+[data-theme='hc-dark'] {
+  --chrome-surface: #000000;
+  --chrome-surface-raised: #0a0a0a;
+  --chrome-surface-sunken: #000000;
+  --chrome-border: #ffffff;
+  --chrome-border-bold: #ffffff;
+  --chrome-border-focused: #ffd900;
+  --chrome-text: #ffffff;
+  --chrome-text-subtle: #e0e0e0;
+  --chrome-text-subtlest: #b0b0b0;
+  --chrome-accent: #b5a9ff;
+  --chrome-accent-subtle: #1a1a2e;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+
+html, body { background: var(--chrome-surface); color: var(--chrome-text); }
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--chrome-border-focused);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Keep the page from jumping when the scrollbar appears on short pages. */
+html { scrollbar-gutter: stable; }
+
+/* Skip-link: visible when focused. */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  background: var(--chrome-accent);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  z-index: 1000;
+}
+.skip-link:focus-visible { top: 8px; outline: 2px solid #fff; outline-offset: 2px; }
+
+/* ─── Glossary MDX page ──────────────────────────────────────── */
+.mdx-glossary p {
+  margin-top: 12px;
+  color: var(--chrome-text-subtle);
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 62ch;
+}
+.mdx-glossary dl {
+  margin-top: 32px;
+  border-top: 1px solid var(--chrome-border);
+}
+.mdx-glossary dl > dt {
+  padding-top: 20px;
+  padding-bottom: 6px;
+  font-family: var(--mono-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--chrome-accent);
+  scroll-margin-top: 96px;
+}
+.mdx-glossary dl > dd {
+  padding-bottom: 20px;
+  margin-left: 0;
+  color: var(--chrome-text-subtle);
+  font-size: 14px;
+  line-height: 22px;
+  max-width: 62ch;
+  border-bottom: 1px solid var(--chrome-border);
+}
+
+/* Checkerboard pattern for transparent / alpha swatches */
+.bg-checker {
+  background-image:
+    linear-gradient(var(--swatch-overlay, transparent), var(--swatch-overlay, transparent)),
+    linear-gradient(45deg, #d6d6d6 25%, transparent 25%),
+    linear-gradient(-45deg, #d6d6d6 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #d6d6d6 75%),
+    linear-gradient(-45deg, transparent 75%, #d6d6d6 75%);
+  background-size: 100% 100%, 12px 12px, 12px 12px, 12px 12px, 12px 12px;
+  background-position: 0 0, 0 0, 0 6px, 6px -6px, -6px 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

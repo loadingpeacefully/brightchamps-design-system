@@ -1,0 +1,15 @@
+node_modules
+dist
+.env
+.env.local
+.playwright-auth
+ledger/.extractions
+dashboard/.next
+.DS_Store
+*.log
+
+# DS site v2 build outputs
+src/publish/ds-site-v2/.next
+src/publish/ds-site-v2/out
+src/publish/ds-site-v2/app/tokens.css
+src/publish/ds-site-v2/lib/tokens.generated.ts

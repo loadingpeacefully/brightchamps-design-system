@@ -1,0 +1,311 @@
+[
+  {
+    "prefix": "Accordion",
+    "elements": 98,
+    "localNames": [
+      "accordion",
+      "courseContainer",
+      "courseImg",
+      "header",
+      "openArea",
+      "progress",
+      "toggleIcon"
+    ],
+    "pages": [
+      "badges",
+      "certificates",
+      "global-feed",
+      "learn",
+      "my-feed",
+      "nano-skills",
+      "rewards"
+    ]
+  },
+  {
+    "prefix": "RightSectionInList",
+    "elements": 69,
+    "localNames": [
+      "arrowRightIconContainer",
+      "checkIconContainer",
+      "lessonIconContainer",
+      "rightSectionContainer",
+      "rightSectionLesson"
+    ],
+    "pages": [
+      "learn"
+    ]
+  },
+  {
+    "prefix": "ProgressLine",
+    "elements": 63,
+    "localNames": [
+      "progressBar",
+      "progressFill",
+      "progressWrapper"
+    ],
+    "pages": [
+      "badges",
+      "certificates",
+      "global-feed",
+      "learn",
+      "my-feed",
+      "nano-skills",
+      "rewards"
+    ]
+  },
+  {
+    "prefix": "GreenLine",
+    "elements": 49,
+    "localNames": [
+      "greenLineContainer",
+      "helpTip",
+      "howCanIHelp",
+      "howCanIHelpContainer",
+      "iconTextContainer",
+      "selectContainer"
+    ],
+    "pages": [
+      "badges",
+      "certificates",
+      "global-feed",
+      "learn",
+      "my-feed",
+      "nano-skills",
+      "rewards"
+    ]
+  },
+  {
+    "prefix": "LessonList",
+    "elements": 43,
+    "localNames": [
+      "container",
+      "iconContainer",
+      "root",
+      "upcomingIcon"
+    ],
+    "pages": [
+      "learn"
+    ]
+  },
+  {
+    "prefix": "LeftSectionInList",
+    "elements": 36,
+    "localNames": [
+      "iconTitleContainer",
+      "titleContainer",
+      "titleImg"
+    ],
+    "pages": [
+      "learn"
+    ]
+  },
+  {
+    "prefix": "Layout",
+    "elements": 35,
+    "localNames": [
+      "contentWrapper",
+      "layout",
+      "leftSidebar",
+      "rightSidebar",
+      "root"
+    ],
+    "pages": [
+      "badges",
+      "certificates",
+      "global-feed",
+      "learn",
+      "my-feed",
+      "nano-skills",
+      "rewards"
+    ]
+  },
+  {
+    "prefix": "LeftSideBar",
+    "elements": 21,
+    "localNames": [
+      "bottomSectionContaner",
+      "logo",
+      "sidebar"
+    ],
+    "pages": [
+      "badges",
+      "certificates",
+      "global-feed",
+      "learn",
+      "my-feed",
+      "nano-skills",
+      "rewards"
+    ]
+  },
+  {
+    "prefix": "RightSideBar",
+    "elements": 21,
+    "localNames": [
+      "profileCalenderWrapper",
+      "profileToproot",
+      "root"
+    ],
+    "pages": [
+      "badges",
+      "certificates",
+      "global-feed",
+      "learn",
+      "my-feed",
+      "nano-skills",
+      "rewards"
+    ]
+  },
+  {
+    "prefix": "FeedLayout",
+    "elements": 15,
+    "localNames": [
+      "notifications",
+      "sectionHeader",
+      "upcomingCardContainer",
+      "verticalLine"
+    ],
+    "pages": [
+      "certificates",
+      "global-feed",
+      "my-feed"
+    ]
+  },
+  {
+    "prefix": "NavBar",
+    "elements": 13,
+    "localNames": [
+      "active",
+      "root"
+    ],
+    "pages": [
+      "badges",
+      "certificates",
+      "global-feed",
+      "learn",
+      "my-feed",
+      "nano-skills",
+      "rewards"
+    ]
+  },
+  {
+    "prefix": "ModuleHeader",
+    "elements": 8,
+    "localNames": [
+      "container",
+      "imgContainer",
+      "moduleStatusContainer",
+      "moduleStatusIcon",
+      "progressBar",
+      "progressBarContainer",
+      "root",
+      "textContainer"
+    ],
+    "pages": [
+      "learn"
+    ]
+  },
+  {
+    "prefix": "Navbar",
+    "elements": 6,
+    "localNames": [
+      "active",
+      "navContainer",
+      "root"
+    ],
+    "pages": [
+      "badges",
+      "learn"
+    ]
+  },
+  {
+    "prefix": "ClassDetails",
+    "elements": 3,
+    "localNames": [
+      "userAvatar"
+    ],
+    "pages": [
+      "certificates",
+      "global-feed",
+      "my-feed"
+    ]
+  },
+  {
+    "prefix": "ProfileAvatar",
+    "elements": 3,
+    "localNames": [
+      "profileAvatarWithName"
+    ],
+    "pages": [
+      "certificates",
+      "global-feed",
+      "my-feed"
+    ]
+  },
+  {
+    "prefix": "ToggleSwitch",
+    "elements": 3,
+    "localNames": [
+      "toggleSwitch"
+    ],
+    "pages": [
+      "certificates",
+      "global-feed",
+      "my-feed"
+    ]
+  },
+  {
+    "prefix": "Header",
+    "elements": 3,
+    "localNames": [
+      "description",
+      "dropIconContainer",
+      "heading"
+    ],
+    "pages": [
+      "learn"
+    ]
+  },
+  {
+    "prefix": "Tray",
+    "elements": 3,
+    "localNames": [
+      "ButtonContainer",
+      "customCSSBtn",
+      "outerMostContainer"
+    ],
+    "pages": [
+      "rewards"
+    ]
+  },
+  {
+    "prefix": "ProgressBar",
+    "elements": 2,
+    "localNames": [
+      "progressBar",
+      "progressFill"
+    ],
+    "pages": [
+      "learn"
+    ]
+  },
+  {
+    "prefix": "Module",
+    "elements": 1,
+    "localNames": [
+      "lessonContainer"
+    ],
+    "pages": [
+      "learn"
+    ]
+  },
+  {
+    "prefix": "LockedModuleContainer",
+    "elements": 1,
+    "localNames": [
+      "root"
+    ],
+    "pages": [
+      "learn"
+    ]
+  }
+]

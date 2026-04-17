@@ -1,0 +1,818 @@
+[
+  {
+    "selector": "button[3]",
+    "text": "Change Time Zone",
+    "page": "my-feed",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[4]",
+    "text": "Rate us",
+    "page": "my-feed",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[5]",
+    "text": "",
+    "page": "my-feed",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[6]",
+    "text": "",
+    "page": "my-feed",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(78, 59, 194)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(78, 59, 194)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[7]",
+    "text": "",
+    "page": "my-feed",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[8]",
+    "text": "Join the class",
+    "page": "my-feed",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[9]",
+    "text": "My Feed",
+    "page": "my-feed",
+    "baseline": {
+      "color": "rgb(81, 102, 123)",
+      "backgroundColor": "rgb(193, 204, 215)",
+      "borderColor": "rgb(81, 102, 123)"
+    },
+    "hovered": {
+      "color": "rgb(81, 102, 123)",
+      "backgroundColor": "rgb(193, 204, 215)",
+      "borderColor": "rgb(81, 102, 123)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[2]",
+    "text": "Rate us",
+    "page": "global-feed",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[3]",
+    "text": "Change Time Zone",
+    "page": "global-feed",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[4]",
+    "text": "Rate us",
+    "page": "global-feed",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[5]",
+    "text": "",
+    "page": "global-feed",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[6]",
+    "text": "",
+    "page": "global-feed",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(78, 59, 194)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(78, 59, 194)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[7]",
+    "text": "",
+    "page": "global-feed",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[8]",
+    "text": "Join the class",
+    "page": "global-feed",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[9]",
+    "text": "My Feed",
+    "page": "global-feed",
+    "baseline": {
+      "color": "rgb(81, 102, 123)",
+      "backgroundColor": "rgb(193, 204, 215)",
+      "borderColor": "rgb(81, 102, 123)"
+    },
+    "hovered": {
+      "color": "rgb(81, 102, 123)",
+      "backgroundColor": "rgb(193, 204, 215)",
+      "borderColor": "rgb(81, 102, 123)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[1]",
+    "text": "Unlocked (1)",
+    "page": "badges",
+    "baseline": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(77, 59, 194)",
+      "borderColor": "rgb(255, 255, 255)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(77, 59, 194)",
+      "borderColor": "rgb(255, 255, 255)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[2]",
+    "text": "",
+    "page": "badges",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[3]",
+    "text": "",
+    "page": "badges",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[4]",
+    "text": "More Scheduling Options",
+    "page": "badges",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[5]",
+    "text": "Show All (26)",
+    "page": "badges",
+    "baseline": {
+      "color": "rgb(34, 42, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(237, 235, 249)"
+    },
+    "hovered": {
+      "color": "rgb(34, 42, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(237, 235, 249)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[1]",
+    "text": "Download Certificate",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(20, 11, 75)",
+      "borderColor": "rgb(255, 255, 255)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(20, 11, 75)",
+      "borderColor": "rgb(255, 255, 255)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[2]",
+    "text": "Download Certificate",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(114, 46, 209)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(114, 46, 209)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(91, 37, 167)",
+      "borderColor": "rgb(91, 37, 167)"
+    },
+    "changed": true
+  },
+  {
+    "selector": "button[3]",
+    "text": "View all",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(114, 46, 209)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(114, 46, 209)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(91, 37, 167)",
+      "borderColor": "rgb(91, 37, 167)"
+    },
+    "changed": true
+  },
+  {
+    "selector": "button[4]",
+    "text": "View all",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(114, 46, 209)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(114, 46, 209)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(91, 37, 167)",
+      "borderColor": "rgb(91, 37, 167)"
+    },
+    "changed": true
+  },
+  {
+    "selector": "button[5]",
+    "text": "Resume Now",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(77, 59, 194)",
+      "backgroundColor": "rgba(255, 255, 255, 0.72)",
+      "borderColor": "rgb(77, 59, 194)"
+    },
+    "hovered": {
+      "color": "rgb(77, 59, 194)",
+      "backgroundColor": "rgba(255, 255, 255, 0.72)",
+      "borderColor": "rgb(77, 59, 194)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[6]",
+    "text": "Resume Now",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(114, 46, 209)",
+      "borderColor": "rgb(114, 46, 209)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(91, 37, 167)",
+      "borderColor": "rgb(91, 37, 167)"
+    },
+    "changed": true
+  },
+  {
+    "selector": "button[7]",
+    "text": "Download Certificate",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(114, 46, 209)",
+      "borderColor": "rgb(114, 46, 209)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(91, 37, 167)",
+      "borderColor": "rgb(91, 37, 167)"
+    },
+    "changed": true
+  },
+  {
+    "selector": "button[8]",
+    "text": "Resume Now",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(114, 46, 209)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(114, 46, 209)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(91, 37, 167)",
+      "borderColor": "rgb(91, 37, 167)"
+    },
+    "changed": true
+  },
+  {
+    "selector": "button[9]",
+    "text": "Resume Now",
+    "page": "nano-skills",
+    "baseline": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(114, 46, 209)",
+      "borderColor": "rgb(114, 46, 209)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(91, 37, 167)",
+      "borderColor": "rgb(91, 37, 167)"
+    },
+    "changed": true
+  },
+  {
+    "selector": "button[1]",
+    "text": "Homework",
+    "page": "learn",
+    "baseline": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(77, 59, 194)",
+      "borderColor": "rgb(255, 255, 255)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(77, 59, 194)",
+      "borderColor": "rgb(255, 255, 255)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[2]",
+    "text": "Quiz",
+    "page": "learn",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[3]",
+    "text": "",
+    "page": "learn",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[4]",
+    "text": "",
+    "page": "learn",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[5]",
+    "text": "More Scheduling Options",
+    "page": "learn",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[6]",
+    "text": "Show All (26)",
+    "page": "learn",
+    "baseline": {
+      "color": "rgb(34, 42, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(237, 235, 249)"
+    },
+    "hovered": {
+      "color": "rgb(34, 42, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(237, 235, 249)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[3]",
+    "text": "Change Time Zone",
+    "page": "certificates",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[4]",
+    "text": "Rate us",
+    "page": "certificates",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[5]",
+    "text": "",
+    "page": "certificates",
+    "baseline": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "hovered": {
+      "color": "rgb(61, 77, 93)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(61, 77, 93)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[6]",
+    "text": "",
+    "page": "certificates",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[7]",
+    "text": "",
+    "page": "certificates",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(171, 157, 255)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[8]",
+    "text": "Join the class",
+    "page": "certificates",
+    "baseline": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(78, 59, 194)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(78, 59, 194)",
+      "borderColor": "rgba(0, 0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[9]",
+    "text": "My Feed",
+    "page": "certificates",
+    "baseline": {
+      "color": "rgb(81, 102, 123)",
+      "backgroundColor": "rgb(193, 204, 215)",
+      "borderColor": "rgb(81, 102, 123)"
+    },
+    "hovered": {
+      "color": "rgb(81, 102, 123)",
+      "backgroundColor": "rgb(193, 204, 215)",
+      "borderColor": "rgb(81, 102, 123)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[1]",
+    "text": "Share",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(78, 59, 194)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(78, 59, 194)"
+    },
+    "hovered": {
+      "color": "rgb(78, 59, 194)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(78, 59, 194)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[2]",
+    "text": "",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(78, 59, 194)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(78, 59, 194)"
+    },
+    "hovered": {
+      "color": "rgb(78, 59, 194)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(78, 59, 194)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[3]",
+    "text": "Refer Now",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(78, 59, 194)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(78, 59, 194)"
+    },
+    "hovered": {
+      "color": "rgb(78, 59, 194)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(78, 59, 194)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[4]",
+    "text": "Redeem Your Gems",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(78, 59, 194)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(78, 59, 194)"
+    },
+    "hovered": {
+      "color": "rgb(78, 59, 194)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(78, 59, 194)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[5]",
+    "text": "My Rewards",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(116, 83, 215)",
+      "borderColor": "rgb(255, 255, 255)"
+    },
+    "hovered": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(116, 83, 215)",
+      "borderColor": "rgb(255, 255, 255)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[6]",
+    "text": "",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(77, 59, 194)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(77, 59, 194)"
+    },
+    "hovered": {
+      "color": "rgb(77, 59, 194)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderColor": "rgb(77, 59, 194)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[7]",
+    "text": "",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[8]",
+    "text": "More Scheduling Options",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "hovered": {
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(0, 0, 0)"
+    },
+    "changed": false
+  },
+  {
+    "selector": "button[9]",
+    "text": "Show All (26)",
+    "page": "rewards",
+    "baseline": {
+      "color": "rgb(34, 42, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(237, 235, 249)"
+    },
+    "hovered": {
+      "color": "rgb(34, 42, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderColor": "rgb(237, 235, 249)"
+    },
+    "changed": false
+  }
+]

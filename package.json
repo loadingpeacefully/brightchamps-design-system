@@ -1,0 +1,42 @@
+{
+  "name": "brightchamps-design-system",
+  "version": "0.1.0",
+  "description": "BrightChamps living design system — token extraction, drift detection, and publishing",
+  "type": "module",
+  "scripts": {
+    "extract:dom": "tsx src/extractors/playwright-crawler.ts",
+    "extract:figma": "tsx src/extractors/figma-api.ts",
+    "extract:all": "npm run extract:figma && npm run extract:dom",
+    "ledger:build": "tsx src/resolver/index.ts",
+    "ledger:status": "tsx scripts/ledger-status.ts",
+    "migrate:tokens": "tsx scripts/migrate-tokens.ts",
+    "audit:student": "tsx scripts/audit-student-surface.ts",
+    "drift:detect": "tsx src/drift/detect.ts",
+    "drift:review": "cd dashboard && npm run dev",
+    "publish:figma": "tsx src/publish/figma-variables.ts",
+    "publish:css": "tsx src/publish/css-tokens.ts",
+    "publish:site": "tsx src/publish/ds-site/build.ts && pagefind --site src/publish/ds-site/dist --output-subdir _pagefind",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "chalk": "^5.4.1",
+    "dotenv": "^16.5.0",
+    "playwright": "^1.52.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "eslint": "^9.0.0",
+    "pagefind": "^1.5.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

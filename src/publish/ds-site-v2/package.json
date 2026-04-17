@@ -1,0 +1,35 @@
+{
+  "name": "brightchamps-ds-site",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx scripts/build-tokens.ts && next dev -p 4000",
+    "build": "tsx scripts/build-tokens.ts && next build",
+    "start": "next start -p 4000",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "build:tokens": "tsx scripts/build-tokens.ts"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.2.4",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@types/mdx": "^2.0.13",
+    "lucide-react": "0.453.0",
+    "next": "14.2.30",
+    "next-themes": "0.3.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.7.5",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.47",
+    "tailwindcss": "3.4.14",
+    "tsx": "^4.21.0",
+    "typescript": "5.6.3"
+  }
+}

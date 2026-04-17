@@ -1,0 +1,2163 @@
+[
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/green_diamond_profile.webp",
+    "width": 40,
+    "height": 40,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/green_diamond_profile.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 30
+  },
+  {
+    "type": "svg",
+    "identifier": "<path d=\"M7.11439 1.68875C7.48887 0.974653 8.51113 0.974654 8.88561 1.68875L10.4158 4.60669C10.5557 4.87338 10.8083 5.06",
+    "width": 18,
+    "height": 18,
+    "viewBox": "0 0 16 16",
+    "markup": "<svg width=\"18px\" height=\"18px\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7.11439 1.68875C7.48887 0.974653 8.51113 0.974654 8.88561 1.68875L10.4158 4.60669C10.5557 4.87338 10.8083 5.06284 11.1035 5.12246L14.2928 5.76663C15.0494 5.91946 15.355 6.83558 14.8415 7.41199L12.5661 9.9663C12.3757 10.1801 12.286 10.4653 12.3199 10.7496L12.7267 14.1698C12.8205 14.9577 12.0031 15.5357 11.2914 15.1847L8.44232 13.7796C8.16347 13.6421 7.83653 13.6421 7.55768 13.7796L4.7086 15.1847C3.99691 15.5357 3.17954 14.9577 3.27328 14.1698L3.68015 10.7496C3.71397 10.4653 3.6243 10.1801 3.43385 9.9663L1.15851 7.41199C0.645047 6.83558 0.950573 5.91946 1.70723 5.76663L4.89654 5.12246C5.19172 5.06284 5.44431 4.87338 5.58417 4.60669L7.11439 1.68875Z\" fill=\"#FFB743\" stroke=\"white\"></path></svg>",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 22
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/drop-down.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/drop-down.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 21
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/arrow_down.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/arrow_down.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 15
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard//dropdown_arrow.webp",
+    "width": 10,
+    "height": 6,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard//dropdown_arrow.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 14
+  },
+  {
+    "type": "img",
+    "identifier": "/icons/lock.svg",
+    "width": 18,
+    "height": 18,
+    "viewBox": null,
+    "src": "/icons/lock.svg",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 14
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/right_check_green.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/right_check_green.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 14
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/avatar_boy.webp",
+    "width": 38,
+    "height": 38,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/avatar_boy.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 13
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/arrow_right.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/arrow_right.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 12
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_brightstar.svg",
+    "width": 28,
+    "height": 28,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_brightstar.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 11
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/rate_us_guy.webp",
+    "width": 62,
+    "height": 78,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/rate_us_guy.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 9
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_horary_star_achievement_gold.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_horary_star_achievement_gold.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 9
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/learn.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/learn.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 8
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_trail_blazer_achievement_gold.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_trail_blazer_achievement_gold.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 8
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/brightchamps_logo.webp",
+    "width": 163,
+    "height": 38,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/brightchamps_logo.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/explore.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/explore.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/flag-icon.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/flag-icon.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/practice_zone_icon.webp?updatedAt=1745393312926",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/practice_zone_icon.webp?updatedAt=1745393312926",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/new_tag.webp",
+    "width": 43,
+    "height": 21,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/new_tag.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/nano-skill.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/nano-skill.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/certificat_icon.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/certificat_icon.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/reward.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/reward.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/parent_hub_icon_2x.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/parent_hub_icon_2x.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/world_icon.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/world_icon.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/language_translator_icon.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/language_translator_icon.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/avatar_greenline.webp",
+    "width": 107,
+    "height": 91,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/avatar_greenline.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/edit_pencil_red.webp",
+    "width": 19,
+    "height": 19,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/edit_pencil_red.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/settings.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/settings.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/icons/stars.svg",
+    "width": 15,
+    "height": 15,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/icons/stars.svg",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/icons/badge.svg",
+    "width": 15,
+    "height": 14,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/icons/badge.svg",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/icons/certificates.svg",
+    "width": 16,
+    "height": 15,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/icons/certificates.svg",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/icons/gems.svg",
+    "width": 15,
+    "height": 15,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/icons/gems.svg",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/icons/diamonds.svg",
+    "width": 16,
+    "height": 15,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/icons/diamonds.svg",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/navigate-left.webp",
+    "width": 18,
+    "height": 18,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/navigate-left.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/navigate-right.webp",
+    "width": 18,
+    "height": 18,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/navigate-right.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/concerned_ray.webp",
+    "width": 80,
+    "height": 80,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/concerned_ray.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/schedule_icon.webp",
+    "width": 18,
+    "height": 18,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/schedule_icon.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/gif/badges_rhythm_star_bronze.webp",
+    "width": 89,
+    "height": 89,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/gif/badges_rhythm_star_bronze.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/gif/badges_ignition_star_bronze.webp",
+    "width": 89,
+    "height": 89,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/gif/badges_ignition_star_bronze.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/brightchamps-new-website/course+Icon/coding_course_icon.png",
+    "width": 34,
+    "height": 34,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/brightchamps-new-website/course+Icon/coding_course_icon.png",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/groupclass_icon.webp",
+    "width": 21,
+    "height": 21,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/groupclass_icon.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/brightchamps-new-website/course+Icon/math_course_icon.png",
+    "width": 34,
+    "height": 34,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/brightchamps-new-website/course+Icon/math_course_icon.png",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/progress_logo_youtube.webp",
+    "width": 43,
+    "height": 44,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/progress_logo_youtube.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "badges",
+      "nano-skills",
+      "learn",
+      "certificates",
+      "rewards"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/disabled_assignment.webp",
+    "width": 32,
+    "height": 32,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/disabled_assignment.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/disabled_quiz.webp",
+    "width": 32,
+    "height": 32,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/disabled_quiz.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 7
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/chevron_left_slide.webp",
+    "width": 16,
+    "height": 16,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/chevron_left_slide.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "nano-skills",
+      "certificates"
+    ],
+    "count": 6
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/circlechess_image1.webp",
+    "width": 228,
+    "height": 130,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/circlechess_image1.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 6
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/circlechess_logo.webp",
+    "width": 320,
+    "height": 26,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/circlechess_logo.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 6
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/chevron_right_slide.webp",
+    "width": 16,
+    "height": 16,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/chevron_right_slide.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "nano-skills",
+      "certificates"
+    ],
+    "count": 6
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_ignition_star_achievement_silver.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_ignition_star_achievement_silver.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 6
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/diamond_profile.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/diamond_profile.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 6
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/assignment.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/assignment.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 6
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/quiz.webp",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/quiz.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 6
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_grit_star_achievement_gold.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_grit_star_achievement_gold.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 5
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/star.svg",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/star.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 5
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_rhythm_star_achievement_gold.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_rhythm_star_achievement_gold.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 4
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_grit_star_achievement_silver.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_grit_star_achievement_silver.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 4
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_rhythm_star_achievement_silver.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_rhythm_star_achievement_silver.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 4
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_ignition_star_achievement_bronze.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_ignition_star_achievement_bronze.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 4
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/arrowRight.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/arrowRight.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 4
+  },
+  {
+    "type": "svg",
+    "identifier": "<defs><clipPath id=\"__lottie_element_2\"><rect width=\"512\" height=\"512\" x=\"0\" y=\"0\"></rect></clipPath></defs><g clip-path",
+    "width": 80,
+    "height": 80,
+    "viewBox": "0 0 512 512",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 3
+  },
+  {
+    "type": "svg",
+    "identifier": "<defs><clipPath id=\"__lottie_element_16\"><rect width=\"512\" height=\"512\" x=\"0\" y=\"0\"></rect></clipPath></defs><g clip-pat",
+    "width": 80,
+    "height": 80,
+    "viewBox": "0 0 512 512",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 3
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/brightchamps/senior-champs/Subtraction_with_Borrowing_3_digit_28593.png",
+    "width": 148,
+    "height": 128,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/brightchamps/senior-champs/Subtraction_with_Borrowing_3_digit_28593.png",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 3
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/yellow_clock_icon.webp",
+    "width": 16,
+    "height": 16,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/yellow_clock_icon.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 3
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/videocamera.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/videocamera.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 3
+  },
+  {
+    "type": "img",
+    "identifier": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/webp/celebrate.webp",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/webp/celebrate.webp",
+    "pages": [
+      "my-feed",
+      "global-feed",
+      "certificates"
+    ],
+    "count": 3
+  },
+  {
+    "type": "img",
+    "identifier": "https://flagcdn.com/us.svg",
+    "width": 18,
+    "height": 12,
+    "viewBox": null,
+    "src": "https://flagcdn.com/us.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 3
+  },
+  {
+    "type": "img",
+    "identifier": "https://flagcdn.com/in.svg",
+    "width": 18,
+    "height": 12,
+    "viewBox": null,
+    "src": "https://flagcdn.com/in.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 3
+  },
+  {
+    "type": "img",
+    "identifier": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/webp/congrats_left.webp",
+    "width": 18,
+    "height": 16,
+    "viewBox": null,
+    "src": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/webp/congrats_left.webp",
+    "pages": [
+      "my-feed",
+      "certificates"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/webp/congrats_right.webp",
+    "width": 18,
+    "height": 16,
+    "viewBox": null,
+    "src": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/webp/congrats_right.webp",
+    "pages": [
+      "my-feed",
+      "certificates"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://d1s2qg9lntsnzw.cloudfront.net/public/webp/crying_monster.webp",
+    "width": 130,
+    "height": 130,
+    "viewBox": null,
+    "src": "https://d1s2qg9lntsnzw.cloudfront.net/public/webp/crying_monster.webp",
+    "pages": [
+      "my-feed",
+      "certificates"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/svg/arrow_right.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/svg/arrow_right.svg",
+    "pages": [
+      "my-feed",
+      "certificates"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_rhythm_star_bronze.webp",
+    "width": 28,
+    "height": 28,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_rhythm_star_bronze.webp",
+    "pages": [
+      "badges"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_ignition_star_bronze.webp",
+    "width": 28,
+    "height": 28,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_ignition_star_bronze.webp",
+    "pages": [
+      "badges"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_grit_star_bronze.webp",
+    "width": 28,
+    "height": 28,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_grit_star_bronze.webp",
+    "pages": [
+      "badges"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_horary_star_bronze.webp",
+    "width": 28,
+    "height": 28,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_horary_star_bronze.webp",
+    "pages": [
+      "badges"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_trail_blazer_bronze.webp",
+    "width": 28,
+    "height": 28,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/webp/badges_trail_blazer_bronze.webp",
+    "pages": [
+      "badges"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_trail_blazer_achievement_silver.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_trail_blazer_achievement_silver.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_rhythm_star_achievement_bronze.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_rhythm_star_achievement_bronze.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://flagcdn.com/vn.svg",
+    "width": 18,
+    "height": 12,
+    "viewBox": null,
+    "src": "https://flagcdn.com/vn.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/nano_skill_completed_icon.svg",
+    "width": 32,
+    "height": 32,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/nano_skill_completed_icon.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/click_icon_blue.svg",
+    "width": 18,
+    "height": 18,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/click_icon_blue.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/green_star_icon.svg",
+    "width": 12,
+    "height": 12,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/green_star_icon.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2235-title.svg",
+    "width": 186,
+    "height": 56,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2235-title.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2138-title.svg",
+    "width": 178,
+    "height": 53,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2138-title.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/1937-title.svg",
+    "width": 178,
+    "height": 53,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/1937-title.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2320-title.svg",
+    "width": 178,
+    "height": 53,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2320-title.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/10_free_class.webp",
+    "width": 108,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/10_free_class.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 2
+  },
+  {
+    "type": "img",
+    "identifier": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/webp/boy_pf.webp",
+    "width": 47,
+    "height": 47,
+    "viewBox": null,
+    "src": "https://d1s2qg9lntsnzw.cloudfront.net/public/icons/webp/boy_pf.webp",
+    "pages": [
+      "global-feed"
+    ],
+    "count": 1
+  },
+  {
+    "type": "svg",
+    "identifier": "<g style=\"transform: rotate(0deg); transform-origin: center center;\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"none\" stroke=\"",
+    "width": 80,
+    "height": 80,
+    "viewBox": "0 0 100 100",
+    "markup": "<svg class=\"circularProgressWithStar_progressBarSvg__rg8aG\" viewBox=\"0 0 100 100\"><g style=\"transform: rotate(0deg); transform-origin: center center;\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"none\" stroke=\"rgba(240, 240, 240, 0.1)\" stroke-width=\"8\" stroke-dasharray=\"289.02652413026095 0\" stroke-linecap=\"round\"></circle><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"none\" stroke=\"#FEC519\" stroke-width=\"8\" stroke-dasharray=\"289.02652413026095\" stroke-dashoffset=\"260.12387171723486\" stroke-linecap=\"round\" class=\"circularProgressWithStar_progressFill__kKbPH\"></circle></g></svg>",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "svg",
+    "identifier": "<path d=\"M13.5737 24.1104L4.70273 24.2133L8.64996 16.6565L5.53072 8.52847L14.3155 10.0583L21.2587 4.93213L22.7407 13.434",
+    "width": 30,
+    "height": 30,
+    "viewBox": "0 0 34 33",
+    "markup": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"30\" height=\"30\" viewBox=\"0 0 34 33\" fill=\"none\"><path d=\"M13.5737 24.1104L4.70273 24.2133L8.64996 16.6565L5.53072 8.52847L14.3155 10.0583L21.2587 4.93213L22.7407 13.4344L30.1511 18.3942L22.2823 22.1191L19.919 30.3106L13.5737 24.1104Z\" fill=\"white\"></path><path d=\"M28.8073 18.2157L16.3407 17.2081L22.1316 13.7477L28.8073 18.2157Z\" fill=\"url(#paint0_linear_2907_18198)\"></path><path d=\"M21.7193 21.5698L16.3413 17.2067L28.8079 18.2143L21.7193 21.5698Z\" fill=\"url(#paint1_linear_2907_18198)\"></path><path d=\"M20.7966 6.08464L16.3408 17.2044L14.5419 10.7026L20.7966 6.08464Z\" fill=\"url(#paint2_linear_2907_18198)\"></path><path d=\"M22.1329 13.7443L16.342 17.2047L20.7979 6.08496L22.1329 13.7443Z\" fill=\"url(#paint3_linear_2907_18198)\"></path><path d=\"M6.62769 9.32642L16.3404 17.2063L9.43763 16.6484L6.62769 9.32642Z\" fill=\"url(#paint4_linear_2907_18198)\"></path><path d=\"M14.5408 10.706L16.3397 17.2078L6.62702 9.32788L14.5408 10.706Z\" fill=\"url(#paint5_linear_2907_18198)\"></path><path d=\"M5.88268 23.4573L16.3413 17.2076L13.8741 23.3646L5.88268 23.4573Z\" fill=\"url(#paint6_linear_2907_18198)\"></path><path d=\"M9.43861 16.6497L16.3413 17.2076L5.88268 23.4573L9.43861 16.6497Z\" fill=\"url(#paint7_linear_2907_18198)\"></path><path d=\"M19.59 28.9501L16.3411 17.2075L21.719 21.5706L19.59 28.9501Z\" fill=\"url(#paint8_linear_2907_18198)\"></path><path d=\"M19.59 28.9501L13.8738 23.3646L16.3411 17.2075L19.59 28.9501Z\" fill=\"url(#paint9_linear_2907_18198)\"></path><defs><linearGradient id=\"paint0_linear_2907_18198\" x1=\"23.8886\" y1=\"14.8861\" x2=\"22.1922\" y2=\"19.108\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FCDC73\"></stop><stop offset=\"1\" stop-color=\"#FFBF00\"></stop></linearGradient><linearGradient id=\"paint1_linear_2907_18198\" x1=\"29.5561\" y1=\"20.5159\" x2=\"22.6982\" y2=\"25.5994\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FFFF53\"></stop><stop offset=\"0.12\" stop-color=\"#FFF24C\"></stop><stop offset=\"0.35\" stop-color=\"#FFD23C\"></stop><stop offset=\"0.65\" stop-color=\"#FF9D22\"></stop><stop offset=\"1\" stop-color=\"#FF5900\"></stop></linearGradient><linearGradient id=\"paint2_linear_2907_18198\" x1=\"18.6181\" y1=\"6.18133\" x2=\"14.781\" y2=\"15.5857\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FCDC73\"></stop><stop offset=\"1\" stop-color=\"#FFBF00\"></stop></linearGradient><linearGradient id=\"paint3_linear_2907_18198\" x1=\"23.6458\" y1=\"11.3956\" x2=\"18.3005\" y2=\"10.7494\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FFFF53\"></stop><stop offset=\"0.12\" stop-color=\"#FFF24C\"></stop><stop offset=\"0.35\" stop-color=\"#FFD23C\"></stop><stop offset=\"0.65\" stop-color=\"#FF9D22\"></stop><stop offset=\"1\" stop-color=\"#FF5900\"></stop></linearGradient><linearGradient id=\"paint4_linear_2907_18198\" x1=\"4.31587\" y1=\"9.5605\" x2=\"15.706\" y2=\"17.1295\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FFFF53\"></stop><stop offset=\"0.12\" stop-color=\"#FFF24C\"></stop><stop offset=\"0.35\" stop-color=\"#FFD23C\"></stop><stop offset=\"0.65\" stop-color=\"#FF9D22\"></stop><stop offset=\"1\" stop-color=\"#FF5900\"></stop></linearGradient><linearGradient id=\"paint5_linear_2907_18198\" x1=\"6.66351\" y1=\"9.70062\" x2=\"15.5773\" y2=\"14.5965\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FCDC73\"></stop><stop offset=\"1\" stop-color=\"#FFBF00\"></stop></linearGradient><linearGradient id=\"paint6_linear_2907_18198\" x1=\"4.37555\" y1=\"25.4101\" x2=\"15.5339\" y2=\"16.3445\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FFFF53\"></stop><stop offset=\"0.12\" stop-color=\"#FFF24C\"></stop><stop offset=\"0.35\" stop-color=\"#FFD23C\"></stop><stop offset=\"0.65\" stop-color=\"#FF9D22\"></stop><stop offset=\"1\" stop-color=\"#FF5900\"></stop></linearGradient><linearGradient id=\"paint7_linear_2907_18198\" x1=\"12.7407\" y1=\"16.5492\" x2=\"9.6627\" y2=\"24.1684\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FCDC73\"></stop><stop offset=\"1\" stop-color=\"#FFBF00\"></stop></linearGradient><linearGradient id=\"paint8_linear_2907_18198\" x1=\"19.5942\" y1=\"19.2956\" x2=\"16.5162\" y2=\"26.9148\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FCDC73\"></stop><stop offset=\"1\" stop-color=\"#FFBF00\"></stop></linearGradient><linearGradient id=\"paint9_linear_2907_18198\" x1=\"19.429\" y1=\"29.8397\" x2=\"15.2524\" y2=\"17.8047\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#FFFF53\"></stop><stop offset=\"0.12\" stop-color=\"#FFF24C\"></stop><stop offset=\"0.35\" stop-color=\"#FFD23C\"></stop><stop offset=\"0.65\" stop-color=\"#FF9D22\"></stop><stop offset=\"1\" stop-color=\"#FF5900\"></stop></linearGradient></defs></svg>",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "svg",
+    "identifier": "<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2.50423 5.33736C2.73203 5.10955 3.10138 5.10955 3.32919 5.33736L7.0000",
+    "width": 14,
+    "height": 15,
+    "viewBox": "0 0 14 15",
+    "markup": "<svg class=\"monthDropdown_arrow__Lgpi9 \" xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"15\" viewBox=\"0 0 14 15\" fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2.50423 5.33736C2.73203 5.10955 3.10138 5.10955 3.32919 5.33736L7.00004 9.00821L10.6709 5.33736C10.8987 5.10955 11.268 5.10955 11.4959 5.33736C11.7237 5.56516 11.7237 5.93451 11.4959 6.16232L7.41252 10.2456C7.18471 10.4735 6.81537 10.4735 6.58756 10.2456L2.50423 6.16232C2.27642 5.93451 2.27642 5.56516 2.50423 5.33736Z\" fill=\"#333333\"></path></svg>",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_bright_star_bronze.svg",
+    "width": 227,
+    "height": 118,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_bright_star_bronze.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/flag_red.svg",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/flag_red.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard//badges_leaderboard_table.svg",
+    "width": 22,
+    "height": 22,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard//badges_leaderboard_table.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://flagcdn.com/au.svg",
+    "width": 18,
+    "height": 12,
+    "viewBox": null,
+    "src": "https://flagcdn.com/au.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://flagcdn.com/gb.svg",
+    "width": 18,
+    "height": 12,
+    "viewBox": null,
+    "src": "https://flagcdn.com/gb.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://flagcdn.com/ae.svg",
+    "width": 18,
+    "height": 12,
+    "viewBox": null,
+    "src": "https://flagcdn.com/ae.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_horary_star_achievement_silver.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_horary_star_achievement_silver.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_grit_star_achievement_bronze.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://assets.brightchamps.com/student-dashboard/images/svg/badges_grit_star_achievement_bronze.svg",
+    "pages": [
+      "badges"
+    ],
+    "count": 1
+  },
+  {
+    "type": "svg",
+    "identifier": "<defs><clipPath id=\"__lottie_element_2\"><rect width=\"80\" height=\"80\" x=\"0\" y=\"0\"></rect></clipPath><clipPath id=\"__lotti",
+    "width": 24,
+    "height": 40,
+    "viewBox": "0 0 80 80",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/plus_icon_blue.svg",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/plus_icon_blue.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/self_paced_mob_banner.webp",
+    "width": 245,
+    "height": 52,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/self_paced_mob_banner.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/self_paced_spark.webp",
+    "width": 24,
+    "height": 30,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/self_paced_spark.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2186-card.webp",
+    "width": 88,
+    "height": 88,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2186-card.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2334-card.webp",
+    "width": 88,
+    "height": 88,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2334-card.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/course_catalog.webp",
+    "width": 56,
+    "height": 56,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/course_catalog.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/vedic_maths_thumbnail_v2.webp",
+    "width": 230,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/vedic_maths_thumbnail_v2.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/gen_ai_thumbnail_v2.webp",
+    "width": 222,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/gen_ai_thumbnail_v2.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/check_icon_white.svg",
+    "width": 20,
+    "height": 20,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/check_icon_white.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/become_a_youtber_thumbnail_v2.webp",
+    "width": 222,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/become_a_youtber_thumbnail_v2.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/rubiks_cube_thumbnail_v2.webp",
+    "width": 222,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/rubiks_cube_thumbnail_v2.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/antibullying_thumbnail_v2.webp",
+    "width": 230,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/antibullying_thumbnail_v2.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/sparkle_icon.svg",
+    "width": 32,
+    "height": 32,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/sparkle_icon.svg",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_banner_webp/pattern_and_puzzles_thumbnail.webp",
+    "width": 230,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_banner_webp/pattern_and_puzzles_thumbnail.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/food_habits_thumbnail_v2.webp",
+    "width": 222,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/food_habits_thumbnail_v2.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/fun_science_experiment_thumbnail_v2.webp",
+    "width": 222,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/fun_science_experiment_thumbnail_v2.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/petcare_journey_thumbnail_v2.webp",
+    "width": 230,
+    "height": 172,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/_thumbnail_webp/petcare_journey_thumbnail_v2.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2235-card.webp",
+    "width": 180,
+    "height": 160,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2235-card.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2138-card.webp",
+    "width": 180,
+    "height": 160,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2138-card.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/1937-card.webp",
+    "width": 180,
+    "height": 160,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/1937-card.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2320-card.webp",
+    "width": 180,
+    "height": 160,
+    "viewBox": null,
+    "src": "https://brightchamps-academy.s3.ap-south-1.amazonaws.com/curriculum/onlineMasterClass/2320-card.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/teacher_led_default_object.png",
+    "width": 180,
+    "height": 160,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/teacher_led_default_object.png",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/harvard_banner_image.webp",
+    "width": 231,
+    "height": 166,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/harvard_banner_image.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/harvard_impact_banner_new.webp",
+    "width": 92,
+    "height": 106,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/harvard_impact_banner_new.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/category_creativity_digital_skills.webp",
+    "width": 96,
+    "height": 96,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/category_creativity_digital_skills.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/category_financial_literacy.webp",
+    "width": 96,
+    "height": 96,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/category_financial_literacy.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/category_personal_growth.webp",
+    "width": 96,
+    "height": 96,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/category_personal_growth.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/category_math_wizards.webp",
+    "width": 96,
+    "height": 96,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/category_math_wizards.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/nano_skill_footer_banner_web.webp",
+    "width": 594,
+    "height": 264,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/nano_skill_footer_banner_web.webp",
+    "pages": [
+      "nano-skills"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/unified-dashboard/hour_glass_icon_white.webp",
+    "width": 16,
+    "height": 16,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/unified-dashboard/hour_glass_icon_white.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/module-display-content/Coding_Fundamentals_1.png",
+    "width": 159,
+    "height": 159,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/module-display-content/Coding_Fundamentals_1.png",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Geometric_Rides_1.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Geometric_Rides_1.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/My_Birthday_Party_2.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/My_Birthday_Party_2.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/DJ_The_Music_Explorer_3.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/DJ_The_Music_Explorer_3.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Pen_Interactor_4.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Pen_Interactor_4.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Scrolling_Background_5.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Scrolling_Background_5.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Advanced_Calculator_6.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Advanced_Calculator_6.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Math_Race_7.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Math_Race_7.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Archery_8.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Archery_8.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Rock_Paper_Scissors_9.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Rock_Paper_Scissors_9.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Fruit_Collector_10.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Fruit_Collector_10.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Snake_II_11.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Snake_II_11.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Pong_Game_12.webp",
+    "width": 72,
+    "height": 59,
+    "viewBox": null,
+    "src": "https://d26kej74xcgneg.cloudfront.net/curriculum/webp/Pong_Game_12.webp",
+    "pages": [
+      "learn"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard//mac_img.svg",
+    "width": 40,
+    "height": 40,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard//mac_img.svg",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard//copyIcon.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard//copyIcon.svg",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard//share_icon.svg",
+    "width": 24,
+    "height": 24,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard//share_icon.svg",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard//three_dropdown.svg",
+    "width": 15,
+    "height": 15,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard//three_dropdown.svg",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/vedic_math.webp",
+    "width": 164,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/vedic_math.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/harvard_course.webp",
+    "width": 190,
+    "height": 87,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/harvard_course.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/amazon_giftcard.webp?updatedAt=1705395995318",
+    "width": 171,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/amazon_giftcard.webp?updatedAt=1705395995318",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/airpods.webp",
+    "width": 105,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/airpods.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/nientendo_switch.webp",
+    "width": 190,
+    "height": 84,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/nientendo_switch.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/lego_set.webp",
+    "width": 114,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/lego_set.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/30_percent_off.webp",
+    "width": 158,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/30_percent_off.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/gaming_accessories.webp",
+    "width": 129,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/gaming_accessories.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/apple_ipad.webp",
+    "width": 84,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/apple_ipad.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/playstation_5.webp",
+    "width": 84,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/playstation_5.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/gaming_laptop.webp",
+    "width": 146,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/gaming_laptop.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  },
+  {
+    "type": "img",
+    "identifier": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/mackbook_pro.webp",
+    "width": 163,
+    "height": 105,
+    "viewBox": null,
+    "src": "https://ik.imagekit.io/brightchamps/dashboard/referrral-rewards/mackbook_pro.webp",
+    "pages": [
+      "rewards"
+    ],
+    "count": 1
+  }
+]
