@@ -146,8 +146,8 @@
 
   { "name": "color/brand/primary", "value": "#4e3bc2", "type": "color", "source": "figma", "surface": "student", "confidence": 0.9,
     "description": "Brand primary — CTAs, selected nav, primary actions",
-    "notes": "Extracted from student Figma. Confirmed as current production value. usageCount was 5,853 in Figma extraction.",
-    "openQuestion": "Designer DS uses #722ED1 (Royal Amethyst). Confirm with brand team before changing." },
+    "notes": "Frozen at #4e3bc2 as working canonical pending brand team formal override. All migration work proceeds on this value. See DC-005. Extracted from student Figma — usageCount was 5,853 in Figma extraction.",
+    "openQuestion": "Four-way conflict: Designer DS uses #722ED1 (Royal Amethyst). Production Figma extracts #4e3bc2 (current value). Feed/dashboard production code uses #6651e4 in 25+ files. A typo variant #4d3bc2 ships in 46 dashboard files (see DC-008). Brand team must pick canonical." },
 
   { "name": "color/course/coding/50", "value": "#E6F7FF", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Coding surface. Light background for coding vertical cards.", "notes": "From designer DS. Course vertical color." },
   { "name": "color/course/coding/500", "value": "#33CCFF", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Coding base. Course tags, icons, and primary elements.", "notes": "From designer DS. Course vertical color." },
@@ -171,5 +171,9 @@
   { "name": "font/heading/sm", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":600,\"fontSize\":24,\"lineHeightPx\":28.8,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Small section titles. Designer heading — fills gap in FINDING-002.", "notes": "From designer DS (font-heading-sm). 24px seen in DOM drift." },
   { "name": "font/heading/md", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":32,\"lineHeightPx\":38.4,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Card titles, component headers. Designer heading — fills gap in FINDING-002.", "notes": "From designer DS (font-heading-md). 32px seen in DOM drift." },
   { "name": "font/heading/lg", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":40,\"lineHeightPx\":48,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Section headers. Designer heading.", "notes": "From designer DS (font-heading-lg). Not yet seen in DOM — aspirational." },
-  { "name": "font/heading/xl", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":56,\"lineHeightPx\":67.2,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Page titles, hero headings. Designer heading.", "notes": "From designer DS (font-heading-xl). Not yet seen in DOM — aspirational." }
+  { "name": "font/heading/xl", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":56,\"lineHeightPx\":67.2,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Page titles, hero headings. Designer heading.", "notes": "From designer DS (font-heading-xl). Not yet seen in DOM — aspirational." },
+
+  { "name": "color/info/400", "value": "#3b9af5", "type": "color", "source": "designer", "surface": "student", "confidence": 0.6,
+    "description": "Paused/in-progress state — mid blue. Used for ProgressBar paused variant.",
+    "notes": "Proposed addition. Design confirmation pending. Unblocks ProgressBar codemod. See DC-010." }
 ]

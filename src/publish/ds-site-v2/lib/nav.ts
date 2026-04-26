@@ -20,6 +20,7 @@ export const NAV: NavSection[] = [
       { href: '/get-started/design/',     label: 'For designers',   disabled: true },
       { href: '/get-started/develop/',    label: 'For engineers',   disabled: true },
       { href: '/get-started/contribute/', label: 'Contributing',    badge: 'new' },
+      { href: '/get-started/decisions/',  label: 'Decisions',       badge: 'new' },
       { href: '/get-started/glossary/',   label: 'Glossary',        badge: 'new' },
     ],
   },
@@ -74,6 +75,7 @@ export const NAV: NavSection[] = [
     label: 'Tools',
     items: [
       { href: '/tools/',                 label: 'Overview' },
+      { href: '/tools/generate/',        label: 'AI Generator',      badge: 'new' },
       { href: '/tools/palette/',         label: 'Palette generator', disabled: true },
       { href: '/tools/contrast/',        label: 'Contrast checker',  disabled: true },
       { href: '/tools/token-picker/',    label: 'Token picker',      disabled: true },

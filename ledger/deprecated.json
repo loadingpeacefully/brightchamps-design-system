@@ -1209,5 +1209,12 @@
     "cssFrom": "--bc-shadow-10",
     "cssTo": "--shadow-10",
     "reason": "shadow-rank"
+  },
+  {
+    "from": "color/info/400 (auto-extracted)",
+    "to": "color/info/400 (designer provisional)",
+    "cssFrom": "--color-info-400 (#15e8ff)",
+    "cssTo": "--color-info-400 (#3b9af5)",
+    "reason": "Overridden by designer provisional value #3b9af5. Pending design confirmation. See DC-010."
   }
 ]

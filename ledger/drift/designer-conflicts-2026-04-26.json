@@ -62,9 +62,9 @@
       "deltaE": 18,
       "severity": "critical",
       "category": "color",
-      "action": "Block all other token work until resolved. This is the foundation everything builds on.",
+      "action": "Frozen at #4e3bc2 as working canonical pending brand team formal override. Migration work proceeds. Brand team must confirm or override.",
       "status": "pending-confirmation",
-      "notes": "Four distinct purples shipping simultaneously. Designer DS: #722ED1 (Royal Amethyst, 6 files in dashboard). Production Figma canonical: #4e3bc2 (173 files, $primary-color). Feed repo de facto: #6651e4 (25 files, $inprogress-state). Typo variant: #4d3bc2 (46 files, ΔE≈0.5 from #4e3bc2, visually identical but semantically wrong — see DC-008). Note: #722ED1 is NOT aspirational — it is already shipping in production (year-in-review, learn page header, FeedLayout). Brand team must pick one canonical. Everything else is drift."
+      "notes": "FROZEN at #4e3bc2 as working canonical (DR-001 / 2026-04-26). All migration work — codemods, componentSpecs, AI generator — proceeds on this value pending brand team formal override. Four distinct purples shipping simultaneously: Designer DS #722ED1 (Royal Amethyst, 6 files in dashboard). Production Figma canonical: #4e3bc2 (173 files, $primary-color). Feed repo de facto: #6651e4 (25 files, $inprogress-state). Typo variant: #4d3bc2 (46 files, ΔE≈0.5 — see DC-008). #722ED1 is NOT aspirational — it ships in year-in-review, learn page header, FeedLayout. Brand team must confirm or override #4e3bc2."
     },
     {
       "id": "DC-006",
@@ -120,9 +120,9 @@
       "deltaE": null,
       "severity": "low",
       "category": "color",
-      "action": "Design team to decide: add #3b9af5 as color/info/600 or map to nearest existing info token. Used for ProgressBar paused variant and $paused-state in dashboard _variables.scss.",
-      "status": "open",
-      "notes": "No designer equivalent defined yet. Needs design decision before engineering can standardize."
+      "action": "PENDING DESIGN CONFIRMATION — token added as provisional, unblocks engineering. Design team to confirm color/info/400 (#3b9af5) or override.",
+      "status": "pending-confirmation",
+      "notes": "Provisionally added as color/info/400 in manual-canonicals.json at confidence 0.6 (candidate tier). Replaces the auto-extracted #15e8ff that previously occupied that slot. Now visible at /foundations/color/ in the Info group. Engineering can codemod the ProgressBar paused variant against this token; rename happens automatically if design overrides."
     }
   ]
 }

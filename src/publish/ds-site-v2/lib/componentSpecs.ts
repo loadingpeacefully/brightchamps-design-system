@@ -30,6 +30,14 @@ export interface ComponentSpec {
   verificationStatus: 'verified' | 'inferred' | 'conflict'
   /** Discrepancies between this spec and the source file. */
   conflicts?: string[]
+  /**
+   * Migration target inside the dashboard repo (DR-001).
+   * - `newDashboard`: source file lives in `src/newDashboard/*` or `src/components/*` —
+   *   the new Next.js implementation. Migration codemods target this tree first.
+   * - `sections`: source file lives in `src/sections/*` (older composed pages),
+   *   or no source file located yet. Lower priority for the codemod sweep.
+   */
+  target: 'newDashboard' | 'sections'
 }
 
 export const componentSpecs: ComponentSpec[] = [
@@ -69,6 +77,7 @@ export const componentSpecs: ComponentSpec[] = [
   Primary Action
 </button>`,
     sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/Button/button.module.scss',
+    target: 'newDashboard',
     verificationStatus: 'conflict',
     conflicts: [
       'Variants taxonomy: spec has primary/secondary/ghost. Production has 5 variants — contained, outlined, danger, info, underline. None are named "primary"/"secondary"/"ghost".',
@@ -115,6 +124,7 @@ export const componentSpecs: ComponentSpec[] = [
   />
 </div>`,
     sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/ProgressBar/progressbar.module.scss',
+    target: 'newDashboard',
     verificationStatus: 'conflict',
     conflicts: [
       'Track: spec says color/neutral/200 (#e7e7e7). Production uses #e0e0e0.',
@@ -175,6 +185,7 @@ export const componentSpecs: ComponentSpec[] = [
   )}
 </div>`,
     sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/PracticeZone/components/milestoneAccordion/milestoneAccordion.module.scss',
+    target: 'newDashboard',
     verificationStatus: 'conflict',
     conflicts: [
       'Border: spec says color/neutral/200 (#e7e7e7). Production uses bottom-border-only #37255124 (brand-purple at 14% alpha).',
@@ -235,6 +246,7 @@ export const componentSpecs: ComponentSpec[] = [
   ))}
 </ol>`,
     sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/learn/components/LessonList/LessonList.module.scss',
+    target: 'sections',
     verificationStatus: 'conflict',
     conflicts: [
       'Row background: spec says color/neutral/100 (#ffffff) for default — production .activeList uses #fff for active rows only; default rows are transparent over container.',
@@ -271,6 +283,7 @@ export const componentSpecs: ComponentSpec[] = [
     margin: 'var(--space-4) 0',
   }}
 />`,
+    target: 'sections',
     verificationStatus: 'inferred',
     conflicts: [
       'No reusable GreenLine component exists in either the feed or dashboard repos. Searched for green-line, GreenLine, greenline, separator, divider — none match.',
@@ -335,6 +348,7 @@ export const componentSpecs: ComponentSpec[] = [
   </main>
 </div>`,
     sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/layouts/DashboardLayout/dashboardLayout.module.scss',
+    target: 'newDashboard',
     verificationStatus: 'conflict',
     conflicts: [
       'Page background: spec says color/neutral/100 (#ffffff). Production uses $app-background (#f5f4fa) — a tinted lavender, not pure white.',

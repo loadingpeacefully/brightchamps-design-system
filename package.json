@@ -7,7 +7,7 @@
     "extract:dom": "tsx src/extractors/playwright-crawler.ts",
     "extract:figma": "tsx src/extractors/figma-api.ts",
     "extract:all": "npm run extract:figma && npm run extract:dom",
-    "ledger:build": "tsx src/resolver/index.ts",
+    "ledger:build": "node -e \"console.error('\\n⚠️  ledger:build will overwrite TDR-0001 semantic naming. Run \\`npm run migrate:tokens\\` after. See DR-002 in /get-started/decisions/.\\n')\" && tsx src/resolver/index.ts",
     "ledger:status": "tsx scripts/ledger-status.ts",
     "migrate:tokens": "tsx scripts/migrate-tokens.ts",
     "audit:student": "tsx scripts/audit-student-surface.ts",
