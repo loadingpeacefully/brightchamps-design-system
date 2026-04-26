@@ -173,7 +173,7 @@ export default function SurfacesPage() {
                 <div className="mt-5 grid gap-3 sm:grid-cols-4">
                   <div className="rounded-md border border-chrome-border bg-chrome-surface px-4 py-3">
                     <div className="flex items-center gap-2">
-                      <Shield size={14} className="text-[var(--bc-brand-green)]" />
+                      <Shield size={14} className="text-[var(--brand-green)]" />
                       <span className="font-mono text-[18px] font-bold text-chrome-text">{drift.match}</span>
                     </div>
                     <div className="text-[11px] font-semibold text-chrome-text-subtlest uppercase tracking-[0.06em]">Match</div>
@@ -191,7 +191,7 @@ export default function SurfacesPage() {
                   </div>
                   <div className="rounded-md border border-chrome-border bg-chrome-surface px-4 py-3">
                     <div className="flex items-center gap-2">
-                      <HelpCircle size={14} className="text-[var(--bc-brand-red)]" />
+                      <HelpCircle size={14} className="text-[var(--brand-red)]" />
                       <span className="font-mono text-[18px] font-bold text-chrome-text">{drift.unknown}</span>
                     </div>
                     <div className="text-[11px] font-semibold text-chrome-text-subtlest uppercase tracking-[0.06em]">Unknown</div>
@@ -199,14 +199,14 @@ export default function SurfacesPage() {
                 </div>
 
                 <div className="mt-5 space-y-2.5">
-                  <ProgressBar value={drift.match}   total={drift.totalItems} color="var(--bc-brand-green)" label="Match" />
+                  <ProgressBar value={drift.match}   total={drift.totalItems} color="var(--brand-green)" label="Match" />
                   <ProgressBar value={drift.drift}   total={drift.totalItems} color="#ffbb3a" label="Drift" />
                   <ProgressBar value={drift.missing} total={drift.totalItems} color="#8499ae" label="Missing" />
-                  <ProgressBar value={drift.unknown} total={drift.totalItems} color="var(--bc-brand-red)" label="Unknown" />
+                  <ProgressBar value={drift.unknown} total={drift.totalItems} color="var(--brand-red)" label="Unknown" />
                 </div>
 
                 <div className="mt-5 flex items-center gap-2 text-[12px] text-chrome-text-subtlest">
-                  <span>Critical issues: <strong className="text-[var(--bc-brand-red)]">{criticalCount}</strong></span>
+                  <span>Critical issues: <strong className="text-[var(--brand-red)]">{criticalCount}</strong></span>
                   <span>·</span>
                   <span>Report: {drift.date} · {drift.totalItems.toLocaleString()} items</span>
                 </div>

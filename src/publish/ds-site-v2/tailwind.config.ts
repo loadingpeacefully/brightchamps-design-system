@@ -28,8 +28,8 @@ const config: Config = {
           header: 'var(--chrome-header-bg)',
         },
         bc: {
-          'brand-primary': 'var(--bc-brand-primary)',
-          'brand-accent': 'var(--bc-brand-accent)',
+          'brand-primary': 'var(--brand-primary)',
+          'brand-accent': 'var(--brand-accent)',
         },
       },
       fontFamily: {

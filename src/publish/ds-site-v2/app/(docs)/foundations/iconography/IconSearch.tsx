@@ -66,7 +66,7 @@ export function IconSearch() {
               SVG
             </div>
             <div className="text-[11px] font-semibold text-chrome-text truncate w-full group-hover:text-chrome-accent">
-              {copied === icon.name ? <span className="text-[color:var(--bc-brand-green)] inline-flex items-center gap-0.5"><Check size={10} /> Copied</span> : icon.name}
+              {copied === icon.name ? <span className="text-[color:var(--brand-green)] inline-flex items-center gap-0.5"><Check size={10} /> Copied</span> : icon.name}
             </div>
             <div className="text-[9px] text-chrome-text-subtlest truncate w-full">{icon.category}</div>
           </button>

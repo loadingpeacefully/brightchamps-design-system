@@ -40,7 +40,7 @@ export default function StudentOverviewPage() {
           {drift && (
             <div className="mt-4 grid gap-3 sm:grid-cols-4">
               <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5 text-center">
-                <Shield size={20} className="mx-auto text-[var(--bc-brand-green)]" />
+                <Shield size={20} className="mx-auto text-[var(--brand-green)]" />
                 <div className="mt-2 font-mono text-[28px] font-bold text-chrome-text">{drift.match}</div>
                 <div className="text-overline text-chrome-text-subtlest">Match</div>
               </div>
@@ -54,7 +54,7 @@ export default function StudentOverviewPage() {
                 <div className="text-overline text-chrome-text-subtlest">Missing</div>
               </div>
               <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5 text-center">
-                <HelpCircle size={20} className="mx-auto text-[var(--bc-brand-red)]" />
+                <HelpCircle size={20} className="mx-auto text-[var(--brand-red)]" />
                 <div className="mt-2 font-mono text-[28px] font-bold text-chrome-text">{drift.unknown}</div>
                 <div className="text-overline text-chrome-text-subtlest">Unknown</div>
               </div>
@@ -97,7 +97,7 @@ export default function StudentOverviewPage() {
                           </span>
                         ) : <span className="text-chrome-text-subtlest">—</span>}
                       </td>
-                      <td className="p-3 text-right font-mono font-bold tabular-nums text-[var(--bc-brand-red)]">
+                      <td className="p-3 text-right font-mono font-bold tabular-nums text-[var(--brand-red)]">
                         {item.delta !== undefined ? item.delta.toFixed(1) : '—'}
                       </td>
                       <td className="p-3 text-[11px] text-chrome-text-subtle max-w-[200px] truncate">

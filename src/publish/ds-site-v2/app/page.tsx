@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 const WHATS_NEW = [
   {
     date: '2026-04-26',
+    kind: 'Tokens',
+    label: 'TDR-0001 shipped — semantic token names live',
+    description: 'color.008 → color/primary/500. All 329 canonical tokens now have semantic names. CSS variables emit as --color-primary-500 (legacy --bc-* aliases coexist for 90 days).',
+    href: '/tdr/0001-taxonomy-migration/',
+  },
+  {
+    date: '2026-04-26',
     kind: 'Merge',
     label: 'Designer DS merge — course colors, icons, spacing, component docs',
     description: '18 course vertical tokens, 1,215 icon library, spacing visualization, Button component page. 7 designer conflict tickets filed.',
@@ -57,7 +64,7 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-[1120px] px-6 pb-20 pt-16 lg:px-16">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-chrome-border bg-chrome-surface px-3 py-1 text-[12px] font-semibold text-chrome-text-subtle">
-            <Sparkles size={12} strokeWidth={2} style={{ color: 'var(--bc-brand-primary)' }} />
+            <Sparkles size={12} strokeWidth={2} style={{ color: 'var(--brand-primary)' }} />
             Phase 1 · v0.2 · DS site rebuild
           </div>
           <h1 className="font-display text-display max-w-[16ch] text-chrome-text">
@@ -71,7 +78,7 @@ export default function HomePage() {
             <Link
               href="/foundations/"
               className="inline-flex items-center gap-2 rounded-md px-4 py-2.5 text-[14px] font-semibold text-white transition hover:brightness-110"
-              style={{ background: 'var(--bc-brand-primary)' }}
+              style={{ background: 'var(--brand-primary)' }}
             >
               Explore foundations <ArrowRight size={14} strokeWidth={2.25} />
             </Link>

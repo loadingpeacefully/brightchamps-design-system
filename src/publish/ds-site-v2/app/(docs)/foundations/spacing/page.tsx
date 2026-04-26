@@ -59,7 +59,7 @@ function SpacingCard({ token }: { token: typeof SPACING_TOKENS[0] }) {
           className="h-full rounded-full"
           style={{
             width: `${(token.px / MAX_PX) * 100}%`,
-            background: 'var(--bc-brand-primary, #4e3bc2)',
+            background: 'var(--brand-primary, #4e3bc2)',
           }}
         />
       </div>
@@ -130,7 +130,7 @@ export default function SpacingPage() {
         <section id="guidelines" className="mt-16 scroll-mt-24">
           <h2 className="text-h2 text-chrome-text">Guidelines</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-card border border-l-4 border-l-[var(--bc-brand-green)] border-chrome-border bg-chrome-surface-raised p-5">
+            <div className="rounded-card border border-l-4 border-l-[var(--brand-green)] border-chrome-border bg-chrome-surface-raised p-5">
               <div className="text-[12px] font-bold text-[#16803c] uppercase tracking-[0.06em] mb-2">Do</div>
               <ul className="m-0 p-0 list-none space-y-1.5 text-body-s text-chrome-text">
                 <li>Use spacing tokens for all padding, margin, and gap values</li>
@@ -139,7 +139,7 @@ export default function SpacingPage() {
                 <li>Scale up proportionally — spacing/6 for sections, spacing/8 for page-level</li>
               </ul>
             </div>
-            <div className="rounded-card border border-l-4 border-l-[var(--bc-brand-red)] border-chrome-border bg-chrome-surface-raised p-5">
+            <div className="rounded-card border border-l-4 border-l-[var(--brand-red)] border-chrome-border bg-chrome-surface-raised p-5">
               <div className="text-[12px] font-bold text-[#a31836] uppercase tracking-[0.06em] mb-2">Don&apos;t</div>
               <ul className="m-0 p-0 list-none space-y-1.5 text-body-s text-chrome-text">
                 <li>Don&apos;t use arbitrary pixel values — always use a spacing token</li>

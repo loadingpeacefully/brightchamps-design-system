@@ -16,21 +16,19 @@ const TOC = [
 ]
 
 const TOKEN_MAP = [
-  { property: 'Background (Primary)',  token: 'color/primary/500',   cssVar: '--color-primary-500',   value: '#4e3bc2' },
-  { property: 'Background (Secondary)', token: 'color/secondary/500', cssVar: '--color-secondary-500', value: '#FFCE00' },
-  { property: 'Background (Hover)',    token: 'color/primary/600',   cssVar: '--color-primary-600',   value: '#3f2eae' },
-  { property: 'Text (Primary)',        token: 'color/neutral/50',    cssVar: '--color-neutral-50',    value: '#F9FAFB' },
-  { property: 'Text (Secondary)',      token: 'color/neutral/900',   cssVar: '--color-neutral-900',   value: '#0D1D2D' },
-  { property: 'Disabled bg',          token: 'color/neutral/200',   cssVar: '--color-neutral-200',   value: '#E7E7E7' },
-  { property: 'Disabled text',        token: 'color/neutral/300',   cssVar: '--color-neutral-300',   value: '#BCC2CA' },
-  { property: 'Padding (x)',          token: 'space/6',             cssVar: '--spacing-6',           value: '24px' },
-  { property: 'Padding (y)',          token: 'space/3',             cssVar: '--spacing-3',           value: '12px' },
-  { property: 'Icon gap (sm)',        token: 'space/1',             cssVar: '--spacing-1',           value: '4px' },
-  { property: 'Icon gap (md)',        token: 'space/2',             cssVar: '--spacing-2',           value: '8px' },
-  { property: 'Border radius',        token: 'radius/full',         cssVar: '--radius-full',         value: '100px' },
-  { property: 'Font family',          token: 'font/family/primary', cssVar: '--font-family-primary', value: 'Nunito' },
-  { property: 'Font weight',          token: 'font/weight/semibold', cssVar: '--font-weight-semibold', value: '600' },
-  { property: 'Font size (md)',       token: 'font/body/md',        cssVar: '--font-size-body-md',   value: '16px' },
+  { property: 'Background (Primary)',   token: 'color/brand/primary', cssVar: '--color-brand-primary', value: '#4e3bc2' },
+  { property: 'Background (Secondary)', token: 'color/warning/500',   cssVar: '--color-warning-500',   value: '#ffd900' },
+  { property: 'Background (Hover)',     token: 'color/primary/700',   cssVar: '--color-primary-700',   value: '#0d47a1' },
+  { property: 'Text (Primary, on dark)', token: 'color/neutral/100',  cssVar: '--color-neutral-100',   value: '#ffffff' },
+  { property: 'Text (Secondary, on light)', token: 'color/neutral/1400', cssVar: '--color-neutral-1400', value: '#212121' },
+  { property: 'Disabled bg',            token: 'color/neutral/200',   cssVar: '--color-neutral-200',   value: '#eeeeee' },
+  { property: 'Disabled text',          token: 'color/neutral/400',   cssVar: '--color-neutral-400',   value: '#c3c2b3' },
+  { property: 'Padding (x)',            token: 'space/6',             cssVar: '--space-6',             value: '24px' },
+  { property: 'Padding (y)',            token: 'space/3',             cssVar: '--space-3',             value: '12px' },
+  { property: 'Icon gap (sm)',          token: 'space/1',             cssVar: '--space-1',             value: '4px' },
+  { property: 'Icon gap (md)',          token: 'space/2',             cssVar: '--space-2',             value: '8px' },
+  { property: 'Border radius',          token: 'radius/full',         cssVar: '--radius-full',         value: '9999px' },
+  { property: 'Font family',            token: 'font/body/medium',    cssVar: '--font-body-medium',    value: 'Nunito 16px / 500' },
 ]
 
 function DemoButton({ variant, label, disabled, loading, size = 'md' }: {
@@ -71,9 +69,10 @@ export default function ButtonPage() {
           <div className="flex items-start gap-2">
             <AlertTriangle size={14} className="mt-0.5 shrink-0 text-chrome-accent" />
             <p className="text-body-s text-chrome-text">
-              <strong>Token names shown are the proposed standard</strong> (TDR-0001 pending).
-              Current CSS variables are still in <code className="font-mono text-[12px]">--bc-color-001</code> format.
-              Both will coexist during the 90-day deprecation window.
+              <strong>Token names live as of TDR-0001 (2026-04-26).</strong> CSS variables are emitted
+              as <code className="font-mono text-[12px]">--color-brand-primary</code> et al. Legacy
+              <code className="font-mono text-[12px]"> --bc-*</code> aliases coexist during the
+              90-day deprecation window so consumers can migrate incrementally.
             </p>
           </div>
         </div>
@@ -200,16 +199,15 @@ export default function ButtonPage() {
           <div className="mt-4 rounded-card border border-chrome-border bg-chrome-surface-sunken p-5 overflow-x-auto">
             <pre className="font-mono text-[13px] text-chrome-text leading-relaxed whitespace-pre">{`<button
   className="
-    bg-[var(--color-primary-500)]
-    text-[var(--color-neutral-50)]
-    px-[var(--spacing-6)]
-    py-[var(--spacing-3)]
+    bg-[var(--color-brand-primary)]
+    text-[var(--color-neutral-100)]
+    px-[var(--space-6)]
+    py-[var(--space-3)]
     rounded-full
     font-semibold
-    text-[var(--font-size-body-md)]
-    hover:bg-[var(--color-primary-600)]
+    hover:bg-[var(--color-primary-700)]
     disabled:bg-[var(--color-neutral-200)]
-    disabled:text-[var(--color-neutral-300)]
+    disabled:text-[var(--color-neutral-400)]
   "
 >
   Primary Action

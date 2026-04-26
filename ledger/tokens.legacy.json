@@ -5,7 +5,7 @@
   "componentCount": 0,
   "tokens": [
     {
-      "name": "color/neutral/100",
+      "name": "color.001",
       "value": "#ffffff",
       "type": "color",
       "source": "figma",
@@ -2145,7 +2145,7 @@
       ]
     },
     {
-      "name": "color/neutral/1600",
+      "name": "color.002",
       "value": "#000000",
       "type": "color",
       "source": "dom",
@@ -2708,7 +2708,7 @@
       ]
     },
     {
-      "name": "color/neutral/900",
+      "name": "color.003",
       "value": "#757575",
       "type": "color",
       "source": "figma",
@@ -3333,7 +3333,7 @@
       ]
     },
     {
-      "name": "color/neutral/1400",
+      "name": "color.004",
       "value": "#212121",
       "type": "color",
       "source": "figma",
@@ -4031,7 +4031,7 @@
       ]
     },
     {
-      "name": "color/info/100",
+      "name": "color.005",
       "value": "#cfd8dc",
       "type": "color",
       "source": "figma",
@@ -5020,7 +5020,7 @@
       ]
     },
     {
-      "name": "color/info/1400",
+      "name": "color.006",
       "value": "#3d4d5d",
       "type": "color",
       "source": "figma",
@@ -5413,7 +5413,7 @@
       ]
     },
     {
-      "name": "color/info/1500",
+      "name": "color.007",
       "value": "#222a33",
       "type": "color",
       "source": "figma",
@@ -5989,7 +5989,7 @@
       ]
     },
     {
-      "name": "color/neutral/1300",
+      "name": "color.009",
       "value": "#393939",
       "type": "color",
       "source": "figma",
@@ -6575,7 +6575,7 @@
       ]
     },
     {
-      "name": "color/primary/900",
+      "name": "color.010",
       "value": "#1a237e",
       "type": "color",
       "source": "figma",
@@ -6680,7 +6680,7 @@
       ]
     },
     {
-      "name": "color/primary/700",
+      "name": "color.011",
       "value": "#0d47a1",
       "type": "color",
       "source": "figma",
@@ -6750,7 +6750,7 @@
       ]
     },
     {
-      "name": "color/warning/1800",
+      "name": "color.012",
       "value": "#8c4f2a",
       "type": "color",
       "source": "figma",
@@ -6822,7 +6822,7 @@
       ]
     },
     {
-      "name": "color/error/600",
+      "name": "color.013",
       "value": "#d84315",
       "type": "color",
       "source": "figma",
@@ -6898,7 +6898,7 @@
       ]
     },
     {
-      "name": "color/neutral/700",
+      "name": "color.014",
       "value": "#7f98a0",
       "type": "color",
       "source": "figma",
@@ -6974,7 +6974,7 @@
       ]
     },
     {
-      "name": "color/primary/500",
+      "name": "color.015",
       "value": "#6651e4",
       "type": "color",
       "source": "figma",
@@ -7300,7 +7300,7 @@
       ]
     },
     {
-      "name": "color/neutral/200",
+      "name": "color.016",
       "value": "#eeeeee",
       "type": "color",
       "source": "figma",
@@ -8719,7 +8719,7 @@
       ]
     },
     {
-      "name": "color/surface/500",
+      "name": "color.017",
       "value": "#efe6f5",
       "type": "color",
       "source": "figma",
@@ -10782,7 +10782,7 @@
       ]
     },
     {
-      "name": "color/error/700",
+      "name": "color.018",
       "value": "#f0294d",
       "type": "color",
       "source": "figma",
@@ -10923,7 +10923,7 @@
       ]
     },
     {
-      "name": "color/info/800",
+      "name": "color.019",
       "value": "#90a4ae",
       "type": "color",
       "source": "figma",
@@ -11029,7 +11029,7 @@
       ]
     },
     {
-      "name": "color/overlay/generic-30",
+      "name": "color.020",
       "value": "#ffffff4d",
       "type": "color",
       "source": "figma",
@@ -11066,7 +11066,7 @@
       ]
     },
     {
-      "name": "color/warning/1900",
+      "name": "color.021",
       "value": "#24130a",
       "type": "color",
       "source": "figma",
@@ -11138,7 +11138,7 @@
       ]
     },
     {
-      "name": "color/success/200",
+      "name": "color.022",
       "value": "#72bb32",
       "type": "color",
       "source": "figma",
@@ -11251,7 +11251,7 @@
       ]
     },
     {
-      "name": "color/warning/1600",
+      "name": "color.023",
       "value": "#975f3c",
       "type": "color",
       "source": "figma",
@@ -11323,7 +11323,7 @@
       ]
     },
     {
-      "name": "color/overlay/generic-50",
+      "name": "color.024",
       "value": "#ffffff80",
       "type": "color",
       "source": "figma",
@@ -11360,7 +11360,7 @@
       ]
     },
     {
-      "name": "color/neutral/500",
+      "name": "color.025",
       "value": "#bdbdbd",
       "type": "color",
       "source": "figma",
@@ -11922,7 +11922,7 @@
       ]
     },
     {
-      "name": "color/warning/900",
+      "name": "color.026",
       "value": "#ffbb3a",
       "type": "color",
       "source": "figma",
@@ -12176,7 +12176,7 @@
       ]
     },
     {
-      "name": "color/success/700",
+      "name": "color.027",
       "value": "#098137",
       "type": "color",
       "source": "figma",
@@ -12246,7 +12246,7 @@
       ]
     },
     {
-      "name": "color/warning/500",
+      "name": "color.028",
       "value": "#ffd900",
       "type": "color",
       "source": "figma",
@@ -12818,7 +12818,7 @@
       ]
     },
     {
-      "name": "color/success/900",
+      "name": "color.029",
       "value": "#1f3508",
       "type": "color",
       "source": "figma",
@@ -12850,7 +12850,7 @@
       ]
     },
     {
-      "name": "color/error/200",
+      "name": "color.030",
       "value": "#ff6e61",
       "type": "color",
       "source": "figma",
@@ -13034,7 +13034,7 @@
       ]
     },
     {
-      "name": "color/info/900",
+      "name": "color.031",
       "value": "#1cb6f0",
       "type": "color",
       "source": "figma",
@@ -13329,7 +13329,7 @@
       ]
     },
     {
-      "name": "color/info/1200",
+      "name": "color.032",
       "value": "#e866ff",
       "type": "color",
       "source": "figma",
@@ -13365,7 +13365,7 @@
       ]
     },
     {
-      "name": "color/neutral/300",
+      "name": "color.033",
       "value": "#d9d8ce",
       "type": "color",
       "source": "figma",
@@ -13402,7 +13402,7 @@
       ]
     },
     {
-      "name": "color/success/100",
+      "name": "color.034",
       "value": "#14f001",
       "type": "color",
       "source": "figma",
@@ -13432,7 +13432,7 @@
       ]
     },
     {
-      "name": "color/neutral/1200",
+      "name": "color.035",
       "value": "#3d3c30",
       "type": "color",
       "source": "figma",
@@ -13469,7 +13469,7 @@
       ]
     },
     {
-      "name": "color/neutral/400",
+      "name": "color.036",
       "value": "#c3c2b3",
       "type": "color",
       "source": "figma",
@@ -13506,7 +13506,7 @@
       ]
     },
     {
-      "name": "color/neutral/1000",
+      "name": "color.037",
       "value": "#626262",
       "type": "color",
       "source": "figma",
@@ -13819,7 +13819,7 @@
       ]
     },
     {
-      "name": "color/success/800",
+      "name": "color.038",
       "value": "#3b6511",
       "type": "color",
       "source": "figma",
@@ -13851,7 +13851,7 @@
       ]
     },
     {
-      "name": "color/error/900",
+      "name": "color.039",
       "value": "#643430",
       "type": "color",
       "source": "figma",
@@ -13881,7 +13881,7 @@
       ]
     },
     {
-      "name": "color/error/50",
+      "name": "color.040",
       "value": "#fccace",
       "type": "color",
       "source": "figma",
@@ -14028,7 +14028,7 @@
       ]
     },
     {
-      "name": "color/success/600",
+      "name": "color.041",
       "value": "#477916",
       "type": "color",
       "source": "figma",
@@ -14097,7 +14097,7 @@
       ]
     },
     {
-      "name": "color/warning/1400",
+      "name": "color.042",
       "value": "#ff752c",
       "type": "color",
       "source": "figma",
@@ -14169,7 +14169,7 @@
       ]
     },
     {
-      "name": "color/neutral/1100",
+      "name": "color.043",
       "value": "#4c4c4c",
       "type": "color",
       "source": "figma",
@@ -14486,7 +14486,7 @@
       ]
     },
     {
-      "name": "color/error/800",
+      "name": "color.044",
       "value": "#c62828",
       "type": "color",
       "source": "figma",
@@ -14557,7 +14557,7 @@
       ]
     },
     {
-      "name": "color/warning/300",
+      "name": "color.045",
       "value": "#f6e139",
       "type": "color",
       "source": "figma",
@@ -14698,7 +14698,7 @@
       ]
     },
     {
-      "name": "color/info/700",
+      "name": "color.046",
       "value": "#f099ff",
       "type": "color",
       "source": "figma",
@@ -14733,7 +14733,7 @@
       ]
     },
     {
-      "name": "color/warning/800",
+      "name": "color.047",
       "value": "#b8d424",
       "type": "color",
       "source": "figma",
@@ -14768,7 +14768,7 @@
       ]
     },
     {
-      "name": "color/error/300",
+      "name": "color.048",
       "value": "#f76969",
       "type": "color",
       "source": "figma",
@@ -15054,7 +15054,7 @@
       ]
     },
     {
-      "name": "color/success/500",
+      "name": "color.049",
       "value": "#67a22c",
       "type": "color",
       "source": "figma",
@@ -15123,7 +15123,7 @@
       ]
     },
     {
-      "name": "color/warning/1200",
+      "name": "color.050",
       "value": "#ff8f00",
       "type": "color",
       "source": "figma",
@@ -15335,7 +15335,7 @@
       ]
     },
     {
-      "name": "color/info/1000",
+      "name": "color.051",
       "value": "#8499ae",
       "type": "color",
       "source": "figma",
@@ -15412,7 +15412,7 @@
       ]
     },
     {
-      "name": "color/warning/200",
+      "name": "color.052",
       "value": "#ffdf3f",
       "type": "color",
       "source": "figma",
@@ -15691,7 +15691,7 @@
       ]
     },
     {
-      "name": "color/info/1100",
+      "name": "color.053",
       "value": "#409cf2",
       "type": "color",
       "source": "figma",
@@ -15932,7 +15932,7 @@
       ]
     },
     {
-      "name": "color/overlay/generic-60",
+      "name": "color.054",
       "value": "#ffffff99",
       "type": "color",
       "source": "figma",
@@ -15970,7 +15970,7 @@
       ]
     },
     {
-      "name": "color/surface/50",
+      "name": "color.055",
       "value": "#ffeef0",
       "type": "color",
       "source": "figma",
@@ -16602,7 +16602,7 @@
       ]
     },
     {
-      "name": "color/primary/200",
+      "name": "color.056",
       "value": "#7b68ec",
       "type": "color",
       "source": "figma",
@@ -16739,7 +16739,7 @@
       ]
     },
     {
-      "name": "color/warning/700",
+      "name": "color.057",
       "value": "#f6c358",
       "type": "color",
       "source": "figma",
@@ -16956,7 +16956,7 @@
       ]
     },
     {
-      "name": "color/warning/1000",
+      "name": "color.058",
       "value": "#feb04d",
       "type": "color",
       "source": "figma",
@@ -17022,7 +17022,7 @@
       ]
     },
     {
-      "name": "color/surface/900",
+      "name": "color.059",
       "value": "#e6e2ff",
       "type": "color",
       "source": "figma",
@@ -17932,7 +17932,7 @@
       ]
     },
     {
-      "name": "color/warning/100",
+      "name": "color.060",
       "value": "#fffb55",
       "type": "color",
       "source": "figma",
@@ -18037,7 +18037,7 @@
       ]
     },
     {
-      "name": "color/error/500",
+      "name": "color.061",
       "value": "#ff6323",
       "type": "color",
       "source": "figma",
@@ -18107,7 +18107,7 @@
       ]
     },
     {
-      "name": "color/info/400",
+      "name": "color.062",
       "value": "#15e8ff",
       "type": "color",
       "source": "figma",
@@ -18142,7 +18142,7 @@
       ]
     },
     {
-      "name": "color/warning/400",
+      "name": "color.063",
       "value": "#ffd642",
       "type": "color",
       "source": "figma",
@@ -18356,7 +18356,7 @@
       ]
     },
     {
-      "name": "color/warning/1100",
+      "name": "color.064",
       "value": "#ffb300",
       "type": "color",
       "source": "figma",
@@ -18496,7 +18496,7 @@
       ]
     },
     {
-      "name": "color/neutral/600",
+      "name": "color.065",
       "value": "#a8acb1",
       "type": "color",
       "source": "figma",
@@ -18880,7 +18880,7 @@
       ]
     },
     {
-      "name": "color/success/300",
+      "name": "color.066",
       "value": "#24c26e",
       "type": "color",
       "source": "figma",
@@ -18959,7 +18959,7 @@
       ]
     },
     {
-      "name": "color/info/1300",
+      "name": "color.067",
       "value": "#51667b",
       "type": "color",
       "source": "figma",
@@ -19102,7 +19102,7 @@
       ]
     },
     {
-      "name": "color/warning/1700",
+      "name": "color.068",
       "value": "#925500",
       "type": "color",
       "source": "figma",
@@ -19139,7 +19139,7 @@
       ]
     },
     {
-      "name": "color/warning/1500",
+      "name": "color.069",
       "value": "#ae7450",
       "type": "color",
       "source": "figma",
@@ -19176,7 +19176,7 @@
       ]
     },
     {
-      "name": "color/warning/1300",
+      "name": "color.070",
       "value": "#e0922d",
       "type": "color",
       "source": "figma",
@@ -19246,7 +19246,7 @@
       ]
     },
     {
-      "name": "color/success/50",
+      "name": "color.071",
       "value": "#95ec2f",
       "type": "color",
       "source": "figma",
@@ -19289,7 +19289,7 @@
       ]
     },
     {
-      "name": "color/error/100",
+      "name": "color.072",
       "value": "#ecb5b9",
       "type": "color",
       "source": "figma",
@@ -19355,7 +19355,7 @@
       ]
     },
     {
-      "name": "color/warning/600",
+      "name": "color.073",
       "value": "#fdc816",
       "type": "color",
       "source": "figma",
@@ -19643,7 +19643,7 @@
       ]
     },
     {
-      "name": "color/info/200",
+      "name": "color.074",
       "value": "#a0cdf8",
       "type": "color",
       "source": "figma",
@@ -19679,7 +19679,7 @@
       ]
     },
     {
-      "name": "color/neutral/800",
+      "name": "color.075",
       "value": "#7e858d",
       "type": "color",
       "source": "figma",
@@ -19964,7 +19964,7 @@
       ]
     },
     {
-      "name": "color/primary/50",
+      "name": "color.076",
       "value": "#cbc2ff",
       "type": "color",
       "source": "figma",
@@ -20098,7 +20098,7 @@
       ]
     },
     {
-      "name": "color/info/600",
+      "name": "color.077",
       "value": "#6cc1ff",
       "type": "color",
       "source": "figma",
@@ -20198,7 +20198,7 @@
       ]
     },
     {
-      "name": "color/info/300",
+      "name": "color.078",
       "value": "#84d1f6",
       "type": "color",
       "source": "figma",
@@ -20337,7 +20337,7 @@
       ]
     },
     {
-      "name": "color/info/500",
+      "name": "color.079",
       "value": "#8cc0de",
       "type": "color",
       "source": "figma",
@@ -20407,7 +20407,7 @@
       ]
     },
     {
-      "name": "color/neutral/1500",
+      "name": "color.080",
       "value": "#000014",
       "type": "color",
       "source": "figma",
@@ -69649,7 +69649,7 @@
       ]
     },
     {
-      "name": "font/body/medium",
+      "name": "typography.01",
       "value": "{\"fontFamily\":\"Nunito\",\"fontSize\":16,\"fontWeight\":400,\"lineHeightPx\":null,\"letterSpacing\":null}",
       "type": "typography",
       "source": "dom",
@@ -69818,7 +69818,7 @@
       ]
     },
     {
-      "name": "font/heading/medium",
+      "name": "typography.02",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":600,\"fontSize\":16,\"lineHeightPx\":19.200000762939453,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -70283,7 +70283,7 @@
       ]
     },
     {
-      "name": "font/heading/xsmall",
+      "name": "typography.03",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":12,\"lineHeightPx\":14.40000057220459,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -71139,7 +71139,7 @@
       ]
     },
     {
-      "name": "font/heading/medium/16-700",
+      "name": "typography.04",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":16,\"lineHeightPx\":19.200000762939453,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -71657,7 +71657,7 @@
       ]
     },
     {
-      "name": "font/heading/small",
+      "name": "typography.05",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":14,\"lineHeightPx\":19.600000381469727,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -72477,7 +72477,7 @@
       ]
     },
     {
-      "name": "font/heading/xlarge",
+      "name": "typography.06",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":20,\"lineHeightPx\":22,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -72913,7 +72913,7 @@
       ]
     },
     {
-      "name": "font/body/xsmall",
+      "name": "typography.07",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":500,\"fontSize\":12,\"lineHeightPx\":14.40000057220459,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -73364,7 +73364,7 @@
       ]
     },
     {
-      "name": "font/heading/xsmall/12-600",
+      "name": "typography.08",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":600,\"fontSize\":12,\"lineHeightPx\":16.368000030517578,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -73939,7 +73939,7 @@
       ]
     },
     {
-      "name": "font/heading/small/14-800",
+      "name": "typography.09",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":14,\"lineHeightPx\":16.80000114440918,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -74467,7 +74467,7 @@
       ]
     },
     {
-      "name": "font/heading/small/14-600",
+      "name": "typography.10",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":600,\"fontSize\":14,\"lineHeightPx\":19.600000381469727,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -75060,7 +75060,7 @@
       ]
     },
     {
-      "name": "font/heading/medium/16-800",
+      "name": "typography.11",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":16,\"lineHeightPx\":22.399999618530273,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -75818,7 +75818,7 @@
       ]
     },
     {
-      "name": "font/body/xsmall/12-400",
+      "name": "typography.12",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":400,\"fontSize\":12,\"lineHeightPx\":16.368000030517578,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -76324,7 +76324,7 @@
       ]
     },
     {
-      "name": "font/body/xxsmall",
+      "name": "typography.13",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":400,\"fontSize\":10,\"lineHeightPx\":12,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -76630,7 +76630,7 @@
       ]
     },
     {
-      "name": "font/body/small",
+      "name": "typography.14",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":500,\"fontSize\":14,\"lineHeightPx\":16.80000114440918,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -76943,7 +76943,7 @@
       ]
     },
     {
-      "name": "font/heading/large",
+      "name": "typography.15",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":18,\"lineHeightPx\":24,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -77504,7 +77504,7 @@
       ]
     },
     {
-      "name": "font/heading/large/18-700",
+      "name": "typography.16",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":18,\"lineHeightPx\":21.600000381469727,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -77994,7 +77994,7 @@
       ]
     },
     {
-      "name": "font/heading/xlarge/20-600",
+      "name": "typography.18",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":600,\"fontSize\":20,\"lineHeightPx\":22,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -78154,7 +78154,7 @@
       ]
     },
     {
-      "name": "font/heading/xxsmall",
+      "name": "typography.19",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":600,\"fontSize\":10,\"lineHeightPx\":13.639999389648438,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -78427,7 +78427,7 @@
       ]
     },
     {
-      "name": "font/body/small/14-400",
+      "name": "typography.20",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":400,\"fontSize\":14,\"lineHeightPx\":20,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -78859,7 +78859,7 @@
       ]
     },
     {
-      "name": "font/body/xxsmall/10-500",
+      "name": "typography.21",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":500,\"fontSize\":10,\"lineHeightPx\":12,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -79248,7 +79248,7 @@
       ]
     },
     {
-      "name": "font/heading/xxlarge",
+      "name": "typography.22",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":24,\"lineHeightPx\":28.80000114440918,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -79469,7 +79469,7 @@
       ]
     },
     {
-      "name": "font/heading/xlarge/20-700",
+      "name": "typography.23",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":20,\"lineHeightPx\":24,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -79688,7 +79688,7 @@
       ]
     },
     {
-      "name": "font/heading/xsmall/12-800",
+      "name": "typography.24",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":12,\"lineHeightPx\":18,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -80053,7 +80053,7 @@
       ]
     },
     {
-      "name": "font/body/xlarge",
+      "name": "typography.25",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":500,\"fontSize\":20,\"lineHeightPx\":27.279998779296875,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -80144,7 +80144,7 @@
       ]
     },
     {
-      "name": "font/body/medium/15-400",
+      "name": "typography.26",
       "value": "{\"fontFamily\":\"Nunito\",\"fontSize\":15,\"fontWeight\":400,\"lineHeightPx\":null,\"letterSpacing\":null}",
       "type": "typography",
       "source": "dom",
@@ -80176,7 +80176,7 @@
       ]
     },
     {
-      "name": "font/heading/xxlarge/24-800",
+      "name": "typography.27",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":24,\"lineHeightPx\":24,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -80507,7 +80507,7 @@
       ]
     },
     {
-      "name": "font/heading/xxlarge/32-900",
+      "name": "typography.28",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":32,\"lineHeightPx\":38.400001525878906,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -80609,7 +80609,7 @@
       ]
     },
     {
-      "name": "font/heading/large/17-900",
+      "name": "typography.29",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":17,\"lineHeightPx\":12,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -80647,7 +80647,7 @@
       ]
     },
     {
-      "name": "font/heading/xxsmall/7.140938758850098-900",
+      "name": "typography.30",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":7.140938758850098,\"lineHeightPx\":14.281877517700195,\"letterSpacing\":0.7140938758850098}",
       "type": "typography",
       "source": "figma",
@@ -80685,7 +80685,7 @@
       ]
     },
     {
-      "name": "font/heading/xxsmall/10-700",
+      "name": "typography.31",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":10,\"lineHeightPx\":12,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -80968,7 +80968,7 @@
       ]
     },
     {
-      "name": "font/heading/xxsmall/4.409999847412109-900",
+      "name": "typography.32",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":4.409999847412109,\"lineHeightPx\":6.015239715576172,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81006,7 +81006,7 @@
       ]
     },
     {
-      "name": "font/heading/xxsmall/4.415057182312012-900",
+      "name": "typography.33",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":4.415057182312012,\"lineHeightPx\":6.022137641906738,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81044,7 +81044,7 @@
       ]
     },
     {
-      "name": "font/heading/xxsmall/9.653708457946777-900",
+      "name": "typography.34",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":9.653708457946777,\"lineHeightPx\":13.167657852172852,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81082,7 +81082,7 @@
       ]
     },
     {
-      "name": "font/heading/xxsmall/10-800",
+      "name": "typography.35",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":10,\"lineHeightPx\":13,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81240,7 +81240,7 @@
       ]
     },
     {
-      "name": "font/heading/small/14-600-dup-2",
+      "name": "typography.36",
       "value": "{\"fontFamily\":\"Poppins\",\"fontWeight\":600,\"fontSize\":14,\"lineHeightPx\":19.600000381469727,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81303,7 +81303,7 @@
       ]
     },
     {
-      "name": "font/body/large",
+      "name": "typography.37",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":500,\"fontSize\":18,\"lineHeightPx\":24.552000045776367,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81459,7 +81459,7 @@
       ]
     },
     {
-      "name": "font/body/xsmall/12-500",
+      "name": "typography.38",
       "value": "{\"fontFamily\":\"Poppins\",\"fontWeight\":500,\"fontSize\":12,\"lineHeightPx\":18,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81524,7 +81524,7 @@
       ]
     },
     {
-      "name": "font/body/medium/16-400",
+      "name": "typography.39",
       "value": "{\"fontFamily\":\"Lexend\",\"fontWeight\":400,\"fontSize\":16,\"lineHeightPx\":22,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81556,7 +81556,7 @@
       ]
     },
     {
-      "name": "font/heading/xxlarge/24-900",
+      "name": "typography.40",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":24,\"lineHeightPx\":36,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81770,7 +81770,7 @@
       ]
     },
     {
-      "name": "font/body/xsmall/12-300",
+      "name": "typography.41",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":300,\"fontSize\":12,\"lineHeightPx\":14.40000057220459,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -81899,7 +81899,7 @@
       ]
     },
     {
-      "name": "font/body/large/18-400",
+      "name": "typography.42",
       "value": "{\"fontFamily\":\"Nunito\",\"fontSize\":18,\"fontWeight\":400,\"lineHeightPx\":null,\"letterSpacing\":null}",
       "type": "typography",
       "source": "dom",
@@ -82094,7 +82094,7 @@
       ]
     },
     {
-      "name": "font/heading/medium/15.198894500732422-800",
+      "name": "typography.43",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":15.198894500732422,\"lineHeightPx\":18.23867416381836,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82126,7 +82126,7 @@
       ]
     },
     {
-      "name": "font/body/xlarge/20-400",
+      "name": "typography.44",
       "value": "{\"fontFamily\":\"Nunito\",\"fontSize\":20,\"fontWeight\":400,\"lineHeightPx\":null,\"letterSpacing\":null}",
       "type": "typography",
       "source": "dom",
@@ -82222,7 +82222,7 @@
       ]
     },
     {
-      "name": "font/body/xxsmall/10-300",
+      "name": "typography.45",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":300,\"fontSize\":10,\"lineHeightPx\":13.639999389648438,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82344,7 +82344,7 @@
       ]
     },
     {
-      "name": "font/heading/xxlarge/32-800",
+      "name": "typography.46",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":32,\"lineHeightPx\":43.64799880981445,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82408,7 +82408,7 @@
       ]
     },
     {
-      "name": "font/body/xsmall/10.856352806091309-400",
+      "name": "typography.47",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":400,\"fontSize\":10.856352806091309,\"lineHeightPx\":13.027624130249023,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82440,7 +82440,7 @@
       ]
     },
     {
-      "name": "font/body/xsmall/10.202898979187012-400",
+      "name": "typography.48",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":400,\"fontSize\":10.202898979187012,\"lineHeightPx\":13.916753768920898,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82473,7 +82473,7 @@
       ]
     },
     {
-      "name": "font/body/xlarge/37-400",
+      "name": "typography.49",
       "value": "{\"fontFamily\":\"Anton\",\"fontWeight\":400,\"fontSize\":37,\"lineHeightPx\":55.69873046875,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82537,7 +82537,7 @@
       ]
     },
     {
-      "name": "font/body/xlarge/48-400",
+      "name": "typography.50",
       "value": "{\"fontFamily\":\"Anton\",\"fontWeight\":400,\"fontSize\":48,\"lineHeightPx\":72.2578125,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82601,7 +82601,7 @@
       ]
     },
     {
-      "name": "font/heading/small/14-900",
+      "name": "typography.51",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":14,\"lineHeightPx\":19.095998764038086,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82752,7 +82752,7 @@
       ]
     },
     {
-      "name": "font/body/medium/15-500",
+      "name": "typography.52",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":500,\"fontSize\":15,\"lineHeightPx\":20.459999084472656,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82786,7 +82786,7 @@
       ]
     },
     {
-      "name": "font/heading/medium/16-900",
+      "name": "typography.53",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":16,\"lineHeightPx\":20,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -82969,7 +82969,7 @@
       ]
     },
     {
-      "name": "font/heading/small/14-700",
+      "name": "typography.54",
       "value": "{\"fontFamily\":\"Poppins\",\"fontWeight\":700,\"fontSize\":14,\"lineHeightPx\":19.600000381469727,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -83062,7 +83062,7 @@
       ]
     },
     {
-      "name": "font/body/xsmall/11.223-500",
+      "name": "typography.55",
       "value": "{\"fontFamily\":\"Nunito\",\"fontSize\":11.223,\"fontWeight\":500,\"lineHeightPx\":13.4676,\"letterSpacing\":null}",
       "type": "typography",
       "source": "dom",
@@ -83100,7 +83100,7 @@
       ]
     },
     {
-      "name": "font/body/xlarge/24-400",
+      "name": "typography.56",
       "value": "{\"fontFamily\":\"Nunito\",\"fontSize\":24,\"fontWeight\":400,\"lineHeightPx\":null,\"letterSpacing\":null}",
       "type": "typography",
       "source": "dom",
@@ -83138,7 +83138,7 @@
       ]
     },
     {
-      "name": "font/body/small/13-500",
+      "name": "typography.57",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":500,\"fontSize\":13,\"lineHeightPx\":17.73200035095215,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -83170,7 +83170,7 @@
       ]
     },
     {
-      "name": "font/heading/large/18-900",
+      "name": "typography.58",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":900,\"fontSize\":18,\"lineHeightPx\":24.552000045776367,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -83294,7 +83294,7 @@
       ]
     },
     {
-      "name": "font/heading/xxsmall/4.607635021209717-700",
+      "name": "typography.59",
       "value": "{\"fontFamily\":\"Arial\",\"fontWeight\":700,\"fontSize\":4.607635021209717,\"lineHeightPx\":5.298330307006836,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -83326,7 +83326,7 @@
       ]
     },
     {
-      "name": "font/body/small/14-500",
+      "name": "typography.60",
       "value": "{\"fontFamily\":\"Poppins\",\"fontWeight\":500,\"fontSize\":14,\"lineHeightPx\":23,\"letterSpacing\":0}",
       "type": "typography",
       "source": "figma",
@@ -95367,7 +95367,7 @@
       ]
     },
     {
-      "name": "shadow/01",
+      "name": "shadow.01",
       "value": "0px 0px 4px 0px #00000040",
       "type": "shadow",
       "source": "figma",
@@ -96045,7 +96045,7 @@
       ]
     },
     {
-      "name": "shadow/02",
+      "name": "shadow.02",
       "value": "0px 4px 4px 0px #2f00541a",
       "type": "shadow",
       "source": "figma",
@@ -96142,7 +96142,7 @@
       ]
     },
     {
-      "name": "shadow/03",
+      "name": "shadow.03",
       "value": "inset 0px -8px 0px 0px #00000040",
       "type": "shadow",
       "source": "figma",
@@ -96212,7 +96212,7 @@
       ]
     },
     {
-      "name": "shadow/04",
+      "name": "shadow.04",
       "value": "0px 0px 4px 0px #0000001f",
       "type": "shadow",
       "source": "figma",
@@ -96348,7 +96348,7 @@
       ]
     },
     {
-      "name": "shadow/05",
+      "name": "shadow.05",
       "value": "0px 6px 20px 0px #f0294d4d",
       "type": "shadow",
       "source": "figma",
@@ -96417,7 +96417,7 @@
       ]
     },
     {
-      "name": "shadow/06",
+      "name": "shadow.06",
       "value": "0px 0px 8.399999618530273px 0px #00000024",
       "type": "shadow",
       "source": "figma",
@@ -96514,7 +96514,7 @@
       ]
     },
     {
-      "name": "shadow/07",
+      "name": "shadow.07",
       "value": "0px 4px 4px 0px #0000001a",
       "type": "shadow",
       "source": "figma",
@@ -96612,7 +96612,7 @@
       ]
     },
     {
-      "name": "shadow/08",
+      "name": "shadow.08",
       "value": "0px 0px 12px 0px #00000029",
       "type": "shadow",
       "source": "figma",
@@ -96749,7 +96749,7 @@
       ]
     },
     {
-      "name": "shadow/09",
+      "name": "shadow.09",
       "value": "0px 7px 9.300000190734863px 0px #00000021",
       "type": "shadow",
       "source": "figma",
@@ -96778,7 +96778,7 @@
       ]
     },
     {
-      "name": "shadow/10",
+      "name": "shadow.10",
       "value": "0px 0px 9.896906852722168px 0px #00000052",
       "type": "shadow",
       "source": "figma",
@@ -98958,7 +98958,7 @@
       ]
     },
     {
-      "name": "space/2",
+      "name": "spacing.02",
       "value": "8px",
       "type": "spacing",
       "source": "dom",
@@ -98988,7 +98988,7 @@
       ]
     },
     {
-      "name": "space/1",
+      "name": "spacing.03",
       "value": "4px",
       "type": "spacing",
       "source": "dom",
@@ -99018,7 +99018,7 @@
       ]
     },
     {
-      "name": "space/4",
+      "name": "spacing.04",
       "value": "16px",
       "type": "spacing",
       "source": "dom",
@@ -99048,7 +99048,7 @@
       ]
     },
     {
-      "name": "space/0-5",
+      "name": "spacing.05",
       "value": "2px",
       "type": "spacing",
       "source": "dom",
@@ -99228,7 +99228,7 @@
       ]
     },
     {
-      "name": "space/2-5",
+      "name": "spacing.11",
       "value": "10px",
       "type": "spacing",
       "source": "dom",
@@ -99347,7 +99347,7 @@
       ]
     },
     {
-      "name": "space/3",
+      "name": "spacing.15",
       "value": "12px",
       "type": "spacing",
       "source": "dom",
@@ -99570,7 +99570,7 @@
       ]
     },
     {
-      "name": "space/1-5",
+      "name": "spacing.23",
       "value": "6px",
       "type": "spacing",
       "source": "dom",
@@ -100095,7 +100095,7 @@
       ]
     },
     {
-      "name": "space/6",
+      "name": "spacing.42",
       "value": "24px",
       "type": "spacing",
       "source": "dom",
@@ -101325,7 +101325,7 @@
       ]
     },
     {
-      "name": "space/3-5",
+      "name": "spacing.86",
       "value": "14px",
       "type": "spacing",
       "source": "dom",
@@ -101529,7 +101529,7 @@
       ]
     },
     {
-      "name": "space/8",
+      "name": "spacing.94",
       "value": "32px",
       "type": "spacing",
       "source": "dom",
@@ -101960,7 +101960,7 @@
       ]
     },
     {
-      "name": "space/5",
+      "name": "spacing.111",
       "value": "20px",
       "type": "spacing",
       "source": "dom",
@@ -102035,7 +102035,7 @@
       ]
     },
     {
-      "name": "space/7",
+      "name": "spacing.114",
       "value": "28px",
       "type": "spacing",
       "source": "dom",
@@ -103092,7 +103092,7 @@
       ]
     },
     {
-      "name": "radius/sm",
+      "name": "radius.01",
       "value": "4px",
       "type": "radius",
       "source": "dom",
@@ -103122,7 +103122,7 @@
       ]
     },
     {
-      "name": "radius/xl",
+      "name": "radius.02",
       "value": "16px",
       "type": "radius",
       "source": "dom",
@@ -103212,7 +103212,7 @@
       ]
     },
     {
-      "name": "radius/xl-dup-2",
+      "name": "radius.05",
       "value": "20px",
       "type": "radius",
       "source": "dom",
@@ -103242,7 +103242,7 @@
       ]
     },
     {
-      "name": "radius/2xl",
+      "name": "radius.06",
       "value": "24px",
       "type": "radius",
       "source": "dom",
@@ -103272,7 +103272,7 @@
       ]
     },
     {
-      "name": "radius/md",
+      "name": "radius.07",
       "value": "8px",
       "type": "radius",
       "source": "dom",
@@ -103302,7 +103302,7 @@
       ]
     },
     {
-      "name": "radius/md-dup-2",
+      "name": "radius.08",
       "value": "6px",
       "type": "radius",
       "source": "dom",
@@ -103332,7 +103332,7 @@
       ]
     },
     {
-      "name": "radius/lg",
+      "name": "radius.10",
       "value": "10px",
       "type": "radius",
       "source": "dom",
@@ -103387,7 +103387,7 @@
       ]
     },
     {
-      "name": "radius/xs",
+      "name": "radius.12",
       "value": "2px",
       "type": "radius",
       "source": "dom",
@@ -103412,7 +103412,7 @@
       ]
     },
     {
-      "name": "radius/pill",
+      "name": "radius.13",
       "value": "50px",
       "type": "radius",
       "source": "dom",
@@ -103469,7 +103469,7 @@
       ]
     },
     {
-      "name": "radius/lg-dup-2",
+      "name": "radius.15",
       "value": "12px",
       "type": "radius",
       "source": "dom",
@@ -103520,7 +103520,7 @@
       ]
     },
     {
-      "name": "radius/full",
+      "name": "radius.17",
       "value": "100px",
       "type": "radius",
       "source": "dom",
@@ -103546,7 +103546,7 @@
       ]
     },
     {
-      "name": "radius/3xl",
+      "name": "radius.18",
       "value": "32px",
       "type": "radius",
       "source": "dom",
@@ -103944,7 +103944,7 @@
       }
     },
     {
-      "name": "font/body/medium/16-400-dup-2",
+      "name": "typography.17",
       "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":400,\"fontSize\":16,\"lineHeightPx\":19.2,\"letterSpacing\":0}",
       "type": "typography",
       "source": "dom",

@@ -49,7 +49,7 @@ export function FeedbackCard({ pathname }: { pathname: string }) {
         </>
       ) : (
         <div className="flex items-center gap-2 text-[13px] text-chrome-text">
-          <Check size={14} strokeWidth={2} className="text-[color:var(--bc-brand-green)]" />
+          <Check size={14} strokeWidth={2} className="text-[color:var(--brand-green)]" />
           <span className="font-semibold">Thanks for your feedback.</span>
           <span className="text-chrome-text-subtle">
             You said this page was {vote === 'yes' ? 'helpful' : 'not helpful'}.

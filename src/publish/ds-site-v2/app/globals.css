@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Auto-generated design tokens from ledger/tokens.json (prefix --bc-*). */
+/* Auto-generated design tokens from ledger/tokens.json. After TDR-0001
+   the variables are self-namespacing — --color-*, --font-*, --space-*, etc. */
 @import './tokens.css';
 
 /* ─── Chrome + brand tokens (Part B.1) ───────────────────────────────────── */
@@ -34,13 +35,22 @@
   --chrome-header-chip-bg:   rgba(255,255,255,0.06);
   --chrome-header-chip-border: rgba(255,255,255,0.12);
 
-  /* Brand tokens (exposed to doc pages so they can reference the source of truth) */
-  --bc-brand-primary:        #4e3bc2;
-  --bc-brand-accent:         #6651e4;
-  --bc-brand-indigo:         #1a237e;
-  --bc-brand-yellow:         #ffd900;
-  --bc-brand-red:            #f0294d;
-  --bc-brand-green:          #24c26e;
+  /* Brand-level chrome shortcuts. These reference the auto-generated semantic
+     tokens (TDR-0001). Update those, not these. */
+  --brand-primary:           var(--color-brand-primary);   /* #4e3bc2 */
+  --brand-accent:            var(--color-primary-500);     /* #6651e4 */
+  --brand-indigo:            var(--color-primary-900);     /* #1a237e */
+  --brand-yellow:            var(--color-warning-500);     /* #ffd900 */
+  --brand-red:               var(--color-error-700);       /* #f0294d */
+  --brand-green:             var(--color-success-300);     /* #24c26e */
+
+  /* Legacy --bc-* aliases. DEPRECATED — remove after the 90-day window (TDR-0001 A2). */
+  --bc-brand-primary:        var(--brand-primary);
+  --bc-brand-accent:          var(--brand-accent);
+  --bc-brand-indigo:         var(--brand-indigo);
+  --bc-brand-yellow:         var(--brand-yellow);
+  --bc-brand-red:            var(--brand-red);
+  --bc-brand-green:          var(--brand-green);
 }
 
 [data-theme='dark'] {

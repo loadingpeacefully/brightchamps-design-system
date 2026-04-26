@@ -55,6 +55,17 @@ function luminance(hex: string): number {
   const b = parseInt(h.slice(4, 6), 16) / 255
   return 0.2126 * r + 0.7152 * g + 0.0722 * b
 }
+// WCAG relative luminance — linearized sRGB. Use this for color-page sort
+// so the ramp reads as visual gradient (lightest → darkest).
+function hexToLuminance(hex: string): number {
+  const clean = solidOf(hex).replace('#', '')
+  if (clean.length !== 6) return 0
+  const r = parseInt(clean.slice(0, 2), 16) / 255
+  const g = parseInt(clean.slice(2, 4), 16) / 255
+  const b = parseInt(clean.slice(4, 6), 16) / 255
+  const lin = (c: number): number => c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
+  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b)
+}
 
 type ColorCategory = 'brand' | 'neutral' | 'feedback' | 'overlay' | 'surface' | 'interactive' | 'course'
 type FeedbackRole = 'danger' | 'warning' | 'success' | 'info'
@@ -90,8 +101,11 @@ function feedbackRoleOf(hex: string): FeedbackRole {
 // ─── CSS variable name generation ────────────────────────────────────────────
 
 function cssVarName(tokenName: string): string {
-  // color.008 → --bc-color-008; color/overlay/dark → --bc-color-overlay-dark
-  return '--bc-' + tokenName.replace(/[./]/g, '-')
+  // color/primary/500 → --color-primary-500
+  // font/heading/xl → --font-heading-xl
+  // space/4 → --space-4
+  // After TDR-0001, names are self-namespacing — no --bc- prefix needed.
+  return '--' + tokenName.replace(/[./]/g, '-')
 }
 
 // ─── Token shape we emit into lib/tokens.generated.ts ────────────────────────
@@ -164,17 +178,21 @@ function build(): void {
     return token
   })
 
-  // Group + sort per category for the UI
+  // Group + sort per category for the UI.
+  // After TDR-0001 every chromatic ramp sorts by luminance (lightest first) so the
+  // visual reads as a gradient from background tint → solid → text-strength.
+  // WCAG-style relative luminance via hexToLuminance() — linearized RGB.
+  const byLumDesc = (a: { value: string }, b: { value: string }): number => hexToLuminance(b.value) - hexToLuminance(a.value)
   const byCategory = {
-    brand:       generatedColors.filter(c => c.category === 'brand').sort((a, b) => b.usageCount - a.usageCount),
-    neutral:     generatedColors.filter(c => c.category === 'neutral').sort((a, b) => luminance(b.value) - luminance(a.value)),
+    brand:       generatedColors.filter(c => c.category === 'brand').sort(byLumDesc),
+    neutral:     generatedColors.filter(c => c.category === 'neutral').sort(byLumDesc),
     feedback: {
-      danger:  generatedColors.filter(c => c.category === 'feedback' && c.feedbackRole === 'danger').sort((a, b) => b.usageCount - a.usageCount),
-      warning: generatedColors.filter(c => c.category === 'feedback' && c.feedbackRole === 'warning').sort((a, b) => b.usageCount - a.usageCount),
-      success: generatedColors.filter(c => c.category === 'feedback' && c.feedbackRole === 'success').sort((a, b) => b.usageCount - a.usageCount),
-      info:    generatedColors.filter(c => c.category === 'feedback' && c.feedbackRole === 'info').sort((a, b) => b.usageCount - a.usageCount),
+      danger:  generatedColors.filter(c => c.category === 'feedback' && c.feedbackRole === 'danger').sort(byLumDesc),
+      warning: generatedColors.filter(c => c.category === 'feedback' && c.feedbackRole === 'warning').sort(byLumDesc),
+      success: generatedColors.filter(c => c.category === 'feedback' && c.feedbackRole === 'success').sort(byLumDesc),
+      info:    generatedColors.filter(c => c.category === 'feedback' && c.feedbackRole === 'info').sort(byLumDesc),
     },
-    surface: generatedColors.filter(c => c.category === 'surface').sort((a, b) => luminance(b.value) - luminance(a.value)),
+    surface: generatedColors.filter(c => c.category === 'surface').sort(byLumDesc),
     overlay: generatedColors.filter(c => c.category === 'overlay').sort((a, b) => {
       const aA = isAlphaHex(a.value) ? parseInt(a.value.slice(-2), 16) : 255
       const bA = isAlphaHex(b.value) ? parseInt(b.value.slice(-2), 16) : 255
@@ -270,19 +288,21 @@ function build(): void {
   tsLines.push('')
   tsLines.push('export const colors: ColorToken[] = ' + JSON.stringify(generatedColors, null, 2) + ' as const satisfies ColorToken[]')
   tsLines.push('')
+  // Emit pre-sorted arrays directly. Sort happens at build time using
+  // hexToLuminance (lightest first) so the consumer doesn't re-sort.
   tsLines.push('export const colorsByCategory = {')
-  tsLines.push(`  brand:   colors.filter(c => c.category === "brand")   .sort((a,b) => b.usageCount - a.usageCount),`)
-  tsLines.push(`  neutral: colors.filter(c => c.category === "neutral") ,`)
+  tsLines.push(`  brand:       ${JSON.stringify(byCategory.brand.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
+  tsLines.push(`  neutral:     ${JSON.stringify(byCategory.neutral.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
   tsLines.push(`  feedback: {`)
-  tsLines.push(`    danger:  colors.filter(c => c.category === "feedback" && c.feedbackRole === "danger" ),`)
-  tsLines.push(`    warning: colors.filter(c => c.category === "feedback" && c.feedbackRole === "warning"),`)
-  tsLines.push(`    success: colors.filter(c => c.category === "feedback" && c.feedbackRole === "success"),`)
-  tsLines.push(`    info:    colors.filter(c => c.category === "feedback" && c.feedbackRole === "info"   ),`)
+  tsLines.push(`    danger:  ${JSON.stringify(byCategory.feedback.danger.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
+  tsLines.push(`    warning: ${JSON.stringify(byCategory.feedback.warning.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
+  tsLines.push(`    success: ${JSON.stringify(byCategory.feedback.success.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
+  tsLines.push(`    info:    ${JSON.stringify(byCategory.feedback.info.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
   tsLines.push(`  },`)
-  tsLines.push(`  surface:     colors.filter(c => c.category === "surface"),`)
-  tsLines.push(`  overlay:     colors.filter(c => c.category === "overlay"),`)
-  tsLines.push(`  interactive: colors.filter(c => c.category === "interactive"),`)
-  tsLines.push(`  course:      colors.filter(c => c.category === "course"),`)
+  tsLines.push(`  surface:     ${JSON.stringify(byCategory.surface.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
+  tsLines.push(`  overlay:     ${JSON.stringify(byCategory.overlay.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
+  tsLines.push(`  interactive: ${JSON.stringify(byCategory.interactive.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
+  tsLines.push(`  course:      ${JSON.stringify(byCategory.course.map(c => c.name))}.map(n => colors.find(c => c.name === n)!).filter(Boolean),`)
   tsLines.push('}')
   tsLines.push('')
   // Typography

@@ -1,0 +1,1213 @@
+[
+  {
+    "from": "color.076",
+    "to": "color/primary/50",
+    "cssFrom": "--bc-color-076",
+    "cssTo": "--color-primary-50",
+    "reason": "brand-primary-ramp"
+  },
+  {
+    "from": "color.056",
+    "to": "color/primary/200",
+    "cssFrom": "--bc-color-056",
+    "cssTo": "--color-primary-200",
+    "reason": "brand-primary-ramp"
+  },
+  {
+    "from": "color.015",
+    "to": "color/primary/500",
+    "cssFrom": "--bc-color-015",
+    "cssTo": "--color-primary-500",
+    "reason": "brand-primary-ramp"
+  },
+  {
+    "from": "color.011",
+    "to": "color/primary/700",
+    "cssFrom": "--bc-color-011",
+    "cssTo": "--color-primary-700",
+    "reason": "brand-primary-ramp"
+  },
+  {
+    "from": "color.010",
+    "to": "color/primary/900",
+    "cssFrom": "--bc-color-010",
+    "cssTo": "--color-primary-900",
+    "reason": "brand-primary-ramp"
+  },
+  {
+    "from": "color.001",
+    "to": "color/neutral/100",
+    "cssFrom": "--bc-color-001",
+    "cssTo": "--color-neutral-100",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.016",
+    "to": "color/neutral/200",
+    "cssFrom": "--bc-color-016",
+    "cssTo": "--color-neutral-200",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.033",
+    "to": "color/neutral/300",
+    "cssFrom": "--bc-color-033",
+    "cssTo": "--color-neutral-300",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.036",
+    "to": "color/neutral/400",
+    "cssFrom": "--bc-color-036",
+    "cssTo": "--color-neutral-400",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.025",
+    "to": "color/neutral/500",
+    "cssFrom": "--bc-color-025",
+    "cssTo": "--color-neutral-500",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.065",
+    "to": "color/neutral/600",
+    "cssFrom": "--bc-color-065",
+    "cssTo": "--color-neutral-600",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.014",
+    "to": "color/neutral/700",
+    "cssFrom": "--bc-color-014",
+    "cssTo": "--color-neutral-700",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.075",
+    "to": "color/neutral/800",
+    "cssFrom": "--bc-color-075",
+    "cssTo": "--color-neutral-800",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.003",
+    "to": "color/neutral/900",
+    "cssFrom": "--bc-color-003",
+    "cssTo": "--color-neutral-900",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.037",
+    "to": "color/neutral/1000",
+    "cssFrom": "--bc-color-037",
+    "cssTo": "--color-neutral-1000",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.043",
+    "to": "color/neutral/1100",
+    "cssFrom": "--bc-color-043",
+    "cssTo": "--color-neutral-1100",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.035",
+    "to": "color/neutral/1200",
+    "cssFrom": "--bc-color-035",
+    "cssTo": "--color-neutral-1200",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.009",
+    "to": "color/neutral/1300",
+    "cssFrom": "--bc-color-009",
+    "cssTo": "--color-neutral-1300",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.004",
+    "to": "color/neutral/1400",
+    "cssFrom": "--bc-color-004",
+    "cssTo": "--color-neutral-1400",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.080",
+    "to": "color/neutral/1500",
+    "cssFrom": "--bc-color-080",
+    "cssTo": "--color-neutral-1500",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.002",
+    "to": "color/neutral/1600",
+    "cssFrom": "--bc-color-002",
+    "cssTo": "--color-neutral-1600",
+    "reason": "neutral-ramp"
+  },
+  {
+    "from": "color.040",
+    "to": "color/error/50",
+    "cssFrom": "--bc-color-040",
+    "cssTo": "--color-error-50",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.072",
+    "to": "color/error/100",
+    "cssFrom": "--bc-color-072",
+    "cssTo": "--color-error-100",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.030",
+    "to": "color/error/200",
+    "cssFrom": "--bc-color-030",
+    "cssTo": "--color-error-200",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.048",
+    "to": "color/error/300",
+    "cssFrom": "--bc-color-048",
+    "cssTo": "--color-error-300",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.061",
+    "to": "color/error/500",
+    "cssFrom": "--bc-color-061",
+    "cssTo": "--color-error-500",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.013",
+    "to": "color/error/600",
+    "cssFrom": "--bc-color-013",
+    "cssTo": "--color-error-600",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.018",
+    "to": "color/error/700",
+    "cssFrom": "--bc-color-018",
+    "cssTo": "--color-error-700",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.044",
+    "to": "color/error/800",
+    "cssFrom": "--bc-color-044",
+    "cssTo": "--color-error-800",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.039",
+    "to": "color/error/900",
+    "cssFrom": "--bc-color-039",
+    "cssTo": "--color-error-900",
+    "reason": "feedback-danger-ramp"
+  },
+  {
+    "from": "color.060",
+    "to": "color/warning/100",
+    "cssFrom": "--bc-color-060",
+    "cssTo": "--color-warning-100",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.052",
+    "to": "color/warning/200",
+    "cssFrom": "--bc-color-052",
+    "cssTo": "--color-warning-200",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.045",
+    "to": "color/warning/300",
+    "cssFrom": "--bc-color-045",
+    "cssTo": "--color-warning-300",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.063",
+    "to": "color/warning/400",
+    "cssFrom": "--bc-color-063",
+    "cssTo": "--color-warning-400",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.028",
+    "to": "color/warning/500",
+    "cssFrom": "--bc-color-028",
+    "cssTo": "--color-warning-500",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.073",
+    "to": "color/warning/600",
+    "cssFrom": "--bc-color-073",
+    "cssTo": "--color-warning-600",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.057",
+    "to": "color/warning/700",
+    "cssFrom": "--bc-color-057",
+    "cssTo": "--color-warning-700",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.047",
+    "to": "color/warning/800",
+    "cssFrom": "--bc-color-047",
+    "cssTo": "--color-warning-800",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.026",
+    "to": "color/warning/900",
+    "cssFrom": "--bc-color-026",
+    "cssTo": "--color-warning-900",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.058",
+    "to": "color/warning/1000",
+    "cssFrom": "--bc-color-058",
+    "cssTo": "--color-warning-1000",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.064",
+    "to": "color/warning/1100",
+    "cssFrom": "--bc-color-064",
+    "cssTo": "--color-warning-1100",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.050",
+    "to": "color/warning/1200",
+    "cssFrom": "--bc-color-050",
+    "cssTo": "--color-warning-1200",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.070",
+    "to": "color/warning/1300",
+    "cssFrom": "--bc-color-070",
+    "cssTo": "--color-warning-1300",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.042",
+    "to": "color/warning/1400",
+    "cssFrom": "--bc-color-042",
+    "cssTo": "--color-warning-1400",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.069",
+    "to": "color/warning/1500",
+    "cssFrom": "--bc-color-069",
+    "cssTo": "--color-warning-1500",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.023",
+    "to": "color/warning/1600",
+    "cssFrom": "--bc-color-023",
+    "cssTo": "--color-warning-1600",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.068",
+    "to": "color/warning/1700",
+    "cssFrom": "--bc-color-068",
+    "cssTo": "--color-warning-1700",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.012",
+    "to": "color/warning/1800",
+    "cssFrom": "--bc-color-012",
+    "cssTo": "--color-warning-1800",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.021",
+    "to": "color/warning/1900",
+    "cssFrom": "--bc-color-021",
+    "cssTo": "--color-warning-1900",
+    "reason": "feedback-warning-ramp"
+  },
+  {
+    "from": "color.071",
+    "to": "color/success/50",
+    "cssFrom": "--bc-color-071",
+    "cssTo": "--color-success-50",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.034",
+    "to": "color/success/100",
+    "cssFrom": "--bc-color-034",
+    "cssTo": "--color-success-100",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.022",
+    "to": "color/success/200",
+    "cssFrom": "--bc-color-022",
+    "cssTo": "--color-success-200",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.066",
+    "to": "color/success/300",
+    "cssFrom": "--bc-color-066",
+    "cssTo": "--color-success-300",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.049",
+    "to": "color/success/500",
+    "cssFrom": "--bc-color-049",
+    "cssTo": "--color-success-500",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.041",
+    "to": "color/success/600",
+    "cssFrom": "--bc-color-041",
+    "cssTo": "--color-success-600",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.027",
+    "to": "color/success/700",
+    "cssFrom": "--bc-color-027",
+    "cssTo": "--color-success-700",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.038",
+    "to": "color/success/800",
+    "cssFrom": "--bc-color-038",
+    "cssTo": "--color-success-800",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.029",
+    "to": "color/success/900",
+    "cssFrom": "--bc-color-029",
+    "cssTo": "--color-success-900",
+    "reason": "feedback-success-ramp"
+  },
+  {
+    "from": "color.005",
+    "to": "color/info/100",
+    "cssFrom": "--bc-color-005",
+    "cssTo": "--color-info-100",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.074",
+    "to": "color/info/200",
+    "cssFrom": "--bc-color-074",
+    "cssTo": "--color-info-200",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.078",
+    "to": "color/info/300",
+    "cssFrom": "--bc-color-078",
+    "cssTo": "--color-info-300",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.062",
+    "to": "color/info/400",
+    "cssFrom": "--bc-color-062",
+    "cssTo": "--color-info-400",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.079",
+    "to": "color/info/500",
+    "cssFrom": "--bc-color-079",
+    "cssTo": "--color-info-500",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.077",
+    "to": "color/info/600",
+    "cssFrom": "--bc-color-077",
+    "cssTo": "--color-info-600",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.046",
+    "to": "color/info/700",
+    "cssFrom": "--bc-color-046",
+    "cssTo": "--color-info-700",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.019",
+    "to": "color/info/800",
+    "cssFrom": "--bc-color-019",
+    "cssTo": "--color-info-800",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.031",
+    "to": "color/info/900",
+    "cssFrom": "--bc-color-031",
+    "cssTo": "--color-info-900",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.051",
+    "to": "color/info/1000",
+    "cssFrom": "--bc-color-051",
+    "cssTo": "--color-info-1000",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.053",
+    "to": "color/info/1100",
+    "cssFrom": "--bc-color-053",
+    "cssTo": "--color-info-1100",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.032",
+    "to": "color/info/1200",
+    "cssFrom": "--bc-color-032",
+    "cssTo": "--color-info-1200",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.067",
+    "to": "color/info/1300",
+    "cssFrom": "--bc-color-067",
+    "cssTo": "--color-info-1300",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.006",
+    "to": "color/info/1400",
+    "cssFrom": "--bc-color-006",
+    "cssTo": "--color-info-1400",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.007",
+    "to": "color/info/1500",
+    "cssFrom": "--bc-color-007",
+    "cssTo": "--color-info-1500",
+    "reason": "feedback-info-ramp"
+  },
+  {
+    "from": "color.055",
+    "to": "color/surface/50",
+    "cssFrom": "--bc-color-055",
+    "cssTo": "--color-surface-50",
+    "reason": "surface-ramp"
+  },
+  {
+    "from": "color.017",
+    "to": "color/surface/500",
+    "cssFrom": "--bc-color-017",
+    "cssTo": "--color-surface-500",
+    "reason": "surface-ramp"
+  },
+  {
+    "from": "color.059",
+    "to": "color/surface/900",
+    "cssFrom": "--bc-color-059",
+    "cssTo": "--color-surface-900",
+    "reason": "surface-ramp"
+  },
+  {
+    "from": "color.020",
+    "to": "color/overlay/generic-30",
+    "cssFrom": "--bc-color-020",
+    "cssTo": "--color-overlay-generic-30",
+    "reason": "overlay-generic"
+  },
+  {
+    "from": "color.024",
+    "to": "color/overlay/generic-50",
+    "cssFrom": "--bc-color-024",
+    "cssTo": "--color-overlay-generic-50",
+    "reason": "overlay-generic"
+  },
+  {
+    "from": "color.054",
+    "to": "color/overlay/generic-60",
+    "cssFrom": "--bc-color-054",
+    "cssTo": "--color-overlay-generic-60",
+    "reason": "overlay-generic"
+  },
+  {
+    "from": "typography.01",
+    "to": "font/body/medium",
+    "cssFrom": "--bc-typography-01",
+    "cssTo": "--font-body-medium",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.26",
+    "to": "font/body/medium/15-400",
+    "cssFrom": "--bc-typography-26",
+    "cssTo": "--font-body-medium-15-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.39",
+    "to": "font/body/medium/16-400",
+    "cssFrom": "--bc-typography-39",
+    "cssTo": "--font-body-medium-16-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.52",
+    "to": "font/body/medium/15-500",
+    "cssFrom": "--bc-typography-52",
+    "cssTo": "--font-body-medium-15-500",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.17",
+    "to": "font/body/medium/16-400-dup-2",
+    "cssFrom": "--bc-typography-17",
+    "cssTo": "--font-body-medium-16-400-dup-2",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.02",
+    "to": "font/heading/medium",
+    "cssFrom": "--bc-typography-02",
+    "cssTo": "--font-heading-medium",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.04",
+    "to": "font/heading/medium/16-700",
+    "cssFrom": "--bc-typography-04",
+    "cssTo": "--font-heading-medium-16-700",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.11",
+    "to": "font/heading/medium/16-800",
+    "cssFrom": "--bc-typography-11",
+    "cssTo": "--font-heading-medium-16-800",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.43",
+    "to": "font/heading/medium/15.198894500732422-800",
+    "cssFrom": "--bc-typography-43",
+    "cssTo": "--font-heading-medium-15-198894500732422-800",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.53",
+    "to": "font/heading/medium/16-900",
+    "cssFrom": "--bc-typography-53",
+    "cssTo": "--font-heading-medium-16-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.03",
+    "to": "font/heading/xsmall",
+    "cssFrom": "--bc-typography-03",
+    "cssTo": "--font-heading-xsmall",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.08",
+    "to": "font/heading/xsmall/12-600",
+    "cssFrom": "--bc-typography-08",
+    "cssTo": "--font-heading-xsmall-12-600",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.24",
+    "to": "font/heading/xsmall/12-800",
+    "cssFrom": "--bc-typography-24",
+    "cssTo": "--font-heading-xsmall-12-800",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.05",
+    "to": "font/heading/small",
+    "cssFrom": "--bc-typography-05",
+    "cssTo": "--font-heading-small",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.09",
+    "to": "font/heading/small/14-800",
+    "cssFrom": "--bc-typography-09",
+    "cssTo": "--font-heading-small-14-800",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.10",
+    "to": "font/heading/small/14-600",
+    "cssFrom": "--bc-typography-10",
+    "cssTo": "--font-heading-small-14-600",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.36",
+    "to": "font/heading/small/14-600-dup-2",
+    "cssFrom": "--bc-typography-36",
+    "cssTo": "--font-heading-small-14-600-dup-2",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.51",
+    "to": "font/heading/small/14-900",
+    "cssFrom": "--bc-typography-51",
+    "cssTo": "--font-heading-small-14-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.54",
+    "to": "font/heading/small/14-700",
+    "cssFrom": "--bc-typography-54",
+    "cssTo": "--font-heading-small-14-700",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.06",
+    "to": "font/heading/xlarge",
+    "cssFrom": "--bc-typography-06",
+    "cssTo": "--font-heading-xlarge",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.18",
+    "to": "font/heading/xlarge/20-600",
+    "cssFrom": "--bc-typography-18",
+    "cssTo": "--font-heading-xlarge-20-600",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.23",
+    "to": "font/heading/xlarge/20-700",
+    "cssFrom": "--bc-typography-23",
+    "cssTo": "--font-heading-xlarge-20-700",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.07",
+    "to": "font/body/xsmall",
+    "cssFrom": "--bc-typography-07",
+    "cssTo": "--font-body-xsmall",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.12",
+    "to": "font/body/xsmall/12-400",
+    "cssFrom": "--bc-typography-12",
+    "cssTo": "--font-body-xsmall-12-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.38",
+    "to": "font/body/xsmall/12-500",
+    "cssFrom": "--bc-typography-38",
+    "cssTo": "--font-body-xsmall-12-500",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.41",
+    "to": "font/body/xsmall/12-300",
+    "cssFrom": "--bc-typography-41",
+    "cssTo": "--font-body-xsmall-12-300",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.47",
+    "to": "font/body/xsmall/10.856352806091309-400",
+    "cssFrom": "--bc-typography-47",
+    "cssTo": "--font-body-xsmall-10-856352806091309-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.48",
+    "to": "font/body/xsmall/10.202898979187012-400",
+    "cssFrom": "--bc-typography-48",
+    "cssTo": "--font-body-xsmall-10-202898979187012-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.55",
+    "to": "font/body/xsmall/11.223-500",
+    "cssFrom": "--bc-typography-55",
+    "cssTo": "--font-body-xsmall-11-223-500",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.13",
+    "to": "font/body/xxsmall",
+    "cssFrom": "--bc-typography-13",
+    "cssTo": "--font-body-xxsmall",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.21",
+    "to": "font/body/xxsmall/10-500",
+    "cssFrom": "--bc-typography-21",
+    "cssTo": "--font-body-xxsmall-10-500",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.45",
+    "to": "font/body/xxsmall/10-300",
+    "cssFrom": "--bc-typography-45",
+    "cssTo": "--font-body-xxsmall-10-300",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.14",
+    "to": "font/body/small",
+    "cssFrom": "--bc-typography-14",
+    "cssTo": "--font-body-small",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.20",
+    "to": "font/body/small/14-400",
+    "cssFrom": "--bc-typography-20",
+    "cssTo": "--font-body-small-14-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.57",
+    "to": "font/body/small/13-500",
+    "cssFrom": "--bc-typography-57",
+    "cssTo": "--font-body-small-13-500",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.60",
+    "to": "font/body/small/14-500",
+    "cssFrom": "--bc-typography-60",
+    "cssTo": "--font-body-small-14-500",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.15",
+    "to": "font/heading/large",
+    "cssFrom": "--bc-typography-15",
+    "cssTo": "--font-heading-large",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.16",
+    "to": "font/heading/large/18-700",
+    "cssFrom": "--bc-typography-16",
+    "cssTo": "--font-heading-large-18-700",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.29",
+    "to": "font/heading/large/17-900",
+    "cssFrom": "--bc-typography-29",
+    "cssTo": "--font-heading-large-17-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.58",
+    "to": "font/heading/large/18-900",
+    "cssFrom": "--bc-typography-58",
+    "cssTo": "--font-heading-large-18-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.19",
+    "to": "font/heading/xxsmall",
+    "cssFrom": "--bc-typography-19",
+    "cssTo": "--font-heading-xxsmall",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.30",
+    "to": "font/heading/xxsmall/7.140938758850098-900",
+    "cssFrom": "--bc-typography-30",
+    "cssTo": "--font-heading-xxsmall-7-140938758850098-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.31",
+    "to": "font/heading/xxsmall/10-700",
+    "cssFrom": "--bc-typography-31",
+    "cssTo": "--font-heading-xxsmall-10-700",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.32",
+    "to": "font/heading/xxsmall/4.409999847412109-900",
+    "cssFrom": "--bc-typography-32",
+    "cssTo": "--font-heading-xxsmall-4-409999847412109-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.33",
+    "to": "font/heading/xxsmall/4.415057182312012-900",
+    "cssFrom": "--bc-typography-33",
+    "cssTo": "--font-heading-xxsmall-4-415057182312012-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.34",
+    "to": "font/heading/xxsmall/9.653708457946777-900",
+    "cssFrom": "--bc-typography-34",
+    "cssTo": "--font-heading-xxsmall-9-653708457946777-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.35",
+    "to": "font/heading/xxsmall/10-800",
+    "cssFrom": "--bc-typography-35",
+    "cssTo": "--font-heading-xxsmall-10-800",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.59",
+    "to": "font/heading/xxsmall/4.607635021209717-700",
+    "cssFrom": "--bc-typography-59",
+    "cssTo": "--font-heading-xxsmall-4-607635021209717-700",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.22",
+    "to": "font/heading/xxlarge",
+    "cssFrom": "--bc-typography-22",
+    "cssTo": "--font-heading-xxlarge",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.27",
+    "to": "font/heading/xxlarge/24-800",
+    "cssFrom": "--bc-typography-27",
+    "cssTo": "--font-heading-xxlarge-24-800",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.28",
+    "to": "font/heading/xxlarge/32-900",
+    "cssFrom": "--bc-typography-28",
+    "cssTo": "--font-heading-xxlarge-32-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.40",
+    "to": "font/heading/xxlarge/24-900",
+    "cssFrom": "--bc-typography-40",
+    "cssTo": "--font-heading-xxlarge-24-900",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.46",
+    "to": "font/heading/xxlarge/32-800",
+    "cssFrom": "--bc-typography-46",
+    "cssTo": "--font-heading-xxlarge-32-800",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.25",
+    "to": "font/body/xlarge",
+    "cssFrom": "--bc-typography-25",
+    "cssTo": "--font-body-xlarge",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.44",
+    "to": "font/body/xlarge/20-400",
+    "cssFrom": "--bc-typography-44",
+    "cssTo": "--font-body-xlarge-20-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.49",
+    "to": "font/body/xlarge/37-400",
+    "cssFrom": "--bc-typography-49",
+    "cssTo": "--font-body-xlarge-37-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.50",
+    "to": "font/body/xlarge/48-400",
+    "cssFrom": "--bc-typography-50",
+    "cssTo": "--font-body-xlarge-48-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.56",
+    "to": "font/body/xlarge/24-400",
+    "cssFrom": "--bc-typography-56",
+    "cssTo": "--font-body-xlarge-24-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "typography.37",
+    "to": "font/body/large",
+    "cssFrom": "--bc-typography-37",
+    "cssTo": "--font-body-large",
+    "reason": "typography-primary"
+  },
+  {
+    "from": "typography.42",
+    "to": "font/body/large/18-400",
+    "cssFrom": "--bc-typography-42",
+    "cssTo": "--font-body-large-18-400",
+    "reason": "typography-collision"
+  },
+  {
+    "from": "spacing.02",
+    "to": "space/2",
+    "cssFrom": "--bc-spacing-02",
+    "cssTo": "--space-2",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.03",
+    "to": "space/1",
+    "cssFrom": "--bc-spacing-03",
+    "cssTo": "--space-1",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.04",
+    "to": "space/4",
+    "cssFrom": "--bc-spacing-04",
+    "cssTo": "--space-4",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.05",
+    "to": "space/0-5",
+    "cssFrom": "--bc-spacing-05",
+    "cssTo": "--space-0-5",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.11",
+    "to": "space/2-5",
+    "cssFrom": "--bc-spacing-11",
+    "cssTo": "--space-2-5",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.15",
+    "to": "space/3",
+    "cssFrom": "--bc-spacing-15",
+    "cssTo": "--space-3",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.23",
+    "to": "space/1-5",
+    "cssFrom": "--bc-spacing-23",
+    "cssTo": "--space-1-5",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.42",
+    "to": "space/6",
+    "cssFrom": "--bc-spacing-42",
+    "cssTo": "--space-6",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.86",
+    "to": "space/3-5",
+    "cssFrom": "--bc-spacing-86",
+    "cssTo": "--space-3-5",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.94",
+    "to": "space/8",
+    "cssFrom": "--bc-spacing-94",
+    "cssTo": "--space-8",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.111",
+    "to": "space/5",
+    "cssFrom": "--bc-spacing-111",
+    "cssTo": "--space-5",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "spacing.114",
+    "to": "space/7",
+    "cssFrom": "--bc-spacing-114",
+    "cssTo": "--space-7",
+    "reason": "spacing-ramp"
+  },
+  {
+    "from": "radius.01",
+    "to": "radius/sm",
+    "cssFrom": "--bc-radius-01",
+    "cssTo": "--radius-sm",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.02",
+    "to": "radius/xl",
+    "cssFrom": "--bc-radius-02",
+    "cssTo": "--radius-xl",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.05",
+    "to": "radius/xl-dup-2",
+    "cssFrom": "--bc-radius-05",
+    "cssTo": "--radius-xl-dup-2",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.06",
+    "to": "radius/2xl",
+    "cssFrom": "--bc-radius-06",
+    "cssTo": "--radius-2xl",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.07",
+    "to": "radius/md",
+    "cssFrom": "--bc-radius-07",
+    "cssTo": "--radius-md",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.08",
+    "to": "radius/md-dup-2",
+    "cssFrom": "--bc-radius-08",
+    "cssTo": "--radius-md-dup-2",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.10",
+    "to": "radius/lg",
+    "cssFrom": "--bc-radius-10",
+    "cssTo": "--radius-lg",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.12",
+    "to": "radius/xs",
+    "cssFrom": "--bc-radius-12",
+    "cssTo": "--radius-xs",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.13",
+    "to": "radius/pill",
+    "cssFrom": "--bc-radius-13",
+    "cssTo": "--radius-pill",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.15",
+    "to": "radius/lg-dup-2",
+    "cssFrom": "--bc-radius-15",
+    "cssTo": "--radius-lg-dup-2",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.17",
+    "to": "radius/full",
+    "cssFrom": "--bc-radius-17",
+    "cssTo": "--radius-full",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "radius.18",
+    "to": "radius/3xl",
+    "cssFrom": "--bc-radius-18",
+    "cssTo": "--radius-3xl",
+    "reason": "radius-ramp"
+  },
+  {
+    "from": "shadow.01",
+    "to": "shadow/01",
+    "cssFrom": "--bc-shadow-01",
+    "cssTo": "--shadow-01",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.02",
+    "to": "shadow/02",
+    "cssFrom": "--bc-shadow-02",
+    "cssTo": "--shadow-02",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.03",
+    "to": "shadow/03",
+    "cssFrom": "--bc-shadow-03",
+    "cssTo": "--shadow-03",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.04",
+    "to": "shadow/04",
+    "cssFrom": "--bc-shadow-04",
+    "cssTo": "--shadow-04",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.05",
+    "to": "shadow/05",
+    "cssFrom": "--bc-shadow-05",
+    "cssTo": "--shadow-05",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.06",
+    "to": "shadow/06",
+    "cssFrom": "--bc-shadow-06",
+    "cssTo": "--shadow-06",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.07",
+    "to": "shadow/07",
+    "cssFrom": "--bc-shadow-07",
+    "cssTo": "--shadow-07",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.08",
+    "to": "shadow/08",
+    "cssFrom": "--bc-shadow-08",
+    "cssTo": "--shadow-08",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.09",
+    "to": "shadow/09",
+    "cssFrom": "--bc-shadow-09",
+    "cssTo": "--shadow-09",
+    "reason": "shadow-rank"
+  },
+  {
+    "from": "shadow.10",
+    "to": "shadow/10",
+    "cssFrom": "--bc-shadow-10",
+    "cssTo": "--shadow-10",
+    "reason": "shadow-rank"
+  }
+]

@@ -4,6 +4,25 @@
  * Reads all extraction results from ledger/.extractions/ and synthesizes
  * the canonical ledger/tokens.json.
  *
+ * ⚠️  WARNING — TDR-0001 INCOMPATIBILITY (as of 2026-04-26)
+ * ────────────────────────────────────────────────────────────────────────────
+ * This resolver still generates flat names (color.NN, typography.NN, etc.) via
+ * `nameOverride` calls below. The TDR-0001 migration renamed every token to a
+ * semantic taxonomy (color/primary/500, font/heading/xl). Running this script
+ * will OVERWRITE that migration.
+ *
+ * If you need to rebuild the ledger from extractions:
+ *   1. Pass --force to acknowledge you'll lose the TDR-0001 renames
+ *   2. Run `npm run migrate:tokens` afterwards to re-apply the rename
+ *
+ * Backup of pre-migration ledger lives at `ledger/tokens.legacy.json`.
+ *
+ * Architectural fix (deferred): import the rename logic from
+ * scripts/migrate-tokens.ts (classifyColor, indexToShade, typographyRoleName,
+ * etc.) and apply it inside makeLedgerToken() so this resolver produces
+ * semantic names natively. Once that's done, remove this guard.
+ * ────────────────────────────────────────────────────────────────────────────
+ *
  * Tiering policy (see ADR-0008):
  *   COLORS      — cluster at ΔE < 5 (CIE76); top 80 clusters canonical (conf 0.9);
  *                 rest deprecated (conf 0.2). Non-canonical cluster members
@@ -14,7 +33,7 @@
  *                 rest deprecated.
  *   OTHER TYPES — pass through with no tiering; confidence from extractor.
  *
- * Usage: npm run ledger:build
+ * Usage: npm run ledger:build -- --force   (requires --force after TDR-0001)
  */
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'fs'
@@ -348,6 +367,35 @@ function passthroughTier(tokens: DesignToken[]): { ledger: LedgerToken[]; counts
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
+  // ── TDR-0001 guard ──────────────────────────────────────────────────────
+  // The resolver still produces flat names (color.NN). Running it overwrites
+  // the TDR-0001 semantic-rename migration. Require --force to proceed.
+  if (!process.argv.includes('--force')) {
+    console.error('')
+    console.error('═══════════════════════════════════════════════════════════════════')
+    console.error('  ⚠️  ledger:build is BLOCKED after TDR-0001 (2026-04-26).')
+    console.error('═══════════════════════════════════════════════════════════════════')
+    console.error('')
+    console.error('  Running this resolver regenerates ledger/tokens.json from')
+    console.error('  extractions and uses flat names (color.001, typography.01,')
+    console.error('  spacing.04, etc.) — which OVERWRITES the semantic taxonomy')
+    console.error('  applied by scripts/migrate-tokens.ts.')
+    console.error('')
+    console.error('  If you really need to rebuild from extractions:')
+    console.error('    npm run ledger:build -- --force')
+    console.error('    npm run migrate:tokens     # re-applies the rename')
+    console.error('')
+    console.error('  See ledger/tokens.legacy.json for the pre-migration backup,')
+    console.error('  and ledger/deprecated.json for the 173 old→new mappings.')
+    console.error('  Header comment in src/resolver/index.ts has the full plan.')
+    console.error('═══════════════════════════════════════════════════════════════════')
+    console.error('')
+    process.exit(2)
+  }
+  console.warn('[resolver] --force flag detected. Proceeding with rebuild — this WILL')
+  console.warn('[resolver] overwrite TDR-0001 semantic names. Run `npm run migrate:tokens`')
+  console.warn('[resolver] immediately after to re-apply the rename.')
+
   console.log('[resolver] Loading extractions...')
   mkdirSync(LEDGER_DIR, { recursive: true })
 

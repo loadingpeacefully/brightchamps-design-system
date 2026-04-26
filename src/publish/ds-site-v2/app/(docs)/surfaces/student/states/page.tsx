@@ -82,9 +82,9 @@ export default function StudentStatesPage() {
 
         <section id="finding" className="mt-12 scroll-mt-24">
           <h2 className="text-h2 text-chrome-text">Key finding</h2>
-          <div className="mt-4 rounded-card border-l-4 border-l-[var(--bc-brand-red)] border border-chrome-border bg-[rgba(240,41,77,0.05)] p-5">
+          <div className="mt-4 rounded-card border-l-4 border-l-[var(--brand-red)] border border-chrome-border bg-[rgba(240,41,77,0.05)] p-5">
             <div className="flex items-center gap-2 mb-2">
-              <AlertTriangle size={16} strokeWidth={1.75} className="text-[var(--bc-brand-red)]" />
+              <AlertTriangle size={16} strokeWidth={1.75} className="text-[var(--brand-red)]" />
               <span className="text-[13px] font-bold text-[#a31836] uppercase tracking-[0.04em]">Missing hover states</span>
             </div>
             <p className="text-body text-chrome-text">

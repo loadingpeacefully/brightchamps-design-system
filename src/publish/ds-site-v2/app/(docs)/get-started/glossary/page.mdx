@@ -28,7 +28,7 @@ Every term you'll run into across the BrightChamps design system, explained like
 <dd>A token whose value is "go look at this other token." For example fgColor/brand isn't a color itself — it points at color/brand/primary. Aliases let us name things by their job (text-in-brand-context) rather than their raw value (a specific hex).</dd>
 
 <dt id="css-variable">CSS variable</dt>
-<dd>A runtime slot in a stylesheet, written like --bc-color-brand-primary: #4e3bc2. Product code reads it via var(--bc-color-brand-primary). When the system switches themes (light / dark), the variable changes value and everything using it updates.</dd>
+<dd>A runtime slot in a stylesheet, written like --color-brand-primary: #4e3bc2. Product code reads it via var(--color-brand-primary). When the system switches themes (light / dark), the variable changes value and everything using it updates.</dd>
 
 <dt id="ledger">ledger</dt>
 <dd>The single JSON file (ledger/tokens.json) that is the source of truth for every token. Nothing else is canonical. Every published artifact — this site, the CSS variables, the Figma styles — is derived from the ledger.</dd>

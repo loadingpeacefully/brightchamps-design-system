@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Check, Copy, AlertTriangle } from 'lucide-react'
 import type { ColorToken } from '@/lib/tokens.generated'
+import { COLOR_ALIASES } from '@/lib/colorAliases'
 
 function isAlphaHex(v: string): boolean { return /^#[0-9a-f]{8}$/i.test(v) }
 function solidOf(v: string): string { return isAlphaHex(v) ? '#' + v.slice(1, 7) : v }
@@ -15,6 +16,12 @@ function luminance(hex: string): number {
 }
 function textOn(hex: string): string {
   return luminance(hex) > 0.55 ? '#0b1324' : '#ffffff'
+}
+
+// Suspected Material Design library imports — see DC-003.
+const LIBRARY_LEAK_HEXES = new Set(['#1a237e', '#0d47a1'])
+function isSuspectedLibraryLeak(hex: string): boolean {
+  return LIBRARY_LEAK_HEXES.has(solidOf(hex).toLowerCase())
 }
 
 export function ColorSwatch({ token }: { token: ColorToken }) {
@@ -50,7 +57,7 @@ export function ColorSwatch({ token }: { token: ColorToken }) {
           onClick={() => copy('name', token.name)}
           aria-label={`Copy token name ${token.name}`}
         >
-          {copied === 'name' ? <span className="text-[color:var(--bc-brand-green)] inline-flex items-center gap-1"><Check size={11} /> Copied name</span> : token.name}
+          {copied === 'name' ? <span className="text-[color:var(--brand-green)] inline-flex items-center gap-1"><Check size={11} /> Copied name</span> : token.name}
         </button>
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
           <span className={'inline-block rounded-[10px] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em] ' + tierClass}>
@@ -89,6 +96,14 @@ export function ColorSwatch({ token }: { token: ColorToken }) {
         {token.description && !token.description.startsWith('Extracted from student') && (
           <p className="mt-2 text-[11px] leading-snug text-chrome-text-subtlest">{token.description}</p>
         )}
+        {COLOR_ALIASES[token.name]?.map((usage, i) => (
+          <span
+            key={i}
+            className="mt-1.5 inline-block rounded-md bg-[rgba(78,59,194,0.10)] px-2 py-0.5 text-[10px] font-medium leading-snug text-[#4e3bc2] dark:bg-[rgba(155,140,255,0.18)] dark:text-[#b5a9ff]"
+          >
+            {usage}
+          </span>
+        ))}
         {token.openQuestion && (
           <div className="mt-2 rounded-md border-l-2 border-amber-500/70 bg-amber-50/60 dark:bg-amber-950/25 px-2 py-1.5">
             <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.05em] text-amber-700 dark:text-amber-400">
@@ -96,6 +111,15 @@ export function ColorSwatch({ token }: { token: ColorToken }) {
               Open question
             </div>
             <p className="mt-0.5 text-[11px] leading-snug text-chrome-text">{token.openQuestion}</p>
+          </div>
+        )}
+        {isSuspectedLibraryLeak(token.value) && (
+          <div className="mt-2 rounded-md border-l-2 border-red-500/70 bg-red-50/60 dark:bg-red-950/25 px-2 py-1.5">
+            <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.05em] text-red-700 dark:text-red-400">
+              <AlertTriangle size={11} strokeWidth={2} />
+              Suspected library leak
+            </div>
+            <p className="mt-0.5 text-[11px] leading-snug text-chrome-text">May be a Material Design import. See DC-003.</p>
           </div>
         )}
       </div>

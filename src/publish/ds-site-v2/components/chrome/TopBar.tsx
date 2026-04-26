@@ -29,7 +29,7 @@ export function TopBar() {
             <span
               className="block h-2.5 w-2.5 rounded-full"
               style={{
-                background: 'var(--bc-brand-accent)',
+                background: 'var(--brand-accent)',
                 boxShadow: '0 0 0 3px rgba(102,81,228,0.30)',
               }}
             />
