@@ -57,9 +57,12 @@ function Swatch({ label, value }: { label: string; value: string | null | undefi
 }
 
 function ConflictRow({ ticket }: { ticket: DesignerConflict }) {
-  const isThreeWay = ticket.threeWayConflict === true
+  const isFourWay = ticket.fourWayConflict === true
+  const isThreeWay = ticket.threeWayConflict === true || isFourWay
   const showSwatches = ticket.category === 'color' && (isHex(ticket.designerValue) || isHex(ticket.productionValue))
   const isCritical = ticket.severity === 'critical'
+  // DC-008-style typo cases: values are visually identical (ΔE < 1) — render as text, not swatches.
+  const isTypoCase = ticket.category === 'color' && typeof ticket.deltaE === 'number' && ticket.deltaE < 1
   return (
     <article
       className={
@@ -73,11 +76,15 @@ function ConflictRow({ ticket }: { ticket: DesignerConflict }) {
           <div className="flex items-center gap-2 mb-1 flex-wrap">
             <span className="font-mono text-[11px] font-bold text-chrome-text-subtlest">{ticket.id}</span>
             <SeverityBadge severity={ticket.severity} />
-            {isThreeWay && (
+            {isFourWay ? (
+              <span className="inline-block rounded-[10px] bg-[rgba(78,59,194,0.14)] text-[#4e3bc2] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em]">
+                4-way conflict
+              </span>
+            ) : isThreeWay ? (
               <span className="inline-block rounded-[10px] bg-[rgba(78,59,194,0.14)] text-[#4e3bc2] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em]">
                 3-way conflict
               </span>
-            )}
+            ) : null}
             {ticket.deltaE !== null && (
               <span className="inline-block rounded-[10px] border border-chrome-border-bold bg-chrome-surface px-2 py-[1px] text-[10px] font-mono font-semibold text-chrome-text-subtle">ΔE {ticket.deltaE}</span>
             )}
@@ -87,7 +94,21 @@ function ConflictRow({ ticket }: { ticket: DesignerConflict }) {
         <StatusPill status={ticket.status} />
       </div>
 
-      {isThreeWay && ticket.category === 'color' ? (
+      {isFourWay && ticket.category === 'color' ? (
+        <>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <Swatch label="Designer DS"                     value={ticket.designerValue} />
+            <Swatch label="Production · Figma"               value={ticket.productionFigmaValue ?? ticket.productionValue} />
+            <Swatch label="Production · Code (feed)"         value={ticket.productionCodeValue} />
+            <Swatch label="Production · Code (dashboard)"    value={ticket.productionCodeValue2} />
+          </div>
+          <p className="mt-3 text-[11px] leading-snug text-[#a31836]">
+            Four-way conflict detected from source-code analysis — see{' '}
+            <code className="font-mono">docs/repo-analysis-student-dashboard.md</code> and{' '}
+            <code className="font-mono">docs/component-spec-verification.md</code>.
+          </p>
+        </>
+      ) : isThreeWay && ticket.category === 'color' ? (
         <>
           <div className="grid grid-cols-3 gap-3">
             <Swatch label="Designer DS"         value={ticket.designerValue} />
@@ -99,6 +120,19 @@ function ConflictRow({ ticket }: { ticket: DesignerConflict }) {
             <code className="font-mono">docs/component-spec-verification.md</code>.
           </p>
         </>
+      ) : isTypoCase ? (
+        <div className="grid grid-cols-2 gap-3 text-[12px]">
+          <div>
+            <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">Intended</div>
+            <div className="font-mono text-chrome-text">{ticket.designerValue}</div>
+            <div className="text-[11px] text-chrome-text-subtlest italic mt-0.5">canonical brand</div>
+          </div>
+          <div>
+            <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">Shipping (typo)</div>
+            <div className="font-mono text-chrome-text">{ticket.productionValue}</div>
+            <div className="text-[11px] text-chrome-text-subtlest italic mt-0.5">visually identical · ΔE {ticket.deltaE}</div>
+          </div>
+        </div>
       ) : showSwatches ? (
         <div className="grid grid-cols-2 gap-3">
           <Swatch label="Designer"   value={ticket.designerValue} />

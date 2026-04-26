@@ -51,18 +51,20 @@
     },
     {
       "id": "DC-005",
-      "title": "Brand primary color — three-way conflict",
+      "title": "Brand primary color — four-way conflict",
       "designerValue": "#722ED1",
       "productionValue": "#4e3bc2",
       "productionFigmaValue": "#4e3bc2",
       "productionCodeValue": "#6651e4",
+      "productionCodeValue2": "#722ED1",
+      "fourWayConflict": true,
       "threeWayConflict": true,
       "deltaE": 18,
       "severity": "critical",
       "category": "color",
       "action": "Block all other token work until resolved. This is the foundation everything builds on.",
       "status": "pending-confirmation",
-      "notes": "Three distinct purples in active use. Designer DS: #722ED1. Figma extraction canonical: #4e3bc2 (6,000 uses in Figma). Production React code: #6651e4 (9 files, all primary UI elements). None match. Brand team must pick one. Source-code evidence in docs/component-spec-verification.md and docs/hardcoded-color-migration.md."
+      "notes": "Four distinct purples shipping simultaneously. Designer DS: #722ED1 (Royal Amethyst, 6 files in dashboard). Production Figma canonical: #4e3bc2 (173 files, $primary-color). Feed repo de facto: #6651e4 (25 files, $inprogress-state). Typo variant: #4d3bc2 (46 files, ΔE≈0.5 from #4e3bc2, visually identical but semantically wrong — see DC-008). Note: #722ED1 is NOT aspirational — it is already shipping in production (year-in-review, learn page header, FeedLayout). Brand team must pick one canonical. Everything else is drift."
     },
     {
       "id": "DC-006",
@@ -85,6 +87,42 @@
       "category": "typography",
       "action": "Resolved — added font/heading/sm (24px), font/heading/md (32px), font/heading/lg (40px), font/heading/xl (56px) to canonical via manual-canonicals.json. Engineering: ensure Nunito loads correctly at these sizes.",
       "status": "resolved"
+    },
+    {
+      "id": "DC-008",
+      "title": "Brand primary typo — #4d3bc2 shipping in 46 files",
+      "designerValue": "#4e3bc2",
+      "productionValue": "#4d3bc2",
+      "deltaE": 0.5,
+      "severity": "medium",
+      "category": "color",
+      "action": "Engineering to find-replace #4d3bc2 with #4e3bc2 across student dashboard repo. No design decision needed — this is a typo, not an intentional variant. 46 files, ~80 occurrences.",
+      "status": "open",
+      "notes": "Invisible to the human eye (ΔE 0.5) but wrong in every computed style. Will cause confusion once CSS variables are introduced. Fix before codemod runs. Source-code evidence in docs/repo-analysis-student-dashboard.md."
+    },
+    {
+      "id": "DC-009",
+      "title": "Progress success color not in ledger",
+      "designerValue": "#00B67A",
+      "productionValue": "#11ac69",
+      "deltaE": 8,
+      "severity": "medium",
+      "category": "color",
+      "action": "Engineering to update progress completed fill to #00B67A (color/success/500). Also used as $success-green and $completed-state in dashboard _variables.scss.",
+      "status": "open",
+      "notes": "DC-001 addresses the global success color. This is the component-specific instance on ProgressBar. Both should resolve together when DC-001 ships."
+    },
+    {
+      "id": "DC-010",
+      "title": "Paused state color not in ledger",
+      "designerValue": null,
+      "productionValue": "#3b9af5",
+      "deltaE": null,
+      "severity": "low",
+      "category": "color",
+      "action": "Design team to decide: add #3b9af5 as color/info/600 or map to nearest existing info token. Used for ProgressBar paused variant and $paused-state in dashboard _variables.scss.",
+      "status": "open",
+      "notes": "No designer equivalent defined yet. Needs design decision before engineering can standardize."
     }
   ]
 }

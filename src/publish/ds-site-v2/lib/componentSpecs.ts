@@ -68,15 +68,18 @@ export const componentSpecs: ComponentSpec[] = [
 >
   Primary Action
 </button>`,
-    sourceFile: 'repo-cloned/brightchamps-student-feed-b84495106f34/src/components/atoms/Button/Button.scss',
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/Button/button.module.scss',
     verificationStatus: 'conflict',
     conflicts: [
-      'Primary background: spec says color/brand/primary (#4e3bc2). Source uses #6651e4 (color/primary/500). Production de facto brand color is #6651e4 (used in 9 places across 7 files).',
-      'No Secondary variant in source. Source has .submit (white bg) and .quiz (#f0ad4e bootstrap orange). Spec calls for color/warning/500 (#ffd900).',
-      'No :hover rule in source. Spec defines hover background color/primary/700 (#0d47a1).',
-      'Padding mismatch: spec says space/6 + space/3 (24px / 12px). Source uses 10px 15px (default) and 10px 20px (.primary).',
-      'Border radius: spec says radius/full (9999px). Source has 5px on .btn base, 100px on .primary and .submit.',
-      'Bug in source: Button.scss line ~31 has `color: 007bff;` (missing # — invalid CSS). Submit-variant text color is broken.',
+      'Variants taxonomy: spec has primary/secondary/ghost. Production has 5 variants — contained, outlined, danger, info, underline. None are named "primary"/"secondary"/"ghost".',
+      'Primary background: spec says color/brand/primary (#4e3bc2). Production .contained matches via SCSS var get-color(primary-color) = #4e3bc2. ✓',
+      'Padding (y): spec says space/3 (12px). Production uses 8px on all variants.',
+      'Border radius: spec says radius/full (9999px). Production has 50px on .root (functionally pill, but numerically different).',
+      'Outline: production .contained adds a 2px solid border in the primary color — not in spec.',
+      'Disabled bg: spec says color/neutral/200 (#eeeeee). Production uses $disabled-bg (#eff3f5).',
+      'Hover: spec defines color/primary/700 (#0d47a1) hover bg. No :hover rule in production source.',
+      'Hardcoded colors not in ledger: #ff8480 (danger border/text), #60bfbd (info border/text), #0000003b (shadow).',
+      'Earlier feed-repo audit (docs/component-spec-verification.md) found completely different conflicts in feed/Button.scss. Dashboard is the canonical implementation.',
     ],
   },
   {
@@ -111,10 +114,17 @@ export const componentSpecs: ComponentSpec[] = [
     }}
   />
 </div>`,
-    verificationStatus: 'inferred',
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/ProgressBar/progressbar.module.scss',
+    verificationStatus: 'conflict',
     conflicts: [
-      'Source file not located. ProgressLine appears in the broader student-app surfaces (63 elements across 7 pages per DOM audit), but no matching React component exists in the brightchamps-student-feed repo. Likely lives in the /learn/ surface codebase.',
-      'Per docs/component-spec-verification.md: success-fill spec value (#00B67A, color/success/500) disagrees with what production currently ships in CertificateCardBody (#24C26E, color/success/300). Same conflict tracked as DC-001.',
+      'Track: spec says color/neutral/200 (#e7e7e7). Production uses #e0e0e0.',
+      'Height: spec says space/2 (8px). Production uses 10px.',
+      'Border radius: spec says radius/full (9999px). Production uses 10px (rounded corners, not pill — different visual).',
+      'Fill (in-progress): spec says color/brand/primary (#4e3bc2). Production uses #6651e4 (= color/primary/500, the de facto brand purple).',
+      'Fill (completed): spec says color/success/500 (#00B67A). Production uses #11ac69 (a fourth green not in the ledger — and not the same as the feed repo\'s #24c26e).',
+      'Variants: spec has 3 (default/in-progress/completed). Production has 5: completed, in-progress, notstarted, skipped, paused — plus an "openCard" inverted theme for each.',
+      'Paused-state #3b9af5 is a brand-new color not in the ledger. Recommended new ticket DC-010.',
+      'Completed-state #11ac69 is a brand-new green not in the ledger. Recommended new ticket DC-009.',
     ],
   },
   {
@@ -164,9 +174,16 @@ export const componentSpecs: ComponentSpec[] = [
     </div>
   )}
 </div>`,
-    verificationStatus: 'inferred',
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/PracticeZone/components/milestoneAccordion/milestoneAccordion.module.scss',
+    verificationStatus: 'conflict',
     conflicts: [
-      'Source file not located in brightchamps-student-feed. The 98 Accordion DOM elements counted in the audit live elsewhere (likely /learn/ lesson lists or /badges/).',
+      'Border: spec says color/neutral/200 (#e7e7e7). Production uses bottom-border-only #37255124 (brand-purple at 14% alpha).',
+      'Title text: spec says color/neutral/1400 (#212121). Production uses #222A33 (= color/info/1500).',
+      'Status / body text: spec says color/neutral/600 (#3d4d5d). Production uses brand purple #6651E4 for active status and #222A33 for inactive — neutral-only treatment is wrong for this component.',
+      'Border radius: spec says radius/md (8px). Production has no wrapper border-radius; the inner status pill is 6px.',
+      'Padding: spec says space/4 (16px). Production uses 20px 0.',
+      'Background (default): spec says color/neutral/100 (#ffffff). Production wrapper has no background — transparent over its container.',
+      'There is also src/components/FAQ/ — a simpler accordion shape used for FAQs. milestoneAccordion is the better match for the spec\'s lesson/module use case.',
     ],
   },
   {
@@ -217,9 +234,15 @@ export const componentSpecs: ComponentSpec[] = [
     </li>
   ))}
 </ol>`,
-    verificationStatus: 'inferred',
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/learn/components/LessonList/LessonList.module.scss',
+    verificationStatus: 'conflict',
     conflicts: [
-      'Source file not located in brightchamps-student-feed. LessonList lives on the /learn/ surface only (43 elements per DOM audit). Only "lesson" reference in this repo is a comment in CompletionCardBody.',
+      'Row background: spec says color/neutral/100 (#ffffff) for default — production .activeList uses #fff for active rows only; default rows are transparent over container.',
+      'Border radius: spec says radius/md (8px). Production uses 16px (= $border-radius-medium).',
+      'Padding (block): spec says space/4 (16px). Production uses 26px 0 (desktop) / 15px 0 (mobile) — no token.',
+      'Divider: spec says color/neutral/200 (#e7e7e7). Production uses rgb(10, 13, 15, 0.1) (alpha overlay, not in ledger).',
+      'Status icon size: spec says space/4 (16px). Production .upcomingIcon is 24px desktop / 16px mobile.',
+      'Status colors per row (locked/available/in-progress/completed) live in LessonList/components/LeftSectionInList/ subcomponents — not yet read. Spec values for those statuses are still inferred.',
     ],
   },
   {
@@ -250,8 +273,10 @@ export const componentSpecs: ComponentSpec[] = [
 />`,
     verificationStatus: 'inferred',
     conflicts: [
-      'Source file not located in brightchamps-student-feed. No file matching GreenLine / green-line. The 49 elements counted in the audit live on the broader student-app surfaces.',
-      'Production success color is #24C26E (color/success/300), not #00B67A (color/success/500) per the spec. Same conflict as ProgressLine and DC-001.',
+      'No reusable GreenLine component exists in either the feed or dashboard repos. Searched for green-line, GreenLine, greenline, separator, divider — none match.',
+      'The 49 elements counted in the DOM audit are inline patterns (toggle indicators, badge tab indicators, prelogin markers) rendered per-component, not extracted.',
+      'Production success colors disagree across repos: feed uses #24C26E (color/success/300), dashboard ProgressBar uses #11ac69 (a fourth green not yet in the ledger). Spec says #00B67A (color/success/500).',
+      'Recommendation: either remove GreenLine from componentSpecs and merge its tokens into ProgressLine variants, or document it as a utility pattern with no source file.',
     ],
   },
   {
@@ -309,10 +334,16 @@ export const componentSpecs: ComponentSpec[] = [
     {children}
   </main>
 </div>`,
-    verificationStatus: 'inferred',
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/layouts/DashboardLayout/dashboardLayout.module.scss',
+    verificationStatus: 'conflict',
     conflicts: [
-      'Source file not located in brightchamps-student-feed. The feed repo is mounted inside a parent shell — the Layout / sidebar / app frame is owned by another codebase.',
-      'Per docs/component-spec-verification.md: spec uses color/brand/primary (#4e3bc2) for the active sidebar item, but production code uses #6651e4 (color/primary/500) for every brand-purple touch. Pending DC-005 resolution.',
+      'Page background: spec says color/neutral/100 (#ffffff). Production uses $app-background (#f5f4fa) — a tinted lavender, not pure white.',
+      'Sidebar width (desktop): spec says 240px. Production has a 104px chrome rail (icon + minimal labels), NOT a wide 240px sidebar. The IA is fundamentally different.',
+      'Three-column layout: production has left rail (104px) + main (max 880px) + right context panel (460px). Spec describes only two columns (sidebar + main).',
+      'Sidebar background / active item colors: spec describes them, but they live inside src/components/NavigationBar/ (a separate component), not in dashboardLayout.module.scss. Need separate verification pass.',
+      'Variants: spec has with-sidebar / without-sidebar / mobile. Production has 8 distinct Layouts (AppLayout, LoginLayout, FullScreenLayout, FullWidthLayout, OnboardingLayout, DashboardLayout, DemoDashboardLayout, GameDashboardLayout) — each is its own component, not a variant.',
+      'Padding (32px 24px) matches space/8 + space/6 ✓.',
+      'Per docs/component-spec-verification-dashboard.md and DC-005: brand-primary touchpoints use #4e3bc2 / #6651e4 / #722ED1 inconsistently across this repo. Pending DC-005 four-way resolution.',
     ],
   },
 ]
