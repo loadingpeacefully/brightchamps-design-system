@@ -23,6 +23,12 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-26 — Phase 1-6 source analysis pipeline
+  { date: '2026-04-26', version: 'v0.6', kind: 'AUDIT',    title: 'Source-code drift analysis — 774 colors, 20% token adoption, 379 files ranked',  status: 'shipped', note: 'static analysis, no Playwright', href: '/surfaces/student/#source' },
+  { date: '2026-04-26', version: 'v0.6', kind: 'TOOL',     title: 'Engineering migration guide — 25 copy-paste sed commands, 0 placeholders',       status: 'shipped', note: 'Steps 0-3 zero visual change',  href: '/surfaces/student/#migrate' },
+  { date: '2026-04-26', version: 'v0.6', kind: 'COMPONENT', title: 'NavBar + LeftSideBar specs added (verified against source)',                    status: 'shipped', note: 'first VERIFIED entries',       href: '/components/' },
+  { date: '2026-04-26', version: 'v0.6', kind: 'TOOL',     title: 'AI Generator system prompt: 5 real production SCSS modules embedded',            status: 'shipped', note: 'untested with real output yet', href: '/tools/generate/' },
+
   // 2026-04-26 — corrections pass (after full system audit)
   { date: '2026-04-26', version: 'v0.5', kind: 'AUDIT',    title: 'Full system audit — 16 site lies fixed',                       status: 'shipped', note: 'spec callouts + TDR-0001 frontmatter accepted', href: '/full-system-audit-2026-04-26' },
   { date: '2026-04-26', version: 'v0.5', kind: 'DECISION', title: 'DR-004 · Component spec accuracy standard',                    status: 'decided', href: '/get-started/decisions/#dr-004' },
