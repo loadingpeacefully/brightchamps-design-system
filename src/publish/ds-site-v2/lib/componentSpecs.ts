@@ -18,6 +18,18 @@ export interface ComponentSpec {
     value: string
   }[]
   usageExample: string
+  /** Path inside the production student-app codebase, when located. */
+  sourceFile?: string
+  /**
+   * - `verified`: spec was compared against the source file and matches it
+   * - `inferred`: spec was authored from DOM audit / designer DS, not yet
+   *   verified against real source
+   * - `conflict`: source file located, but spec disagrees with it on at least
+   *   one property — see `conflicts[]`
+   */
+  verificationStatus: 'verified' | 'inferred' | 'conflict'
+  /** Discrepancies between this spec and the source file. */
+  conflicts?: string[]
 }
 
 export const componentSpecs: ComponentSpec[] = [
@@ -56,6 +68,16 @@ export const componentSpecs: ComponentSpec[] = [
 >
   Primary Action
 </button>`,
+    sourceFile: 'repo-cloned/brightchamps-student-feed-b84495106f34/src/components/atoms/Button/Button.scss',
+    verificationStatus: 'conflict',
+    conflicts: [
+      'Primary background: spec says color/brand/primary (#4e3bc2). Source uses #6651e4 (color/primary/500). Production de facto brand color is #6651e4 (used in 9 places across 7 files).',
+      'No Secondary variant in source. Source has .submit (white bg) and .quiz (#f0ad4e bootstrap orange). Spec calls for color/warning/500 (#ffd900).',
+      'No :hover rule in source. Spec defines hover background color/primary/700 (#0d47a1).',
+      'Padding mismatch: spec says space/6 + space/3 (24px / 12px). Source uses 10px 15px (default) and 10px 20px (.primary).',
+      'Border radius: spec says radius/full (9999px). Source has 5px on .btn base, 100px on .primary and .submit.',
+      'Bug in source: Button.scss line ~31 has `color: 007bff;` (missing # — invalid CSS). Submit-variant text color is broken.',
+    ],
   },
   {
     name: 'ProgressLine',
@@ -89,6 +111,11 @@ export const componentSpecs: ComponentSpec[] = [
     }}
   />
 </div>`,
+    verificationStatus: 'inferred',
+    conflicts: [
+      'Source file not located. ProgressLine appears in the broader student-app surfaces (63 elements across 7 pages per DOM audit), but no matching React component exists in the brightchamps-student-feed repo. Likely lives in the /learn/ surface codebase.',
+      'Per docs/component-spec-verification.md: success-fill spec value (#00B67A, color/success/500) disagrees with what production currently ships in CertificateCardBody (#24C26E, color/success/300). Same conflict tracked as DC-001.',
+    ],
   },
   {
     name: 'Accordion',
@@ -137,6 +164,10 @@ export const componentSpecs: ComponentSpec[] = [
     </div>
   )}
 </div>`,
+    verificationStatus: 'inferred',
+    conflicts: [
+      'Source file not located in brightchamps-student-feed. The 98 Accordion DOM elements counted in the audit live elsewhere (likely /learn/ lesson lists or /badges/).',
+    ],
   },
   {
     name: 'LessonList',
@@ -186,6 +217,10 @@ export const componentSpecs: ComponentSpec[] = [
     </li>
   ))}
 </ol>`,
+    verificationStatus: 'inferred',
+    conflicts: [
+      'Source file not located in brightchamps-student-feed. LessonList lives on the /learn/ surface only (43 elements per DOM audit). Only "lesson" reference in this repo is a comment in CompletionCardBody.',
+    ],
   },
   {
     name: 'GreenLine',
@@ -213,6 +248,11 @@ export const componentSpecs: ComponentSpec[] = [
     margin: 'var(--space-4) 0',
   }}
 />`,
+    verificationStatus: 'inferred',
+    conflicts: [
+      'Source file not located in brightchamps-student-feed. No file matching GreenLine / green-line. The 49 elements counted in the audit live on the broader student-app surfaces.',
+      'Production success color is #24C26E (color/success/300), not #00B67A (color/success/500) per the spec. Same conflict as ProgressLine and DC-001.',
+    ],
   },
   {
     name: 'Layout',
@@ -269,5 +309,10 @@ export const componentSpecs: ComponentSpec[] = [
     {children}
   </main>
 </div>`,
+    verificationStatus: 'inferred',
+    conflicts: [
+      'Source file not located in brightchamps-student-feed. The feed repo is mounted inside a parent shell — the Layout / sidebar / app frame is owned by another codebase.',
+      'Per docs/component-spec-verification.md: spec uses color/brand/primary (#4e3bc2) for the active sidebar item, but production code uses #6651e4 (color/primary/500) for every brand-purple touch. Pending DC-005 resolution.',
+    ],
   },
 ]

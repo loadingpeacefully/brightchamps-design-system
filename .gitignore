@@ -16,3 +16,6 @@ src/publish/ds-site-v2/lib/tokens.generated.ts
 
 # Designer DS source (reference only, not part of build)
 Design System Dashbaord/
+
+# Cloned external repos used for source-code analysis
+repo-cloned/

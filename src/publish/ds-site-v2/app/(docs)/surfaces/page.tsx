@@ -21,12 +21,12 @@ const TOC = [
 
 function isHex(v: string | null): v is string { return !!v && /^#[0-9a-f]{3,8}$/i.test(v) }
 
-function SeverityBadge({ severity }: { severity: 'high' | 'medium' | 'low' }) {
-  const cls = severity === 'high'
-    ? 'bg-[rgba(240,41,77,0.12)] text-[#a31836]'
-    : severity === 'medium'
-      ? 'bg-[rgba(255,187,58,0.18)] text-[#8a5e00]'
-      : 'bg-[rgba(132,153,174,0.18)] text-chrome-text-subtle'
+function SeverityBadge({ severity }: { severity: 'critical' | 'high' | 'medium' | 'low' }) {
+  const cls =
+    severity === 'critical' ? 'bg-[rgba(99,9,21,0.92)] text-white border border-[#a31836]' :
+    severity === 'high'     ? 'bg-[rgba(240,41,77,0.12)] text-[#a31836]' :
+    severity === 'medium'   ? 'bg-[rgba(255,187,58,0.18)] text-[#8a5e00]' :
+                              'bg-[rgba(132,153,174,0.18)] text-chrome-text-subtle'
   return <span className={'inline-block rounded-[10px] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em] ' + cls}>{severity}</span>
 }
 
@@ -40,15 +40,44 @@ function StatusPill({ status }: { status: 'open' | 'pending-confirmation' | 'res
   return <span className="inline-block rounded-[10px] bg-[rgba(13,71,161,0.14)] text-[#0d47a1] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em]">Engineering action</span>
 }
 
-function ConflictRow({ ticket }: { ticket: DesignerConflict }) {
-  const showSwatches = ticket.category === 'color' && (isHex(ticket.designerValue) || isHex(ticket.productionValue))
+function Swatch({ label, value }: { label: string; value: string | null | undefined }) {
   return (
-    <article className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
+    <div>
+      <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">{label}</div>
+      {isHex(value ?? null) ? (
+        <div className="flex items-center gap-2">
+          <div className="h-8 w-8 rounded border border-chrome-border" style={{ background: value as string }} />
+          <span className="font-mono text-[12px] text-chrome-text">{value}</span>
+        </div>
+      ) : (
+        <span className="text-[12px] text-chrome-text-subtlest italic">{value ?? 'no match'}</span>
+      )}
+    </div>
+  )
+}
+
+function ConflictRow({ ticket }: { ticket: DesignerConflict }) {
+  const isThreeWay = ticket.threeWayConflict === true
+  const showSwatches = ticket.category === 'color' && (isHex(ticket.designerValue) || isHex(ticket.productionValue))
+  const isCritical = ticket.severity === 'critical'
+  return (
+    <article
+      className={
+        isCritical
+          ? 'rounded-card border-2 border-[#a31836] bg-[rgba(240,41,77,0.04)] p-5'
+          : 'rounded-card border border-chrome-border bg-chrome-surface-raised p-5'
+      }
+    >
       <div className="flex items-start justify-between gap-4 mb-3">
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
             <span className="font-mono text-[11px] font-bold text-chrome-text-subtlest">{ticket.id}</span>
             <SeverityBadge severity={ticket.severity} />
+            {isThreeWay && (
+              <span className="inline-block rounded-[10px] bg-[rgba(78,59,194,0.14)] text-[#4e3bc2] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em]">
+                3-way conflict
+              </span>
+            )}
             {ticket.deltaE !== null && (
               <span className="inline-block rounded-[10px] border border-chrome-border-bold bg-chrome-surface px-2 py-[1px] text-[10px] font-mono font-semibold text-chrome-text-subtle">ΔE {ticket.deltaE}</span>
             )}
@@ -58,30 +87,22 @@ function ConflictRow({ ticket }: { ticket: DesignerConflict }) {
         <StatusPill status={ticket.status} />
       </div>
 
-      {showSwatches ? (
+      {isThreeWay && ticket.category === 'color' ? (
+        <>
+          <div className="grid grid-cols-3 gap-3">
+            <Swatch label="Designer DS"         value={ticket.designerValue} />
+            <Swatch label="Production · Figma"   value={ticket.productionFigmaValue ?? ticket.productionValue} />
+            <Swatch label="Production · Code"    value={ticket.productionCodeValue} />
+          </div>
+          <p className="mt-3 text-[11px] leading-snug text-[#a31836]">
+            Three-way conflict detected from source code analysis — see{' '}
+            <code className="font-mono">docs/component-spec-verification.md</code>.
+          </p>
+        </>
+      ) : showSwatches ? (
         <div className="grid grid-cols-2 gap-3">
-          <div>
-            <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">Designer</div>
-            {isHex(ticket.designerValue) ? (
-              <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded border border-chrome-border" style={{ background: ticket.designerValue }} />
-                <span className="font-mono text-[12px] text-chrome-text">{ticket.designerValue}</span>
-              </div>
-            ) : (
-              <span className="text-[12px] text-chrome-text-subtlest italic">{ticket.designerValue ?? 'none'}</span>
-            )}
-          </div>
-          <div>
-            <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">Production</div>
-            {isHex(ticket.productionValue) ? (
-              <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded border border-chrome-border" style={{ background: ticket.productionValue }} />
-                <span className="font-mono text-[12px] text-chrome-text">{ticket.productionValue}</span>
-              </div>
-            ) : (
-              <span className="text-[12px] text-chrome-text-subtlest italic">no match</span>
-            )}
-          </div>
+          <Swatch label="Designer"   value={ticket.designerValue} />
+          <Swatch label="Production" value={ticket.productionValue} />
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-3 text-[12px]">

@@ -10,8 +10,14 @@ export interface DesignerConflict {
   title: string
   designerValue: string | null
   productionValue: string | null
+  /** Optional, for three-way conflicts: the value extracted from production Figma. */
+  productionFigmaValue?: string | null
+  /** Optional, for three-way conflicts: the value found in production source code. */
+  productionCodeValue?: string | null
+  /** True when designer / production-Figma / production-code all disagree. */
+  threeWayConflict?: boolean
   deltaE: number | null
-  severity: 'high' | 'medium' | 'low'
+  severity: 'critical' | 'high' | 'medium' | 'low'
   category: 'color' | 'system' | 'typography'
   action: string
   status: 'open' | 'pending-confirmation' | 'resolved'

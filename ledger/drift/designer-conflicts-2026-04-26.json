@@ -51,15 +51,18 @@
     },
     {
       "id": "DC-005",
-      "title": "Brand primary color",
+      "title": "Brand primary color — three-way conflict",
       "designerValue": "#722ED1",
       "productionValue": "#4e3bc2",
+      "productionFigmaValue": "#4e3bc2",
+      "productionCodeValue": "#6651e4",
+      "threeWayConflict": true,
       "deltaE": 18,
-      "severity": "high",
+      "severity": "critical",
       "category": "color",
-      "action": "Confirm with brand team which purple is canonical before any engineering action.",
+      "action": "Block all other token work until resolved. This is the foundation everything builds on.",
       "status": "pending-confirmation",
-      "notes": "Designer uses Royal Amethyst #722ED1. Production Figma extracts #4e3bc2. Both are purples but perceptually distinct (ΔE ~18). Keeping #4e3bc2 as canonical until brand team confirms."
+      "notes": "Three distinct purples in active use. Designer DS: #722ED1. Figma extraction canonical: #4e3bc2 (6,000 uses in Figma). Production React code: #6651e4 (9 files, all primary UI elements). None match. Brand team must pick one. Source-code evidence in docs/component-spec-verification.md and docs/hardcoded-color-migration.md."
     },
     {
       "id": "DC-006",
