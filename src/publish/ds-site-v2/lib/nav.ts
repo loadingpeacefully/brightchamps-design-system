@@ -50,10 +50,15 @@ export const NAV: NavSection[] = [
   {
     label: 'Components',
     items: [
-      { href: '/components/',            label: 'Overview' },
-      { href: '/components/button/',     label: 'Button',         badge: 'new' },
-      { href: '/components/card/',       label: 'Card',           disabled: true },
-      { href: '/components/input/',      label: 'Input',          disabled: true, badge: 'beta' },
+      { href: '/components/',                label: 'Overview' },
+      { href: '/components/button/',         label: 'Button',        badge: 'new' },
+      { href: '/components/accordion/',      label: 'Accordion',     badge: 'new' },
+      { href: '/components/progress-line/',  label: 'ProgressLine',  badge: 'new' },
+      { href: '/components/green-line/',     label: 'GreenLine',     badge: 'new' },
+      { href: '/components/lesson-list/',    label: 'LessonList',    badge: 'new' },
+      { href: '/components/layout/',         label: 'Layout',        badge: 'new' },
+      { href: '/components/card/',           label: 'Card',          disabled: true },
+      { href: '/components/input/',          label: 'Input',         disabled: true, badge: 'beta' },
     ],
   },
   {
