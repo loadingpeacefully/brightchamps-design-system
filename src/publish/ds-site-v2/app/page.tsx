@@ -8,6 +8,27 @@ export const metadata: Metadata = {
 }
 
 const WHATS_NEW = [
+  {
+    date: '2026-04-26',
+    kind: 'Merge',
+    label: 'Designer DS merge — course colors, icons, spacing, component docs',
+    description: '18 course vertical tokens, 1,215 icon library, spacing visualization, Button component page. 7 designer conflict tickets filed.',
+    href: '/surfaces/#designer-conflicts',
+  },
+  {
+    date: '2026-04-26',
+    kind: 'Audit',
+    label: '7 designer conflict tickets filed (DC-001–DC-007)',
+    description: 'Status color mismatches, icon system gap, and brand primary open question formally tracked.',
+    href: '/surfaces/#designer-conflicts',
+  },
+  {
+    date: '2026-04-26',
+    kind: 'Tokens',
+    label: '329 canonical tokens — 112 colors, 21 typography',
+    description: 'Heading scale (24/32/40/56px) added. Course vertical colors for all 6 verticals. Per-swatch descriptions.',
+    href: '/foundations/color/',
+  },
   { date: '2026-04-17', label: 'TDR-0001 proposed', href: '/tdr/0001-taxonomy-migration/', kind: 'TDR' },
   { date: '2026-04-16', label: 'First authenticated drift report · student surface', href: '/drift-review/2026-04-16/', kind: 'Drift' },
   { date: '2026-04-16', label: '13 manual canonicals added (overlays, surfaces, interactive)', href: '/tokens/color/', kind: 'Tokens' },
@@ -78,13 +99,13 @@ export default function HomePage() {
               <li key={item.date + item.label}>
                 <Link
                   href={item.href}
-                  className="flex items-center gap-4 py-3 text-body text-chrome-text hover:text-chrome-accent transition"
+                  className="group flex items-start gap-4 py-3 text-body text-chrome-text hover:text-chrome-accent transition"
                 >
-                  <time className="w-24 shrink-0 font-mono text-[12px] text-chrome-text-subtlest tabular-nums">
+                  <time className="mt-[2px] w-24 shrink-0 font-mono text-[12px] text-chrome-text-subtlest tabular-nums">
                     {item.date}
                   </time>
                   <span
-                    className="inline-flex items-center rounded-[3px] px-2 py-[1px] text-[10px] font-bold uppercase tracking-[0.04em]"
+                    className="mt-[2px] inline-flex items-center rounded-[3px] px-2 py-[1px] text-[10px] font-bold uppercase tracking-[0.04em] shrink-0"
                     style={{
                       background: 'var(--chrome-accent-subtle)',
                       color: 'var(--chrome-accent)',
@@ -92,8 +113,13 @@ export default function HomePage() {
                   >
                     {item.kind}
                   </span>
-                  <span className="flex-1 truncate">{item.label}</span>
-                  <ArrowRight size={14} className="shrink-0 text-chrome-text-subtlest transition group-hover:text-chrome-accent" />
+                  <span className="min-w-0 flex-1">
+                    <span className="block">{item.label}</span>
+                    {'description' in item && item.description && (
+                      <span className="mt-0.5 block text-[12px] leading-snug text-chrome-text-subtlest">{item.description}</span>
+                    )}
+                  </span>
+                  <ArrowRight size={14} className="mt-[5px] shrink-0 text-chrome-text-subtlest transition group-hover:text-chrome-accent" />
                 </Link>
               </li>
             ))}

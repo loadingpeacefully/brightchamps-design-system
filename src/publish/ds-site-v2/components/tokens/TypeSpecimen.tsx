@@ -15,10 +15,13 @@ export function TypeSpecimen({ token }: { token: TypographyToken }) {
     }).catch(() => {})
   }
 
-  const tierClass =
-    token.tier === 'canonical' ? 'bg-[rgba(36,194,110,0.14)] text-[#16803c]' :
-    token.tier === 'candidate' ? 'bg-[rgba(255,187,58,0.2)] text-[#8a5e00]' :
-    'bg-[rgba(132,153,174,0.18)] text-chrome-text-subtle'
+  const isDesigner = token.source === 'designer'
+  const tierClass = isDesigner
+    ? 'bg-[rgba(78,59,194,0.14)] text-[#4e3bc2]'
+    : token.tier === 'canonical' ? 'bg-[rgba(36,194,110,0.14)] text-[#16803c]'
+    : token.tier === 'candidate' ? 'bg-[rgba(255,187,58,0.2)] text-[#8a5e00]'
+    : 'bg-[rgba(132,153,174,0.18)] text-chrome-text-subtle'
+  const tierLabel = isDesigner ? 'Designer' : token.tier
 
   return (
     <article className="grid gap-6 rounded-card border border-chrome-border bg-chrome-surface-raised p-5 transition hover:border-chrome-border-bold md:grid-cols-[240px_1fr]">
@@ -41,12 +44,24 @@ export function TypeSpecimen({ token }: { token: TypographyToken }) {
           <dd className="m-0 font-mono font-semibold text-chrome-text">{token.weight}</dd>
           <dt className="text-chrome-text-subtlest">Line height</dt>
           <dd className="m-0 font-mono font-semibold text-chrome-text">{lh.toFixed(1)}px</dd>
-          <dt className="text-chrome-text-subtlest">Usage</dt>
-          <dd className="m-0 font-mono font-semibold text-chrome-text">{token.usageCount.toLocaleString()}</dd>
+          {isDesigner ? (
+            <>
+              <dt className="text-chrome-text-subtlest">Status</dt>
+              <dd className="m-0 italic text-chrome-text-subtle">Not yet in production</dd>
+            </>
+          ) : (
+            <>
+              <dt className="text-chrome-text-subtlest">Usage</dt>
+              <dd className="m-0 font-mono font-semibold text-chrome-text">{token.usageCount.toLocaleString()}</dd>
+            </>
+          )}
         </dl>
         <div className="flex items-center gap-1.5 mt-1">
-          <span className={'inline-block rounded-[10px] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em] ' + tierClass}>
-            {token.tier}
+          <span
+            className={'inline-block rounded-[10px] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em] ' + tierClass}
+            title={isDesigner ? 'Added from designer source. Production usage pending implementation.' : undefined}
+          >
+            {tierLabel}
           </span>
           <button
             className="inline-flex items-center gap-1 rounded-[4px] border border-chrome-border-bold bg-chrome-surface px-2 py-[2px] text-[11px] font-semibold text-chrome-text-subtle hover:bg-chrome-accent hover:text-white hover:border-chrome-accent transition"

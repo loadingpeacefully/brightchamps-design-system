@@ -6,6 +6,7 @@ import { MobileDrawer } from './MobileDrawer'
 const NAV_LINKS = [
   { href: '/foundations/', label: 'Foundations' },
   { href: '/tokens/', label: 'Tokens' },
+  { href: '/surfaces/', label: 'Surfaces' },
   { href: '/components/', label: 'Components' },
   { href: '/patterns/', label: 'Patterns' },
   { href: '/tools/', label: 'Tools' },

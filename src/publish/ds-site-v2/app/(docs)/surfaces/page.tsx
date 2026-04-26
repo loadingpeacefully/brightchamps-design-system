@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { RightTOC } from '@/components/chrome/RightTOC'
 import { loadLatestDrift } from '@/lib/drift'
+import { loadLatestDesignerConflicts, type DesignerConflict } from '@/lib/designer-conflicts'
 import { loadComponents, loadIcons, loadStates } from '@/lib/surface-data'
 import { Terminal, Shield, AlertTriangle, HelpCircle, ArrowRight, Layers, Image, MousePointer } from 'lucide-react'
 
@@ -11,11 +12,97 @@ export const metadata: Metadata = {
 }
 
 const TOC = [
-  { id: 'student',  label: 'Student app', level: 2 as const },
-  { id: 'landing',  label: 'Landing',     level: 2 as const },
-  { id: 'teacher',  label: 'Teacher app', level: 2 as const },
-  { id: 'admin',    label: 'Admin',       level: 2 as const },
+  { id: 'student',             label: 'Student app',         level: 2 as const },
+  { id: 'designer-conflicts',  label: 'Designer conflicts',  level: 2 as const },
+  { id: 'landing',             label: 'Landing',             level: 2 as const },
+  { id: 'teacher',             label: 'Teacher app',         level: 2 as const },
+  { id: 'admin',               label: 'Admin',               level: 2 as const },
 ]
+
+function isHex(v: string | null): v is string { return !!v && /^#[0-9a-f]{3,8}$/i.test(v) }
+
+function SeverityBadge({ severity }: { severity: 'high' | 'medium' | 'low' }) {
+  const cls = severity === 'high'
+    ? 'bg-[rgba(240,41,77,0.12)] text-[#a31836]'
+    : severity === 'medium'
+      ? 'bg-[rgba(255,187,58,0.18)] text-[#8a5e00]'
+      : 'bg-[rgba(132,153,174,0.18)] text-chrome-text-subtle'
+  return <span className={'inline-block rounded-[10px] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em] ' + cls}>{severity}</span>
+}
+
+function StatusPill({ status }: { status: 'open' | 'pending-confirmation' | 'resolved' }) {
+  if (status === 'pending-confirmation') {
+    return <span className="inline-block rounded-[10px] bg-[rgba(255,187,58,0.2)] text-[#8a5e00] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em]">Awaiting brand team sign-off</span>
+  }
+  if (status === 'resolved') {
+    return <span className="inline-block rounded-[10px] bg-[rgba(36,194,110,0.14)] text-[#16803c] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em]">Resolved</span>
+  }
+  return <span className="inline-block rounded-[10px] bg-[rgba(13,71,161,0.14)] text-[#0d47a1] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em]">Engineering action</span>
+}
+
+function ConflictRow({ ticket }: { ticket: DesignerConflict }) {
+  const showSwatches = ticket.category === 'color' && (isHex(ticket.designerValue) || isHex(ticket.productionValue))
+  return (
+    <article className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
+      <div className="flex items-start justify-between gap-4 mb-3">
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="font-mono text-[11px] font-bold text-chrome-text-subtlest">{ticket.id}</span>
+            <SeverityBadge severity={ticket.severity} />
+            {ticket.deltaE !== null && (
+              <span className="inline-block rounded-[10px] border border-chrome-border-bold bg-chrome-surface px-2 py-[1px] text-[10px] font-mono font-semibold text-chrome-text-subtle">ΔE {ticket.deltaE}</span>
+            )}
+          </div>
+          <h3 className="text-[15px] font-bold text-chrome-text">{ticket.title}</h3>
+        </div>
+        <StatusPill status={ticket.status} />
+      </div>
+
+      {showSwatches ? (
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">Designer</div>
+            {isHex(ticket.designerValue) ? (
+              <div className="flex items-center gap-2">
+                <div className="h-8 w-8 rounded border border-chrome-border" style={{ background: ticket.designerValue }} />
+                <span className="font-mono text-[12px] text-chrome-text">{ticket.designerValue}</span>
+              </div>
+            ) : (
+              <span className="text-[12px] text-chrome-text-subtlest italic">{ticket.designerValue ?? 'none'}</span>
+            )}
+          </div>
+          <div>
+            <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">Production</div>
+            {isHex(ticket.productionValue) ? (
+              <div className="flex items-center gap-2">
+                <div className="h-8 w-8 rounded border border-chrome-border" style={{ background: ticket.productionValue }} />
+                <span className="font-mono text-[12px] text-chrome-text">{ticket.productionValue}</span>
+              </div>
+            ) : (
+              <span className="text-[12px] text-chrome-text-subtlest italic">no match</span>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 gap-3 text-[12px]">
+          <div>
+            <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">Designer</div>
+            <div className="text-chrome-text">{ticket.designerValue ?? 'none'}</div>
+          </div>
+          <div>
+            <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest mb-1">Production</div>
+            <div className="text-chrome-text">{ticket.productionValue ?? 'none'}</div>
+          </div>
+        </div>
+      )}
+
+      <p className="mt-3 text-[12px] leading-snug text-chrome-text-subtle"><strong className="text-chrome-text">Action:</strong> {ticket.action}</p>
+      {ticket.notes && (
+        <p className="mt-1.5 text-[11px] leading-snug italic text-chrome-text-subtlest">{ticket.notes}</p>
+      )}
+    </article>
+  )
+}
 
 function ProgressBar({ value, total, color, label }: { value: number; total: number; color: string; label: string }) {
   const pct = total > 0 ? (value / total) * 100 : 0
@@ -51,6 +138,7 @@ function EmptyCard({ id, label, description, cmd }: { id?: string; label: string
 
 export default function SurfacesPage() {
   const drift = loadLatestDrift()
+  const conflicts = loadLatestDesignerConflicts()
   const components = loadComponents()
   const icons = loadIcons()
   const states = loadStates()
@@ -153,6 +241,22 @@ export default function SurfacesPage() {
             </div>
           </article>
 
+        </div>
+
+        {conflicts && conflicts.tickets.length > 0 && (
+          <section id="designer-conflicts" className="mt-12 scroll-mt-24">
+            <h2 className="text-h2 text-chrome-text">Design intent vs production</h2>
+            <p className="mt-2 max-w-[62ch] text-body-s text-chrome-text-subtle">
+              {conflicts.tickets.length} tickets — designer-authored values vs what production ships.
+              Source: {conflicts.source}
+            </p>
+            <div className="mt-6 grid gap-4">
+              {conflicts.tickets.map(ticket => <ConflictRow key={ticket.id} ticket={ticket} />)}
+            </div>
+          </section>
+        )}
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {/* ─── Empty surfaces ──────────────────────────────── */}
           <EmptyCard id="landing" label="Landing pages" description="brightchamps.com · public marketing site" cmd="npm run extract:dom -- --surface=landing" />
           <EmptyCard id="teacher" label="Teacher app" description="Teacher dashboard and lesson management" cmd="npm run extract:dom -- --surface=teacher" />

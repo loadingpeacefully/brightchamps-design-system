@@ -103,6 +103,7 @@ interface GeneratedColorToken {
   category: ColorCategory
   feedbackRole?: FeedbackRole
   description?: string
+  openQuestion?: string
   usageCount: number
   confidence: number
   tier: 'canonical' | 'candidate' | 'deprecated'
@@ -157,6 +158,9 @@ function build(): void {
     // Propagate description from ledger (manual-canonicals or synthesized)
     const desc = t.description ?? (t.raw as Record<string, unknown> | undefined)?.['description'] as string | undefined
     if (desc) token.description = desc
+    // Propagate openQuestion from manual-canonicals (resolver puts it on token.raw.openQuestion)
+    const openQ = (t.raw as Record<string, unknown> | undefined)?.['openQuestion'] as string | undefined
+    if (openQ) token.openQuestion = openQ
     return token
   })
 
@@ -199,6 +203,7 @@ function build(): void {
     confidence: number
     tier: 'canonical' | 'candidate' | 'deprecated'
     role: 'display' | 'heading' | 'body' | 'caption'
+    source?: 'figma' | 'dom' | 'designer'
   }
 
   const typoTokens = canonical.filter(t => t.type === 'typography')
@@ -212,7 +217,7 @@ function build(): void {
       if (size >= 20) role = 'display'
       else if (weight >= 600 && size >= 16) role = 'heading'
       else if (size <= 12) role = 'caption'
-      return {
+      const out: GeneratedTypoToken = {
         name: t.name,
         value: t.value,
         cssVar: cssVarName(t.name),
@@ -226,6 +231,8 @@ function build(): void {
         tier: (t.confidence >= 0.9 ? 'canonical' : t.confidence >= 0.4 ? 'candidate' : 'deprecated') as GeneratedTypoToken['tier'],
         role,
       }
+      if (t.source) out.source = t.source as GeneratedTypoToken['source']
+      return out
     })
     .filter((t): t is GeneratedTypoToken => t !== null)
     .sort((a, b) => {
@@ -253,6 +260,7 @@ function build(): void {
   tsLines.push('  category: ColorCategory')
   tsLines.push('  feedbackRole?: FeedbackRole')
   tsLines.push('  description?: string')
+  tsLines.push('  openQuestion?: string')
   tsLines.push('  usageCount: number')
   tsLines.push('  confidence: number')
   tsLines.push('  tier: Tier')
@@ -294,6 +302,7 @@ function build(): void {
   tsLines.push('  confidence: number')
   tsLines.push('  tier: Tier')
   tsLines.push('  role: TypoRole')
+  tsLines.push('  source?: "figma" | "dom" | "designer"')
   tsLines.push('}')
   tsLines.push('')
   tsLines.push('export const typographyTokens: TypographyToken[] = ' + JSON.stringify(generatedTypo, null, 2) + ' as const satisfies TypographyToken[]')

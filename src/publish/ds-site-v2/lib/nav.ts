@@ -19,7 +19,7 @@ export const NAV: NavSection[] = [
       { href: '/get-started/',            label: 'Overview',        badge: 'beta' },
       { href: '/get-started/design/',     label: 'For designers',   disabled: true },
       { href: '/get-started/develop/',    label: 'For engineers',   disabled: true },
-      { href: '/get-started/contribute/', label: 'Contributing',    disabled: true },
+      { href: '/get-started/contribute/', label: 'Contributing',    badge: 'new' },
       { href: '/get-started/glossary/',   label: 'Glossary',        badge: 'new' },
     ],
   },

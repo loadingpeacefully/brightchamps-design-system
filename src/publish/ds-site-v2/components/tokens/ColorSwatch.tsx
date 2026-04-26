@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, Copy } from 'lucide-react'
+import { Check, Copy, AlertTriangle } from 'lucide-react'
 import type { ColorToken } from '@/lib/tokens.generated'
 
 function isAlphaHex(v: string): boolean { return /^#[0-9a-f]{8}$/i.test(v) }
@@ -88,6 +88,15 @@ export function ColorSwatch({ token }: { token: ColorToken }) {
         )}
         {token.description && !token.description.startsWith('Extracted from student') && (
           <p className="mt-2 text-[11px] leading-snug text-chrome-text-subtlest">{token.description}</p>
+        )}
+        {token.openQuestion && (
+          <div className="mt-2 rounded-md border-l-2 border-amber-500/70 bg-amber-50/60 dark:bg-amber-950/25 px-2 py-1.5">
+            <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.05em] text-amber-700 dark:text-amber-400">
+              <AlertTriangle size={11} strokeWidth={2} />
+              Open question
+            </div>
+            <p className="mt-0.5 text-[11px] leading-snug text-chrome-text">{token.openQuestion}</p>
+          </div>
         )}
       </div>
     </article>

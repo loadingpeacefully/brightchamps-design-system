@@ -19,7 +19,10 @@ export interface DriftSummary {
 
 export function loadLatestDrift(): DriftSummary | null {
   try {
-    const files = readdirSync(DRIFT_DIR).filter(f => f.endsWith('.json')).sort()
+    const files = readdirSync(DRIFT_DIR)
+      .filter(f => f.endsWith('.json'))
+      .filter(f => !f.startsWith('designer-') && !f.startsWith('figma-'))
+      .sort()
     if (files.length === 0) return null
     const latest = files[files.length - 1]!
     const raw = JSON.parse(readFileSync(path.join(DRIFT_DIR, latest), 'utf-8'))
@@ -30,6 +33,9 @@ export function loadLatestDrift(): DriftSummary | null {
     const u = bs.unknown ?? 0
     const sg = bs['system-gap'] ?? 0
     const total = m + d + mi + u + sg
+    if (total === 0) {
+      console.error('[drift] loadLatestDrift returned empty stats — check filename filter and report shape (file:', latest, ')')
+    }
     return {
       date: latest.replace('.json', ''),
       totalItems: raw.totalItems ?? total,
