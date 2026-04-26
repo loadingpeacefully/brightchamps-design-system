@@ -1,8 +1,10 @@
 ---
 number: 0001
 title: Semantic taxonomy migration — frequency-ranked → role-based
-status: proposed
+status: accepted
 date: 2026-04-16
+accepted-date: 2026-04-26
+note: "Accepted — migrate-tokens.ts ran destructively. See tokens.legacy.json for backup."
 deciders:
   - Suneet Jagdev (PM, primary approver)
   - Design team lead (awaiting)
@@ -20,9 +22,14 @@ breaking: true
 
 ## Status
 
-**Proposed.** Dry-run migration script executed 2026-04-16; artifacts at
-`ledger/tokens.proposed.json` and `ledger/deprecated.proposed.json`. No
-destructive writes yet.
+**Accepted (2026-04-26).** `scripts/migrate-tokens.ts` ran destructively against
+`ledger/tokens.json`. Backup saved at `ledger/tokens.legacy.json`. 173 tokens
+renamed to the hybrid semantic taxonomy described below. CSS variable prefix
+dropped from `--bc-*` to `--color-*` / `--space-*` / `--radius-*` / `--font-*`.
+The dry-run preceded acceptance on 2026-04-16; destructive run on 2026-04-26.
+
+Brand team formal sign-off on the brand-color value (see DC-005) is pending —
+the taxonomy is accepted independent of which hex value `color/brand/primary` resolves to.
 
 ## Context
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { RightTOC } from '@/components/chrome/RightTOC'
+import { AlertTriangle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'ProgressLine',
@@ -53,6 +54,20 @@ export default function ProgressLinePage() {
           Horizontal progress bar that shows lesson or course completion. Used wherever a learner has a
           quantifiable goal — lessons inside a course, modules inside a lesson, percentages on dashboards.
         </p>
+
+        <div className="mt-4 rounded-card border-l-4 border-l-amber-500 border border-chrome-border bg-amber-50/40 dark:bg-amber-950/15 p-4">
+          <div className="flex items-start gap-2">
+            <AlertTriangle size={14} strokeWidth={2} className="mt-0.5 shrink-0 text-amber-600" />
+            <p className="text-body-s text-chrome-text">
+              <strong className="uppercase tracking-[0.04em] text-[12px] text-amber-700 dark:text-amber-400">Missing variants.</strong>{' '}
+              Skipped (<code className="font-mono text-[12px]">#ff752c</code>) and Paused
+              (<code className="font-mono text-[12px]">#3b9af5</code>) variants not documented. Completed fill shows
+              <code className="font-mono text-[12px]"> #00B67A</code> but production ships
+              <code className="font-mono text-[12px]"> #11ac69</code> (
+              <a href="/surfaces/#designer-conflicts" className="text-chrome-accent underline underline-offset-4">DC-009</a>).
+            </p>
+          </div>
+        </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-4">

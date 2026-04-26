@@ -23,6 +23,10 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-26 — corrections pass (after full system audit)
+  { date: '2026-04-26', version: 'v0.5', kind: 'AUDIT',    title: 'Full system audit — 16 site lies fixed',                       status: 'shipped', note: 'spec callouts + TDR-0001 frontmatter accepted', href: '/full-system-audit-2026-04-26' },
+  { date: '2026-04-26', version: 'v0.5', kind: 'DECISION', title: 'DR-004 · Component spec accuracy standard',                    status: 'decided', href: '/get-started/decisions/#dr-004' },
+
   // 2026-04-26 — today's freeze
   { date: '2026-04-26', version: 'v0.4', kind: 'TOOL',     title: '/tools/generate — AI Generator (Layer 3)',                   status: 'shipped', note: 'Prompt → on-brand component', href: '/tools/generate/' },
   { date: '2026-04-26', version: 'v0.4', kind: 'DECISION', title: 'DR-001 · Migration target = newDashboard',                    status: 'decided', href: '/get-started/decisions/#dr-001' },
@@ -36,7 +40,7 @@ const ENTRIES: Entry[] = [
   { date: '2026-04-26', version: 'v0.3', kind: 'AUDIT',    title: 'Component spec verification — 5 of 6 vs dashboard repo',      status: 'shipped', href: '/components/' },
   { date: '2026-04-26', version: 'v0.3', kind: 'DRIFT',    title: 'DC-008 / DC-009 / DC-010 filed (typo, progress green, paused)', status: 'shipped', href: '/surfaces/#designer-conflicts' },
   { date: '2026-04-26', version: 'v0.3', kind: 'COMPONENT', title: '5 component specs shipped (ProgressLine / Accordion / LessonList / GreenLine / Layout)', status: 'shipped', href: '/components/' },
-  { date: '2026-04-26', version: 'v0.3', kind: 'TDR',      title: 'TDR-0001 shipped — semantic token names live (color/primary/500 etc.)', status: 'shipped', href: '/tdr/0001-taxonomy-migration/' },
+  { date: '2026-04-26', version: 'v0.3', kind: 'TDR',      title: 'TDR-0001 shipped — semantic token names live (color/primary/500 etc.)', status: 'shipped', note: 'frontmatter status now: accepted (2026-04-26)', href: '/tdr/0001-taxonomy-migration/' },
   { date: '2026-04-26', version: 'v0.3', kind: 'MERGE',    title: 'Designer DS merge — course colors, icons, spacing, button',   status: 'shipped', href: '/foundations/color/' },
   { date: '2026-04-26', version: 'v0.3', kind: 'AUDIT',    title: '7 designer-conflict tickets filed (DC-001–DC-007)',           status: 'shipped', href: '/surfaces/#designer-conflicts' },
   { date: '2026-04-26', version: 'v0.3', kind: 'TOKENS',   title: '329 canonical tokens — 112 colors, 21 typography',            status: 'shipped', href: '/foundations/color/' },

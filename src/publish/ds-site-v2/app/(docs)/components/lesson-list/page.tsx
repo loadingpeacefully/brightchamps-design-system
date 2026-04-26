@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { RightTOC } from '@/components/chrome/RightTOC'
-import { Lock, Play, CheckCircle2, Circle } from 'lucide-react'
+import { Lock, Play, CheckCircle2, Circle, AlertTriangle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'LessonList',
@@ -85,6 +85,17 @@ export default function LessonListPage() {
           Ordered list of lessons with per-row status. Used inside course detail pages and the
           /learn/ surface to give learners a clear sequence + their place in it.
         </p>
+
+        <div className="mt-4 rounded-card border-l-4 border-l-amber-500 border border-chrome-border bg-amber-50/40 dark:bg-amber-950/15 p-4">
+          <div className="flex items-start gap-2">
+            <AlertTriangle size={14} strokeWidth={2} className="mt-0.5 shrink-0 text-amber-600" />
+            <p className="text-body-s text-chrome-text">
+              <strong className="uppercase tracking-[0.04em] text-[12px] text-amber-700 dark:text-amber-400">Spec conflict.</strong>{' '}
+              Border-radius documented as 8px. Production uses <code className="font-mono text-[12px]">16px</code>{' '}
+              (<code className="font-mono text-[12px]">$border-radius-medium</code>).
+            </p>
+          </div>
+        </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-4">

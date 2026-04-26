@@ -340,7 +340,7 @@ if (Comp) {
           {state.loading ? 'Generating…' : 'Generate'}
         </button>
         <p className="mt-2 text-[11px] text-chrome-text-subtlest text-center">
-          Uses BrightChamps design tokens. Output is on-brand by default.
+          Beta — uses BrightChamps design tokens. Output quality varies. Verify against production before shipping.
         </p>
       </section>
 

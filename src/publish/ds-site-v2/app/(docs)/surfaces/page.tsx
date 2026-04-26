@@ -206,8 +206,7 @@ export default function SurfacesPage() {
         <div className="text-overline text-chrome-text-subtlest mb-2">Surfaces</div>
         <h1 className="text-h1 text-chrome-text">Surfaces</h1>
         <p className="mt-3 max-w-[62ch] text-body-l text-chrome-text-subtle">
-          Health dashboard for every BrightChamps surface. The student surface is fully extracted;
-          landing, teacher, and admin are pending.
+          Health dashboard — 1 of 4 surfaces extracted. Teacher, Admin, and Landing pending.
         </p>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -222,6 +221,10 @@ export default function SurfacesPage() {
               )}
             </div>
             <p className="text-body-s text-chrome-text-subtle">champ.brightchamps.com · 7 URLs · Last extracted {drift?.date ?? 'unknown'}</p>
+            <p className="mt-1 text-[12px] text-amber-700 dark:text-amber-400">
+              Data from {drift?.date ?? '—'} — 10 days stale. Re-run:{' '}
+              <code className="font-mono text-[11px]">npm run extract:dom -- --surface=student</code>
+            </p>
 
             {drift && (
               <>

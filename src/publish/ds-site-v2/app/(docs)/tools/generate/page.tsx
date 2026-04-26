@@ -12,8 +12,9 @@ export default function GeneratorPage() {
       <div className="text-overline text-chrome-text-subtlest mb-2">Tools</div>
       <h1 className="text-h1 text-chrome-text">AI Generator</h1>
       <p className="mt-3 max-w-[62ch] text-body-l text-chrome-text-subtle">
-        Describe a component in plain English. The generator returns production-ready React (or HTML)
-        code wired to BrightChamps design tokens — no hardcoded hex, no off-brand fonts, no token drift.
+        <strong className="inline-block rounded-[3px] bg-[rgba(255,187,58,0.20)] text-[#8a5e00] px-1.5 py-[1px] text-[10px] font-bold uppercase tracking-[0.06em] mr-1.5 align-middle">Beta</strong>
+        Generates on-brand component code using design tokens. Output quality varies. Verify against
+        production before shipping.
       </p>
       <p className="mt-2 max-w-[62ch] text-body-s text-chrome-text-subtlest">
         Layer 3 of the design system: Layer 1 is the ledger, Layer 2 is the component specs, this is the layer

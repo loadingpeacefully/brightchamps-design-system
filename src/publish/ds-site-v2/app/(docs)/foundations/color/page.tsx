@@ -101,6 +101,11 @@ export default function ColorPage() {
           <InfoChip label="Total canonical" value={tokenMeta.totalCanonical.toLocaleString()} />
           <InfoChip label="Colors" value={tokenMeta.totalColors.toLocaleString()} />
         </div>
+        <p className="mt-2 text-[11px] text-chrome-text-subtlest leading-snug max-w-[62ch]">
+          {tokenMeta.totalCanonical.toLocaleString()} canonical tokens includes 145 spacing shorthand
+          values (e.g. <code className="font-mono">'5px 0px'</code>) that are not usable as design
+          tokens. Single-value spacing canonicals: 12.
+        </p>
         <div className="mt-4">
           <BulkExport
             label={`${tokenMeta.totalColors} color`}

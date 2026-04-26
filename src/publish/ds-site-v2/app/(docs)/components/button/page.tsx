@@ -65,7 +65,20 @@ export default function ButtonPage() {
           Secondary for supporting actions, and Ghost for tertiary or low-emphasis actions.
         </p>
 
-        <div className="mt-4 rounded-card border border-l-4 border-l-chrome-accent border-chrome-border bg-chrome-accent-subtle p-4">
+        <div className="mt-4 rounded-card border-2 border-[#a31836] bg-[rgba(240,41,77,0.06)] p-4">
+          <div className="flex items-start gap-2">
+            <AlertTriangle size={16} strokeWidth={2} className="mt-0.5 shrink-0 text-[#a31836]" />
+            <p className="text-body-s text-chrome-text">
+              <strong className="text-[#a31836] uppercase tracking-[0.04em] text-[12px]">Spec conflict.</strong>{' '}
+              This page documents aspirational variants (Primary/Secondary/Ghost). Production uses
+              {' '}<code className="font-mono text-[12px]">contained / outlined / danger / info / underline</code>.
+              See{' '}<a href="/surfaces/#designer-conflicts" className="text-chrome-accent underline underline-offset-4">DC-005</a>.
+              {' '}<strong>Do not build from this spec.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-3 rounded-card border border-l-4 border-l-chrome-accent border-chrome-border bg-chrome-accent-subtle p-4">
           <div className="flex items-start gap-2">
             <AlertTriangle size={14} className="mt-0.5 shrink-0 text-chrome-accent" />
             <p className="text-body-s text-chrome-text">

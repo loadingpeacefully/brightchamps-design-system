@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { RightTOC } from '@/components/chrome/RightTOC'
+import { AlertTriangle } from 'lucide-react'
 import { AccordionDemo } from './AccordionDemo'
 
 export const metadata: Metadata = {
@@ -40,6 +41,16 @@ export default function AccordionPage() {
           Expandable content sections. Used for lesson lists, FAQ blocks, and any place where you want
           to give learners scannable headings with on-demand detail.
         </p>
+
+        <div className="mt-4 rounded-card border-l-4 border-l-amber-500 border border-chrome-border bg-amber-50/40 dark:bg-amber-950/15 p-4">
+          <div className="flex items-start gap-2">
+            <AlertTriangle size={14} strokeWidth={2} className="mt-0.5 shrink-0 text-amber-600" />
+            <p className="text-body-s text-chrome-text">
+              <strong className="uppercase tracking-[0.04em] text-[12px] text-amber-700 dark:text-amber-400">Partial spec.</strong>{' '}
+              MilestoneAccordion variant uses <code className="font-mono text-[12px]">#6651e4</code> for status text — not documented here.
+            </p>
+          </div>
+        </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-4">

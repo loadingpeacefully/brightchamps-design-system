@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { RightTOC } from '@/components/chrome/RightTOC'
-import { LayoutGrid, Star, Award, BookOpen, Bell } from 'lucide-react'
+import { LayoutGrid, Star, Award, BookOpen, Bell, AlertTriangle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Layout',
@@ -110,6 +110,17 @@ export default function LayoutPage() {
           The shell container for every student dashboard page. Provides the sidebar nav, the main
           content well, and the responsive switch to a drawer on mobile.
         </p>
+
+        <div className="mt-4 rounded-card border-2 border-[#a31836] bg-[rgba(240,41,77,0.06)] p-4">
+          <div className="flex items-start gap-2">
+            <AlertTriangle size={16} strokeWidth={2} className="mt-0.5 shrink-0 text-[#a31836]" />
+            <p className="text-body-s text-chrome-text">
+              <strong className="text-[#a31836] uppercase tracking-[0.04em] text-[12px]">Spec conflict.</strong>{' '}
+              Sidebar documented as 240px. Production uses <strong>104px rail + 880px main + 460px right panel</strong>{' '}
+              (3-column, not 2-column). <strong>8 Layout variants exist, not 3.</strong>
+            </p>
+          </div>
+        </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-4">

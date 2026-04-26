@@ -8,9 +8,10 @@ export const metadata: Metadata = {
 }
 
 const TOC = [
-  { id: 'dr-001', label: 'DR-001 · Migration target',     level: 2 as const },
-  { id: 'dr-002', label: 'DR-002 · ledger:build guard',   level: 2 as const },
-  { id: 'dr-003', label: 'DR-003 · AI Generator scope',   level: 2 as const },
+  { id: 'dr-001', label: 'DR-001 · Migration target',          level: 2 as const },
+  { id: 'dr-002', label: 'DR-002 · ledger:build guard',        level: 2 as const },
+  { id: 'dr-003', label: 'DR-003 · AI Generator scope',        level: 2 as const },
+  { id: 'dr-004', label: 'DR-004 · Component spec accuracy',   level: 2 as const },
 ]
 
 type Status = 'decided' | 'pending'
@@ -128,6 +129,42 @@ export default function DecisionsPage() {
           <p className="mt-3 text-[11px] text-chrome-text-subtlest italic">
             System prompt is built from the live <code className="font-mono">componentSpecs.ts</code> — every spec change
             updates the generator on the next deploy.
+          </p>
+        </section>
+
+        {/* ─── DR-004 ────────────────────────────────────────────────────── */}
+        <section id="dr-004" className="mt-8 scroll-mt-24 rounded-card border border-chrome-border bg-chrome-surface-raised p-6">
+          <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[12px] font-bold text-chrome-text-subtlest">DR-004</span>
+              <h2 className="text-h3 text-chrome-text">Component spec accuracy standard</h2>
+            </div>
+            <StatusPill status="decided" />
+          </div>
+          <p className="text-body-s text-chrome-text-subtle">
+            Decided 2026-04-26. All component pages must be marked with one of three badges:
+            {' '}<strong>VERIFIED</strong> (matches source code),
+            {' '}<strong>ASPIRATIONAL</strong> (design intent, not production-verified),
+            {' '}or <strong>CONFLICT</strong> (known divergence from production).
+            No component page ships without a badge.
+          </p>
+          <div className="mt-4 grid gap-2 text-[13px]">
+            <div className="flex items-baseline gap-2">
+              <span className="inline-block rounded-[4px] bg-[rgba(240,41,77,0.12)] text-[#a31836] px-1.5 py-[1px] text-[10px] font-bold uppercase tracking-[0.06em] shrink-0">CONFLICT</span>
+              <span className="text-chrome-text">Button · Accordion · ProgressLine · LessonList · Layout</span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="inline-block rounded-[4px] bg-[rgba(132,153,174,0.18)] text-chrome-text-subtle px-1.5 py-[1px] text-[10px] font-bold uppercase tracking-[0.06em] shrink-0">NOT FOUND</span>
+              <span className="text-chrome-text">GreenLine — no source file in production</span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="inline-block rounded-[4px] bg-[rgba(36,194,110,0.14)] text-[#16803c] px-1.5 py-[1px] text-[10px] font-bold uppercase tracking-[0.06em] shrink-0">VERIFIED</span>
+              <span className="text-chrome-text-subtlest italic">— none yet</span>
+            </div>
+          </div>
+          <p className="mt-3 text-[11px] text-chrome-text-subtlest italic">
+            As of 2026-04-26: zero components are VERIFIED. Five are CONFLICT, one is NOT FOUND.
+            Implementation: callouts shipped on every component page with the matching badge color.
           </p>
         </section>
       </article>
