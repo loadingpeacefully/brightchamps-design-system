@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { RightTOC } from '@/components/chrome/RightTOC'
 import { loadLatestDrift } from '@/lib/drift'
 import { loadLatestDesignerConflicts, type DesignerConflict } from '@/lib/designer-conflicts'
+import { loadSourceDrift } from '@/lib/source-drift'
 import { loadComponents, loadIcons, loadStates } from '@/lib/surface-data'
 import { Terminal, Shield, AlertTriangle, HelpCircle, ArrowRight, Layers, Image, MousePointer } from 'lucide-react'
 
@@ -193,6 +194,7 @@ function EmptyCard({ id, label, description, cmd }: { id?: string; label: string
 
 export default function SurfacesPage() {
   const drift = loadLatestDrift()
+  const sourceDrift = loadSourceDrift()
   const conflicts = loadLatestDesignerConflicts()
   const components = loadComponents()
   const icons = loadIcons()
@@ -220,9 +222,17 @@ export default function SurfacesPage() {
                 </span>
               )}
             </div>
-            <p className="text-body-s text-chrome-text-subtle">champ.brightchamps.com · 7 URLs · Last extracted {drift?.date ?? 'unknown'}</p>
+            <p className="text-body-s text-chrome-text-subtle">
+              champ.brightchamps.com · 7 URLs · DOM: {drift?.date ?? 'unknown'} · Source: {sourceDrift?.generatedAt?.slice(0, 10) ?? 'unknown'}
+            </p>
+            {sourceDrift && (
+              <p className="mt-1 text-[12px] text-chrome-text-subtle">
+                <span className="inline-block rounded-[3px] bg-[rgba(36,194,110,0.14)] text-[#16803c] px-1.5 py-[1px] text-[10px] font-bold uppercase tracking-[0.06em] mr-1.5">Source adoption</span>
+                {sourceDrift.summary.tokenAdoption.adoptionRateAny} of {sourceDrift.summary.totalColorOccurrences.toLocaleString()} color declarations use tokens · {sourceDrift.summary.filesNeedingMigration} files need migration · {sourceDrift.summary.filesZeroAdoption} have zero adoption.
+              </p>
+            )}
             <p className="mt-1 text-[12px] text-amber-700 dark:text-amber-400">
-              Data from {drift?.date ?? '—'} — 10 days stale. Re-run:{' '}
+              DOM data from {drift?.date ?? '—'} — 10 days stale. Re-run:{' '}
               <code className="font-mono text-[11px]">npm run extract:dom -- --surface=student</code>
             </p>
 

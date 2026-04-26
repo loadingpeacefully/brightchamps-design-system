@@ -3,22 +3,28 @@ import Link from 'next/link'
 import { RightTOC } from '@/components/chrome/RightTOC'
 import { loadLatestDrift } from '@/lib/drift'
 import { loadDriftItems } from '@/lib/surface-data'
-import { Shield, AlertTriangle, HelpCircle, ArrowRight } from 'lucide-react'
+import { loadSourceDrift } from '@/lib/source-drift'
+import { Shield, AlertTriangle, HelpCircle, ArrowRight, FileCode, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Student surface',
-  description: 'Student app surface overview — drift metrics, top critical issues, and links to component, icon, and state audits.',
+  description: 'Student app surface overview — drift metrics, top critical issues, source-code analysis, and links to component, icon, and state audits.',
 }
 
 const TOC = [
-  { id: 'metrics',   label: 'Metrics',         level: 2 as const },
-  { id: 'critical',  label: 'Critical issues',  level: 2 as const },
-  { id: 'explore',   label: 'Explore',          level: 2 as const },
+  { id: 'source',    label: 'Source analysis',  level: 2 as const },
+  { id: 'brand',     label: 'Brand purples',     level: 3 as const },
+  { id: 'drift',     label: 'Color drift',       level: 3 as const },
+  { id: 'migrate',   label: 'Files to migrate',  level: 3 as const },
+  { id: 'metrics',   label: 'DOM drift metrics', level: 2 as const },
+  { id: 'critical',  label: 'Critical issues',   level: 2 as const },
+  { id: 'explore',   label: 'Explore',           level: 2 as const },
 ]
 
 export default function StudentOverviewPage() {
   const drift = loadLatestDrift()
   const items = loadDriftItems()
+  const src = loadSourceDrift()
 
   const criticals = items
     .filter(i => i.severity === 'critical' && i.status === 'unknown' && i.tokenType === 'color')
@@ -32,11 +38,180 @@ export default function StudentOverviewPage() {
         <h1 className="text-h1 text-chrome-text">Student app</h1>
         <p className="mt-3 max-w-[62ch] text-body-l text-chrome-text-subtle">
           champ.brightchamps.com — 7 URLs crawled, authenticated via Playwright storageState.
-          Last extracted {drift?.date ?? 'unknown'}.
+          DOM drift: {drift?.date ?? 'unknown'} · Source: {src?.generatedAt?.slice(0, 10) ?? 'unknown'}.
         </p>
 
+        {src && (
+          <section id="source" className="mt-12 scroll-mt-24">
+            <div className="flex items-center gap-2 mb-2">
+              <h2 className="text-h2 text-chrome-text">Source code analysis</h2>
+              <span className="inline-flex items-center gap-1 rounded-full bg-[rgba(36,194,110,0.14)] px-2 py-[2px] text-[10px] font-bold uppercase tracking-[0.06em] text-[#16803c]">
+                <FileCode size={10} strokeWidth={2.5} />
+                Live source
+              </span>
+            </div>
+            <p className="text-body-s text-chrome-text-subtle">
+              Static analysis of the dashboard repo — {src.generatedAt.slice(0, 10)}. Scans every <code className="font-mono text-[12px]">.scss</code> /
+              {' '}<code className="font-mono text-[12px]">.module.scss</code> / <code className="font-mono text-[12px]">.tsx</code> file. Always fresh — no Playwright session, no auth.
+            </p>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-4">
+                <div className="text-overline text-chrome-text-subtlest mb-1">Unique colors in source</div>
+                <div className="font-mono text-[24px] font-bold text-chrome-text">{src.summary.totalUniqueColors.toLocaleString()}</div>
+                <div className="text-[11px] text-chrome-text-subtlest">{src.summary.totalColorOccurrences.toLocaleString()} total occurrences</div>
+              </div>
+              <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-4">
+                <div className="text-overline text-chrome-text-subtlest mb-1">Token adoption</div>
+                <div className="font-mono text-[24px] font-bold text-chrome-text">{src.summary.tokenAdoption.adoptionRateAny}</div>
+                <div className="text-[11px] text-chrome-text-subtlest">SCSS {src.summary.tokenAdoption.adoptionRateScss} · CSS-var {src.summary.tokenAdoption.adoptionRateCssVar}</div>
+              </div>
+              <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-4">
+                <div className="text-overline text-chrome-text-subtlest mb-1">Files needing migration</div>
+                <div className="font-mono text-[24px] font-bold text-chrome-text">{src.summary.filesNeedingMigration}</div>
+                <div className="text-[11px] text-chrome-text-subtlest">{src.summary.filesZeroAdoption} with zero adoption</div>
+              </div>
+            </div>
+
+            <div className="mt-3 grid gap-3 sm:grid-cols-4">
+              <div className="rounded-md border border-chrome-border px-3 py-2">
+                <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest">Exact matches</div>
+                <div className="font-mono text-[18px] font-bold text-[#16803c]">{src.summary.exactTokenMatches}</div>
+              </div>
+              <div className="rounded-md border border-chrome-border px-3 py-2">
+                <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest">Close (ΔE&lt;5)</div>
+                <div className="font-mono text-[18px] font-bold text-chrome-text">{src.summary.closeMatches}</div>
+              </div>
+              <div className="rounded-md border border-chrome-border px-3 py-2">
+                <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest">Drift</div>
+                <div className="font-mono text-[18px] font-bold text-[#8a5e00]">{src.summary.driftColors}</div>
+              </div>
+              <div className="rounded-md border border-chrome-border px-3 py-2">
+                <div className="text-[10px] font-bold uppercase tracking-[0.06em] text-chrome-text-subtlest">Missing</div>
+                <div className="font-mono text-[18px] font-bold text-[#a31836]">{src.summary.missingFromLedger}</div>
+              </div>
+            </div>
+
+            {/* Brand-purple breakdown */}
+            <div id="brand" className="mt-8 scroll-mt-24">
+              <h3 className="text-h3 text-chrome-text">Brand purples — DC-005 four-way breakdown</h3>
+              <div className="mt-3 grid gap-3 sm:grid-cols-4">
+                {[
+                  { hex: '#4e3bc2', label: 'Figma canonical', dc: '$primary-color' },
+                  { hex: '#4d3bc2', label: 'Typo (DC-008)', dc: 'no token' },
+                  { hex: '#6651e4', label: 'In-progress', dc: '$inprogress-state' },
+                  { hex: '#722ed1', label: 'Designer', dc: '$button-primary' },
+                ].map(({ hex, label, dc }) => {
+                  const count = src.summary.brandPurpleBreakdown[hex] ?? 0
+                  return (
+                    <div key={hex} className="rounded-card border border-chrome-border bg-chrome-surface-raised p-3">
+                      <div className="h-10 rounded-sm border border-chrome-border" style={{ background: hex }} />
+                      <div className="mt-2 font-mono text-[12px] text-chrome-text">{hex}</div>
+                      <div className="font-mono text-[18px] font-bold text-chrome-text">{count.toLocaleString()}</div>
+                      <div className="text-[11px] text-chrome-text-subtle">{label}</div>
+                      <div className="text-[10px] text-chrome-text-subtlest font-mono">{dc}</div>
+                    </div>
+                  )
+                })}
+              </div>
+              <div className="mt-3 rounded-md border-l-4 border-l-amber-500 border border-chrome-border bg-amber-50/40 dark:bg-amber-950/15 p-3">
+                <p className="text-body-s text-chrome-text">
+                  <strong className="uppercase tracking-[0.04em] text-[11px] text-amber-700 dark:text-amber-400">DC-005 pending.</strong>{' '}
+                  Resolution will consolidate these into one canonical value across {(src.summary.brandPurpleBreakdown['#4e3bc2'] ?? 0) + (src.summary.brandPurpleBreakdown['#4d3bc2'] ?? 0) + (src.summary.brandPurpleBreakdown['#6651e4'] ?? 0) + (src.summary.brandPurpleBreakdown['#722ed1'] ?? 0)} occurrences.
+                </p>
+              </div>
+            </div>
+
+            {/* Top color drift */}
+            <div id="drift" className="mt-8 scroll-mt-24">
+              <h3 className="text-h3 text-chrome-text">Top 10 color drift</h3>
+              <p className="mt-1 text-body-s text-chrome-text-subtle">Sorted by occurrences. ΔE 5–15 = perceptually distinct from the closest canonical.</p>
+              <div className="mt-3 overflow-x-auto rounded-card border border-chrome-border">
+                <table className="w-full border-collapse text-[13px]">
+                  <thead>
+                    <tr className="bg-chrome-surface-sunken border-b border-chrome-border">
+                      <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">Hex</th>
+                      <th className="text-right p-3 font-bold text-overline text-chrome-text-subtlest">Uses</th>
+                      <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">Closest token</th>
+                      <th className="text-right p-3 font-bold text-overline text-chrome-text-subtlest">ΔE</th>
+                      <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">DC</th>
+                      <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {src.colorDrift.slice(0, 10).map((d, i) => (
+                      <tr key={i} className="border-b border-chrome-border last:border-b-0">
+                        <td className="p-3">
+                          <span className="inline-flex items-center gap-1.5">
+                            <span className="inline-block h-3.5 w-3.5 rounded-sm border border-chrome-border" style={{ background: d.value }} />
+                            <span className="font-mono font-semibold text-chrome-text">{d.value}</span>
+                          </span>
+                        </td>
+                        <td className="p-3 text-right font-mono tabular-nums">{d.occurrences}</td>
+                        <td className="p-3 font-mono text-chrome-accent">{d.closestToken}</td>
+                        <td className="p-3 text-right font-mono tabular-nums">{d.deltaE.toFixed(1)}</td>
+                        <td className="p-3">
+                          {d.dcTicket ? (
+                            <a href="/surfaces/#designer-conflicts" className="text-chrome-accent underline underline-offset-4 font-mono text-[11px]">{d.dcTicket}</a>
+                          ) : <span className="text-chrome-text-subtlest">—</span>}
+                        </td>
+                        <td className="p-3 text-[11px] text-chrome-text-subtle max-w-[260px] truncate">{d.recommendation}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Files to migrate */}
+            <div id="migrate" className="mt-8 scroll-mt-24">
+              <h3 className="text-h3 text-chrome-text">Files needing migration most</h3>
+              <p className="mt-1 text-body-s text-chrome-text-subtle">
+                Bottom 10 by token-adoption rate. Migrate these first per{' '}
+                <a className="text-chrome-accent underline underline-offset-4" href="/get-started/contribute/">engineering migration guide</a>.
+              </p>
+              <div className="mt-3 overflow-x-auto rounded-card border border-chrome-border">
+                <table className="w-full border-collapse text-[13px]">
+                  <thead>
+                    <tr className="bg-chrome-surface-sunken border-b border-chrome-border">
+                      <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">File</th>
+                      <th className="text-right p-3 font-bold text-overline text-chrome-text-subtlest">Hardcoded</th>
+                      <th className="text-right p-3 font-bold text-overline text-chrome-text-subtlest">SCSS vars</th>
+                      <th className="text-right p-3 font-bold text-overline text-chrome-text-subtlest">Adoption</th>
+                      <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">Priority</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {src.adoptionByFile.slice(0, 10).map((f, i) => (
+                      <tr key={i} className="border-b border-chrome-border last:border-b-0">
+                        <td className="p-3 font-mono text-[11px] text-chrome-text break-all">{f.file.replace(/^.*\/src\//, 'src/')}</td>
+                        <td className="p-3 text-right font-mono tabular-nums text-[#a31836] font-bold">{f.hardcodedColors}</td>
+                        <td className="p-3 text-right font-mono tabular-nums text-chrome-text-subtle">{f.scssVarColors}</td>
+                        <td className="p-3 text-right font-mono tabular-nums">{f.adoptionRate}</td>
+                        <td className="p-3">
+                          <span className={
+                            'inline-block rounded-full px-2 py-[1px] text-[10px] font-bold uppercase tracking-[0.06em] ' +
+                            (f.priority === 'HIGH' ? 'bg-[rgba(240,41,77,0.12)] text-[#a31836]' :
+                             f.priority === 'MEDIUM' ? 'bg-[rgba(255,187,58,0.18)] text-[#8a5e00]' :
+                             'bg-[rgba(132,153,174,0.18)] text-chrome-text-subtle')
+                          }>
+                            {f.priority}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        )}
+
         <section id="metrics" className="mt-12 scroll-mt-24">
-          <h2 className="text-h2 text-chrome-text">Drift metrics</h2>
+          <h2 className="text-h2 text-chrome-text">DOM drift metrics</h2>
+          <p className="text-body-s text-chrome-text-subtle">
+            Playwright DOM extraction — {drift?.date ?? '—'} (10 days stale). Static source analysis above is fresher and more complete.
+          </p>
           {drift && (
             <div className="mt-4 grid gap-3 sm:grid-cols-4">
               <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5 text-center">

@@ -360,4 +360,89 @@ export const componentSpecs: ComponentSpec[] = [
       'Per docs/component-spec-verification-dashboard.md and DC-005: brand-primary touchpoints use #4e3bc2 / #6651e4 / #722ED1 inconsistently across this repo. Pending DC-005 four-way resolution.',
     ],
   },
+
+  // ─── NavBar (verified against real source) ──────────────────────────────
+  {
+    name: 'NavBar',
+    slug: 'nav-bar',
+    description: 'Primary navigation bar — collapsible chrome rail. Appears on every authenticated student dashboard page (7/7).',
+    variants: ['collapsed', 'expanded'],
+    tokens: [
+      { property: 'Container width (collapsed)',     token: 'space/sidebar-collapsed', cssVar: '--space-sidebar-collapsed', value: '80px' },
+      { property: 'Container width (expanded)',      token: 'space/sidebar-expanded',  cssVar: '--space-sidebar-expanded',  value: '280px' },
+      { property: 'Container background',            token: 'color/neutral/100',       cssVar: '--color-neutral-100',       value: '#ffffff' },
+      { property: 'Padding (block / inline)',        token: 'space/4 + space/3',       cssVar: '--space-4 / --space-3',     value: '18px 12px' },
+      { property: 'Menu item border-radius',         token: 'radius/md',               cssVar: '--radius-md',               value: '12px' },
+      { property: 'Menu item icon container size',   token: 'space/14',                cssVar: '--space-14',                value: '56px' },
+      { property: 'Menu item gap',                   token: 'space/3',                 cssVar: '--space-3',                 value: '12px' },
+      { property: 'Active item color',               token: 'color/brand/primary',     cssVar: '--color-brand-primary',     value: '#4e3bc2' },
+      { property: 'Font weight (active)',            token: 'font/weight/black',       cssVar: '--font-weight-black',       value: '800' },
+      { property: 'Transition',                      token: '—',                       cssVar: '—',                         value: 'all 0.3s ease-out' },
+    ],
+    usageExample: `<aside
+  className={classes.container}
+  aria-label="Primary"
+>
+  {navData.map(item => (
+    <a
+      key={item.href}
+      href={item.href}
+      aria-current={isActive(item.href) ? 'page' : undefined}
+      className={classes.menuItem}
+    >
+      <div className={classes.iconWrapper}>
+        <item.Icon />
+      </div>
+      {expanded && <span>{item.label}</span>}
+    </a>
+  ))}
+</aside>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/NavigationBar/navigation.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'All values cross-checked against source. ✓ container width 80px (collapsed) / 280px (expanded), white bg, 12px border-radius on items, 56px icon container, brand-primary active color via get-color("primary-color").',
+      'Note: source uses SCSS custom local variables ($nav-padding-x: 12px, $navigation-width: 80px) rather than DS-canonical space tokens. Recommend adding space/sidebar-collapsed (80px) and space/sidebar-expanded (280px) to the ledger as named-spacing tokens.',
+    ],
+  },
+
+  // ─── LeftSideBar (newDashboard chrome) ──────────────────────────────────
+  {
+    name: 'LeftSideBar',
+    slug: 'left-side-bar',
+    description: 'Left chrome shell of the new-dashboard layout. Wraps the NavBar + extras in a vertical column with logo + nav + bottom items.',
+    variants: ['default', 'parent-hub'],
+    tokens: [
+      { property: 'Display',              token: '—',                  cssVar: '—',                  value: 'flex column, full height' },
+      { property: 'Width',                token: 'space/full',         cssVar: '—',                  value: '100%' },
+      { property: 'Padding-left',         token: 'space/5',            cssVar: '--space-5',          value: '20px' },
+      { property: 'Padding-top',          token: 'space/5',            cssVar: '--space-5',          value: '20px' },
+      { property: 'Gap',                  token: 'space/4',            cssVar: '--space-4',          value: '15px' },
+      { property: 'Section divider',      token: 'color/overlay/black-10', cssVar: '—',              value: 'rgba(0, 0, 0, 0.1)' },
+      { property: 'Logo bottom margin',   token: 'space/10',           cssVar: '--space-10',         value: '2.55rem' },
+      { property: 'Bottom section margin', token: 'space/5',           cssVar: '--space-5',          value: '20px' },
+      { property: 'Height (parent-hub)',  token: '—',                  cssVar: '—',                  value: 'calc(100vh - 48px)' },
+    ],
+    usageExample: `<aside
+  className={clsx(classes.sidebar, isParentHub && classes.parenHubSidebar)}
+  aria-label="Primary"
+>
+  <div>
+    <div className={classes.logo}><img src={LOGO} alt="BrightChamps" /></div>
+    <div className={classes.sideBarNavContainer}>
+      <NavBar />
+    </div>
+  </div>
+  <div className={classes.bottomSectionContaner}>
+    {children}
+  </div>
+</aside>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/templates/NewDashboard/LeftSideBar/LeftSideBar.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'All values match source. Note: typo in class name ".parenHubSidebar" should be ".parentHubSidebar" — file as a separate cleanup ticket.',
+      'No background color in source — transparent over container. The DashboardLayout sets the page bg.',
+    ],
+  },
 ]

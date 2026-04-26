@@ -1,0 +1,1581 @@
+{
+  "generatedAt": "2026-04-26T17:54:48.583Z",
+  "source": "static-source-analysis",
+  "repo": "brightchamps-student-dashboard",
+  "method": {
+    "deltaE": "simplified weighted RGB euclidean (ΔE = sqrt(0.299·dR² + 0.587·dG² + 0.114·dB²) · 100)",
+    "classification": "<0.5 exact · 0.5–5 close · 5–15 drift · ≥15 missing",
+    "scope": "src/**/*.scss, *.module.scss, *.tsx, *.ts (excluding node_modules)"
+  },
+  "summary": {
+    "totalUniqueColors": 774,
+    "solidHexCount": 758,
+    "threeDigitHexCount": 16,
+    "totalColorOccurrences": 4472,
+    "exactTokenMatches": 58,
+    "closeMatches": 425,
+    "driftColors": 263,
+    "missingFromLedger": 12,
+    "tokenAdoption": {
+      "totalColorDeclarations": 3367,
+      "usingHardcodedHex": 2694,
+      "usingSCSSVar": 623,
+      "usingCSSVar": 50,
+      "adoptionRateScss": "19%",
+      "adoptionRateCssVar": "1%",
+      "adoptionRateAny": "20%"
+    },
+    "filesScanned": 404,
+    "filesNeedingMigration": 379,
+    "filesZeroAdoption": 252,
+    "brandPurpleBreakdown": {
+      "#4e3bc2": 326,
+      "#4d3bc2": 79,
+      "#6651e4": 32,
+      "#722ed1": 7
+    }
+  },
+  "colorDrift": [
+    {
+      "value": "#8a78f9",
+      "occurrences": 58,
+      "closestToken": "color/primary/200",
+      "closestValue": "#7b68ec",
+      "deltaE": 6.03,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/primary/200 (#7b68ec) after design review."
+    },
+    {
+      "value": "#894aed",
+      "occurrences": 15,
+      "closestToken": "color/course/ai/500",
+      "closestValue": "#7453D7",
+      "deltaE": 6.01,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/course/ai/500 (#7453D7) after design review."
+    },
+    {
+      "value": "#fd8a8a",
+      "occurrences": 13,
+      "closestToken": "color/error/200",
+      "closestValue": "#ff6e61",
+      "deltaE": 10.02,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/error/200 (#ff6e61) after design review."
+    },
+    {
+      "value": "#4bae4f",
+      "occurrences": 13,
+      "closestToken": "color/success/500",
+      "closestValue": "#67a22c",
+      "deltaE": 8.4,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/success/500 (#67a22c) after design review."
+    },
+    {
+      "value": "#11ac69",
+      "occurrences": 13,
+      "closestToken": "color/course/finance/500",
+      "closestValue": "#00B67A",
+      "deltaE": 5.23,
+      "status": "drift",
+      "dcTicket": "DC-009",
+      "semanticRole": "success / completed state",
+      "recommendation": "Pending DC-009: success / completed state."
+    },
+    {
+      "value": "#54bab9",
+      "occurrences": 12,
+      "closestToken": "color/info/600",
+      "closestValue": "#6cc1ff",
+      "deltaE": 10.81,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/info/600 (#6cc1ff) after design review."
+    },
+    {
+      "value": "#f04b4b",
+      "occurrences": 11,
+      "closestToken": "color/course/literature/500",
+      "closestValue": "#ED675C",
+      "deltaE": 8.73,
+      "status": "drift",
+      "dcTicket": "DC-002",
+      "semanticRole": "error / danger",
+      "recommendation": "Pending DC-002: error / danger."
+    },
+    {
+      "value": "#60bfbd",
+      "occurrences": 10,
+      "closestToken": "color/info/600",
+      "closestValue": "#6cc1ff",
+      "deltaE": 9.13,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/info/600 (#6cc1ff) after design review."
+    },
+    {
+      "value": "#a793f8",
+      "occurrences": 7,
+      "closestToken": "color/neutral/600",
+      "closestValue": "#a8acb1",
+      "deltaE": 12.04,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/neutral/600 (#a8acb1) after design review."
+    },
+    {
+      "value": "#a78bfa",
+      "occurrences": 7,
+      "closestToken": "color/info/1000",
+      "closestValue": "#8499ae",
+      "deltaE": 13.24,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/info/1000 (#8499ae) after design review."
+    },
+    {
+      "value": "#722ed1",
+      "occurrences": 7,
+      "closestToken": "color/brand/primary",
+      "closestValue": "#4e3bc2",
+      "deltaE": 8.88,
+      "status": "drift",
+      "dcTicket": "DC-005",
+      "semanticRole": "designer brand purple ($button-primary)",
+      "recommendation": "Pending DC-005: designer brand purple ($button-primary)."
+    },
+    {
+      "value": "#ab9dff",
+      "occurrences": 6,
+      "closestToken": "color/neutral/600",
+      "closestValue": "#a8acb1",
+      "deltaE": 11.29,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/neutral/600 (#a8acb1) after design review."
+    },
+    {
+      "value": "#5a67d8",
+      "occurrences": 6,
+      "closestToken": "color/primary/500",
+      "closestValue": "#6651e4",
+      "deltaE": 7.27,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/primary/500 (#6651e4) after design review."
+    },
+    {
+      "value": "#57ad5b",
+      "occurrences": 6,
+      "closestToken": "color/success/500",
+      "closestValue": "#67a22c",
+      "deltaE": 7.84,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/success/500 (#67a22c) after design review."
+    },
+    {
+      "value": "#ff5900",
+      "occurrences": 5,
+      "closestToken": "color/error/500",
+      "closestValue": "#ff6323",
+      "deltaE": 5.52,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/error/500 (#ff6323) after design review."
+    },
+    {
+      "value": "#fcdc73",
+      "occurrences": 5,
+      "closestToken": "color/warning/400",
+      "closestValue": "#ffd642",
+      "deltaE": 6.76,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/warning/400 (#ffd642) after design review."
+    },
+    {
+      "value": "#dd4a45",
+      "occurrences": 5,
+      "closestToken": "color/error/600",
+      "closestValue": "#d84315",
+      "deltaE": 6.78,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/error/600 (#d84315) after design review."
+    },
+    {
+      "value": "#9c8eef",
+      "occurrences": 5,
+      "closestToken": "color/info/1000",
+      "closestValue": "#8499ae",
+      "deltaE": 10.56,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/info/1000 (#8499ae) after design review."
+    },
+    {
+      "value": "#ffe895",
+      "occurrences": 4,
+      "closestToken": "color/warning/100",
+      "closestValue": "#fffb55",
+      "deltaE": 10.22,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/warning/100 (#fffb55) after design review."
+    },
+    {
+      "value": "#ff8480",
+      "occurrences": 4,
+      "closestToken": "color/error/200",
+      "closestValue": "#ff6e61",
+      "deltaE": 7.78,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/error/200 (#ff6e61) after design review."
+    },
+    {
+      "value": "#bfa2ff",
+      "occurrences": 4,
+      "closestToken": "color/primary/50",
+      "closestValue": "#cbc2ff",
+      "deltaE": 9.95,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/primary/50 (#cbc2ff) after design review."
+    },
+    {
+      "value": "#9b78ff",
+      "occurrences": 4,
+      "closestToken": "color/primary/200",
+      "closestValue": "#7b68ec",
+      "deltaE": 8.75,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/primary/200 (#7b68ec) after design review."
+    },
+    {
+      "value": "#6bc48a",
+      "occurrences": 4,
+      "closestToken": "color/success/200",
+      "closestValue": "#72bb32",
+      "deltaE": 12.06,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/success/200 (#72bb32) after design review."
+    },
+    {
+      "value": "#5bb078",
+      "occurrences": 4,
+      "closestToken": "color/success/200",
+      "closestValue": "#72bb32",
+      "deltaE": 11.01,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/success/200 (#72bb32) after design review."
+    },
+    {
+      "value": "#5b21b6",
+      "occurrences": 4,
+      "closestToken": "color/brand/primary",
+      "closestValue": "#4e3bc2",
+      "deltaE": 8.45,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/brand/primary (#4e3bc2) after design review."
+    },
+    {
+      "value": "#581dae",
+      "occurrences": 4,
+      "closestToken": "color/brand/primary",
+      "closestValue": "#4e3bc2",
+      "deltaE": 9.64,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/brand/primary (#4e3bc2) after design review."
+    },
+    {
+      "value": "#5022c3",
+      "occurrences": 4,
+      "closestToken": "color/brand/primary",
+      "closestValue": "#4e3bc2",
+      "deltaE": 7.52,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/brand/primary (#4e3bc2) after design review."
+    },
+    {
+      "value": "#4bc15b",
+      "occurrences": 4,
+      "closestToken": "color/success/300",
+      "closestValue": "#24c26e",
+      "deltaE": 8.74,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/success/300 (#24c26e) after design review."
+    },
+    {
+      "value": "#448b45",
+      "occurrences": 4,
+      "closestToken": "color/success/600",
+      "closestValue": "#477916",
+      "deltaE": 8.27,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/success/600 (#477916) after design review."
+    },
+    {
+      "value": "#3eb655",
+      "occurrences": 4,
+      "closestToken": "color/success/300",
+      "closestValue": "#24c26e",
+      "deltaE": 7.42,
+      "status": "drift",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "Replace with color/success/300 (#24c26e) after design review."
+    }
+  ],
+  "missingTokens": [
+    {
+      "value": "#ff0000",
+      "occurrences": 5,
+      "closestToken": "color/error/700",
+      "closestValue": "#f0294d",
+      "deltaE": 16.31,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 16.3). Add as new canonical or map manually."
+    },
+    {
+      "value": "#007bff",
+      "occurrences": 5,
+      "closestToken": "color/info/400",
+      "closestValue": "#3b9af5",
+      "deltaE": 15.77,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 15.8). Add as new canonical or map manually."
+    },
+    {
+      "value": "#b634cd",
+      "occurrences": 4,
+      "closestToken": "color/course/ai/500",
+      "closestValue": "#7453D7",
+      "deltaE": 16.99,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 17.0). Add as new canonical or map manually."
+    },
+    {
+      "value": "#fe018e",
+      "occurrences": 2,
+      "closestToken": "color/error/700",
+      "closestValue": "#f0294d",
+      "deltaE": 15.08,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 15.1). Add as new canonical or map manually."
+    },
+    {
+      "value": "#fd00a7",
+      "occurrences": 2,
+      "closestToken": "color/error/700",
+      "closestValue": "#f0294d",
+      "deltaE": 17.36,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 17.4). Add as new canonical or map manually."
+    },
+    {
+      "value": "#0e72ed",
+      "occurrences": 2,
+      "closestToken": "color/info/400",
+      "closestValue": "#3b9af5",
+      "deltaE": 15.45,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 15.4). Add as new canonical or map manually."
+    },
+    {
+      "value": "#00ba00",
+      "occurrences": 2,
+      "closestToken": "color/course/finance/500",
+      "closestValue": "#00B67A",
+      "deltaE": 16.2,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 16.2). Add as new canonical or map manually."
+    },
+    {
+      "value": "#e033ff",
+      "occurrences": 1,
+      "closestToken": "color/info/1200",
+      "closestValue": "#e866ff",
+      "deltaE": 15.42,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 15.4). Add as new canonical or map manually."
+    },
+    {
+      "value": "#9effab",
+      "occurrences": 1,
+      "closestToken": "color/info/100",
+      "closestValue": "#cfd8dc",
+      "deltaE": 17.02,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 17.0). Add as new canonical or map manually."
+    },
+    {
+      "value": "#861f99",
+      "occurrences": 1,
+      "closestToken": "color/brand/primary",
+      "closestValue": "#4e3bc2",
+      "deltaE": 15.63,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 15.6). Add as new canonical or map manually."
+    },
+    {
+      "value": "#1d01f5",
+      "occurrences": 1,
+      "closestToken": "color/primary/900",
+      "closestValue": "#1a237e",
+      "deltaE": 18.79,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 18.8). Add as new canonical or map manually."
+    },
+    {
+      "value": "#076fec",
+      "occurrences": 1,
+      "closestToken": "color/primary/700",
+      "closestValue": "#0d47a1",
+      "deltaE": 15.64,
+      "status": "missing",
+      "dcTicket": null,
+      "semanticRole": null,
+      "recommendation": "No close canonical (ΔE 15.6). Add as new canonical or map manually."
+    }
+  ],
+  "closeMatchesSample": [
+    {
+      "value": "#384655",
+      "count": 70,
+      "token": "color/info/1400",
+      "deltaE": 2.59
+    },
+    {
+      "value": "#f5f4fa",
+      "count": 33,
+      "token": "color/course/ai/50",
+      "deltaE": 1.31
+    },
+    {
+      "value": "#64717d",
+      "count": 29,
+      "token": "color/neutral/900",
+      "deltaE": 3.98
+    },
+    {
+      "value": "#424242",
+      "count": 25,
+      "token": "color/neutral/1200",
+      "deltaE": 3.17
+    },
+    {
+      "value": "#e3e2e9",
+      "count": 23,
+      "token": "color/surface/900",
+      "deltaE": 2.98
+    },
+    {
+      "value": "#2b3742",
+      "count": 23,
+      "token": "color/neutral/1300",
+      "deltaE": 3.29
+    },
+    {
+      "value": "#f9cf53",
+      "count": 21,
+      "token": "color/warning/400",
+      "deltaE": 3.34
+    },
+    {
+      "value": "#e0e0e0",
+      "count": 21,
+      "token": "color/neutral/300",
+      "deltaE": 3.7
+    },
+    {
+      "value": "#8e8e8e",
+      "count": 21,
+      "token": "color/neutral/800",
+      "deltaE": 4.37
+    },
+    {
+      "value": "#ffc200",
+      "count": 20,
+      "token": "color/warning/600",
+      "deltaE": 3.45
+    },
+    {
+      "value": "#1b0742",
+      "count": 20,
+      "token": "color/course/ai/900",
+      "deltaE": 4.16
+    },
+    {
+      "value": "#d9d9d9",
+      "count": 19,
+      "token": "color/neutral/300",
+      "deltaE": 1.49
+    },
+    {
+      "value": "#7d8892",
+      "count": 19,
+      "token": "color/neutral/800",
+      "deltaE": 1.14
+    },
+    {
+      "value": "#f5f3fc",
+      "count": 18,
+      "token": "color/course/ai/50",
+      "deltaE": 0.94
+    },
+    {
+      "value": "#f5f5f5",
+      "count": 16,
+      "token": "color/course/ai/50",
+      "deltaE": 1.92
+    },
+    {
+      "value": "#f0f0f0",
+      "count": 15,
+      "token": "color/neutral/200",
+      "deltaE": 0.78
+    },
+    {
+      "value": "#eff3f5",
+      "count": 15,
+      "token": "color/neutral/200",
+      "deltaE": 1.78
+    },
+    {
+      "value": "#f9fafb",
+      "count": 14,
+      "token": "color/neutral/100",
+      "deltaE": 2.05
+    },
+    {
+      "value": "#e1e2ff",
+      "count": 14,
+      "token": "color/surface/900",
+      "deltaE": 1.07
+    },
+    {
+      "value": "#f1f1f1",
+      "count": 13,
+      "token": "color/neutral/200",
+      "deltaE": 1.18
+    }
+  ],
+  "exactMatchesSample": [
+    {
+      "value": "#3d4d5d",
+      "count": 509,
+      "token": "color/info/1400"
+    },
+    {
+      "value": "#4e3bc2",
+      "count": 326,
+      "token": "color/brand/primary"
+    },
+    {
+      "value": "#ffffff",
+      "count": 149,
+      "token": "color/neutral/100"
+    },
+    {
+      "value": "#222a33",
+      "count": 100,
+      "token": "color/info/1500"
+    },
+    {
+      "value": "#4d3bc2",
+      "count": 79,
+      "token": "color/brand/primary"
+    },
+    {
+      "value": "#7453d7",
+      "count": 46,
+      "token": "color/course/ai/500"
+    },
+    {
+      "value": "#000000",
+      "count": 39,
+      "token": "color/neutral/1600"
+    },
+    {
+      "value": "#6651e4",
+      "count": 32,
+      "token": "color/primary/500"
+    },
+    {
+      "value": "#bdbdbd",
+      "count": 28,
+      "token": "color/neutral/500"
+    },
+    {
+      "value": "#ff752c",
+      "count": 24,
+      "token": "color/warning/1400"
+    },
+    {
+      "value": "#51667b",
+      "count": 17,
+      "token": "color/info/1300"
+    },
+    {
+      "value": "#efefef",
+      "count": 13,
+      "token": "color/neutral/200"
+    },
+    {
+      "value": "#8cc0de",
+      "count": 12,
+      "token": "color/info/500"
+    },
+    {
+      "value": "#e6e2ff",
+      "count": 11,
+      "token": "color/surface/900"
+    },
+    {
+      "value": "#4a3fb4",
+      "count": 11,
+      "token": "color/interactive/tab-active"
+    },
+    {
+      "value": "#ff6e61",
+      "count": 5,
+      "token": "color/error/200"
+    },
+    {
+      "value": "#f76969",
+      "count": 5,
+      "token": "color/error/300"
+    },
+    {
+      "value": "#f4f0ff",
+      "count": 5,
+      "token": "color/course/ai/50"
+    },
+    {
+      "value": "#626262",
+      "count": 5,
+      "token": "color/neutral/1000"
+    },
+    {
+      "value": "#24c26e",
+      "count": 5,
+      "token": "color/success/300"
+    }
+  ],
+  "adoptionByFile": [
+    {
+      "file": "src/newDashboard/components/molecules/Calendar/calendar.module.scss",
+      "hardcodedColors": 42,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/PaymentTab/TransactionTable/transactionTable.module.scss",
+      "hardcodedColors": 40,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/PaymentTab/PaymentOverview/UpcommingPayments/upcommingPayment.module.scss",
+      "hardcodedColors": 33,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/sections/hackathonSlotModal/components/CustomDropdown/CustomDropdown.module.scss",
+      "hardcodedColors": 29,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/parentHub/components/StickyNudge/stickuNudge.module.scss",
+      "hardcodedColors": 28,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/NanoSkills/SkillCard/skillCard.module.scss",
+      "hardcodedColors": 26,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/components/ProgressBar/progressbar.module.scss",
+      "hardcodedColors": 25,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/PracticeZone/components/worksheetStep/workSheetStep.module.scss",
+      "hardcodedColors": 22,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/yearInReview/yearInReview.module.scss",
+      "hardcodedColors": 21,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/NanoSkills/TeacherLedCard/teacherLedCard.module.scss",
+      "hardcodedColors": 21,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/InstallmentCard/installmentCard.module.scss",
+      "hardcodedColors": 21,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/parentHub/components/CourseTab/courseTab.module.scss",
+      "hardcodedColors": 20,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/parentHub/components/AlertCards/alertCards.module.scss",
+      "hardcodedColors": 20,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/UpgradeCard/UpgradeCardFeed/upgradeCardFeed.module.scss",
+      "hardcodedColors": 20,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "HIGH"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/DemoCourseDetailModal/DemoCourseDetailModal.module.scss",
+      "hardcodedColors": 19,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/DemoClasses/Components/DemoJoiningCard/DemoJoiningSection/DemoJoiningSection.module.scss",
+      "hardcodedColors": 18,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/PaymentTab/YouMayCheckAlso/Card/card.module.scss",
+      "hardcodedColors": 18,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/banners/circleChessBanner/circleChessBanner.module.scss",
+      "hardcodedColors": 18,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/Badges&Challenges/BadgesOnboardingModal/PrefferedClassTimings/prefferedTiming.module.scss",
+      "hardcodedColors": 18,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/TeacherProfile/RatingsAndReviews/ratingAndReviews.module.scss",
+      "hardcodedColors": 17,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/badges/components/SatelliteLoader/satelliteLoader.module.scss",
+      "hardcodedColors": 17,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/components/ProfileSelector/profileSelector.module.scss",
+      "hardcodedColors": 17,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/MakeupStatusModal/makeupStatusModal.module.scss",
+      "hardcodedColors": 17,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/UpgradeCard/upgrade.module.scss",
+      "hardcodedColors": 17,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/PracticeZone/pages/Home/practiceZone.module.scss",
+      "hardcodedColors": 16,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/NanoSkills/Pages/DiscoverSkillById/skillById.module.scss",
+      "hardcodedColors": 16,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/components/CourseDropdown/courseDropdown.module.scss",
+      "hardcodedColors": 16,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/components/SkeletonLoading/parentHubSkeleton.module.scss",
+      "hardcodedColors": 15,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/PaymentTab/StudentSelectionStrip/studentSelectionStrip.module.scss",
+      "hardcodedColors": 15,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/PaymentTab/latestPayment/latestPayment.module.scss",
+      "hardcodedColors": 15,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/PaymentTab/BillingAddress/EditBillingAddressModal/editBillingAddressModel.module.scss",
+      "hardcodedColors": 15,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/PaymentTab/PaymentOverview/UpgradePackageCard/upgradePackageCard.module.scss",
+      "hardcodedColors": 15,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/Refund/Steps/Step3/CreditTransfer/verticalCard.module.scss",
+      "hardcodedColors": 15,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/badges/components/BadgesNotificationBanner/badgesNotificationBanner.module.scss",
+      "hardcodedColors": 14,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/DemoClasses/Components/DemoJoiningCard/TeacherDetailSection/TeacherDetailSection.module.scss",
+      "hardcodedColors": 14,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/learn/components/LockedModuleContainer/components/BookDemoModal/BookDemoModal.module.scss",
+      "hardcodedColors": 14,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/InsightTab/DetailedInsights/CurrentModule/currentModule.module.scss",
+      "hardcodedColors": 14,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/components/NewExperience/newExperience.module.scss",
+      "hardcodedColors": 13,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/ClassesToReschedule/classesToReschedule.module.scss",
+      "hardcodedColors": 13,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/RedeemGemsCard/reward.module.scss",
+      "hardcodedColors": 13,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/PracticeZone/components/milestoneAccordion/milestoneAccordion.module.scss",
+      "hardcodedColors": 12,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/NewStudentProfile/newStudentProfile.module.scss",
+      "hardcodedColors": 12,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/TeacherProfile/TeacherProfileCard/teacherProfileCard.module.scss",
+      "hardcodedColors": 12,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/components/MonthDropdown/monthDropdown.module.scss",
+      "hardcodedColors": 12,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/components/molecules/PreLogin/prelogin.module.scss",
+      "hardcodedColors": 12,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/parentHub/Tabs/InsightTab/ReportCardTable/reportCardTable.module.scss",
+      "hardcodedColors": 12,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/components/ChatBot/GridActionButtons/gridActionButtons.module.scss",
+      "hardcodedColors": 11,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/templates/NewDashboard/Layout.module.scss",
+      "hardcodedColors": 11,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/badges/CurrentBadges/StudentDetailsCard/studentDetailsCard.module.scss",
+      "hardcodedColors": 11,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    },
+    {
+      "file": "src/newDashboard/DemoClasses/Components/SiblingOffer/siblingOffer.module.scss",
+      "hardcodedColors": 11,
+      "scssVarColors": 0,
+      "cssVarColors": 0,
+      "adoptionRate": "0%",
+      "adoptionRateNum": 0,
+      "priority": "MEDIUM"
+    }
+  ],
+  "typographyDrift": [
+    {
+      "value": "font-size:12px",
+      "occurrences": 517,
+      "inCanonicalScale": true,
+      "status": "match"
+    },
+    {
+      "value": "font-size:14px",
+      "occurrences": 487,
+      "inCanonicalScale": true,
+      "status": "match"
+    },
+    {
+      "value": "font-size:16px",
+      "occurrences": 344,
+      "inCanonicalScale": true,
+      "status": "match"
+    },
+    {
+      "value": "font-size:18px",
+      "occurrences": 209,
+      "inCanonicalScale": true,
+      "status": "match"
+    },
+    {
+      "value": "font-size:20px",
+      "occurrences": 148,
+      "inCanonicalScale": true,
+      "status": "match"
+    },
+    {
+      "value": "font-size:10px",
+      "occurrences": 117,
+      "inCanonicalScale": true,
+      "status": "match"
+    },
+    {
+      "value": "font-size:24px",
+      "occurrences": 109,
+      "inCanonicalScale": true,
+      "status": "match"
+    },
+    {
+      "value": "font-size:1vw",
+      "occurrences": 68,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:32px",
+      "occurrences": 44,
+      "inCanonicalScale": true,
+      "status": "match"
+    },
+    {
+      "value": "font-size:1.125rem",
+      "occurrences": 31,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:13px",
+      "occurrences": 29,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:0.9vw",
+      "occurrences": 25,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:28px",
+      "occurrences": 24,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:1.2vw",
+      "occurrences": 23,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:11px",
+      "occurrences": 20,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:0.8vw",
+      "occurrences": 19,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:22px",
+      "occurrences": 17,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:0.97vw",
+      "occurrences": 17,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:0.83vw",
+      "occurrences": 16,
+      "inCanonicalScale": false,
+      "status": "drift"
+    },
+    {
+      "value": "font-size:8px",
+      "occurrences": 15,
+      "inCanonicalScale": false,
+      "status": "drift"
+    }
+  ],
+  "spacingDrift": [
+    {
+      "value": "gap: 8px",
+      "occurrences": 252,
+      "inCanonicalScale": true,
+      "pixelValue": 8
+    },
+    {
+      "value": "gap: 12px",
+      "occurrences": 134,
+      "inCanonicalScale": true,
+      "pixelValue": 12
+    },
+    {
+      "value": "gap: 4px",
+      "occurrences": 132,
+      "inCanonicalScale": true,
+      "pixelValue": 4
+    },
+    {
+      "value": "gap: 16px",
+      "occurrences": 119,
+      "inCanonicalScale": true,
+      "pixelValue": 16
+    },
+    {
+      "value": "gap: 10px",
+      "occurrences": 112,
+      "inCanonicalScale": true,
+      "pixelValue": 10
+    },
+    {
+      "value": "padding: 16px",
+      "occurrences": 97,
+      "inCanonicalScale": true,
+      "pixelValue": 16
+    },
+    {
+      "value": "padding: 20px",
+      "occurrences": 59,
+      "inCanonicalScale": true,
+      "pixelValue": 20
+    },
+    {
+      "value": "gap: 6px",
+      "occurrences": 56,
+      "inCanonicalScale": true,
+      "pixelValue": 6
+    },
+    {
+      "value": "padding: 10px",
+      "occurrences": 53,
+      "inCanonicalScale": true,
+      "pixelValue": 10
+    },
+    {
+      "value": "padding: 24px",
+      "occurrences": 49,
+      "inCanonicalScale": true,
+      "pixelValue": 24
+    },
+    {
+      "value": "gap: 24px",
+      "occurrences": 49,
+      "inCanonicalScale": true,
+      "pixelValue": 24
+    },
+    {
+      "value": "gap: 20px",
+      "occurrences": 45,
+      "inCanonicalScale": true,
+      "pixelValue": 20
+    },
+    {
+      "value": "gap: 5px",
+      "occurrences": 43,
+      "inCanonicalScale": false,
+      "pixelValue": 5
+    },
+    {
+      "value": "gap: 15px",
+      "occurrences": 35,
+      "inCanonicalScale": false,
+      "pixelValue": 15
+    },
+    {
+      "value": "padding: 12px",
+      "occurrences": 34,
+      "inCanonicalScale": true,
+      "pixelValue": 12
+    },
+    {
+      "value": "padding: 8px",
+      "occurrences": 32,
+      "inCanonicalScale": true,
+      "pixelValue": 8
+    },
+    {
+      "value": "padding: 2px",
+      "occurrences": 28,
+      "inCanonicalScale": true,
+      "pixelValue": 2
+    },
+    {
+      "value": "gap: 30px",
+      "occurrences": 28,
+      "inCanonicalScale": false,
+      "pixelValue": 30
+    },
+    {
+      "value": "padding: 0px",
+      "occurrences": 25,
+      "inCanonicalScale": true,
+      "pixelValue": 0
+    },
+    {
+      "value": "gap: 2px",
+      "occurrences": 24,
+      "inCanonicalScale": true,
+      "pixelValue": 2
+    },
+    {
+      "value": "padding: 4px",
+      "occurrences": 23,
+      "inCanonicalScale": true,
+      "pixelValue": 4
+    },
+    {
+      "value": "gap: 25px",
+      "occurrences": 18,
+      "inCanonicalScale": false,
+      "pixelValue": 25
+    },
+    {
+      "value": "gap: 0px",
+      "occurrences": 15,
+      "inCanonicalScale": true,
+      "pixelValue": 0
+    },
+    {
+      "value": "padding: 30px",
+      "occurrences": 13,
+      "inCanonicalScale": false,
+      "pixelValue": 30
+    },
+    {
+      "value": "margin: 0px",
+      "occurrences": 13,
+      "inCanonicalScale": true,
+      "pixelValue": 0
+    }
+  ],
+  "radiusDrift": [
+    {
+      "value": "20px",
+      "occurrences": 175,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "16px",
+      "occurrences": 157,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "10px",
+      "occurrences": 133,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "8px",
+      "occurrences": 130,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "12px",
+      "occurrences": 98,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "24px",
+      "occurrences": 94,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "4px",
+      "occurrences": 67,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "6px",
+      "occurrences": 62,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "30px",
+      "occurrences": 38,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "0px",
+      "occurrences": 25,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "18px",
+      "occurrences": 24,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "50px",
+      "occurrences": 23,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "14px",
+      "occurrences": 22,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "32px",
+      "occurrences": 17,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "15px",
+      "occurrences": 17,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "5px",
+      "occurrences": 16,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "40px",
+      "occurrences": 16,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "100px",
+      "occurrences": 13,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "7px",
+      "occurrences": 10,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "2px",
+      "occurrences": 7,
+      "inCanonicalScale": true
+    },
+    {
+      "value": "3px",
+      "occurrences": 6,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "11px",
+      "occurrences": 6,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "31px",
+      "occurrences": 5,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "25px",
+      "occurrences": 5,
+      "inCanonicalScale": false
+    },
+    {
+      "value": "23px",
+      "occurrences": 5,
+      "inCanonicalScale": false
+    }
+  ]
+}

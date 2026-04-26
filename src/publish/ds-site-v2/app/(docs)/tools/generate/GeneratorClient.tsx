@@ -66,6 +66,131 @@ Radius:
 COMPONENT PATTERNS (use these as reference):
 ${JSON.stringify(componentSpecs, null, 2)}
 
+REAL PRODUCTION PATTERNS (use these as style reference — they're the actual SCSS modules shipping in the student-dashboard):
+
+// NavigationBar — appears on all 7 student pages, the chrome rail
+// File: src/components/NavigationBar/navigation.module.scss
+.container {
+  width: 80px;                           // collapsed
+  background-color: white;
+  height: 100vh;
+  padding: 18px 12px;
+  transition: all 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.containerExpanded { width: 280px; }
+.menuBar { display: flex; flex-direction: column; gap: 12px; }
+.menuItem {
+  min-width: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: var(--color-brand-primary);
+  font-weight: 800;
+  cursor: pointer;
+}
+.iconWrapper { min-width: 56px; min-height: 56px; display: flex; align-items: center; justify-content: center; }
+.menuItemActive {
+  background-color: var(--color-brand-primary);
+  color: white;
+}
+.menuItemHover:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-brand-primary);
+}
+
+// Button — primary action component, 5 variants
+// File: src/components/Button/button.module.scss
+.root {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--color-brand-primary);
+  cursor: pointer;
+  position: relative;
+}
+.buttonPadding { padding: 8px 24px; }
+.contained {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-white);
+  border: 2px solid var(--color-brand-primary);
+  padding: 8px 24px;
+}
+.contained:disabled {
+  background-color: var(--color-bg-disabled);
+  color: var(--color-text-disabled);
+  border: 2px solid var(--color-bg-disabled);
+  cursor: default;
+}
+.outlined {
+  border: 2px solid var(--color-brand-primary);
+  background-color: transparent;
+  color: var(--color-brand-primary);
+  padding: 8px 24px;
+}
+.fullWidth { min-width: 100%; white-space: nowrap; }
+
+// DashboardLayout — three-column shell. Wraps every authenticated student page.
+// File: src/layouts/DashboardLayout/dashboardLayout.module.scss
+.root { position: relative; max-width: 1440px; margin: 0 auto; }
+.container { display: flex; gap: 0; background-color: white; }
+.leftArea  { width: 104px; position: relative; }
+.mainWrapper {
+  background-color: var(--color-bg-app);
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 32px 24px;
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+.mainContentArea { max-width: 880px; margin: auto; }
+.rightArea {
+  position: relative;
+  min-width: 460px; max-width: 460px;
+  height: 100vh; overflow-y: scroll;
+  padding: 20px;
+}
+
+// ProgressBar — 5 status variants, all with rounded track
+// File: src/components/ProgressBar/progressbar.module.scss
+.container { display: flex; gap: 10px; align-items: center; }
+.progressBar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-bg-disabled);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px 0;
+}
+.progressBarFill { height: 100%; transition: width 0.3s ease-in-out; }
+.progressBarFillCompleted   { background-color: var(--color-success); }
+.progressBarFillInProgress  { background-color: var(--color-in-progress); }
+.progressBarFillSkipped     { background-color: var(--color-warning); }
+.progressBarFillPaused      { background-color: var(--color-paused); }
+
+// LeftSideBar — newDashboard wrapper around NavBar + extras
+// File: src/newDashboard/templates/NewDashboard/LeftSideBar/LeftSideBar.module.scss
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 20px;
+  height: 100vh;
+  gap: 15px;
+  overflow: auto;
+}
+.sideBarNavContainer { border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+.logo { margin-bottom: 2.55rem; }
+.bottomSectionContaner { margin-bottom: 20px; }
+
+These are real shipping patterns. Mimic the structure (flex column, semantic class names, transitions, focus-visible) but always emit \`var(--token)\` references in your output, never raw hex.
+
 RULES:
 - Always use CSS variables, never hardcode hex values
 - Use Nunito font family
