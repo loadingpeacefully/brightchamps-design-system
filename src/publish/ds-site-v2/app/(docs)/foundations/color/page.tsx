@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { ColorSwatch } from '@/components/tokens/ColorSwatch'
+import { BulkExport } from '@/components/tokens/BulkExport'
 import { RightTOC } from '@/components/chrome/RightTOC'
-import { colorsByCategory, metadata as tokenMeta, type ColorToken, type FeedbackRole } from '@/lib/tokens.generated'
+import { colors, colorsByCategory, metadata as tokenMeta, type ColorToken, type FeedbackRole } from '@/lib/tokens.generated'
 
 export const metadata: Metadata = {
   title: 'Color',
@@ -19,6 +20,7 @@ const TOC = [
   { id: 'surface',     label: 'Surface',     level: 2 as const },
   { id: 'overlay',     label: 'Overlay',     level: 2 as const },
   { id: 'interactive', label: 'Interactive', level: 2 as const },
+  { id: 'course',      label: 'Course verticals', level: 2 as const },
 ]
 
 function Section({ id, title, description, tokens, children }: {
@@ -99,6 +101,13 @@ export default function ColorPage() {
           <InfoChip label="Total canonical" value={tokenMeta.totalCanonical.toLocaleString()} />
           <InfoChip label="Colors" value={tokenMeta.totalColors.toLocaleString()} />
         </div>
+        <div className="mt-4">
+          <BulkExport
+            label={`${tokenMeta.totalColors} color`}
+            cssContent={colors.map(c => `${c.cssVar}: ${c.value};`).join('\n')}
+            jsonContent={JSON.stringify(colors.map(c => ({ name: c.name, value: c.value, category: c.category })), null, 2)}
+          />
+        </div>
 
         <Section
           id="brand"
@@ -145,6 +154,15 @@ export default function ColorPage() {
           description="Colors reserved for UI state — hover, active, selected. Semantic meaning for interaction, not decoration."
           tokens={colorsByCategory.interactive}
         />
+
+        {colorsByCategory.course.length > 0 && (
+          <Section
+            id="course"
+            title="Course verticals"
+            description="Per-course identity colors for BrightChamps learning tracks. Three scales per course: 50 (surface), 500 (base), 900 (heading). Source: designer DS."
+            tokens={colorsByCategory.course}
+          />
+        )}
       </article>
       <RightTOC items={TOC} />
     </div>

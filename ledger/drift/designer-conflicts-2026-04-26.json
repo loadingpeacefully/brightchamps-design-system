@@ -1,0 +1,87 @@
+{
+  "id": "designer-conflicts-2026-04-26",
+  "type": "design-intent-vs-production",
+  "generatedAt": "2026-04-26T12:00:00.000Z",
+  "source": "Designer DS (Design System Dashbaord/src/styles/tokens.css)",
+  "description": "Conflicts between the designer-authored token system and production-extracted values. Each ticket is an actionable gap for engineering.",
+  "tickets": [
+    {
+      "id": "DC-001",
+      "title": "Status color: Success",
+      "designerValue": "#00B67A",
+      "productionValue": "#24c26e",
+      "deltaE": 12,
+      "severity": "medium",
+      "category": "color",
+      "action": "Engineering to update success color to #00B67A across all surfaces.",
+      "status": "open"
+    },
+    {
+      "id": "DC-002",
+      "title": "Status color: Error",
+      "designerValue": "#FF5C5C",
+      "productionValue": "#f0294d",
+      "deltaE": 15,
+      "severity": "medium",
+      "category": "color",
+      "action": "Engineering to update error color to #FF5C5C across all surfaces.",
+      "status": "open"
+    },
+    {
+      "id": "DC-003",
+      "title": "Status color: Info",
+      "designerValue": "#33CCFF",
+      "productionValue": "#0d47a1",
+      "deltaE": 40,
+      "severity": "high",
+      "category": "color",
+      "action": "Engineering to update info color to #33CCFF. Note: #0d47a1 flagged previously as Material Blue 900 library leak — this confirms it should be replaced.",
+      "status": "open"
+    },
+    {
+      "id": "DC-004",
+      "title": "Status color: Warning",
+      "designerValue": "#FF7C35",
+      "productionValue": null,
+      "deltaE": null,
+      "severity": "medium",
+      "category": "color",
+      "action": "Engineering to add #FF7C35 as warning color. No close match exists in production.",
+      "status": "open"
+    },
+    {
+      "id": "DC-005",
+      "title": "Brand primary color",
+      "designerValue": "#722ED1",
+      "productionValue": "#4e3bc2",
+      "deltaE": 18,
+      "severity": "high",
+      "category": "color",
+      "action": "Confirm with brand team which purple is canonical before any engineering action.",
+      "status": "pending-confirmation",
+      "notes": "Designer uses Royal Amethyst #722ED1. Production Figma extracts #4e3bc2. Both are purples but perceptually distinct (ΔE ~18). Keeping #4e3bc2 as canonical until brand team confirms."
+    },
+    {
+      "id": "DC-006",
+      "title": "Icon system not implemented",
+      "designerValue": "1,208 SVG icons across 22 categories (line + fill variants)",
+      "productionValue": "153 image assets (PNG/CDN), 7 inline SVGs",
+      "deltaE": null,
+      "severity": "high",
+      "category": "system",
+      "action": "Engineering to replace image-based icons with SVG icon system. Migrate to lucide-react or custom SVG sprite using designer's icon library as source. Multi-sprint engineering effort.",
+      "status": "open"
+    },
+    {
+      "id": "DC-007",
+      "title": "Typography scale gap",
+      "designerValue": "24/32/40/56px heading sizes defined",
+      "productionValue": "Only 10–20px extracted as canonical",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "typography",
+      "action": "Resolved — added font/heading/sm (24px), font/heading/md (32px), font/heading/lg (40px), font/heading/xl (56px) to canonical via manual-canonicals.json. Engineering: ensure Nunito loads correctly at these sizes.",
+      "status": "resolved"
+    }
+  ]
+}

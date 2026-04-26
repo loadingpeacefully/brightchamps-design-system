@@ -259,6 +259,45 @@ variables in this order:
 variable resolves to a hex literal directly (i.e., any `--bc-color-\d+:` line
 must be `var(...)`, never `#…`).
 
+### A3 — Naming scheme reconciliation with designer DS (2026-04-26)
+
+**Context:** The designer's system uses flat kebab-case naming:
+`color-primary-500`, `color-secondary-500`, `font-heading-xl`. TDR-0001
+originally proposed slash-hierarchical: `color/brand/purple/01`. After a
+pre-merge audit comparing both systems (`docs/pre-merge-audit.md`), a hybrid
+was chosen.
+
+**Decision:** Adopt `color/primary/500` — the designer's semantic hue
+vocabulary with our slash-delimited DTCG-compatible hierarchy.
+
+**Rationale:**
+- Slash-delimited paths are DTCG-compatible and Figma Variables-ready
+- Semantic hue names (`primary` not `purple`) survive brand color changes
+  without token renames — if purple becomes blue, `color/primary/500` is
+  still valid
+- Maps to CSS vars as `--color-primary-500` (readable, standard)
+- Matches designer's mental model and how Tailwind/shadcn consumers think
+- The designer's vocabulary is adopted exactly: `primary` (Royal Amethyst),
+  `secondary` (Golden Aurelia), `neutral` (Metal Grey), `success`, `warning`,
+  `error`, `info`, plus course verticals: `coding`, `robotics`, `finance`,
+  `ai`, `literature`, `maths`
+
+**Updated naming examples:**
+
+```
+color/primary/500     (was: color.008 / earlier proposed: color/brand/purple/01)
+color/secondary/500   (was: color.028)
+color/neutral/600     (was: color.006)
+color/success/500     (was: color.066)
+color/course/coding/500  (new — from designer DS)
+font/heading/xl       (was: typography.01, now mapped by role)
+space/4               (was: spacing.04)
+radius/full           (was: radius.11)
+```
+
+**Migration status:** DRY-RUN ONLY until design + eng sign-off.
+`scripts/migrate-tokens.ts` updated to produce the hybrid naming scheme.
+
 ## Alternatives considered
 
 1. **Keep frequency-ranked names; add comments.** Rejected: comments in JSON are ignored by tooling; the problem is the name itself, not documentation around it.

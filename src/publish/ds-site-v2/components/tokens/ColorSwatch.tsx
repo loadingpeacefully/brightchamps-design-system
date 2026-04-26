@@ -86,6 +86,9 @@ export function ColorSwatch({ token }: { token: ColorToken }) {
             ))}
           </div>
         )}
+        {token.description && !token.description.startsWith('Extracted from student') && (
+          <p className="mt-2 text-[11px] leading-snug text-chrome-text-subtlest">{token.description}</p>
+        )}
       </div>
     </article>
   )

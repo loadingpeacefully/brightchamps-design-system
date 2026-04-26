@@ -206,6 +206,20 @@ function setNested(root: DtcgNode, pathSegs: string[], leaf: DtcgLeaf): boolean 
 // sees fit; we just append a 2-digit index.
 function rankSuffix(i: number): string { return String(i + 1).padStart(2, '0') }
 
+// Map a 0-based luminance-sorted index to a Radix/Tailwind shade scale (50–900).
+// Distributes items across the scale based on count. If there are ≤10 items, maps
+// directly to [50,100,200,300,400,500,600,700,800,900]. If more, uses rank suffix.
+const SHADE_SCALE = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+function indexToShade(index: number, total: number): string {
+  if (total <= SHADE_SCALE.length) {
+    // Distribute evenly across the scale
+    const step = Math.round((index / Math.max(total - 1, 1)) * (SHADE_SCALE.length - 1))
+    return String(SHADE_SCALE[step])
+  }
+  // More items than scale positions — use padded index
+  return String((index + 1) * 100).padStart(3, '0')
+}
+
 function buildProposal(ledger: LedgerState): {
   proposed: DtcgNode
   mappings: Mapping[]
@@ -246,46 +260,52 @@ function buildProposal(ledger: LedgerState): {
   bump(counts.byCategory, 'color')
   counts.byCategory['color'] = colors.length
   const colorsByGroup: Record<ColorGroup, LedgerToken[]> = { brand: [], neutral: [], feedback: [], overlay: [], surface: [], interactive: [] }
-  for (const t of colors) colorsByGroup[classifyColor(t)].push(t)
+  for (const t of colors) {
+    // Course vertical tokens pass through unchanged — they already use semantic names
+    if (t.name.startsWith('color/course/')) {
+      const leaf: DtcgLeaf = {
+        $value: t.value, $type: 'color',
+        $description: t.description ?? `Course vertical color. Migrated from ${t.name}.`,
+        $extensions: { bc: { legacyName: t.name, group: 'course', usageCount: t.usageCount ?? 0 } },
+      }
+      setNested(root, t.name.split('/'), leaf)
+      mappings.push({ oldName: t.name, oldValue: t.value, newPath: t.name, reason: 'course-passthrough', group: 'course' })
+      counts.migrated++
+      bump(counts.byNewGroup, 'color/course')
+      continue
+    }
+    colorsByGroup[classifyColor(t)].push(t)
+  }
 
-  // Brand — sub-group by hue bucket (purple cluster is the point of this)
+  // Brand — use semantic role names (primary/secondary) instead of hue buckets.
+  // Sort by luminance ascending (darkest shade = highest number, e.g., 900).
+  // A3 amendment: naming is color/primary/{shade} not color/brand/purple/{step}.
   {
-    const hueGroups = new Map<string, LedgerToken[]>()
-    for (const t of colorsByGroup.brand) {
-      const hex = solidOf(t.value)
-      const bucket = hueBucket(hex)
-      const list = hueGroups.get(bucket) ?? []
-      list.push(t)
-      hueGroups.set(bucket, list)
-    }
-    for (const [bucket, list] of hueGroups) {
-      // Sort by luminance ascending (darkest → 1, lightest → N): matches Radix
-      list.sort((a, b) => luminance(a.value) - luminance(b.value))
-      list.forEach((t, i) => {
-        const step = rankSuffix(i)
-        const newPath = `color/brand/${bucket}/${step}`
-        const leaf: DtcgLeaf = {
-          $value: t.value, $type: 'color',
-          $description: `Brand ${bucket} step ${step}. Migrated from ${t.name}.`,
-          $extensions: { bc: { legacyName: t.name, group: 'brand', hueBucket: bucket, usageCount: t.usageCount ?? 0, luminance: Number(luminance(t.value).toFixed(3)), sourceConfidence: t.confidence } },
-        }
-        setNested(root, newPath.split('/'), leaf)
-        mappings.push({ oldName: t.name, oldValue: t.value, newPath, reason: `brand-${bucket}-ramp`, group: 'brand' })
-        counts.migrated++
-        bump(counts.byNewGroup, 'color/brand')
-      })
-    }
-    // Semantic alias: primary → the most-saturated purple with highest usage
-    const purples = hueGroups.get('purple') ?? []
-    if (purples.length > 0) {
-      const primary = purples.slice().sort((a, b) => (b.usageCount ?? 0) - (a.usageCount ?? 0))[0]!
-      const i = purples.findIndex(t => t.value.toLowerCase() === primary.value.toLowerCase())
-      const step = rankSuffix(i)
-      setNested(root, ['color', 'brand', 'primary'], {
-        $value: `{color.brand.purple.${step}}`, $type: 'color',
+    // All brand tokens go into the "primary" ramp (since BrightChamps has one brand hue).
+    const list = colorsByGroup.brand.slice()
+    list.sort((a, b) => luminance(b.value) - luminance(a.value))  // lightest first = lowest shade
+    list.forEach((t, i) => {
+      const shade = indexToShade(i, list.length)
+      const newPath = `color/primary/${shade}`
+      const leaf: DtcgLeaf = {
+        $value: t.value, $type: 'color',
+        $description: `Primary ${shade}. Migrated from ${t.name}.`,
+        $extensions: { bc: { legacyName: t.name, group: 'brand', usageCount: t.usageCount ?? 0, luminance: Number(luminance(t.value).toFixed(3)), sourceConfidence: t.confidence } },
+      }
+      setNested(root, newPath.split('/'), leaf)
+      mappings.push({ oldName: t.name, oldValue: t.value, newPath, reason: 'primary-ramp', group: 'brand' })
+      counts.migrated++
+      bump(counts.byNewGroup, 'color/primary')
+    })
+    // Semantic alias: primary/default → the most-used shade
+    if (list.length > 0) {
+      const primary = list.slice().sort((a, b) => (b.usageCount ?? 0) - (a.usageCount ?? 0))[0]!
+      const idx = list.findIndex(t => t.value.toLowerCase() === primary.value.toLowerCase())
+      const shade = indexToShade(idx, list.length)
+      setNested(root, ['color', 'primary', 'default'], {
+        $value: `{color.primary.${shade}}`, $type: 'color',
         $description: 'Semantic alias for BrightChamps brand primary.',
       })
-      bump(counts.byNewGroup, 'color/brand')
     }
   }
 

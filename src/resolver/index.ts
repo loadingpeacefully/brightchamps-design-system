@@ -271,7 +271,9 @@ interface ManualCanonical {
   source?: TokenSource
   surface?: Surface
   confidence?: number
+  description?: string
   notes?: string
+  openQuestion?: string
 }
 
 function loadManualCanonicals(): LedgerToken[] {
@@ -309,7 +311,8 @@ function loadManualCanonicals(): LedgerToken[] {
       // because we explicitly decided to canonicalize them.
       canonical: true,
     }
-    token.raw = { manual: true, ...(m.notes ? { notes: m.notes } : {}) }
+    if (m.description) token.description = m.description
+    token.raw = { manual: true, ...(m.notes ? { notes: m.notes } : {}), ...(m.openQuestion ? { openQuestion: m.openQuestion } : {}) }
     result.push(token)
   }
   return result

@@ -142,5 +142,34 @@
     "surface": "student",
     "confidence": 0.8,
     "notes": "Purple overlay at 10% alpha. System-gap from 2026-04-16 drift report."
-  }
+  },
+
+  { "name": "color/brand/primary", "value": "#4e3bc2", "type": "color", "source": "figma", "surface": "student", "confidence": 0.9,
+    "description": "Brand primary — CTAs, selected nav, primary actions",
+    "notes": "Extracted from student Figma. Confirmed as current production value. usageCount was 5,853 in Figma extraction.",
+    "openQuestion": "Designer DS uses #722ED1 (Royal Amethyst). Confirm with brand team before changing." },
+
+  { "name": "color/course/coding/50", "value": "#E6F7FF", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Coding surface. Light background for coding vertical cards.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/coding/500", "value": "#33CCFF", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Coding base. Course tags, icons, and primary elements.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/coding/900", "value": "#0A2933", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Coding heading. High-contrast text on light surfaces.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/robotics/50", "value": "#FFF5EF", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Robotics surface. Light background for robotics vertical cards.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/robotics/500", "value": "#FF7C35", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Robotics base. Course tags, icons, and primary elements.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/robotics/900", "value": "#33180A", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Robotics heading. High-contrast text on light surfaces.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/finance/50", "value": "#E6F8F1", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Finance surface. Light background for finance vertical cards.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/finance/500", "value": "#00B67A", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Finance base. Course tags, icons, and primary elements.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/finance/900", "value": "#002518", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Finance heading. High-contrast text on light surfaces.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/ai/50", "value": "#F5F0FE", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "AI surface. Light background for AI vertical cards.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/ai/500", "value": "#7453D7", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "AI base. Course tags, icons, and primary elements.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/ai/900", "value": "#17102B", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "AI heading. High-contrast text on light surfaces.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/literature/50", "value": "#FEF0EF", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Literature surface. Light background for literature vertical cards.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/literature/500", "value": "#ED675C", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Literature base. Course tags, icons, and primary elements.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/literature/900", "value": "#2F1512", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Literature heading. High-contrast text on light surfaces.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/maths/50", "value": "#FFF8E6", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Maths surface. Light background for maths vertical cards.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/maths/500", "value": "#FFA914", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Maths base. Course tags, icons, and primary elements.", "notes": "From designer DS. Course vertical color." },
+  { "name": "color/course/maths/900", "value": "#332204", "type": "color", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Maths heading. High-contrast text on light surfaces.", "notes": "From designer DS. Course vertical color." },
+
+  { "name": "font/heading/sm", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":600,\"fontSize\":24,\"lineHeightPx\":28.8,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Small section titles. Designer heading — fills gap in FINDING-002.", "notes": "From designer DS (font-heading-sm). 24px seen in DOM drift." },
+  { "name": "font/heading/md", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":32,\"lineHeightPx\":38.4,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Card titles, component headers. Designer heading — fills gap in FINDING-002.", "notes": "From designer DS (font-heading-md). 32px seen in DOM drift." },
+  { "name": "font/heading/lg", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":700,\"fontSize\":40,\"lineHeightPx\":48,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Section headers. Designer heading.", "notes": "From designer DS (font-heading-lg). Not yet seen in DOM — aspirational." },
+  { "name": "font/heading/xl", "value": "{\"fontFamily\":\"Nunito\",\"fontWeight\":800,\"fontSize\":56,\"lineHeightPx\":67.2,\"letterSpacing\":0}", "type": "typography", "source": "designer", "surface": "student", "confidence": 0.7, "description": "Page titles, hero headings. Designer heading.", "notes": "From designer DS (font-heading-xl). Not yet seen in DOM — aspirational." }
 ]

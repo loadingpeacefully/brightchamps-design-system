@@ -32,6 +32,7 @@ export interface DesignToken {
   surface: Surface
   confidence: number        // 0.0–1.0
   deprecated?: boolean
+  description?: string      // Human-readable usage context (e.g., "Lightest surface", "Brand primary")
   raw?: Record<string, unknown>
   extractedAt?: string      // ISO timestamp
   // Figma tree-walk metadata (optional; populated when extractor counts occurrences)

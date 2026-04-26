@@ -11,6 +11,7 @@
     "ledger:status": "tsx scripts/ledger-status.ts",
     "migrate:tokens": "tsx scripts/migrate-tokens.ts",
     "audit:student": "tsx scripts/audit-student-surface.ts",
+    "figma:pull": "tsx scripts/figma-pull.ts",
     "drift:detect": "tsx src/drift/detect.ts",
     "drift:review": "cd dashboard && npm run dev",
     "publish:figma": "tsx src/publish/figma-variables.ts",

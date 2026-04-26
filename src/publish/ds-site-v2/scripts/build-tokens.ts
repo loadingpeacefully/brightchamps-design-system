@@ -56,7 +56,7 @@ function luminance(hex: string): number {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b
 }
 
-type ColorCategory = 'brand' | 'neutral' | 'feedback' | 'overlay' | 'surface' | 'interactive'
+type ColorCategory = 'brand' | 'neutral' | 'feedback' | 'overlay' | 'surface' | 'interactive' | 'course'
 type FeedbackRole = 'danger' | 'warning' | 'success' | 'info'
 
 const BRAND_HEXES = new Set(['#4e3bc2', '#6651e4', '#4d3bc2', '#1a237e', '#0d47a1'])
@@ -64,6 +64,7 @@ const NEUTRAL_L_FLOOR = 5
 const NEUTRAL_L_CEILING = 97
 
 function classifyColor(t: LedgerToken): ColorCategory {
+  if (t.name.startsWith('color/course/')) return 'course'
   if (t.name.startsWith('color/interactive/')) return 'interactive'
   if (t.name.startsWith('color/overlay/')) return 'overlay'
   if (t.name.startsWith('color/surface/')) return 'surface'
@@ -101,6 +102,7 @@ interface GeneratedColorToken {
   cssVar: string
   category: ColorCategory
   feedbackRole?: FeedbackRole
+  description?: string
   usageCount: number
   confidence: number
   tier: 'canonical' | 'candidate' | 'deprecated'
@@ -152,6 +154,9 @@ function build(): void {
       pages: t.pages ?? [],
     }
     if (category === 'feedback') token.feedbackRole = feedbackRoleOf(solidOf(t.value))
+    // Propagate description from ledger (manual-canonicals or synthesized)
+    const desc = t.description ?? (t.raw as Record<string, unknown> | undefined)?.['description'] as string | undefined
+    if (desc) token.description = desc
     return token
   })
 
@@ -172,6 +177,12 @@ function build(): void {
       return aA - bA
     }),
     interactive: generatedColors.filter(c => c.category === 'interactive'),
+    course: generatedColors.filter(c => c.category === 'course').sort((a, b) => {
+      // Sort by course name (from token path), then by shade (luminance)
+      if (a.name < b.name) return -1
+      if (a.name > b.name) return 1
+      return 0
+    }),
   }
 
   // ── 2b. Typography tokens ──
@@ -231,7 +242,7 @@ function build(): void {
   tsLines.push(` * Source: ledger/tokens.json (${ledger.lastBuilt.slice(0, 10)})`)
   tsLines.push(' */')
   tsLines.push('')
-  tsLines.push('export type ColorCategory = "brand" | "neutral" | "feedback" | "overlay" | "surface" | "interactive"')
+  tsLines.push('export type ColorCategory = "brand" | "neutral" | "feedback" | "overlay" | "surface" | "interactive" | "course"')
   tsLines.push('export type FeedbackRole = "danger" | "warning" | "success" | "info"')
   tsLines.push('export type Tier = "canonical" | "candidate" | "deprecated"')
   tsLines.push('')
@@ -241,6 +252,7 @@ function build(): void {
   tsLines.push('  cssVar: string')
   tsLines.push('  category: ColorCategory')
   tsLines.push('  feedbackRole?: FeedbackRole')
+  tsLines.push('  description?: string')
   tsLines.push('  usageCount: number')
   tsLines.push('  confidence: number')
   tsLines.push('  tier: Tier')
@@ -262,6 +274,7 @@ function build(): void {
   tsLines.push(`  surface:     colors.filter(c => c.category === "surface"),`)
   tsLines.push(`  overlay:     colors.filter(c => c.category === "overlay"),`)
   tsLines.push(`  interactive: colors.filter(c => c.category === "interactive"),`)
+  tsLines.push(`  course:      colors.filter(c => c.category === "course"),`)
   tsLines.push('}')
   tsLines.push('')
   // Typography
@@ -276,6 +289,7 @@ function build(): void {
   tsLines.push('  weight: number')
   tsLines.push('  lineHeight: number | null')
   tsLines.push('  letterSpacing: number | null')
+  tsLines.push('  description?: string')
   tsLines.push('  usageCount: number')
   tsLines.push('  confidence: number')
   tsLines.push('  tier: Tier')
@@ -312,6 +326,7 @@ function build(): void {
   console.log(`    surface     ${byCategory.surface.length}`)
   console.log(`    overlay     ${byCategory.overlay.length}`)
   console.log(`    interactive ${byCategory.interactive.length}`)
+  console.log(`    course      ${byCategory.course.length}`)
   console.log(`[build-tokens] ✓ ${path.relative(REPO_ROOT, TOKENS_CSS_OUT)}`)
   console.log(`[build-tokens] ✓ ${path.relative(REPO_ROOT, TOKENS_TS_OUT)}`)
 }

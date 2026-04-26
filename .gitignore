@@ -13,3 +13,6 @@ src/publish/ds-site-v2/.next
 src/publish/ds-site-v2/out
 src/publish/ds-site-v2/app/tokens.css
 src/publish/ds-site-v2/lib/tokens.generated.ts
+
+# Designer DS source (reference only, not part of build)
+Design System Dashbaord/

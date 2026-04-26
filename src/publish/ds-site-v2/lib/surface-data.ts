@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -63,11 +63,13 @@ export function loadStates(): StateEntry[] {
 
 export function loadDriftItems(): DriftItem[] {
   try {
-    const files = require('fs').readdirSync(DRIFT_DIR).filter((f: string) => f.endsWith('.json')).sort() as string[]
-    if (files.length === 0) return []
-    const latest = files[files.length - 1]!
-    const data = loadJSON<{ items: DriftItem[] }>(path.join(DRIFT_DIR, latest))
-    return data.items
+    const files = readdirSync(DRIFT_DIR).filter(f => f.endsWith('.json')).sort()
+    // Find the latest DOM-vs-Figma drift report (not the designer-conflicts report)
+    const driftFiles = files.filter(f => !f.startsWith('designer-') && !f.startsWith('figma-'))
+    if (driftFiles.length === 0) return []
+    const latest = driftFiles[driftFiles.length - 1]!
+    const data = loadJSON<{ items?: DriftItem[] }>(path.join(DRIFT_DIR, latest))
+    return data.items ?? []
   } catch {
     return []
   }
