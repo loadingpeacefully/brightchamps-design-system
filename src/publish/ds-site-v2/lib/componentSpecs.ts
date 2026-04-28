@@ -1500,4 +1500,136 @@ export const componentSpecs: ComponentSpec[] = [
     target: 'newDashboard',
     verificationStatus: 'verified',
   },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // NanoSkills surface (Harvard sub-product) — built 2026-04-28
+  // ═══════════════════════════════════════════════════════════════════
+
+  {
+    name: 'HarvardHero', slug: 'harvard-hero',
+    description: 'Harvard-branded NanoSkills course hero. Source: 313 SCSS lines. Crimson background (~#a51c30, NOT in ledger — DC-032 candidate). Features: Harvard×BrightChamps badge, discount ribbon (#FC6067 — DC-033 candidate), strikethrough old price, enrollment count + rating.',
+    variants: ['default'],
+    tokens: [
+      { property: 'Hero bg (Harvard crimson)', token: 'surface/bg/brand', cssVar: '--surface-bg-brand', value: 'bound to brand; production uses ~#a51c30 — DC-032 candidate (Harvard crimson not in ledger)' },
+      { property: 'Discount ribbon bg', token: 'surface/bg/error', cssVar: '--surface-bg-error', value: '#FF5C5C (source: #FC6067 — DC-033 candidate)' },
+      { property: 'Discount text size', token: '—', cssVar: '—', value: '18px / 900 (Black) (source-exact)' },
+      { property: 'Title', token: 'Display style + 40px override', cssVar: '—', value: 'Nunito 40px / 800' },
+      { property: 'Title color', token: 'text/on/brand', cssVar: '--text-on-brand', value: '#ffffff' },
+      { property: 'Old price', token: 'text/inverse @ 0.5', cssVar: '—', value: 'white at 0.5 opacity, strikethrough' },
+      { property: 'Enrollment text', token: 'surface/bg/accent', cssVar: '--surface-bg-accent', value: '#FFCE00 stars + count' },
+      { property: 'Radius', token: 'radius/card', cssVar: '--radius-card', value: '16px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/NanoSkills/Pages/CourseDetails/HeroSection/Harvard/harvardHero.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'Harvard crimson background (~#a51c30) is not in the library — bound to surface/bg/brand for visualization. New ticket DC-032 candidate: add Harvard partnership color tokens.',
+      'Discount ribbon bg #FC6067 is a fifth red variant beyond DC-023 — bound to surface/bg/error. Slightly different hue from canonical #FF5C5C.',
+      'fontWeight 900 (Black) used for discount text — Nunito Black is loaded; bound via fontWeight binding.',
+    ],
+  },
+  {
+    name: 'SelfPacedHero', slug: 'self-paced-hero',
+    description: 'Self-paced course hero variant. Source: 243 SCSS lines. Min-height 240px, reverses on mobile-portrait. White rating pill on brand-subtle bg. Used for self-paced courses (no live teacher).',
+    variants: ['default'],
+    tokens: [
+      { property: 'Hero bg', token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle', value: '#FAF5FF' },
+      { property: 'Rating pill bg', token: 'surface/bg/default', cssVar: '--surface-bg-default', value: '#ffffff' },
+      { property: 'Title', token: 'Heading/H2', cssVar: '—', value: 'Nunito 32px / 700' },
+      { property: 'Description', token: 'text/muted', cssVar: '--text-muted', value: 'neutral-500' },
+      { property: 'Hero image', token: 'surface/bg/sunken', cssVar: '--surface-bg-sunken', value: 'placeholder bg' },
+      { property: 'Radius', token: 'radius/card', cssVar: '--radius-card', value: '16px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/NanoSkills/Pages/CourseDetails/HeroSection/SelfPaced/selfPacedHero.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+  },
+  {
+    name: 'TeacherLedHero', slug: 'teacher-led-hero',
+    description: 'Teacher-led course hero variant. LIVE TEACHER badge + book-class CTA flow. Differs from SelfPaced via cohort scheduling.',
+    variants: ['default'],
+    tokens: [
+      { property: 'Hero bg', token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle', value: '#FAF5FF' },
+      { property: 'Live badge bg', token: 'surface/bg/brand', cssVar: '--surface-bg-brand', value: '#722ED1' },
+      { property: 'Live badge text', token: 'text/on/brand', cssVar: '--text-on-brand', value: '#ffffff' },
+      { property: 'Title', token: 'Heading/H2', cssVar: '—', value: 'Nunito 32px / 700' },
+      { property: 'Description', token: 'text/muted', cssVar: '--text-muted', value: 'neutral-500' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/NanoSkills/Pages/CourseDetails/HeroSection/TeacherLed/',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+  },
+  {
+    name: 'NanoSkills SkillCard', slug: 'nanoskills-skill-card',
+    description: 'NanoSkills SkillCard. 414 SCSS lines. Min-height 112px, 24px radius, 148×148 thumbnail. Used across Home, DiscoverSkillById, MyProgress.',
+    variants: ['default', 'teacher-led', 'self-paced'],
+    tokens: [
+      { property: 'Card bg', token: 'surface/bg/default', cssVar: '--surface-bg-default', value: '#ffffff' },
+      { property: 'Card radius', token: 'radius/container/2xl', cssVar: '--radius-container-2xl', value: '24px' },
+      { property: 'Thumbnail size', token: '—', cssVar: '—', value: '148×148 (source-exact)' },
+      { property: 'Thumbnail radius', token: 'radius/container/xl', cssVar: '--radius-container-xl', value: '20px' },
+      { property: 'Course tag', token: 'course/{name}/bg/subtle + course/{name}/text', cssVar: '—', value: 'Per-course theming' },
+      { property: 'Difficulty tag', token: 'surface/bg/success/subtle + text/success', cssVar: '—', value: 'Beginner = success palette' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/NanoSkills/SkillCard/skillCard.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+  },
+  {
+    name: 'NanoSkills BookingModal', slug: 'nanoskills-booking-modal',
+    description: 'Booking-flow modal for NanoSkills purchase. Source has 4 sub-modals (sufficientDiamonds, inSufficientDiamonds, success, diamondPurchaseSuccess) — combined ~1,200 SCSS lines.',
+    variants: ['sufficient-diamonds', 'insufficient-diamonds', 'success', 'purchase-success'],
+    tokens: [
+      { property: 'Modal bg', token: 'surface/bg/default', cssVar: '--surface-bg-default', value: '#ffffff' },
+      { property: 'Modal radius', token: 'radius/container/xl', cssVar: '--radius-container-xl', value: '20px' },
+      { property: 'Success icon', token: 'surface/bg/success', cssVar: '--surface-bg-success', value: '#00B67A' },
+      { property: 'Title', token: 'Heading/H3', cssVar: '—', value: 'Nunito 24px / 600' },
+      { property: 'Body', token: 'text/muted', cssVar: '--text-muted', value: 'neutral-500' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/NanoSkills/BookingModal/',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+  },
+  {
+    name: 'NanoSkills OnboardingModal', slug: 'nanoskills-onboarding-modal',
+    description: 'NanoSkills onboarding modal — has 5 sections (BenefitSection, FinalSection, OfferingSection, ParentsBenefitsSection, SkillSection) combined ~1,500 SCSS lines.',
+    variants: ['benefit', 'offering', 'skill', 'parents-benefits', 'final'],
+    tokens: [
+      { property: 'Section bg', token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle', value: '#FAF5FF' },
+      { property: 'Title', token: 'Heading/H2', cssVar: '—', value: 'Nunito 32px / 700' },
+      { property: 'Bullet dot', token: 'surface/bg/brand', cssVar: '--surface-bg-brand', value: '#722ED1' },
+      { property: 'Body', token: 'text/default', cssVar: '--text-default', value: 'neutral-900' },
+      { property: 'Modal radius', token: 'radius/container/xl', cssVar: '--radius-container-xl', value: '20px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/NanoSkills/OnboardingModal/',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // Practice Zone — built 2026-04-28
+  // ═══════════════════════════════════════════════════════════════════
+
+  {
+    name: 'WorkSheetStep', slug: 'worksheet-step',
+    description: 'PracticeZone core practice mechanic. 4 status variants: blank (locked) / active / completed / mastered. Active state has pulsing pointer animation. Mastered state uses gold gradient.',
+    variants: ['blank', 'active', 'completed', 'mastered'],
+    tokens: [
+      { property: 'Status icon size', token: '—', cssVar: '—', value: '32×32 (source-exact)' },
+      { property: 'Mastered bg', token: 'surface/bg/accent/subtle', cssVar: '--surface-bg-accent-subtle', value: '#FFFCF5 (source: linear-gradient gold)' },
+      { property: 'Mastered border', token: 'surface/bg/accent', cssVar: '--surface-bg-accent', value: '#FFCE00 (source: #FFBE19)' },
+      { property: 'Completed bg', token: 'surface/bg/default @ 0.30', cssVar: '—', value: 'white at 0.30 opacity (source-exact)' },
+      { property: 'Active icon bg', token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle', value: '#FAF5FF (source: #B8B1E7 — light brand)' },
+      { property: 'Blank border', token: 'border/default', cssVar: '--border-default', value: 'neutral-200 (source: #A3B3C2)' },
+      { property: 'Pointer animation', token: 'animation/pulse', cssVar: '—', value: '1500ms ease-in-out infinite' },
+      { property: 'Detail panel radius', token: 'radius/card', cssVar: '--radius-card', value: '16px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/PracticeZone/components/worksheetStep/workSheetStep.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'Mastered border #FFBE19 is a sixth yellow variant beyond DC-026 — bound to surface/bg/accent (#FFCE00). Source uses linear-gradient bg which Figma representation flattens to surface/bg/accent/subtle.',
+      'Active icon bg #B8B1E7 (light brand purple) — bound to surface/bg/brand/subtle. Pointer color #1d01f5 (DC-030 electric blue family).',
+    ],
+  },
 ]

@@ -23,6 +23,10 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — NanoSkills + Practice Zone Figma builds
+  { date: '2026-04-28', version: 'v1.2', kind: 'COMPONENT', title: 'NanoSkills surface in Figma — Harvard / SelfPaced / TeacherLed heroes + SkillCard + BookingModal + OnboardingModal', status: 'shipped', note: 'Surfaces Harvard crimson + #FC6067 ribbon as DC-032 / DC-033 candidates', href: '/components/nanoskills/harvard-hero/' },
+  { date: '2026-04-28', version: 'v1.2', kind: 'COMPONENT', title: 'Practice Zone WorkSheetStep — 4 status variants (blank / active / completed / mastered)', status: 'shipped', note: 'Mastered uses gold gradient. Active uses pulse animation preset.', href: '/components/practice-zone/worksheet-step/' },
+
   // 2026-04-28 — Path A full coverage sweep
   { date: '2026-04-28', version: 'v1.1', kind: 'DRIFT',     title: 'DC-020 through DC-031 filed — 31 designer-conflict tickets total', status: 'shipped', note: 'DC-023 (7 reds), DC-024 (5 greens), DC-025 (5 blues), DC-026 (5 yellows), DC-027 (7 oranges) — system-wide color proliferation mapped', href: '/surfaces/#designer-conflicts' },
   { date: '2026-04-28', version: 'v1.1', kind: 'COMPONENT', title: 'Layouts page in Figma — all 9 layouts built as frame templates', status: 'shipped', note: 'AppLayout / DashboardLayout / DemoDashboardLayout / FullScreenLayout / FullWidthLayout / GameDashboardLayout / LoginLayout / OnboardingLayout / pageLayoutConfig', href: '/surfaces/' },
