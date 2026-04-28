@@ -23,6 +23,10 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — v2.4: Governance dashboards
+  { date: '2026-04-28', version: 'v2.4', kind: 'AUDIT', title: 'v2.4 — Component health dashboard at /components/health/ — verification debt visible at a glance', status: 'shipped', note: '95 specs total: 67 verified, 25 inferred, 3 conflict. Filter by status / target / sort by conflict count or token count. Each row links to its spec page.', href: '/components/health/' },
+  { date: '2026-04-28', version: 'v2.4', kind: 'AUDIT', title: 'DC ticket dashboard at /governance/dc-tickets/ — all 33 conflicts filterable by severity / category / status', status: 'shipped', note: '1 critical · 8 high · 20 medium · 4 low. Color (most), system, typography. Three-/four-/five-way conflicts surface every shipping variant inline.', href: '/governance/dc-tickets/' },
+
   // 2026-04-28 — v2.3: Layouts catalogue + Sections catalogue + Group A-H molecules
   { date: '2026-04-28', version: 'v2.3', kind: 'COMPONENT', title: 'v2.3 — 28 newDashboard Group A-H molecules added to componentSpecs + spec pages live', status: 'shipped', note: 'Class+Booking, Rewards+Gamification, Profile+Account, Trust+Social, Teacher+Counsellor, Upsell+Marketing (CRITICAL — AddMoreClassesV2, SubscriptionStatusBanner, UpcomingCertificateCard), Demo+Onboarding, Sharing+Social. componentSpecs.ts now drives the AI generator with full Group A-H context.', href: '/components/molecules/add-more-classes-v2/' },
   { date: '2026-04-28', version: 'v2.3', kind: 'COMPONENT', title: '9 layout spec pages + 6 section spec pages live (15 total)', status: 'shipped', note: 'Every src/layouts/ shell has a /components/layouts/<slug>/ page documenting regions, token bindings, route mappings, and drift. Sections cover WelcomeKit, SelectProfile, onboarding-new, TeacherProfileSection, ReferralSection, GameDashboardPage.', href: '/components/layouts/page-layout-config/' },

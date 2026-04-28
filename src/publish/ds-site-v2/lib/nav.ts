@@ -52,6 +52,7 @@ export const NAV: NavSection[] = [
     label: 'Components',
     items: [
       { href: '/components/',                label: 'Overview' },
+      { href: '/components/health/',         label: 'Health dashboard', badge: 'new' },
       { href: '/components/button/',         label: 'Button',        badge: 'new' },
       { href: '/components/accordion/',      label: 'Accordion',     badge: 'new' },
       { href: '/components/progress-line/',  label: 'ProgressLine',  badge: 'new' },
@@ -123,6 +124,7 @@ export const NAV: NavSection[] = [
     label: 'Governance',
     items: [
       { href: '/whats-new/',             label: 'Changelog' },
+      { href: '/governance/dc-tickets/', label: 'DC tickets',             badge: 'new' },
       { href: '/tdr/',                   label: 'Token decision records', disabled: true },
       { href: '/drift-review/',          label: 'Drift review',           disabled: true, badge: 'beta' },
     ],
