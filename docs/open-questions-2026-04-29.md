@@ -76,3 +76,65 @@ Format: `[screen] [type] [what's missing] [where in DS frame]`
 - [diamond-popup] color: pink achievement banner #e866ff (DC-049)
 - [diamond-popup] color: time text #ffda0b yellow — yet another yellow variant not in DC-026 ledger
 - [diamond-popup] inconsistency: time text uses yellow #ffda0b on purple bg — accessibility concern (contrast borderline)
+
+## /live-class (DS rebuild: 110:3 on Screens / Live Class page)
+- [live-class] cdn: video stream area (1078×692 black canvas — would be live screenshare)
+- [live-class] cdn: student avatar (Zorbiyah Khan)
+- [live-class] missing-component: VideoPlayer + overlay-controls — Tier 5
+- [live-class] missing-component: ActivityPanel (white card with Skip/Start CTA) — Tier 5
+- [live-class] missing-component: LessonProgressBar (white-with-30%-opacity bg + green fill) — variant of ProgressBar
+- [live-class] color: gradient on right panel — purple→deeper-purple, no token (DC-034 family)
+- [live-class] color: topic chip text #7b68ec — yet another purple variant (DC-005 family, sixth value!)
+- [live-class] color: continue button bg #FFE4A0 — pale yellow, no token (DC-026 family)
+- [live-class] color: back-link orange/yellow #ffc34d — no token (DC-026 family)
+- [live-class] inconsistency: student is "Zorbiyah Khan" Grade 4 — fourth example student name across audits (Troy Darmawan, Sarah, Aryan, Zorbiyah)
+- [live-class] note: 9 frames in production are all identical "Random Class- Live Class" variants — likely showing different student/lesson combinations on the same screen design
+
+## /payment-details (DS rebuild: 111:3 on Screens / Payment Flows page)
+- [payment-details] cdn: VISA card icon
+- [payment-details] cdn: subscription plan thumbnail
+- [payment-details] missing-component: SubscriptionCard pattern not in DS — Tier 5
+- [payment-details] missing-component: CreditCard display (visa/mastercard tile) not in DS
+- [payment-details] missing-component: BillingAddress card pattern not in DS
+- [payment-details] missing-component: Breadcrumb pattern not in DS
+- [payment-details] color: address card bg #f7f5ff — yet another lavender variant (DC-016 family)
+- [payment-details] typo: "Your are subscribed to" — should be "You're"
+- [payment-details] note: production frame is named "My Feed" but content is payment details — Figma file has many mis-named frames
+
+## /gurukul-step-01 (DS rebuild: 113:3 on Screens / Gurukul page)
+- [gurukul] cdn: BrightCHAMPS logo top-left
+- [gurukul] cdn: browser-dialog illustration showing "Open BrightCHAMPS?" prompt
+- [gurukul] missing-component: full-bleed marketing-style instruction screen pattern not in DS
+- [gurukul] color: hero text uses #232332 — yet another near-black variant (DC-014 family, 5th value)
+- [gurukul] color: links use #4d3bc2 (DC-008 typo color), brand purple in heading uses #4e3bc2 (production canonical) — two purples on same screen again
+- [gurukul] note: post-login "install desktop app" flow — only screen of its kind in audit
+
+## /mastercourse (DS rebuild on Screens / Nano Skills page)
+- [mastercourse] cdn: speaker headshot (Vedanti Agarwal, MIT)
+- [mastercourse] cdn: course thumbnail
+- [mastercourse] missing-component: WebinarHero pattern (date + title + speaker + price tag) — Tier 5
+- [mastercourse] missing-component: FeatureBadge row (icon + label + sub) — useful generic pattern
+- [mastercourse] color: title #1b0742 deep purple — yet another near-black variant adjacent to DC-014
+- [mastercourse] color: meta gray #64717d — new gray, not in DC-050 family yet
+- [mastercourse] note: live webinar pattern is unique; Tier 4-5 component candidate
+
+## /self-paced-enroll (DS rebuild on Screens / Nano Skills page)
+- [self-paced-enroll] cdn: course thumbnail
+- [self-paced-enroll] missing-component: CourseEnrollHero (large card + "What's Included" list) — Tier 5
+- [self-paced-enroll] missing-component: ChecklistItem ("✓ X / sub-text") — generic pattern
+- [self-paced-enroll] color: body text #2b3742 — DC-014 family
+- [self-paced-enroll] note: same enrollment-screen pattern as Mastercourse, different content
+
+## /diamond-purchase (DS rebuild on Screens / Nano Skills page)
+- [diamond-purchase] cdn: diamond illustration × 4 (one per pack)
+- [diamond-purchase] missing-component: DiamondPackTile (count + price + recommended badge + Buy CTA) — Tier 4
+- [diamond-purchase] color: 4 distinct pack-bg pastels (#FFFCF5, #FAF5FF, #F0F9FF, #FFF5E0) — net new
+- [diamond-purchase] copy: "INR 1600000" placeholder price on every pack — clearly not production data
+- [diamond-purchase] note: distinct from /diamond-popup (post-class reward) — this is the purchase-store modal
+
+## /add-more-classes (DS rebuild: 116:3 on Screens / Notifications page)
+- [add-more-classes] missing-component: top access-banner (purple bar with white text) — Tier 5
+- [add-more-classes] missing-component: form modal pattern with 4×2 dropdown grid — Tier 5
+- [add-more-classes] missing-component: SelectCourseDropdown (placeholder + chevron) — variant of DS DropDown but with this specific shape
+- [add-more-classes] color: muted gray #485767 — yet another medium gray (DC-050 family, 6+ now on one screen pattern)
+- [add-more-classes] note: production frame named "Notification" but content is class-scheduling form
