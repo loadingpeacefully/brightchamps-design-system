@@ -23,6 +23,12 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — v2.3: Layouts catalogue + Sections catalogue + Group A-H molecules
+  { date: '2026-04-28', version: 'v2.3', kind: 'COMPONENT', title: 'v2.3 — 28 newDashboard Group A-H molecules added to componentSpecs + spec pages live', status: 'shipped', note: 'Class+Booking, Rewards+Gamification, Profile+Account, Trust+Social, Teacher+Counsellor, Upsell+Marketing (CRITICAL — AddMoreClassesV2, SubscriptionStatusBanner, UpcomingCertificateCard), Demo+Onboarding, Sharing+Social. componentSpecs.ts now drives the AI generator with full Group A-H context.', href: '/components/molecules/add-more-classes-v2/' },
+  { date: '2026-04-28', version: 'v2.3', kind: 'COMPONENT', title: '9 layout spec pages + 6 section spec pages live (15 total)', status: 'shipped', note: 'Every src/layouts/ shell has a /components/layouts/<slug>/ page documenting regions, token bindings, route mappings, and drift. Sections cover WelcomeKit, SelectProfile, onboarding-new, TeacherProfileSection, ReferralSection, GameDashboardPage.', href: '/components/layouts/page-layout-config/' },
+  { date: '2026-04-28', version: 'v2.3', kind: 'TOOL',      title: 'pageLayoutConfig reference page — every route mapped to its layout + provider toggles', status: 'shipped', note: '13 provider toggles documented (enableRedux, enableAuth, enableClarityTracking, …). Route → layout → protected map for adding new routes.', href: '/components/layouts/page-layout-config/' },
+  { date: '2026-04-28', version: 'v2.3', kind: 'AUDIT',     title: 'Site at 153 pages (was 108 in v2.2). Layouts + Sections nav sections added.', status: 'shipped', href: '/' },
+
   // 2026-04-28 — v2.2: tools + token references + pattern completion
   { date: '2026-04-28', version: 'v2.2', kind: 'TOOL',      title: 'v2.2 — three new interactive tools shipped: Palette explorer, Contrast checker, Token picker', status: 'shipped', note: 'Palette: filter+search+copy across all canonical colors. Contrast: WCAG AA/AAA + UI-component thresholds with live preview. Token picker: AI-recommended canonical tokens for plain-language design intents.', href: '/tools/palette/' },
   { date: '2026-04-28', version: 'v2.2', kind: 'TOOL',      title: '/tokens/color · font · space · radius · shadow — five reference sub-pages live', status: 'shipped', note: 'Machine-readable token tables. Complement the visual narrative on /foundations/*. Every token has hex/value/CSS-var/uses for copy-paste.', href: '/tokens/color/' },
