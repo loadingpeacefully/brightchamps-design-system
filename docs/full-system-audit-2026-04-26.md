@@ -20,6 +20,32 @@
 | Documentation quality        | 5/10 | **8/10** | Every component has a /components/<slug>/ page driven from the canonical componentSpecs.ts via shared ComponentSpecPage. Single source of truth. |
 | **Overall**                  | **3/10** | **6/10** | **Doubled the headline number; the *production accuracy* of every claim is now traceable to a real SCSS source file.** |
 
+### Re-update — late 2026-04-28 (Path A full sweep)
+
+| Dimension | At audit | After Tier 1–3 | Now (post-Path-A) |
+|---|---:|---:|---:|
+| Component coverage           | 1/10 | 8/10 | **9/10** (newDashboard atoms + molecules + 9 layouts + legacy triage) |
+| Surface coverage             | 2/10 | 2/10 | **5/10** (7 surfaces tracked) |
+| Token system                 | 0/10 | 9/10 | **9/10** (444 vars · 12 collections · motion + radius live) |
+| DC tickets filed             | 0    | 19   | **31** |
+| Documentation quality        | 5/10 | 8/10 | **9/10** (5 surface inventories + 31-ticket map + deprecation triage) |
+| Token adoption (production)  | 3/10 | 3/10 | 3/10 (codemod still pending) |
+| Drift freshness              | 3/10 | 4/10 | 4/10 |
+| AI generator                 | 3/10 | 4/10 | 4/10 |
+| **Overall**                  | **3/10** | **6/10** | **7/10** |
+
+**Late-day net adds (2026-04-28 evening):**
+- 12 new DC tickets (DC-020–DC-031) — color proliferation across 5 hue families documented
+- 9 layout templates catalogued in Figma (Layouts page)
+- Legacy /components triaged: 14 active built in Figma, 17 marked deprecated, 10 duplicates flagged
+- 2 surface inventories filed (NanoSkills, Practice Zone)
+- 3 surface cards added to /surfaces/ (NanoSkills, Practice Zone, Game Dashboard)
+
+**Still blocked:**
+- DC-005 brand-purple resolution (5+ way conflict; codemod blocked on brand sign-off)
+- Engineering codemod run (token adoption frozen at 3/10)
+- Landing/teacher/admin Figma file IDs
+
 **New designer-conflict tickets surfaced during Tier 2 + Tier 3 (2026-04-28):**
 - **DC-011** — Danger button color `#ff8480` (production) vs `#FF5C5C` (design). ΔE ~4, medium.
 - **DC-012** — Info button color `#60bfbd` (production teal) vs `#33CCFF` (design cyan). ΔE ~25, **HIGH** — different hue family.

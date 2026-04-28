@@ -23,6 +23,13 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — Path A full coverage sweep
+  { date: '2026-04-28', version: 'v1.1', kind: 'DRIFT',     title: 'DC-020 through DC-031 filed — 31 designer-conflict tickets total', status: 'shipped', note: 'DC-023 (7 reds), DC-024 (5 greens), DC-025 (5 blues), DC-026 (5 yellows), DC-027 (7 oranges) — system-wide color proliferation mapped', href: '/surfaces/#designer-conflicts' },
+  { date: '2026-04-28', version: 'v1.1', kind: 'COMPONENT', title: 'Layouts page in Figma — all 9 layouts built as frame templates', status: 'shipped', note: 'AppLayout / DashboardLayout / DemoDashboardLayout / FullScreenLayout / FullWidthLayout / GameDashboardLayout / LoginLayout / OnboardingLayout / pageLayoutConfig', href: '/surfaces/' },
+  { date: '2026-04-28', version: 'v1.1', kind: 'COMPONENT', title: 'Legacy /components triaged: 14 active built, 17 unused listed for deprecation, 10 duplicates flagged', status: 'shipped', note: 'ChatBot (68 uses), toast (63), Text (23), SideBarPopup, StarRating, etc.', href: '/components/deprecated/' },
+  { date: '2026-04-28', version: 'v1.1', kind: 'SURFACE',   title: 'Surfaces tracked: 7 (added Nano Skills, Practice Zone, Game Dashboard)', status: 'shipped', href: '/surfaces/' },
+  { date: '2026-04-28', version: 'v1.1', kind: 'AUDIT',     title: 'NanoSkills + Practice Zone surface inventories filed', status: 'shipped', note: 'NanoSkills: 33 SCSS modules, 6,685 lines, 75 colors. Practice Zone: 6 modules, 1,158 lines, 26 colors.', href: '/surfaces/#nano-skills' },
+
   // 2026-04-28 — newDashboard atoms + molecules + icon ref + parent-hub
   { date: '2026-04-28', version: 'v1.0', kind: 'COMPONENT', title: 'newDashboard atomic-design layer — 14 atoms + 20 molecules built and specced', status: 'shipped', note: 'Icon, Calendar, ConfirmationModal, ClassCardInfo, EmptyState, plus 29 more — separate from legacy components/, instance-reused throughout', href: '/components/atoms/icon-atom/' },
   { date: '2026-04-28', version: 'v1.0', kind: 'TOOL',      title: 'Icon Reference page — 30 most-used CDN icons catalogued in Figma + DS site', status: 'shipped', note: 'images.tsx has 217 _ICON exports, 765 unique CDN URLs total — no SVG library yet (DC-006)', href: '/foundations/iconography/#production-icons' },
