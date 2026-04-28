@@ -157,6 +157,22 @@ export default function TypographyPage() {
           label="Caption"
           description="Metadata, timestamps, helper text, and small labels. Size 10–12px. Keep readable — our users include children."
         />
+
+        <section className="mt-12 scroll-mt-24 rounded-card border border-chrome-border bg-chrome-surface-sunken p-4">
+          <div className="text-overline text-chrome-text-subtlest mb-1">New tokens — 2026-04-28</div>
+          <p className="text-body-s text-chrome-text">
+            Source-extraction added these primitives + a new text style to the Figma library:
+          </p>
+          <ul className="mt-2 ml-4 list-disc text-body-s text-chrome-text space-y-1">
+            <li><code className="font-mono">font/size/2xs</code> = 10px (118 uses in source — status pills, captions on every page)</li>
+            <li><code className="font-mono">font/weight/black</code> = 900 (108 uses — emphatic numbers, score readouts)</li>
+            <li><code className="font-mono">font/lineheight/2xs</code> = 14px (paired with the new 10px size at 1.4× ratio)</li>
+            <li>
+              New text style <strong>Caption/SM</strong> — Nunito Medium 10/14, bound to <code className="font-mono">semantic/typography/caption/sm/*</code>
+              (6 sub-tokens, all alias-only)
+            </li>
+          </ul>
+        </section>
       </article>
       <RightTOC items={TOC} />
     </div>

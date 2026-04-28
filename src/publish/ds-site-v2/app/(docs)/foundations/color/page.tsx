@@ -118,9 +118,9 @@ export default function ColorPage() {
           <div className="text-overline text-chrome-text-subtlest mb-1">Figma library — live</div>
           <p className="text-chrome-text">
             These tokens are now live in the BrightChamps Figma variable library
-            (<code className="font-mono text-[12.5px]">8eNJf875iY9HISEsczDfOh</code>). 376 variables across 10 collections,
-            light + dark modes, 15 text styles, 5 effect styles, and 20 production-verified component sets across 19 dedicated pages.
-            Open the library to use them in your designs:
+            (<code className="font-mono text-[12.5px]">8eNJf875iY9HISEsczDfOh</code>). <strong>444 variables across 12 collections</strong>,
+            light + dark modes, 16 text styles, 5 effect styles, plus a new <strong>motion collection</strong> (durations + easings + 9 animation presets),
+            and 20 production-verified component sets. Open the library to use them in your designs:
           </p>
           <p className="mt-2">
             <a
@@ -150,7 +150,30 @@ export default function ColorPage() {
             </li>
           </ul>
           <p className="mt-2">
-            <a className="text-chrome-accent hover:underline" href="/surfaces/#designer-conflicts">See all 12 conflict tickets →</a>
+            <a className="text-chrome-accent hover:underline" href="/surfaces/#designer-conflicts">See all 19 conflict tickets →</a>
+          </p>
+        </div>
+
+        <div className="mt-4 rounded-card border border-chrome-border bg-chrome-surface-sunken p-4 text-[13px]">
+          <div className="text-overline text-chrome-text-subtlest mb-1">Extended neutrals (added 2026-04-28)</div>
+          <p className="text-chrome-text">
+            Source-extraction surfaced 8 widely-used grays that had no library tokens. Added as half-step variants to fill the scale:
+          </p>
+          <ul className="mt-2 ml-4 space-y-1 list-disc text-chrome-text">
+            <li><code className="font-mono">color/neutral/150</code> = #e3e2e9 (21 uses)</li>
+            <li><code className="font-mono">color/neutral/250</code> = #d9d9d9 (15 uses)</li>
+            <li><code className="font-mono">color/neutral/350</code> = #bdbdbd (28 uses)</li>
+            <li><code className="font-mono">color/neutral/450</code> = #8e8e8e (18 uses, <code className="font-mono">$text-disabled</code>)</li>
+            <li><code className="font-mono">color/neutral/650</code> = #64717d (17 uses, <code className="font-mono">$notstarted-state-dark</code>)</li>
+            <li><code className="font-mono">color/neutral/750</code> = #7d8892 (12 uses, <code className="font-mono">$text-gray</code>)</li>
+            <li><code className="font-mono">color/neutral/850</code> = <strong>#384655</strong> (<strong>70 uses</strong> — biggest unmapped, DC-013)</li>
+            <li><code className="font-mono">color/neutral/950</code> = #222a33 (45 uses — title near-black, DC-014)</li>
+          </ul>
+          <p className="mt-2 text-chrome-text">
+            Extended primary purples: <code className="font-mono">primary/150</code> (#f5f3fc), <code className="font-mono">primary/250</code> (#8a78f9, DC-015),
+            <code className="font-mono">primary/350</code> (#e1e2ff), <code className="font-mono">primary/450</code> (#4a3fb4, <strong>DC-018 — 5th brand purple</strong>).
+            Extended secondary: <code className="font-mono">secondary/250</code> (#ffd02b), <code className="font-mono">secondary/350</code> (#ffc200).
+            New surface: <code className="font-mono">color/surface/app-bg</code> (#f5f4fa) and semantic alias <code className="font-mono">surface/bg/app</code>.
           </p>
         </div>
 

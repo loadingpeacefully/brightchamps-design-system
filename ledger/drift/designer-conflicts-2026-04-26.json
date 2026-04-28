@@ -51,20 +51,22 @@
     },
     {
       "id": "DC-005",
-      "title": "Brand primary color — four-way conflict",
+      "title": "Brand primary color — FIVE-WAY conflict",
       "designerValue": "#722ED1",
       "productionValue": "#4e3bc2",
       "productionFigmaValue": "#4e3bc2",
       "productionCodeValue": "#6651e4",
       "productionCodeValue2": "#722ED1",
+      "fifthVariant": "#4a3fb4",
+      "fiveWayConflict": true,
       "fourWayConflict": true,
       "threeWayConflict": true,
       "deltaE": 18,
       "severity": "critical",
       "category": "color",
-      "action": "Frozen at #4e3bc2 as working canonical pending brand team formal override. Migration work proceeds. Brand team must confirm or override.",
+      "action": "Frozen at #4e3bc2 as working canonical pending brand team formal override. Migration work proceeds. Brand team must confirm or override. Codemod must touch ~138 files.",
       "status": "pending-confirmation",
-      "notes": "FROZEN at #4e3bc2 as working canonical (DR-001 / 2026-04-26). All migration work — codemods, componentSpecs, AI generator — proceeds on this value pending brand team formal override. Four distinct purples shipping simultaneously: Designer DS #722ED1 (Royal Amethyst, 6 files in dashboard). Production Figma canonical: #4e3bc2 (173 files, $primary-color). Feed repo de facto: #6651e4 (25 files, $inprogress-state). Typo variant: #4d3bc2 (46 files, ΔE≈0.5 — see DC-008). #722ED1 is NOT aspirational — it ships in year-in-review, learn page header, FeedLayout. Brand team must confirm or override #4e3bc2."
+      "notes": "FIVE-WAY conflict confirmed by deep extraction (2026-04-28). Designer: #722ED1 (1 use). Figma canonical: #4e3bc2 (218 uses / 112 files). In-progress: #6651e4 (15 uses). Typo: #4d3bc2 (24 uses). 5th variant: #4a3fb4 (11 uses). Brand team confirmation required before ANY codemod runs."
     },
     {
       "id": "DC-006",
@@ -147,6 +149,90 @@
       "action": "Engineering to update info button to #33CCFF. Current production value (#60bfbd) is teal, not cyan — a significant perceptual difference.",
       "status": "open",
       "notes": "Found in button.module.scss (.info variant border + text). HIGH severity mismatch — different hue family entirely (cyan vs teal-green), not just a shade difference. Surfaced during Tier 2 component build 2026-04-28."
+    },
+    {
+      "id": "DC-013",
+      "title": "Dominant dark-gray #384655 has no token",
+      "designerValue": null,
+      "productionValue": "#384655",
+      "deltaE": null,
+      "severity": "high",
+      "category": "color",
+      "action": "Add color/neutral/850 = #384655 to ledger and library. Engineering to replace 70 hardcoded instances across 27 files.",
+      "status": "open",
+      "notes": "Biggest unmapped color by usage. Lives between neutral/700 (#2D3D4D) and neutral/600 (#3D4D5D). Used as dark text, icon color, border across many components. Token added 2026-04-28."
+    },
+    {
+      "id": "DC-014",
+      "title": "Title near-black #222a33 has no token",
+      "designerValue": null,
+      "productionValue": "#222a33",
+      "deltaE": null,
+      "severity": "high",
+      "category": "color",
+      "action": "Add color/neutral/950 = #222a33. Engineering to replace 45 instances across 22 files.",
+      "status": "open",
+      "notes": "Used for H3 title text across the dashboard. Darker than neutral/900 (#0D1D2D). Verify if this should map to neutral/900 (ΔE ~8) or get its own step. Token added 2026-04-28."
+    },
+    {
+      "id": "DC-015",
+      "title": "Light purple #8a78f9 not in canonical ledger",
+      "designerValue": "color/primary/300 (#AA82E3)",
+      "productionValue": "#8a78f9",
+      "deltaE": 12,
+      "severity": "medium",
+      "category": "color",
+      "action": "Add as color/primary/250 or map to primary/300. Currently exists as $text-light-purple in _variables.scss but not in the DS ledger.",
+      "status": "open",
+      "notes": "33 uses across 17 files. Used for secondary brand text, active pill labels, subtle brand accents. Token added 2026-04-28 as color/primary/250."
+    },
+    {
+      "id": "DC-016",
+      "title": "App background lavender tint #f5f4fa not in ledger",
+      "designerValue": "surface/bg/canvas (#F9FAFB)",
+      "productionValue": "#f5f4fa",
+      "deltaE": 3,
+      "severity": "medium",
+      "category": "color",
+      "action": "Add as color/surface/app-bg. This is the main DashboardLayout background — it has a subtle lavender tint that neutral/50 (#F9FAFB) does not capture.",
+      "status": "open",
+      "notes": "20 uses across 13 files. $app-background in _variables.scss. The tint comes from the purple brand color bleeding into the background — intentional or drift? Token added 2026-04-28 with semantic alias surface/bg/app."
+    },
+    {
+      "id": "DC-017",
+      "title": "Two unmapped yellows — neither matches secondary/500",
+      "designerValue": "color/secondary/500 (#FFCE00)",
+      "productionValue": "#ffc200 and #ffd02b",
+      "deltaE": 3,
+      "severity": "medium",
+      "category": "color",
+      "action": "Resolve: do these map to secondary/300 (#FFE266) and secondary/400 (#FFD833) respectively, or are they independent values? Engineering audit needed.",
+      "status": "open",
+      "notes": "#ffc200 (16 uses) and #ffd02b (12 uses) appear in reward UI, badges, and highlight contexts. Both are close to existing secondary scale steps but not exact. Tokens added 2026-04-28 as color/secondary/350 (#ffc200) and color/secondary/250 (#ffd02b)."
+    },
+    {
+      "id": "DC-018",
+      "title": "Fifth brand purple variant #4a3fb4 discovered",
+      "designerValue": "color/primary/500 (#722ED1)",
+      "productionValue": "#4a3fb4",
+      "deltaE": 8,
+      "severity": "medium",
+      "category": "color",
+      "action": "DC-005 resolution will determine if this retires to the canonical. Until then: add as color/primary/450 with conflict note.",
+      "status": "open",
+      "notes": "11 uses across 5 files. DC-005 is now a FIVE-way conflict: #722ED1 / #4e3bc2 / #6651e4 / #4d3bc2 / #4a3fb4. Token added 2026-04-28 as color/primary/450 with DC-018 description in Figma."
+    },
+    {
+      "id": "DC-019",
+      "title": "Utility grays missing from token system",
+      "designerValue": null,
+      "productionValue": "#8e8e8e, #7d8892, #64717d",
+      "deltaE": null,
+      "severity": "low",
+      "category": "color",
+      "action": "Add color/neutral/450 ($text-disabled), color/neutral/650 ($notstarted-state-dark), color/neutral/750 ($text-gray) to ledger and library.",
+      "status": "open",
+      "notes": "These exist as SCSS variables in _variables.scss but were never added to the canonical ledger. Combined 47 uses across 37 files. Tokens added 2026-04-28."
     }
   ]
 }

@@ -16,10 +16,14 @@ export interface DesignerConflict {
   productionCodeValue?: string | null
   /** Optional, for four-way conflicts: a second production-code value (e.g., the dashboard repo's shipping designer purple). */
   productionCodeValue2?: string | null
+  /** Optional, for five-way conflicts: a fifth shipped variant. */
+  fifthVariant?: string | null
   /** True when designer / production-Figma / production-code all disagree. */
   threeWayConflict?: boolean
   /** True when a fourth value (e.g., the dashboard repo) is also shipping. Implies threeWayConflict. */
   fourWayConflict?: boolean
+  /** True when a fifth shipping variant is also confirmed. Implies fourWayConflict. */
+  fiveWayConflict?: boolean
   deltaE: number | null
   severity: 'critical' | 'high' | 'medium' | 'low'
   category: 'color' | 'system' | 'typography'

@@ -32,9 +32,9 @@ export const NAV: NavSection[] = [
       { href: '/foundations/typography/', label: 'Typography',    badge: 'new' },
       { href: '/foundations/spacing/',   label: 'Spacing',        badge: 'new' },
       { href: '/foundations/elevation/', label: 'Elevation',      disabled: true, badge: 'beta' },
-      { href: '/foundations/radius/',    label: 'Radius',         disabled: true },
+      { href: '/foundations/radius/',    label: 'Radius',         badge: 'new' },
       { href: '/foundations/iconography/', label: 'Iconography',  badge: 'new' },
-      { href: '/foundations/motion/',    label: 'Motion',         disabled: true, badge: 'beta' },
+      { href: '/foundations/motion/',    label: 'Motion',         badge: 'new' },
     ],
   },
   {
