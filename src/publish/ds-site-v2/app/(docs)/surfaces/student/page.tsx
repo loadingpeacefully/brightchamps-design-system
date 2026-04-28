@@ -16,6 +16,7 @@ const TOC = [
   { id: 'brand',     label: 'Brand purples',     level: 3 as const },
   { id: 'drift',     label: 'Color drift',       level: 3 as const },
   { id: 'migrate',   label: 'Files to migrate',  level: 3 as const },
+  { id: 'cdn-gap',   label: 'CDN asset gap',     level: 2 as const },
   { id: 'metrics',   label: 'DOM drift metrics', level: 2 as const },
   { id: 'critical',  label: 'Critical issues',   level: 2 as const },
   { id: 'explore',   label: 'Explore',           level: 2 as const },
@@ -206,6 +207,50 @@ export default function StudentOverviewPage() {
             </div>
           </section>
         )}
+
+        <section id="cdn-gap" className="mt-12 scroll-mt-24">
+          <h2 className="text-h2 text-chrome-text">CDN asset gap</h2>
+          <p className="mt-2 max-w-[62ch] text-body-m text-chrome-text-subtle">
+            Production renders 765 image assets via the ImageKit CDN — the BrightChamps logo, course thumbnails,
+            avatars, badges, BrightBuddy mascot, Harvard partnership marks, gem icons. The Figma library uses
+            placeholder rectangles + course-color tints for these because the figma-mcp sandbox does not support{' '}
+            <code className="font-mono text-[12.5px]">createImageAsync</code> or runtime <code className="font-mono text-[12.5px]">fetch()</code>.
+          </p>
+          <div className="mt-4 rounded-card border border-[#ffcd6a] bg-[rgba(255,231,153,0.18)] p-4">
+            <div className="text-overline text-[#8a5e00] mb-1">DC-038 — open</div>
+            <p className="text-body-s text-chrome-text">
+              Production uses 765 CDN-hosted image assets via ImageKit. The Figma library uses placeholder
+              frames for these. To fully replicate production screens, download assets from the CDN URLs in{' '}
+              <code className="font-mono">src/constants/images.tsx</code> and upload to Figma manually.
+            </p>
+          </div>
+          <h3 className="mt-6 text-body-l font-bold text-chrome-text">Priority assets to upload</h3>
+          <div className="mt-3 overflow-x-auto rounded-card border border-chrome-border">
+            <table className="w-full border-collapse text-[13px]">
+              <thead>
+                <tr className="bg-chrome-surface-sunken border-b border-chrome-border">
+                  <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">Asset</th>
+                  <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">Where used in Figma</th>
+                  <th className="text-left p-3 font-bold text-overline text-chrome-text-subtlest">CDN URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-chrome-border"><td className="p-3 font-mono">BRIGHTCHAMPS_LOGO</td><td className="p-3 text-chrome-text-subtle">NavBar / LeftSideBar / LoginLayout</td><td className="p-3 font-mono text-[11.5px] text-chrome-text-subtle">/dashboard/brightchamps_logo.svg</td></tr>
+                <tr className="border-b border-chrome-border"><td className="p-3 font-mono">AVATAR_BOY / AVATAR_GIRL</td><td className="p-3 text-chrome-text-subtle">ProfileAvatar / SelectProfile</td><td className="p-3 font-mono text-[11.5px] text-chrome-text-subtle">/dashboard/avatar_boy.webp · avatar_girl.webp</td></tr>
+                <tr className="border-b border-chrome-border"><td className="p-3 font-mono">LEARNING_PATH</td><td className="p-3 text-chrome-text-subtle">NanoSkills skill thumbnails</td><td className="p-3 font-mono text-[11.5px] text-chrome-text-subtle">/dashboard/learningPath.png</td></tr>
+                <tr className="border-b border-chrome-border"><td className="p-3 font-mono">LEVEL_1/2/3/4_BADGE</td><td className="p-3 text-chrome-text-subtle">/badges Screen + BadgesCard tiles</td><td className="p-3 font-mono text-[11.5px] text-chrome-text-subtle">/dashboard/tr:w-182,h-170/level_N_badge.webp</td></tr>
+                <tr className="border-b border-chrome-border"><td className="p-3 font-mono">GEMS_ICON / THREE_DIAMONDS_IMG</td><td className="p-3 text-chrome-text-subtle">RightSideBar / DiamondPurchaseHeader</td><td className="p-3 font-mono text-[11.5px] text-chrome-text-subtle">/dashboard/gems_icon.svg · three_diamonds_img.svg</td></tr>
+                <tr className="border-b border-chrome-border"><td className="p-3 font-mono">HARVARD_BRIGHTCHAMPS_LOGO</td><td className="p-3 text-chrome-text-subtle">NanoSkills harvard-hero, demo-dashboard PreDemo/PostDemo</td><td className="p-3 font-mono text-[11.5px] text-chrome-text-subtle">/dashboard/harvard_brightchamps_logo.svg</td></tr>
+                <tr className="border-b border-chrome-border"><td className="p-3 font-mono">BADGES_ONBOARDING_EXPLORE</td><td className="p-3 text-chrome-text-subtle">First-time-on-/badges hero</td><td className="p-3 font-mono text-[11.5px] text-chrome-text-subtle">/dashboard/badges_onboarding_explore_02.webp</td></tr>
+                <tr className="border-b border-chrome-border last:border-b-0"><td className="p-3 font-mono">CHATBOT_EDIT_ICON</td><td className="p-3 text-chrome-text-subtle">BrightBuddy bottom-right of every authenticated screen</td><td className="p-3 font-mono text-[11.5px] text-chrome-text-subtle">/dashboard/chatbot_edit_icon.svg</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-body-s text-chrome-text-subtle">
+            All ~765 URLs in <code className="font-mono text-[12.5px]">src/constants/images.tsx</code>. Base path:{' '}
+            <code className="font-mono text-[12.5px]">https://ik.imagekit.io/brightchamps/dashboard</code>.
+          </p>
+        </section>
 
         <section id="metrics" className="mt-12 scroll-mt-24">
           <h2 className="text-h2 text-chrome-text">DOM drift metrics</h2>

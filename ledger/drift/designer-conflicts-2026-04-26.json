@@ -401,6 +401,66 @@
       "action": "Map to color/error/500 (#FF5C5C). ΔE of 3 is barely perceptible — this is drift, not intentional differentiation.",
       "status": "open",
       "notes": "Found in NanoSkills discount ribbon. DC-023 covers the full red sprawl — this is the 5th confirmed variant beyond #ff8480 / #f04b4b / #ff6565 / #FF5C5C / #fc373a."
+    },
+    {
+      "id": "DC-034",
+      "title": "SelfPacedBanner gradient — no token equivalent",
+      "designerValue": null,
+      "productionValue": "linear-gradient(253.85deg, #FFAEC2 1.36%, #E29ED9 52.33%, #A86BD1 97.6%)",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "system",
+      "action": "Add semantic token gradient/self-paced or course/promo/gradient. Source: src/newDashboard/NanoSkills/Pages/Home/SelfPacedBanner/selfPacedBanner.module.scss:9. Three-stop pink-to-purple. Currently hardcoded; appears on /nano-skills landing.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during visual-fidelity Figma pass. The DS has no gradient tokens at all — this ticket is the canary for adding a `gradient/*` collection."
+    },
+    {
+      "id": "DC-035",
+      "title": "Harvard hero gradient — no token equivalent",
+      "designerValue": null,
+      "productionValue": "linear-gradient(95.77deg, #301172 17.84%, #5b7cf4 100.57%)",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "system",
+      "action": "Add semantic token gradient/partnership/harvard or gradient/hero/brand. Source: src/sections/DemoDashboardPage/PostDemo/harvard/harvard.module.scss:9 and PreDemo equivalent. Two-stop deep-purple to royal-blue.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29. DC-032 (Harvard crimson) covers the partnership color tickets — this is its gradient counterpart."
+    },
+    {
+      "id": "DC-036",
+      "title": "InsufficientDiamonds modal gradient — magenta to cyan",
+      "designerValue": null,
+      "productionValue": "linear-gradient(180deg, #D880E8 0%, #50CDFF 100%)",
+      "deltaE": null,
+      "severity": "low",
+      "category": "system",
+      "action": "Single-use marketing gradient on the gem-purchase upsell. Either token-ize as gradient/upsell/diamonds or accept as one-off and document. Source: NanoSkills/BookingModal/inSufficientDiamonds/inSufficientDiamonds.module.scss:135.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29. Adjacent radial-gradient (line 162: radial 50% at 50%, #861F99 → #F2AAFF → #F5EEFF) on same modal — also untokenized."
+    },
+    {
+      "id": "DC-037",
+      "title": "Pervasive purple-tinted card gradient — 13 uses",
+      "designerValue": null,
+      "productionValue": "linear-gradient(105deg, #8a78f9 60%, white 40%)",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "system",
+      "action": "13 occurrences across the codebase make this the most-reused untokenized gradient. Token-ize as gradient/brand/diagonal-fade or surface/bg/brand/gradient. #8a78f9 is also DC-015.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29. Top-most-used gradient in the system per a global grep. Likely a brand-purple wash card pattern."
+    },
+    {
+      "id": "DC-038",
+      "title": "DS Figma library cannot embed CDN images — 765 ImageKit assets need manual upload",
+      "designerValue": "765 CDN-hosted images via src/constants/images.tsx",
+      "productionValue": "Figma frames use placeholder rectangles + solid color tints",
+      "deltaE": null,
+      "severity": "high",
+      "category": "system",
+      "action": "Upload key production assets (LOGO, AVATAR_BOY/GIRL, LEARNING_PATH, badges, course thumbnails, BrightBuddy, Harvard logos) to Figma library. Document the asset → node-id mapping in docs/figma-cdn-asset-map.md. Until then, screen rebuilds in Figma show course-color tints in lieu of real thumbnails.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during visual-fidelity pass. The figma-mcp sandbox does NOT support createImageAsync or fetch(), so CDN images cannot be programmatically pulled into Figma. Assets must be downloaded and uploaded manually. See ledger/figma-cdn-gap.md for the full gap analysis."
     }
   ]
 }
