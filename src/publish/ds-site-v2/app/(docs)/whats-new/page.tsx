@@ -23,6 +23,11 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — Tier 2 content components shipped
+  { date: '2026-04-28', version: 'v0.8', kind: 'COMPONENT', title: 'Tier 2 content components shipped — Accordion, ProgressBar, Button (corrected), Card, ProfileAvatar, FeedLayout', status: 'shipped', note: 'production-verified, instance reuse (Card uses Button, FeedLayout uses Card)', href: '/components/card/' },
+  { date: '2026-04-28', version: 'v0.8', kind: 'COMPONENT', title: 'Button taxonomy corrected — primary/secondary/ghost retired; production ships contained/outlined/danger/info/underline', status: 'shipped', href: '/components/button/' },
+  { date: '2026-04-28', version: 'v0.8', kind: 'DRIFT',     title: 'DC-009 (completed green) and DC-010 (paused blue) annotated on ProgressBar; DC-011/DC-012 proposed for Button danger/info colors', status: 'shipped', href: '/components/progress-bar/' },
+
   // 2026-04-28 — Tier 1 chrome components shipped
   { date: '2026-04-28', version: 'v0.7', kind: 'COMPONENT', title: 'Tier 1 chrome components shipped — NavBar, LeftSideBar, RightSideBar, DashboardLayout', status: 'shipped', note: 'all wired to Figma variable library, production-verified from SCSS source', href: '/components/dashboard-layout/' },
   { date: '2026-04-28', version: 'v0.7', kind: 'TOKENS',    title: '6 chrome architecture primitives added (sidebar-rail 104, sidebar-collapsed 80, sidebar-expanded 280, right-panel 460, main-content-max 880, page-max 1440)', status: 'shipped', note: 'mirrored as 6 semantic chrome aliases',  href: '/components/dashboard-layout/' },

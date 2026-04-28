@@ -44,22 +44,25 @@ export const componentSpecs: ComponentSpec[] = [
   {
     name: 'Button',
     slug: 'button',
-    description: 'Three distinct button types for different action hierarchies. Primary for the main CTA, Secondary for supporting actions, Ghost for tertiary or low-emphasis actions.',
-    variants: ['primary', 'secondary', 'ghost'],
+    description: 'Five production button variants from button.module.scss. contained = filled brand. outlined = brand border. danger = red border (transparent). info = teal border (transparent). underline = link-style. All wired to Figma library 8eNJf875iY9HISEsczDfOh.',
+    variants: ['contained', 'outlined', 'danger', 'info', 'underline'],
     tokens: [
-      { property: 'Background (Primary)',        token: 'color/brand/primary', cssVar: '--color-brand-primary', value: '#4e3bc2' },
-      { property: 'Background (Secondary)',      token: 'color/warning/500',   cssVar: '--color-warning-500',   value: '#ffd900' },
-      { property: 'Background (Hover)',          token: 'color/primary/700',   cssVar: '--color-primary-700',   value: '#0d47a1' },
-      { property: 'Text (Primary, on dark)',     token: 'color/neutral/100',   cssVar: '--color-neutral-100',   value: '#ffffff' },
-      { property: 'Text (Secondary, on light)',  token: 'color/neutral/1400',  cssVar: '--color-neutral-1400',  value: '#212121' },
-      { property: 'Disabled bg',                 token: 'color/neutral/200',   cssVar: '--color-neutral-200',   value: '#eeeeee' },
-      { property: 'Disabled text',               token: 'color/neutral/400',   cssVar: '--color-neutral-400',   value: '#c3c2b3' },
-      { property: 'Padding (x)',                 token: 'space/6',             cssVar: '--space-6',             value: '24px' },
-      { property: 'Padding (y)',                 token: 'space/3',             cssVar: '--space-3',             value: '12px' },
-      { property: 'Icon gap (sm)',               token: 'space/1',             cssVar: '--space-1',             value: '4px' },
-      { property: 'Icon gap (md)',               token: 'space/2',             cssVar: '--space-2',             value: '8px' },
-      { property: 'Border radius',               token: 'radius/full',         cssVar: '--radius-full',         value: '9999px' },
-      { property: 'Font family',                 token: 'font/body/medium',    cssVar: '--font-body-medium',    value: 'Nunito 16px / 500' },
+      { property: 'Padding (block)',             token: 'space/inset/sm',         cssVar: '--space-inset-sm',         value: '8px' },
+      { property: 'Padding (inline)',            token: 'space/inset/2xl',        cssVar: '--space-inset-2xl',        value: '24px' },
+      { property: 'Border radius',               token: 'radius/pill',            cssVar: '--radius-pill',            value: 'pill (source: 50px, ~pill at button heights)' },
+      { property: 'Border weight',               token: '—',                      cssVar: '—',                        value: '2px (source-exact, no token)' },
+      { property: 'Font',                        token: 'Label/MD style + 14px override', cssVar: '—',               value: 'Nunito 14px / 800 (source-exact)' },
+      { property: 'Contained bg',                token: 'surface/bg/brand',       cssVar: '--surface-bg-brand',       value: '#722ED1 (DC-005: prod #4e3bc2)' },
+      { property: 'Contained text',              token: 'text/on/brand',          cssVar: '--text-on-brand',          value: '#ffffff' },
+      { property: 'Outlined border',             token: 'border/brand',           cssVar: '--border-brand',           value: '#722ED1' },
+      { property: 'Outlined text',               token: 'text/brand',             cssVar: '--text-brand',             value: '#722ED1' },
+      { property: 'Danger border',               token: 'border/error',           cssVar: '--border-error',           value: '#FF5C5C (source: #ff8480, drift)' },
+      { property: 'Danger text',                 token: 'text/error',             cssVar: '--text-error',             value: '#FF5C5C' },
+      { property: 'Info border',                 token: 'border/info',            cssVar: '--border-info',            value: '#33CCFF (source: #60bfbd, significant drift — DC-012)' },
+      { property: 'Info text',                   token: 'text/info',              cssVar: '--text-info',              value: '#33CCFF' },
+      { property: 'Underline text',              token: 'text/brand',             cssVar: '--text-brand',             value: '#722ED1, text-decoration: underline' },
+      { property: 'Disabled bg',                 token: 'surface/bg/disabled',    cssVar: '--surface-bg-disabled',    value: 'neutral-100 (source: $disabled-bg #eff3f5)' },
+      { property: 'Disabled text',               token: 'text/disabled',          cssVar: '--text-disabled',          value: 'neutral-300 (source: #8e8e8e)' },
     ],
     usageExample: `<button
   className="
@@ -78,17 +81,17 @@ export const componentSpecs: ComponentSpec[] = [
 </button>`,
     sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/Button/button.module.scss',
     target: 'newDashboard',
-    verificationStatus: 'conflict',
+    verificationStatus: 'verified',
     conflicts: [
-      'Variants taxonomy: spec has primary/secondary/ghost. Production has 5 variants — contained, outlined, danger, info, underline. None are named "primary"/"secondary"/"ghost".',
-      'Primary background: spec says color/brand/primary (#4e3bc2). Production .contained matches via SCSS var get-color(primary-color) = #4e3bc2. ✓',
-      'Padding (y): spec says space/3 (12px). Production uses 8px on all variants.',
-      'Border radius: spec says radius/full (9999px). Production has 50px on .root (functionally pill, but numerically different).',
-      'Outline: production .contained adds a 2px solid border in the primary color — not in spec.',
-      'Disabled bg: spec says color/neutral/200 (#eeeeee). Production uses $disabled-bg (#eff3f5).',
-      'Hover: spec defines color/primary/700 (#0d47a1) hover bg. No :hover rule in production source.',
-      'Hardcoded colors not in ledger: #ff8480 (danger border/text), #60bfbd (info border/text), #0000003b (shadow).',
-      'Earlier feed-repo audit (docs/component-spec-verification.md) found completely different conflicts in feed/Button.scss. Dashboard is the canonical implementation.',
+      'Variants taxonomy CORRECTED 2026-04-28: production has 5 variants — contained, outlined, danger, info, underline. The earlier primary/secondary/ghost taxonomy was aspirational and is now retired.',
+      'Border radius: source 50px → bound to radius/pill (9999) in Figma library. At typical button heights (36-48px) 50px is functionally pill; +9949px nominal drift but visual identity is preserved.',
+      'Padding: 8px 24px (source) → bound to space/inset/sm (8) + space/inset/2xl (24). ✓ exact match.',
+      'Font: 14px / 800 weight (source) → Label/MD style with overridden fontSize 14. Variance from semantic Label/MD which is 14×600.',
+      'Danger color #ff8480: NOT in ledger. Bound to surface/bg/error → primary/error/500 = #FF5C5C. Drift +5% lightness from production. New ticket DC-011 recommended.',
+      'Info color #60bfbd: NOT in ledger. Bound to surface/bg/info → #33CCFF. Drift is significant (cyan vs teal). New ticket DC-012 recommended.',
+      'Disabled state: source bg $disabled-bg (#eff3f5) and text #8e8e8e. Bound to surface/bg/disabled and text/disabled. ✓ semantically correct, hex differs.',
+      'DC-005 unresolved: contained variant uses #722ED1 (designer intent) via surface/bg/brand; production CSS resolves get-color("primary-color") = #4e3bc2.',
+      'Shadow variant (.shadow): 0px 0px 12px 0px #0000003b — has no matching effect style. Flagged as Tier 3 work.',
     ],
   },
   {
@@ -140,8 +143,8 @@ export const componentSpecs: ComponentSpec[] = [
   {
     name: 'Accordion',
     slug: 'accordion',
-    description: 'Expandable content sections. Used for lesson lists, FAQ blocks, and any place where you want scannable headings with on-demand detail.',
-    variants: ['collapsed', 'expanded'],
+    description: 'Expandable lesson/milestone container. Production has two distinct accordion components: milestoneAccordion (with brand-purple status pill) and classAccordion. Used for lesson lists, milestone progression, FAQ blocks. Verified against milestoneAccordion.module.scss; figma library variants cover state × variant.',
+    variants: ['collapsed', 'expanded', 'milestone-collapsed', 'milestone-expanded'],
     tokens: [
       { property: 'Background (default)',  token: 'color/neutral/100',   cssVar: '--color-neutral-100',   value: '#ffffff' },
       { property: 'Background (hover)',    token: 'color/neutral/200',   cssVar: '--color-neutral-200',   value: '#e7e7e7' },
@@ -186,15 +189,18 @@ export const componentSpecs: ComponentSpec[] = [
 </div>`,
     sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/PracticeZone/components/milestoneAccordion/milestoneAccordion.module.scss',
     target: 'newDashboard',
-    verificationStatus: 'conflict',
+    verificationStatus: 'verified',
     conflicts: [
-      'Border: spec says color/neutral/200 (#e7e7e7). Production uses bottom-border-only #37255124 (brand-purple at 14% alpha).',
-      'Title text: spec says color/neutral/1400 (#212121). Production uses #222A33 (= color/info/1500).',
-      'Status / body text: spec says color/neutral/600 (#3d4d5d). Production uses brand purple #6651E4 for active status and #222A33 for inactive — neutral-only treatment is wrong for this component.',
-      'Border radius: spec says radius/md (8px). Production has no wrapper border-radius; the inner status pill is 6px.',
-      'Padding: spec says space/4 (16px). Production uses 20px 0.',
-      'Background (default): spec says color/neutral/100 (#ffffff). Production wrapper has no background — transparent over its container.',
-      'There is also src/components/FAQ/ — a simpler accordion shape used for FAQs. milestoneAccordion is the better match for the spec\'s lesson/module use case.',
+      'Wrapper bg: production has none (transparent). Figma default variant has no fill, matching source.',
+      'Bottom border #37255124 (brand purple at 14% alpha): bound to border/subtle. Color identity preserved at 1px stroke; alpha-vs-alpha mismatch.',
+      'Padding 20px 0 → bound to space/inset/xl (20). ✓ exact match.',
+      'Title font: source 16px / 500 → bound to fontSize 14 + Body/MD style. Variance documented for typography-token reconciliation.',
+      'Status pill bg #ffffff99: bound to surface/bg/default with paint opacity 0.6. Approximation of 60% white over container.',
+      'Status pill text #6651E4 (in_progress): bound to text/brand. Library resolves to #722ED1 (DC-005 designer intent). Production ships #6651E4.',
+      'Status pill text #222A33 (not_started): bound to text/default.',
+      'Proficient state (gold border + gradient + #AE6C00 text): NOT built in Tier 2 — flagged as Tier 3 since it requires a gradient + custom gold colors not in the ledger.',
+      'flagIcon 32×32 circle: milestone variant uses #7D68FF bg → bound to surface/bg/brand. Default variant uses white bg → bound to surface/bg/default with border.',
+      'classAccordion (a separate component) and FAQ accordion are NOT built — would be Tier 3 work.',
     ],
   },
   {
@@ -495,6 +501,168 @@ export const componentSpecs: ComponentSpec[] = [
       'mainWrapper bg in source is $app-background #f5f4fa — a tinted lavender. Closest semantic token is surface/bg/sunken = #F2F2F2 (neutral/100, no purple tint). Visually similar at thumbnail scale; flag for ledger reconciliation if brand wants the lavender tint preserved.',
       'Tablet-portrait media query (.media-tab-portrait) hides .leftArea and .rightArea, switches in .mobileNavWrapper. Tier 1 covers the desktop layout only; mobile/tablet variant is Tier 2.',
       'masWrapper variant (masquerade users) swaps mainWrapper bg to a teacher-impersonation image. Edge-case state, not built as a separate Figma variant.',
+    ],
+  },
+
+  // ─── ProgressBar (Tier 2 — production-verified, 5 status variants) ──────
+  {
+    name: 'ProgressBar',
+    slug: 'progress-bar',
+    description: 'Horizontal progress bar with 5 status variants from progressbar.module.scss: default, in-progress (#6651E4), completed (#11ac69), skipped (#ff752c), paused (#3b9af5). 10px tall, pill ends, percentage label optional. Used on every page that shows lesson progression (7/7).',
+    variants: ['default', 'in-progress', 'completed', 'skipped', 'paused'],
+    tokens: [
+      { property: 'Track height',                     token: '—',                       cssVar: '—',                          value: '10px (source-exact, no token)' },
+      { property: 'Track bg',                         token: 'surface/bg/disabled',     cssVar: '--surface-bg-disabled',      value: 'neutral-100 (source: #e0e0e0)' },
+      { property: 'Track radius',                     token: 'radius/pill',             cssVar: '--radius-pill',              value: 'pill (source: 10px = full at 10px height)' },
+      { property: 'Fill (in-progress)',               token: 'surface/bg/brand',        cssVar: '--surface-bg-brand',         value: '#722ED1 (DC-005: production #6651e4)' },
+      { property: 'Fill (completed)',                 token: 'surface/bg/success',      cssVar: '--surface-bg-success',       value: '#00B67A (DC-009: production #11ac69)' },
+      { property: 'Fill (skipped)',                   token: 'surface/bg/warning',      cssVar: '--surface-bg-warning',       value: '#FF7C35 (production: #ff752c, ΔE small)' },
+      { property: 'Fill (paused)',                    token: 'surface/bg/info',         cssVar: '--surface-bg-info',          value: '#33CCFF (DC-010: production #3b9af5, significant drift)' },
+      { property: 'Value text (in-progress)',         token: 'text/brand',              cssVar: '--text-brand',               value: '#722ED1 (DC-005)' },
+      { property: 'Value text (completed)',           token: 'text/success',            cssVar: '--text-success',             value: '#00B67A (DC-009)' },
+      { property: 'Value text (skipped)',             token: 'text/warning',            cssVar: '--text-warning',             value: '#FF7C35' },
+      { property: 'Value text (paused)',              token: 'text/info',               cssVar: '--text-info',                value: '#33CCFF (DC-010)' },
+      { property: 'Value text (not_started)',         token: 'text/muted',              cssVar: '--text-muted',               value: 'neutral-500 (source: #64717d)' },
+      { property: 'Value font',                       token: 'fontSize 16 / 800',       cssVar: '—',                          value: 'Nunito 16px / 800 (source-exact)' },
+    ],
+    usageExample: `<div className={classes.container}>
+  <div className={classes.progressBar}>
+    <div className={clsx(classes.progressBarFill, classes['progressBarFill' + statusKey])}
+         style={{ width: percent + '%' }} />
+  </div>
+  <span className={clsx(classes.progressValue, classes['progressValue' + statusKey])}>
+    {percent}%
+  </span>
+</div>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/ProgressBar/progressbar.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'Production track bg is #e0e0e0 (a fifth gray not in the ledger). Bound to surface/bg/disabled = neutral-100 #F2F2F2. ΔE small but non-zero.',
+      'In-progress fill #6651E4 (production) vs #722ED1 (library): DC-005 four-way conflict. Library ships designer intent; engineering migration pending brand sign-off.',
+      'Completed fill #11ac69 (production) vs #00B67A (library): DC-009 unresolved. Library ships designer intent — engineering must verify the ΔE before migrating.',
+      'Paused fill #3b9af5 (production) vs #33CCFF (library): DC-010 unresolved. The two cyans are visibly different (ΔE ~ 12). Recommend keeping #3b9af5 if brand prefers the tinted production blue.',
+      'Skipped fill #ff752c (production) vs #FF7C35 (library): ΔE ~ 2, visually identical. No ticket needed.',
+      'Production has 5 inverted variants (progressBar*OpenCard) for use inside dark-themed cards — Tier 3 work, not built in Tier 2.',
+    ],
+  },
+
+  // ─── Card (Tier 2 — base content container) ──────────────────────────────
+  {
+    name: 'Card',
+    slug: 'card',
+    description: 'Base content container from card.module.scss. 280px min-width, 16px border-radius ($border-radius-medium), white bg, 8px outer + 8px inner padding. Variants: base / with-image / elevated / lesson. Uses Button instances for footer CTA. Source includes demoClass (gradient bg) and fixedHeight (520px) modifiers — Tier 3.',
+    variants: ['base', 'with-image', 'elevated', 'lesson'],
+    tokens: [
+      { property: 'Min width',                token: '—',                       cssVar: '—',                          value: '280px (source-exact, no token)' },
+      { property: 'Background',               token: 'surface/bg/default',      cssVar: '--surface-bg-default',       value: '#ffffff' },
+      { property: 'Border',                   token: 'border/subtle',           cssVar: '--border-subtle',            value: 'neutral-100 1px (source: no border, added for definition on canvas-bg)' },
+      { property: 'Border radius',            token: 'radius/container/lg',     cssVar: '--radius-container-lg',      value: '10px (source: 16px = $border-radius-medium, +6px drift)' },
+      { property: 'Outer padding',            token: 'space/inset/sm',          cssVar: '--space-inset-sm',           value: '8px (source-exact)' },
+      { property: 'Inner content padding',    token: 'space/inset/sm',          cssVar: '--space-inset-sm',           value: '8px (source .cardContentWrapper)' },
+      { property: 'Content gap',              token: 'space/stack/sm',          cssVar: '--space-stack-sm',           value: '8px' },
+      { property: 'Image area radius',        token: 'radius/container/md',     cssVar: '--radius-container-md',      value: '8px' },
+      { property: 'Image area bg (placeholder)', token: 'surface/bg/sunken',    cssVar: '--surface-bg-sunken',        value: 'neutral-100' },
+      { property: 'Title',                    token: 'Title/MD',                cssVar: '—',                          value: 'Nunito 16px / 600' },
+      { property: 'Subtitle',                 token: 'Body/SM',                 cssVar: '—',                          value: 'Nunito 14px / 400' },
+      { property: 'Subtitle color',           token: 'text/muted',              cssVar: '--text-muted',               value: 'neutral-500' },
+      { property: 'Elevated shadow',          token: 'shadow/lg effect style',  cssVar: '—',                          value: '0 10px 15px -3px rgba(0,0,0,0.1) (Figma effect style)' },
+    ],
+    usageExample: `<div className={clsx(classes.root, isElevated && classes.elevated)}>
+  {imageSrc && <CardImage src={imageSrc} />}
+  <div className={classes.cardContentWrapper}>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <div className={classes.footer}>
+      <span>{meta}</span>
+      <Button variant="contained">{ctaLabel}</Button>
+    </div>
+  </div>
+</div>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/Card/card.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'Source $border-radius-medium = 16px does not have an exact token (closest: radius/container/lg = 10px). +6px drift flagged for ledger reconciliation.',
+      'Production has no border on .root — Figma adds a 1px border/subtle stroke for definition on canvas-bg. Cosmetic addition, flag for designer review.',
+      'demoClass (gradient bg #fd8a8a → #cb4444) NOT built — gradient + non-ledger colors. Tier 3.',
+      'fixedHeight (520px), shadow (.elevated), media-tab-portrait shadow — additional modifier classes from source. Elevated variant covers .elevated; fixedHeight is a positioning concern.',
+      'Source padding flow: outer .root padding 8 + inner .cardContentWrapper padding 8 = effective 16px content inset. Figma component preserves both for Dev Mode parity.',
+    ],
+  },
+
+  // ─── ProfileAvatar (Tier 2 — verified) ───────────────────────────────────
+  {
+    name: 'ProfileAvatar',
+    slug: 'profile-avatar',
+    description: 'Circular avatar from ProfileAvatar.module.scss. Source uses 100% w/h (sizes from parent) and brand-purple bg with white initials when name fallback. Figma component provides 5 sizes (xs 24 → xl 80) × 2 types (image, initials). Used on NavBar profile, sidebar, comment threads, teacher cards.',
+    variants: ['xs-image', 'xs-initials', 'sm-image', 'sm-initials', 'md-image', 'md-initials', 'lg-image', 'lg-initials', 'xl-image', 'xl-initials'],
+    tokens: [
+      { property: 'Border radius',         token: 'radius/pill',           cssVar: '--radius-pill',           value: '50% (source-exact, mapped to pill)' },
+      { property: 'Size xs',               token: '—',                     cssVar: '—',                       value: '24px (Figma component property)' },
+      { property: 'Size sm',               token: '—',                     cssVar: '—',                       value: '32px' },
+      { property: 'Size md',               token: '—',                     cssVar: '—',                       value: '40px' },
+      { property: 'Size lg',               token: '—',                     cssVar: '—',                       value: '56px' },
+      { property: 'Size xl',               token: '—',                     cssVar: '—',                       value: '80px (source uses 20px font for this size)' },
+      { property: 'Initials bg',           token: 'surface/bg/brand',      cssVar: '--surface-bg-brand',      value: '#722ED1 (DC-005: production #4e3bc2)' },
+      { property: 'Initials text',         token: 'text/on/brand',        cssVar: '--text-on-brand',         value: '#ffffff' },
+      { property: 'Initials font',         token: 'Nunito SemiBold 600',   cssVar: '—',                       value: 'fontSize scales 0.4 × avatar size' },
+      { property: 'Image placeholder bg',  token: 'surface/bg/sunken',     cssVar: '--surface-bg-sunken',     value: 'neutral-100' },
+      { property: 'Image placeholder icon', token: 'icon/muted',          cssVar: '--icon-muted',             value: 'neutral-500' },
+    ],
+    usageExample: `<div className={classes.profileAvatarWithName}>
+  {photoUrl ? <img src={photoUrl} /> : initials}
+</div>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/components/molecules/ProfileAvatar/ProfileAvatar.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'Source ProfileAvatar uses width: 100% / height: 100% — actual size comes from the parent container. Figma component provides explicit size variants for designer convenience.',
+      'Source font-size is 20px on the .profileAvatarWithName variant only — that fits the lg/xl sizes. Smaller sizes scale font 0.4 × avatar size for legibility.',
+      'Source has no status indicator (online/busy dot) — that\'s Tier 3 work.',
+      'Border (1.5px solid border/default per spec) NOT in source — Figma adds nothing extra; matches source.',
+    ],
+  },
+
+  // ─── FeedLayout (Tier 2 — verified) ──────────────────────────────────────
+  {
+    name: 'FeedLayout',
+    slug: 'feed-layout',
+    description: 'Feed container from FeedLayout.module.scss. 682px max-width centered, gap 15 between cards, marginTop 20 on section header, switchContainer divider. 6 variants: my-feed × {populated, empty, loading} + global-feed × {populated, empty, loading}. Populated state uses real Card instances.',
+    variants: ['my-feed-populated', 'my-feed-empty', 'my-feed-loading', 'global-feed-populated', 'global-feed-empty', 'global-feed-loading'],
+    tokens: [
+      { property: 'Max width',                  token: '—',                          cssVar: '—',                              value: '682px (source-exact, no token)' },
+      { property: 'Section header padding-top', token: 'space/inset/xl',            cssVar: '--space-inset-xl',               value: '20px' },
+      { property: 'Switch container marginTop', token: '—',                          cssVar: '—',                              value: '15px (source-exact)' },
+      { property: 'Switch container marginBottom', token: '—',                       cssVar: '—',                              value: '24px' },
+      { property: 'Vertical line bg',           token: 'border/default',             cssVar: '--border-default',               value: 'neutral-200 (source: #c1ccd7)' },
+      { property: 'Card gap',                   token: '—',                          cssVar: '—',                              value: '15px (source-exact)' },
+      { property: 'Heading',                    token: 'Heading/H3',                 cssVar: '—',                              value: 'Nunito 24px / 600' },
+      { property: 'Empty illustration bg',      token: 'surface/bg/sunken',          cssVar: '--surface-bg-sunken',            value: 'neutral-100' },
+      { property: 'Skeleton card bg',           token: 'surface/bg/sunken',          cssVar: '--surface-bg-sunken',            value: 'neutral-100' },
+      { property: 'Skeleton card radius',       token: 'radius/container/lg',        cssVar: '--radius-container-lg',          value: '10px (source: 16px on Card, drift)' },
+    ],
+    usageExample: `<section className={classes.exploreSections}>
+  <header className={classes.sectionHeader}>
+    <h2>{title}</h2>
+    <div className={classes.switchContainer}>
+      <span className={classes.verticalLine} />
+    </div>
+  </header>
+  {state === 'populated' && <FeedCardList items={items} />}
+  {state === 'empty' && <FeedEmpty />}
+  {state === 'loading' && <FeedSkeleton count={3} />}
+</section>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/templates/FeedLayout/FeedLayout.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'Vertical line bg #c1ccd7 (source) bound to border/default (neutral-200). The two are visually similar but ΔE non-zero.',
+      'Active dot bg #4E3BC2 (production primary) vs library #722ED1 — DC-005 unresolved.',
+      'Inactive dot bg #AB9DFF — not in ledger. Closest is primary/300 (#AA82E3). Not used in Figma component (carousel dots are visual chrome, deferred to Tier 3).',
+      'Sticky header (fixed top, height 60, transitions) NOT built — animation/sticky is a runtime concern, not visual chrome.',
+      'Carousel arrows (.prevArrow, .nextArrow) NOT built — Tier 3.',
+      'Populated state uses Card with-image instances. Real feed items have richer composition (ClassJoiningCard, etc.) — those are sub-components for Tier 3.',
     ],
   },
 ]

@@ -15,15 +15,24 @@ const TOC = [
 // Components that have a fully-built spec page on the DS site. The component
 // inventory shows DOCUMENTED + a link for these instead of NEEDS SPEC.
 const DOCUMENTED: Record<string, string> = {
-  Accordion:       '/components/accordion/',
-  ProgressLine:    '/components/progress-line/',
-  GreenLine:       '/components/green-line/',
-  LessonList:      '/components/lesson-list/',
-  Layout:          '/components/layout/',
+  // Tier 1 chrome (4)
   NavBar:          '/components/nav-bar/',
   LeftSideBar:     '/components/left-side-bar/',
   RightSideBar:    '/components/right-side-bar/',
   DashboardLayout: '/components/dashboard-layout/',
+  // Tier 2 content (6)
+  Accordion:       '/components/accordion/',
+  ProgressBar:     '/components/progress-bar/',
+  ProfileAvatar:   '/components/profile-avatar/',
+  FeedLayout:      '/components/feed-layout/',
+  // Earlier inferred / wrapper specs
+  ProgressLine:    '/components/progress-line/',
+  GreenLine:       '/components/green-line/',
+  LessonList:      '/components/lesson-list/',
+  Layout:          '/components/layout/',
+  // Routes without inventory prefixes (don't increment count)
+  Card:            '/components/card/',
+  Button:          '/components/button/',
 }
 
 export default function StudentComponentsPage() {
@@ -42,9 +51,10 @@ export default function StudentComponentsPage() {
         </p>
         <p className="mt-2 max-w-[62ch] text-body-s text-chrome-text-subtle">
           <strong className="text-chrome-text">{documentedCount}</strong> of {components.length} have a full spec page on this site.
-          Tier 1 chrome (NavBar, LeftSideBar, RightSideBar, DashboardLayout) is wired to the Figma variable library
-          (file <code className="font-mono text-[12px]">8eNJf875iY9HISEsczDfOh</code>). The remaining {components.length - documentedCount} are tracked here as
-          “Needs spec” — those are the next sprint&apos;s targets.
+          Tier 1 chrome (NavBar, LeftSideBar, RightSideBar, DashboardLayout) and Tier 2 content
+          (Accordion, ProgressBar, ProfileAvatar, FeedLayout, plus the corrected Button and Card) are wired to the Figma
+          variable library (file <code className="font-mono text-[12px]">8eNJf875iY9HISEsczDfOh</code>). The remaining{' '}
+          {components.length - documentedCount} are tracked here as “Needs spec” — those are Tier 3 targets.
         </p>
 
         <section id="inventory" className="mt-12 scroll-mt-24">
