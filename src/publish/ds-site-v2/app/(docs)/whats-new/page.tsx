@@ -23,6 +23,11 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — Tier 3 feature-specific components shipped → 21/21 coverage
+  { date: '2026-04-28', version: 'v0.9', kind: 'COMPONENT', title: 'Tier 3 complete — 21/21 student dashboard components documented. Full coverage achieved.', status: 'shipped', note: 'ModuleHeader, ClassDetails, ToggleSwitch, Tray, LockedModuleContainer, RightSectionInList, LeftSectionInList, SectionHeader, Chip, Timer', href: '/surfaces/student/components/' },
+  { date: '2026-04-28', version: 'v0.9', kind: 'DRIFT',     title: 'DC-011 (danger #ff8480 → #FF5C5C, ΔE 4) and DC-012 (info #60bfbd → #33CCFF, ΔE 25 HIGH) added to designer-conflicts ledger', status: 'shipped', note: '12 open tickets total', href: '/surfaces/#designer-conflicts' },
+  { date: '2026-04-28', version: 'v0.9', kind: 'AUDIT',     title: 'Audit scorecard updated: 3/10 → 6/10 overall. Component coverage 1/10 → 8/10. Variable system 0/10 → 9/10.', status: 'shipped', href: '/full-system-audit-2026-04-26' },
+
   // 2026-04-28 — Tier 2 content components shipped
   { date: '2026-04-28', version: 'v0.8', kind: 'COMPONENT', title: 'Tier 2 content components shipped — Accordion, ProgressBar, Button (corrected), Card, ProfileAvatar, FeedLayout', status: 'shipped', note: 'production-verified, instance reuse (Card uses Button, FeedLayout uses Card)', href: '/components/card/' },
   { date: '2026-04-28', version: 'v0.8', kind: 'COMPONENT', title: 'Button taxonomy corrected — primary/secondary/ghost retired; production ships contained/outlined/danger/info/underline', status: 'shipped', href: '/components/button/' },

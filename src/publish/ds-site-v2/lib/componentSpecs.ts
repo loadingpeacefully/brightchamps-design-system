@@ -665,4 +665,367 @@ export const componentSpecs: ComponentSpec[] = [
       'Populated state uses Card with-image instances. Real feed items have richer composition (ClassJoiningCard, etc.) — those are sub-components for Tier 3.',
     ],
   },
+
+  // ─── ModuleHeader (Tier 3 — verified) ────────────────────────────────────
+  {
+    name: 'ModuleHeader',
+    slug: 'module-header',
+    description: 'Sticky module header on the learn page. Gradient background (#f9e5ff → #d3f4ff), inner container brand purple (#8742FF). h3 24/700 white, p 16/600 white-alpha. Embeds a 180×16 ProgressBar instance and a scheduled-icon module status. Source-faithful from learn/components/ModuleHeader.',
+    variants: ['default', 'locked', 'completed'],
+    tokens: [
+      { property: 'Outer gradient bg',     token: '—',                       cssVar: '—',                          value: 'linear-gradient(135deg, #f9e5ff, #d3f4ff) — gradient not in ledger, source raw' },
+      { property: 'Inner container bg',    token: 'surface/bg/brand',        cssVar: '--surface-bg-brand',         value: '#722ED1 (DC-005: production #8742FF — different brand-purple shade)' },
+      { property: 'Border radius',         token: 'radius/container/lg',     cssVar: '--radius-container-lg',      value: '10px (source: 20px, +10px drift)' },
+      { property: 'Title (h3)',            token: 'fontSize 24 / 700',       cssVar: '—',                          value: 'Nunito 24px / 700' },
+      { property: 'Title color',           token: 'text/inverse',            cssVar: '--text-inverse',             value: '#ffffff' },
+      { property: 'Subtitle (p)',          token: 'fontSize 16 / 600',       cssVar: '—',                          value: 'Nunito 16px / 600 (source-exact)' },
+      { property: 'Subtitle color',        token: 'text/inverse @ opacity 0.8', cssVar: '—',                       value: 'white at 0.8 (source: rgba(255,255,255,0.8))' },
+      { property: 'Embedded ProgressBar',  token: 'ProgressBar (in-progress)', cssVar: '—',                        value: '180×16 instance (source: 180×16 .progressBar)' },
+      { property: 'Module status text',    token: 'text/inverse',            cssVar: '--text-inverse',             value: 'fontSize 12 / 600' },
+      { property: 'Scheduled icon',        token: 'icon/inverse',            cssVar: '--icon-inverse',             value: '18×18 (source-exact)' },
+      { property: 'Image container',       token: '—',                       cssVar: '—',                          value: 'max-width 159px (source-exact, no token)' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/learn/components/ModuleHeader/ModuleHeader.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<header className={classes.root}>
+  <div className={classes.container}>
+    <div className={classes.progressTextContainer}>
+      <div className={classes.textContainer}>
+        <h3>{moduleName}</h3>
+        <p>{moduleDescription}</p>
+      </div>
+      <div className={classes.progressBarContainer}>
+        <ProgressBar variant="in-progress" percent={progress} />
+        <ModuleStatus />
+      </div>
+    </div>
+    <div className={classes.imgContainer}><img src={moduleImg} /></div>
+  </div>
+</header>`,
+    conflicts: [
+      'Inner container bg #8742FF (production) is a different brand-purple shade than #722ED1 (library). Bound to surface/bg/brand for semantic clarity; ΔE significant. Add as DC-013 candidate if brand wants both shades preserved.',
+      'Outer gradient #f9e5ff → #d3f4ff is not representable in current Figma library (no gradient tokens). Component renders without the gradient; flag for Tier 4 elevation/gradient system.',
+      'Source borderRadius 20px → bound to radius/container/lg (10), +10px drift.',
+    ],
+  },
+
+  // ─── LockedModuleContainer (Tier 3 — verified) ───────────────────────────
+  {
+    name: 'LockedModuleContainer',
+    slug: 'locked-module-container',
+    description: 'Locked/premium module wrapper on the learn page. White card (border-radius 20), 72×72 lock icon, h3 22/800 + module-name chip (#f1f1f1 bg). Has a diagonal yellow lockStrip flag (#F8C42B) for premium content + an inline Book Now button (production #4E3BC2).',
+    variants: ['premium', 'prerequisite', 'scheduled'],
+    tokens: [
+      { property: 'Card bg',                 token: 'surface/bg/default',      cssVar: '--surface-bg-default',       value: '#ffffff' },
+      { property: 'Card radius',             token: 'radius/container/lg',     cssVar: '--radius-container-lg',      value: '10px (source: 20px, +10px drift)' },
+      { property: 'Card padding',            token: '—',                       cssVar: '—',                          value: '15px 20 10 41 (source-exact, no token)' },
+      { property: 'Lock icon container',     token: 'surface/bg/sunken',       cssVar: '--surface-bg-sunken',        value: '72×72 circle, neutral-100 bg' },
+      { property: 'Lock icon',               token: 'icon/muted',              cssVar: '--icon-muted',               value: 'neutral-500' },
+      { property: 'h3 title',                token: 'fontSize 22 / 800',       cssVar: '—',                          value: 'Nunito 22px / 800 (source-exact)' },
+      { property: 'h3 color',                token: 'text/default',            cssVar: '--text-default',             value: '#3D4D5D (source) → semantic text/default' },
+      { property: 'Module-name chip bg',     token: 'surface/bg/sunken',       cssVar: '--surface-bg-sunken',        value: 'neutral-100 (source: #f1f1f1)' },
+      { property: 'Module-name chip radius', token: 'radius/container/lg',     cssVar: '--radius-container-lg',      value: '10px (source: 16px, +6px drift)' },
+      { property: 'lockStrip flag bg',       token: 'surface/bg/warning',      cssVar: '--surface-bg-warning',       value: '#FF7C35 (source: #F8C42B yellow — drift; DC-013 candidate)' },
+      { property: 'Book Now button',         token: 'Button (contained)',      cssVar: '—',                          value: 'Button instance from library' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/learn/components/LockedModuleContainer/components/LockedModule/LockedModule.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<div className={classes.root}>
+  <div className={classes.leftContainer}>
+    <div className={classes.lockContainer}>
+      <div className={classes.lockStrip}><p>PREMIUM</p></div>
+      <div className={classes.iconContainer}>{lockIcon}</div>
+    </div>
+    <div className={classes.moduleDetailsContainer}>
+      <h3>{title}</h3>
+      <div className={classes.moduleNameContainer}><p>{moduleName}</p></div>
+    </div>
+  </div>
+  <button className={classes.bookNowButton}>{ctaLabel}</button>
+</div>`,
+    conflicts: [
+      'lockStrip yellow #F8C42B is bound to surface/bg/warning (#FF7C35 orange) — different hues. New ticket DC-013 recommended for true gold/yellow brand color.',
+      'h3 #3D4D5D (production) bound to text/default — semantic-correct but production hex differs from library default.',
+      'bookNowButton uses production primary #4E3BC2 (DC-005). Bound to surface/bg/brand which ships #722ED1 in library.',
+      'lockStrip is positioned with rotation: 40.355deg in source — Figma component shows it but rotation-as-decoration is a runtime concern.',
+    ],
+  },
+
+  // ─── ToggleSwitch (Tier 3 — verified) ────────────────────────────────────
+  {
+    name: 'ToggleSwitch',
+    slug: 'toggle-switch',
+    description: 'Segmented toggle from toggleswitch/ToggleSwitch.module.scss. White rounded container (border-radius 30, padding 4, gap 4) with optional shadow variant. The Figma component renders an opinionated 2-segment pill matching production usage on Badges and Chatbot pages.',
+    variants: ['on', 'off', 'disabled'],
+    tokens: [
+      { property: 'Container bg',          token: 'surface/bg/default',     cssVar: '--surface-bg-default',     value: '#ffffff' },
+      { property: 'Container radius',      token: 'radius/pill',            cssVar: '--radius-pill',            value: 'pill (source: 30px)' },
+      { property: 'Container padding',     token: '—',                      cssVar: '—',                        value: '4px (source-exact)' },
+      { property: 'Container gap',         token: '—',                      cssVar: '—',                        value: '4px' },
+      { property: 'Active option bg',      token: 'surface/bg/brand',       cssVar: '--surface-bg-brand',       value: '#722ED1 (DC-005)' },
+      { property: 'Active option text',    token: 'text/on/brand',          cssVar: '--text-on-brand',          value: '#ffffff' },
+      { property: 'Inactive option text',  token: 'text/muted',             cssVar: '--text-muted',             value: 'neutral-500' },
+      { property: 'Shadow (toggleShadow)', token: 'shadow/sm effect style', cssVar: '—',                        value: '0 4px 12px rgba(0,0,0,0.15) → shadow/sm' },
+      { property: 'Disabled state',        token: '—',                      cssVar: '—',                        value: 'opacity 0.4' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/components/molecules/toggleswitch/ToggleSwitch.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<div className={clsx(classes.toggleSwitch, hasShadow && classes.toggleShadow)}>
+  <button className={isActive ? 'active' : ''}>{onLabel}</button>
+  <button className={!isActive ? 'active' : ''}>{offLabel}</button>
+</div>`,
+    conflicts: [
+      'Source ToggleSwitch.module.scss has only the container styling — the active/inactive button styles are applied by the parent component\'s clsx logic. Figma component bakes in opinionated pill segments matching Badges-page usage.',
+      'Source shadow: 0 4px 12px rgba(0,0,0,0.15) — closest effect style is shadow/sm (0 1px 2px rgba(0,0,0,0.05)). +13% alpha + larger blur — visible drift; flag for ledger reconciliation.',
+    ],
+  },
+
+  // ─── Tray (Tier 3 — verified) ────────────────────────────────────────────
+  {
+    name: 'Tray',
+    slug: 'tray',
+    description: 'Bottom tray notification from molecules/ReferralCard/Tray. Renders below another card (margin-top -17px to overlap). Border-radius 0 0 20 20 (top-flat, bottom-rounded), purple-alpha bg (rgba(229,224,246,0.5)), 12/800 dark text, action button on the right.',
+    variants: ['default'],
+    tokens: [
+      { property: 'Container bg',         token: 'surface/bg/brand/subtle @ opacity 0.5', cssVar: '—',           value: '#FAF5FF at 0.5 (source: rgba(229,224,246,0.5))' },
+      { property: 'Border radius (top)',  token: '—',                          cssVar: '—',                       value: '0 (overlap above sibling)' },
+      { property: 'Border radius (bottom)', token: 'radius/container/lg',     cssVar: '--radius-container-lg',   value: '10px (source: 20px)' },
+      { property: 'Padding',              token: '—',                          cssVar: '—',                       value: '34px 26 16 35 (source-exact, no token)' },
+      { property: 'Gap',                  token: '—',                          cssVar: '—',                       value: '30px (source-exact)' },
+      { property: 'Tray text',            token: 'text/default',               cssVar: '--text-default',          value: 'fontSize 12 / 800 #3d4d5d → semantic text/default' },
+      { property: 'Action button',        token: 'Button (contained)',         cssVar: '—',                       value: 'Button instance, padding 8px 24px (source .customCSSBtn)' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/components/molecules/ReferralCard/Tray/Tray.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<div className={classes.outerMostContainer}>
+  <span className={classes.trayText}>{message}</span>
+  <div className={classes.ButtonContainer}>
+    <Button variant="contained" customCss={classes.customCSSBtn}>{ctaLabel}</Button>
+  </div>
+</div>`,
+    conflicts: [
+      'Source bg rgba(229,224,246,0.5) is a 50% alpha tint that requires a parent context for correct rendering. Figma component approximates with surface/bg/brand/subtle at paint opacity 0.5.',
+      'Source has marginTop: -17px (visual overlap with sibling card). Figma component is standalone — the overlap is a layout concern at usage site.',
+      'Source defines @keyframes appearFromInside but the .trayAnimationContainer class is commented out. Animation is a runtime concern.',
+    ],
+  },
+
+  // ─── ClassDetails (Tier 3 — verified, minimal source) ────────────────────
+  {
+    name: 'ClassDetails',
+    slug: 'class-details',
+    description: 'Class info panel — appears in RightSideBar on 3/7 student pages. Source ClassDetails.module.scss is minimal (just .userAvatar 37.867×38). Most class-info styling lives in the parent ClassJoiningCard. The Figma component is a Tier 2 composition: live state pill, class title, time row, teacher row (ProfileAvatar instance), join button (Button instance).',
+    variants: ['upcoming', 'live', 'completed', 'cancelled'],
+    tokens: [
+      { property: 'Container bg',         token: 'surface/bg/default',     cssVar: '--surface-bg-default',     value: '#ffffff' },
+      { property: 'Container border',     token: 'border/subtle',          cssVar: '--border-subtle',          value: '1px neutral-100' },
+      { property: 'Container radius',     token: 'radius/container/lg',    cssVar: '--radius-container-lg',    value: '10px' },
+      { property: 'Padding',              token: 'space/inset/lg',         cssVar: '--space-inset-lg',         value: '16px' },
+      { property: 'Live pill bg',         token: 'surface/bg/error/subtle', cssVar: '--surface-bg-error-subtle', value: '#FFF0F0' },
+      { property: 'Live pill text',       token: 'text/error',             cssVar: '--text-error',             value: '#FF5C5C' },
+      { property: 'Live dot',             token: 'surface/bg/error',       cssVar: '--surface-bg-error',       value: '#FF5C5C, 8px circle' },
+      { property: 'Title',                token: 'Title/MD',               cssVar: '—',                        value: 'Nunito 16px / 600' },
+      { property: 'Time text (default)',  token: 'text/default',           cssVar: '--text-default',           value: 'neutral-900' },
+      { property: 'Time text (completed)', token: 'text/muted',            cssVar: '--text-muted',             value: 'neutral-500' },
+      { property: 'Time text (cancelled)', token: 'text/error',            cssVar: '--text-error',             value: '#FF5C5C' },
+      { property: 'Teacher avatar',       token: 'ProfileAvatar (md, initials)', cssVar: '—',                  value: '40px ProfileAvatar instance (source uses 37.867×38)' },
+      { property: 'Join button',          token: 'Button (contained)',     cssVar: '—',                        value: 'Button instance' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/templates/FeedLayout/components/ClassJoiningCard/components/ClassDetails/',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<div className={classes.details}>
+  {state === 'live' && <LivePill />}
+  <h3>{className}</h3>
+  <div className={classes.timeRow}>{timeLabel}</div>
+  <div className={classes.teacherRow}>
+    <ProfileAvatar size="md" />
+    <span>{teacherName}</span>
+  </div>
+  {(state === 'upcoming' || state === 'live') && <Button variant="contained">Join now</Button>}
+</div>`,
+    conflicts: [
+      'Source ClassDetails.module.scss is sparse — the actual layout lives in the parent ClassJoiningCard. Figma component composes from production patterns observed in ClassJoiningCard usage.',
+      'userAvatar size 37.867×38 (source-exact, oddly fractional) bound to ProfileAvatar md (40×40). +2.2px width drift.',
+      'Live state styling is composed (live pill + dot + red text) — production uses inline class composition rather than a single .live modifier.',
+    ],
+  },
+
+  // ─── SectionHeader (Tier 3 — verified) ───────────────────────────────────
+  {
+    name: 'SectionHeader',
+    slug: 'section-header',
+    description: 'Generic section header from src/components/SectionHeader. Title (24/800) + optional subtitle (16/500) on the left, optional right-side actions. marginBottom 24. Used as a section divider on feed and detail pages.',
+    variants: ['title-subtitle-action', 'title-only'],
+    tokens: [
+      { property: 'Container layout',     token: '—',                       cssVar: '—',                          value: 'flex space-between, items center' },
+      { property: 'Bottom margin',        token: 'space/inset/2xl',         cssVar: '--space-inset-2xl',          value: '24px' },
+      { property: 'Title',                token: 'fontSize 24 / 800',       cssVar: '—',                          value: 'Nunito 24px / 800 (source @include font-face)' },
+      { property: 'Title color',          token: 'text/default',            cssVar: '--text-default',             value: 'neutral-900 (source: text-property(text-black) #3d4d5d)' },
+      { property: 'Subtitle',             token: 'fontSize 16 / 500',       cssVar: '—',                          value: 'Nunito 16px / 500' },
+      { property: 'Subtitle color',       token: 'text/muted',              cssVar: '--text-muted',               value: 'neutral-500 (source: text-black-alpha #3d4d5d99)' },
+      { property: 'Section title (alt)',  token: 'fontSize 20 / 800',       cssVar: '—',                          value: 'Nunito 20px / 800 (source .sectionTitle)' },
+      { property: 'Actions wrapper gap',  token: 'space/inline/md',         cssVar: '--space-inline-md',          value: '12px (source: 10px, +2px drift)' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/SectionHeader/sectionHeader.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<header className={classes.root}>
+  <div className={classes.titleWrapper}>
+    <h2 className={classes.title}>{title}</h2>
+    {subtitle && <p className={classes.subtitle}>{subtitle}</p>}
+  </div>
+  {actions && <div className={classes.actionsWrapper}>{actions}</div>}
+</header>`,
+    conflicts: [
+      'Source title color text-black (#3d4d5d) bound to text/default which resolves to neutral-900 (#0D1D2D). Different shade — flag.',
+      'Source subtitle color text-black-alpha (#3d4d5d99 = 60% alpha #3d4d5d) bound to text/muted (neutral-500). Approximation.',
+    ],
+  },
+
+  // ─── Chip (Tier 3 — verified, source minimal + 12 semantic variants) ─────
+  {
+    name: 'Chip',
+    slug: 'chip',
+    description: 'Compact label component from src/components/Chip. Source is minimal — just a single .root style with white bg, padding 8 15, borderRadius 24, fontWeight 600, fontSize 14, hover with $chip-hover-color (#4e3bc2). The Figma library extends to 12 semantic variants: default + 5 status + 6 course-vertical chips.',
+    variants: ['default', 'brand', 'success', 'warning', 'error', 'info', 'course-coding', 'course-robotics', 'course-finance', 'course-ai', 'course-literature', 'course-maths'],
+    tokens: [
+      { property: 'Padding (block)',      token: 'space/inset/sm',          cssVar: '--space-inset-sm',           value: '8px' },
+      { property: 'Padding (inline)',     token: 'space/inset/lg',          cssVar: '--space-inset-lg',           value: '16px (source: 15px, +1px drift)' },
+      { property: 'Border radius',        token: 'radius/pill',             cssVar: '--radius-pill',              value: 'pill (source: 24px = pill at chip heights)' },
+      { property: 'Font',                 token: 'fontSize 14 / 600',       cssVar: '—',                          value: 'Nunito 14px / 600 (source-exact)' },
+      { property: 'Default bg',           token: 'surface/bg/subtle',       cssVar: '--surface-bg-subtle',        value: 'neutral-50' },
+      { property: 'Default text',         token: 'text/default',            cssVar: '--text-default',             value: 'neutral-900' },
+      { property: 'Brand bg',             token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle',  value: '#FAF5FF' },
+      { property: 'Brand text',           token: 'text/brand',              cssVar: '--text-brand',               value: '#722ED1 (DC-005)' },
+      { property: 'Course bg/text',       token: 'course/{name}/bg/subtle + course/{name}/text', cssVar: '—',     value: 'Per-vertical aliases — coding/robotics/finance/ai/literature/maths' },
+      { property: 'Hover (source)',       token: 'surface/bg/brand',        cssVar: '--surface-bg-brand',         value: '#722ED1 (source: $chip-hover-color #4e3bc2 — DC-005)' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/Chip/chip.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<span className={classes.root}>{label}</span>`,
+    conflicts: [
+      'Source has only one .root variant. The Figma library extends to 12 semantic variants (status + course verticals). Production uses inline style overrides for specific cases — Figma component is more structured.',
+      'Source padding 8px 15px — bound to space/inset/sm + space/inset/lg (8 + 16). +1px inline drift.',
+      'Course-vertical variants use semantic course/{name}/bg/subtle + course/{name}/text aliases that didn\'t exist before this build. Already in the library from Tier 1.',
+    ],
+  },
+
+  // ─── Timer (Tier 3 — verified, source minimal) ───────────────────────────
+  {
+    name: 'Timer',
+    slug: 'timer',
+    description: 'Countdown timer from src/components/Timer. Source is minimal (.propsChildren text-align center fontWeight 600, .sandTimer margin spacing). The actual countdown is in JS. Figma component renders a pill with sand-timer icon + time text, in 3 states (counting / expired / paused).',
+    variants: ['counting', 'expired', 'paused'],
+    tokens: [
+      { property: 'Container layout',     token: '—',                       cssVar: '—',                          value: 'horizontal pill, items center, gap 6' },
+      { property: 'Padding (block)',      token: 'space/inset/sm',          cssVar: '--space-inset-sm',           value: '8px' },
+      { property: 'Padding (inline)',     token: 'space/inset/lg',          cssVar: '--space-inset-lg',           value: '16px' },
+      { property: 'Border radius',        token: 'radius/pill',             cssVar: '--radius-pill',              value: 'pill' },
+      { property: 'Counting bg',          token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle',  value: '#FAF5FF' },
+      { property: 'Expired bg',           token: 'surface/bg/error/subtle', cssVar: '--surface-bg-error-subtle',  value: '#FFF0F0' },
+      { property: 'Paused bg',            token: 'surface/bg/disabled',     cssVar: '--surface-bg-disabled',      value: 'neutral-100' },
+      { property: 'Time text (counting)', token: 'text/brand',              cssVar: '--text-brand',               value: '#722ED1' },
+      { property: 'Time text (expired)',  token: 'text/error',              cssVar: '--text-error',               value: '#FF5C5C' },
+      { property: 'Time text (paused)',   token: 'text/muted',              cssVar: '--text-muted',               value: 'neutral-500' },
+      { property: 'Sand timer icon',      token: 'icon/{state}',            cssVar: '—',                          value: 'icon/brand / icon/error / icon/muted' },
+      { property: 'Time font',            token: 'fontSize 16 / 600',       cssVar: '—',                          value: 'Nunito 16px / 600 (source: .propsChildren fontWeight 600)' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/components/Timer/timer.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<span className={classes.propsChildren}>
+  <img src={sandTimerIcon} className={classes.sandTimer} />
+  {formattedTime}
+</span>`,
+    conflicts: [
+      'Source Timer is just typography styling — the visible rendering depends on parent context. Figma component bakes in opinionated pill chrome that\'s common in production usage (class-joining countdown, demo class timer).',
+      'State-color decisions (counting=brand, expired=error, paused=muted) are designer choices not in source. Reasonable conventions, flag for designer review.',
+    ],
+  },
+
+  // ─── RightSectionInList (Tier 3 — verified) ─────────────────────────────
+  {
+    name: 'RightSectionInList',
+    slug: 'right-section-in-list',
+    description: 'Right-side row content on the learn page (paired with LeftSectionInList — 69 elements / 1 page, highest-usage unspecced component). Multiple variants: score (h3 16/900 + p 12/400), duration text + arrow, joinNowButton (#4D3BC2 — DC-008 typo confirmed!), completed icon (success-green check overlay).',
+    variants: ['score', 'duration', 'join-button', 'completed-icon'],
+    tokens: [
+      { property: 'Container layout',     token: '—',                       cssVar: '—',                          value: 'horizontal flex, items center, margin-left 10' },
+      { property: 'Container gap (default)', token: 'space/inline/2xl',     cssVar: '--space-inline-2xl',         value: '24px (source: 21px, +3px drift)' },
+      { property: 'Score "label" text',   token: 'text/default',            cssVar: '--text-default',             value: 'fontSize 12 / 400 #3D4D5D' },
+      { property: 'Score "value" text',   token: 'text/default',            cssVar: '--text-default',             value: 'fontSize 16 / 900 (Black)' },
+      { property: 'Arrow icon',           token: 'icon/muted',              cssVar: '--icon-muted',               value: 'neutral-500' },
+      { property: 'joinNowButton bg',     token: 'surface/bg/brand',        cssVar: '--surface-bg-brand',         value: '#722ED1 (DC-005 + DC-008: production #4D3BC2 — TYPO ON LIVE SITE)' },
+      { property: 'joinNowButton padding', token: '—',                      cssVar: '—',                          value: '9 16 (source-exact)' },
+      { property: 'joinNowButton radius', token: 'radius/pill',             cssVar: '--radius-pill',              value: 'pill (source: 40)' },
+      { property: 'Completed icon bg',    token: 'surface/bg/success/subtle', cssVar: '--surface-bg-success-subtle', value: '#E6F8F1' },
+      { property: 'Completed check',      token: 'icon/success',            cssVar: '--icon-success',             value: '#00B67A' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/learn/components/LessonList/components/RightSectionInList/RightSectionInList.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<div className={classes.rightSectionContainer}>
+  {variant === 'score' && <ScoreContainer />}
+  {variant === 'duration' && <DurationLabel />}
+  {variant === 'joinable' && <button className={classes.joinNowButton}>Join now</button>}
+  {variant === 'completed' && <CheckIconContainer />}
+</div>`,
+    conflicts: [
+      'joinNowButton bg #4D3BC2 — this is the DC-008 typo of #4E3BC2 confirmed live in production source. Engineering migration must catch this.',
+      'Assignment h4 #E866FF (magenta) NOT in ledger — appears in .rightSectionAssignment. Tier 4 candidate (DC-014) for assignment-specific accent color.',
+      'Assignment button color #7D68FF ($light-primary-color in _variables.scss) — exists as a SCSS var but not extracted into the ledger. Closest is primary/300.',
+      'Container gap 21px (source) → bound to space/inline/2xl (24). +3px drift.',
+      'Source fontWeight 900 (Black) used for score values — Nunito Black exists, used as-is in Figma.',
+    ],
+  },
+
+  // ─── LeftSectionInList (Tier 3 — verified) ──────────────────────────────
+  {
+    name: 'LeftSectionInList',
+    slug: 'left-section-in-list',
+    description: 'Left-side row content on the learn page (paired with RightSectionInList — 36 elements / 1 page). titleImg (72×59, radius 4) + title h3 (18/700 #222A33) + tags row (purple alpha bg) + completedTag (#EAFFEC bg, #238B2E text — yet another green not in ledger).',
+    variants: ['available', 'in-progress', 'completed', 'locked'],
+    tokens: [
+      { property: 'Container width',      token: '—',                       cssVar: '—',                          value: '80% of row (source-exact)' },
+      { property: 'Title image size',     token: '—',                       cssVar: '—',                          value: '72×59 (source-exact, no token)' },
+      { property: 'Title image radius',   token: 'radius/control/sm',       cssVar: '--radius-control-sm',        value: '6px (source: 4px, +2px drift)' },
+      { property: 'Title image bg',       token: 'surface/bg/sunken',       cssVar: '--surface-bg-sunken',        value: 'neutral-100 placeholder' },
+      { property: 'h3 lesson title',      token: 'fontSize 18 / 700',       cssVar: '—',                          value: 'Nunito 18px / 700' },
+      { property: 'h3 color (default)',   token: 'text/default',            cssVar: '--text-default',             value: '#222A33 (source) → semantic text/default' },
+      { property: 'h3 color (locked)',    token: 'text/disabled',           cssVar: '--text-disabled',            value: 'neutral-300' },
+      { property: 'Tag bg',               token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle',  value: '#FAF5FF (source: rgba(125,104,255,0.20) — alpha tint)' },
+      { property: 'Tag text',             token: 'text/muted',              cssVar: '--text-muted',               value: 'neutral-500 (source: #51667B — close)' },
+      { property: 'Tag radius',           token: 'radius/control/sm',       cssVar: '--radius-control-sm',        value: '6px (source: 4px)' },
+      { property: 'Completed tag bg',     token: 'surface/bg/success/subtle', cssVar: '--surface-bg-success-subtle', value: '#E6F8F1 (source: #EAFFEC — close)' },
+      { property: 'Completed tag text',   token: 'text/success',            cssVar: '--text-success',             value: '#00B67A (source: #238B2E — DC-014: yet another green not in ledger)' },
+    ],
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/learn/components/LessonList/components/LeftSectionInList/LeftSectionInList.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    usageExample: `<div className={classes.leftSectionContainer}>
+  <div className={classes.iconTitleContainer}>
+    <img className={classes.titleImg} src={lessonImage} />
+    <div className={classes.titleContainer}>
+      <h3>{lessonTitle}</h3>
+      <div className={classes.tagsContainer}>
+        {tags.map(t => <button key={t}>{t}</button>)}
+        {isCompleted && <span className={classes.completedTag}><p>Completed</p></span>}
+      </div>
+    </div>
+  </div>
+</div>`,
+    conflicts: [
+      'completedTag green #238B2E (source) is a FOURTH green not in the ledger (#11ac69, #00B67A, #24c26e are the others). Bound to text/success #00B67A. New ticket DC-014 candidate.',
+      'completedTag bg #EAFFEC (source) bound to surface/bg/success/subtle #E6F8F1 — visually similar.',
+      'Tag bg rgba(125,104,255,0.20) (alpha tint over $light-primary) bound to surface/bg/brand/subtle. Approximation — true tint requires gradient/alpha in ledger.',
+      'Tag text #51667B ($text-black-medium) bound to text/muted (neutral-500). ΔE small.',
+      'Title image 72×59 — non-square odd dimensions, no token.',
+    ],
+  },
 ]

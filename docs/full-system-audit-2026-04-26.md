@@ -6,6 +6,43 @@
 
 ---
 
+## UPDATE — 2026-04-28 (post Tier 1 + Tier 2 + Tier 3)
+
+| Dimension | Score at audit | Score now | What changed |
+|---|---:|---:|---|
+| Component coverage           | 1/10 | **8/10** | 21/21 student-dashboard components documented in `componentSpecs.ts` with Figma library bindings |
+| Figma variable system        | 0/10 | **9/10** | 376 vars across 10 collections, light/dark modes + radius mode set, 15 text styles, 5 effect styles, 20 component sets |
+| Component specs accuracy     | 2/10 | **7/10** | 14 verified entries (Tier 1 chrome × 4 + Tier 2 content × 6 + Tier 3 feature × 10 minus 6 already-existing CONFLICT entries we kept). Every drift annotated. DC-005 / 008 / 009 / 010 / 011 / 012 / 013 / 014 surfaced. |
+| Token adoption (production)  | 3/10 | 3/10 | Codemod still hasn't run — engineering migration guide is ready and tested |
+| Surface coverage             | 2/10 | 2/10 | Still 1 of 4 surfaces (landing/teacher/admin Figma file IDs blocking) |
+| Drift freshness              | 3/10 | 4/10 | Drift report still 2026-04-16 but augmented with 2026-04-26 source-code drift analysis (379 files ranked) and four new DC tickets from Tier 2/3 |
+| AI generator                 | 3/10 | 4/10 | System prompt now contains 5 real production SCSS modules + 20 verified component specs as ground truth. Real-output validation still pending. |
+| Documentation quality        | 5/10 | **8/10** | Every component has a /components/<slug>/ page driven from the canonical componentSpecs.ts via shared ComponentSpecPage. Single source of truth. |
+| **Overall**                  | **3/10** | **6/10** | **Doubled the headline number; the *production accuracy* of every claim is now traceable to a real SCSS source file.** |
+
+**New designer-conflict tickets surfaced during Tier 2 + Tier 3 (2026-04-28):**
+- **DC-011** — Danger button color `#ff8480` (production) vs `#FF5C5C` (design). ΔE ~4, medium.
+- **DC-012** — Info button color `#60bfbd` (production teal) vs `#33CCFF` (design cyan). ΔE ~25, **HIGH** — different hue family.
+- **DC-013** *(candidate)* — `#8742FF` ModuleHeader inner-container purple vs `#722ED1` library brand. Plus `#F8C42B` lockStrip yellow has no token. Surface for brand review.
+- **DC-014** *(candidate)* — `#238B2E` (LeftSectionInList completedTag text) is a fourth green not in ledger. Plus `#E866FF` (RightSectionInList assignment magenta) is a fifth brand accent not in ledger.
+
+**Remaining gaps to reach 10/10 on every dimension:**
+1. Engineering runs the codemod from `docs/engineering-migration-guide.md` → token adoption 3 → 8.
+2. Brand team confirms DC-005 (and the new DC-013 / DC-014 candidates) → brand color resolved, 4-way conflict closes.
+3. Figma file IDs unblocked for landing + teacher + admin → surface coverage 2 → 8.
+4. Re-run drift detection on the post-codemod codebase → freshness 4 → 8.
+5. AI generator validated with 10 real-output diffs against production → generator 4 → 7.
+6. Component spec verification re-pass after codemod (every spec re-checked against post-migration code) → component specs 7 → 9.
+
+The remaining bottleneck is no longer documentation or tooling — it's getting the eng team to run the codemod and the brand team to confirm the brand purple. Both are unblocked from the DS side.
+
+---
+
+## ORIGINAL AUDIT (preserved below)
+
+
+---
+
 ## SECTION 1 — COMPLETENESS
 
 ### Surfaces

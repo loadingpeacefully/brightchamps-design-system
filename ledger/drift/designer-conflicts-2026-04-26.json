@@ -123,6 +123,30 @@
       "action": "PENDING DESIGN CONFIRMATION — token added as provisional, unblocks engineering. Design team to confirm color/info/400 (#3b9af5) or override.",
       "status": "pending-confirmation",
       "notes": "Provisionally added as color/info/400 in manual-canonicals.json at confidence 0.6 (candidate tier). Replaces the auto-extracted #15e8ff that previously occupied that slot. Now visible at /foundations/color/ in the Info group. Engineering can codemod the ProgressBar paused variant against this token; rename happens automatically if design overrides."
+    },
+    {
+      "id": "DC-011",
+      "title": "Danger/error color mismatch — Button",
+      "designerValue": "#FF5C5C",
+      "productionValue": "#ff8480",
+      "deltaE": 4,
+      "severity": "medium",
+      "category": "color",
+      "action": "Engineering to update danger button bg to #FF5C5C across all Button danger variants.",
+      "status": "open",
+      "notes": "Found in button.module.scss (.danger variant border + text). Soft coral (#ff8480) ships instead of the design system error red (#FF5C5C). Surfaced during Tier 2 component build 2026-04-28."
+    },
+    {
+      "id": "DC-012",
+      "title": "Info/teal color mismatch — Button (HIGH)",
+      "designerValue": "#33CCFF",
+      "productionValue": "#60bfbd",
+      "deltaE": 25,
+      "severity": "high",
+      "category": "color",
+      "action": "Engineering to update info button to #33CCFF. Current production value (#60bfbd) is teal, not cyan — a significant perceptual difference.",
+      "status": "open",
+      "notes": "Found in button.module.scss (.info variant border + text). HIGH severity mismatch — different hue family entirely (cyan vs teal-green), not just a shade difference. Surfaced during Tier 2 component build 2026-04-28."
     }
   ]
 }

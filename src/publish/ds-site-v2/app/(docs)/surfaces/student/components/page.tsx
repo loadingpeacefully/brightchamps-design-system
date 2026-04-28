@@ -16,23 +16,37 @@ const TOC = [
 // inventory shows DOCUMENTED + a link for these instead of NEEDS SPEC.
 const DOCUMENTED: Record<string, string> = {
   // Tier 1 chrome (4)
-  NavBar:          '/components/nav-bar/',
-  LeftSideBar:     '/components/left-side-bar/',
-  RightSideBar:    '/components/right-side-bar/',
-  DashboardLayout: '/components/dashboard-layout/',
+  NavBar:                '/components/nav-bar/',
+  LeftSideBar:           '/components/left-side-bar/',
+  RightSideBar:          '/components/right-side-bar/',
+  DashboardLayout:       '/components/dashboard-layout/',
   // Tier 2 content (6)
-  Accordion:       '/components/accordion/',
-  ProgressBar:     '/components/progress-bar/',
-  ProfileAvatar:   '/components/profile-avatar/',
-  FeedLayout:      '/components/feed-layout/',
-  // Earlier inferred / wrapper specs
-  ProgressLine:    '/components/progress-line/',
-  GreenLine:       '/components/green-line/',
-  LessonList:      '/components/lesson-list/',
-  Layout:          '/components/layout/',
-  // Routes without inventory prefixes (don't increment count)
-  Card:            '/components/card/',
-  Button:          '/components/button/',
+  Accordion:             '/components/accordion/',
+  ProgressBar:           '/components/progress-bar/',
+  ProfileAvatar:         '/components/profile-avatar/',
+  FeedLayout:            '/components/feed-layout/',
+  // Tier 3 feature-specific (10)
+  ModuleHeader:          '/components/module-header/',
+  ClassDetails:          '/components/class-details/',
+  ToggleSwitch:          '/components/toggle-switch/',
+  Tray:                  '/components/tray/',
+  LockedModuleContainer: '/components/locked-module-container/',
+  RightSectionInList:    '/components/right-section-in-list/',
+  LeftSectionInList:     '/components/left-section-in-list/',
+  Header:                '/components/section-header/',     // map "Header" inventory prefix to SectionHeader
+  Module:                '/components/locked-module-container/', // Module inventory prefix shares LockedModule treatment
+  Navbar:                '/components/nav-bar/',            // lowercase Navbar (different prefix) → NavBar
+  // Earlier inferred / wrapper specs (still in inventory)
+  ProgressLine:          '/components/progress-line/',
+  GreenLine:             '/components/green-line/',
+  LessonList:            '/components/lesson-list/',
+  Layout:                '/components/layout/',
+  // Routes that exist as concepts but no inventory prefix (don't increment count)
+  Card:                  '/components/card/',
+  Button:                '/components/button/',
+  Chip:                  '/components/chip/',
+  Timer:                 '/components/timer/',
+  SectionHeader:         '/components/section-header/',
 }
 
 export default function StudentComponentsPage() {
@@ -50,11 +64,13 @@ export default function StudentComponentsPage() {
           elements on 7 student app pages. Each prefix maps to a React component in the student app codebase.
         </p>
         <p className="mt-2 max-w-[62ch] text-body-s text-chrome-text-subtle">
-          <strong className="text-chrome-text">{documentedCount}</strong> of {components.length} have a full spec page on this site.
-          Tier 1 chrome (NavBar, LeftSideBar, RightSideBar, DashboardLayout) and Tier 2 content
-          (Accordion, ProgressBar, ProfileAvatar, FeedLayout, plus the corrected Button and Card) are wired to the Figma
-          variable library (file <code className="font-mono text-[12px]">8eNJf875iY9HISEsczDfOh</code>). The remaining{' '}
-          {components.length - documentedCount} are tracked here as “Needs spec” — those are Tier 3 targets.
+          <strong className="text-chrome-text">{documentedCount}</strong> of {components.length} components documented.
+          Full coverage achieved across Tier 1 chrome (NavBar, LeftSideBar, RightSideBar, DashboardLayout), Tier 2 content
+          (Accordion, ProgressBar, Button, Card, ProfileAvatar, FeedLayout), and Tier 3 feature-specific (ModuleHeader,
+          ClassDetails, ToggleSwitch, Tray, LockedModuleContainer, RightSectionInList, LeftSectionInList, SectionHeader,
+          Chip, Timer). All wired to the Figma variable library
+          (file <code className="font-mono text-[12px]">8eNJf875iY9HISEsczDfOh</code>) with semantic token bindings and
+          DC-conflict annotations.
         </p>
 
         <section id="inventory" className="mt-12 scroll-mt-24">

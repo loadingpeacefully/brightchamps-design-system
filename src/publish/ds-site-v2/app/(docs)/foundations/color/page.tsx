@@ -118,8 +118,9 @@ export default function ColorPage() {
           <div className="text-overline text-chrome-text-subtlest mb-1">Figma library — live</div>
           <p className="text-chrome-text">
             These tokens are now live in the BrightChamps Figma variable library
-            (<code className="font-mono text-[12.5px]">8eNJf875iY9HISEsczDfOh</code>). 364 variables across 10 collections,
-            light + dark modes, plus 15 text styles and 5 effect styles. Open the library to use them in your designs:
+            (<code className="font-mono text-[12.5px]">8eNJf875iY9HISEsczDfOh</code>). 376 variables across 10 collections,
+            light + dark modes, 15 text styles, 5 effect styles, and 20 production-verified component sets across 19 dedicated pages.
+            Open the library to use them in your designs:
           </p>
           <p className="mt-2">
             <a
@@ -130,6 +131,26 @@ export default function ColorPage() {
             >
               figma.com/design/8eNJf875iY9HISEsczDfOh →
             </a>
+          </p>
+        </div>
+
+        <div className="mt-4 rounded-card border border-[#ffcd6a] bg-[rgba(255,231,153,0.18)] p-4 text-[13px]">
+          <div className="text-overline text-[#8a5e00] mb-1">Open color drift — 12 tickets</div>
+          <p className="text-chrome-text">
+            Two new tickets surfaced during Tier 2 component build (2026-04-28):
+          </p>
+          <ul className="mt-2 ml-4 space-y-1 list-disc text-chrome-text">
+            <li>
+              <strong>DC-011</strong> · Danger button color: <code className="font-mono">#ff8480</code> production vs{' '}
+              <code className="font-mono">#FF5C5C</code> design (ΔE ~4, medium severity).
+            </li>
+            <li>
+              <strong>DC-012</strong> · Info button color: <code className="font-mono">#60bfbd</code> production vs{' '}
+              <code className="font-mono">#33CCFF</code> design (ΔE ~25, <strong>HIGH severity</strong> — cyan vs teal, different hue family).
+            </li>
+          </ul>
+          <p className="mt-2">
+            <a className="text-chrome-accent hover:underline" href="/surfaces/#designer-conflicts">See all 12 conflict tickets →</a>
           </p>
         </div>
 
