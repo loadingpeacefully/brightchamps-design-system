@@ -7,14 +7,21 @@ export const metadata: Metadata = {
   description: 'Verification status of every component spec — verified vs inferred vs conflict, conflict counts, and target migration tier.',
 }
 
+// Production SYSTEM components (95 spec'd + 22 added in v2.5 = 117 total).
+// This is the realistic denominator — feature/unused components are out-of-scope
+// per /governance/scope-boundary/.
+const SYSTEM_TOTAL = 117
+
 export default function ComponentHealthPage() {
   const total = componentSpecs.length
   const verified = componentSpecs.filter(c => c.verificationStatus === 'verified').length
   const inferred = componentSpecs.filter(c => c.verificationStatus === 'inferred').length
   const conflict = componentSpecs.filter(c => c.verificationStatus === 'conflict').length
+  const withFigmaPreview = componentSpecs.filter(c => c.figmaNodeId).length
   const totalConflicts = componentSpecs.reduce((sum, c) => sum + (c.conflicts?.length ?? 0), 0)
   const newDashboard = componentSpecs.filter(c => c.target === 'newDashboard').length
   const sections = componentSpecs.filter(c => c.target === 'sections').length
+  const coveragePct = Math.round((total / SYSTEM_TOTAL) * 100)
 
   return (
     <article className="min-w-0 flex-1 max-w-[1120px]">
@@ -24,19 +31,20 @@ export default function ComponentHealthPage() {
         Every component spec in <code className="font-mono text-[12.5px]">componentSpecs.ts</code> with its
         verification status, target migration tier, conflict count, and quick links to the spec page. Use this as
         the punch list for upgrading <strong>inferred</strong> entries to <strong>verified</strong> by reading the
-        source SCSS.
+        source SCSS. Coverage is measured against the {SYSTEM_TOTAL} system components catalogued at <a className="text-chrome-accent hover:underline" href="/governance/scope-boundary/">/governance/scope-boundary/</a>.
       </p>
 
       <section className="mt-10">
         <div className="grid gap-3 grid-cols-2 sm:grid-cols-4">
           <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
-            <div className="text-overline text-chrome-text-subtlest mb-1">Total specs</div>
-            <div className="text-[28px] font-bold text-chrome-text">{total}</div>
+            <div className="text-overline text-chrome-text-subtlest mb-1">Coverage</div>
+            <div className="text-[28px] font-bold text-chrome-text">{total}<span className="text-chrome-text-subtlest text-[14px] font-mono ml-1">/ {SYSTEM_TOTAL}</span></div>
+            <div className="text-[11px] text-chrome-text-subtlest">{coveragePct}% of SYSTEM components spec&apos;d</div>
           </div>
           <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
             <div className="text-overline text-chrome-text-subtlest mb-1">Verified</div>
             <div className="text-[28px] font-bold" style={{ color: '#0e6a32' }}>{verified}</div>
-            <div className="text-[11px] text-chrome-text-subtlest">{Math.round((verified / total) * 100)}% of total</div>
+            <div className="text-[11px] text-chrome-text-subtlest">{Math.round((verified / total) * 100)}% of spec&apos;d</div>
           </div>
           <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
             <div className="text-overline text-chrome-text-subtlest mb-1">Inferred</div>
@@ -44,9 +52,9 @@ export default function ComponentHealthPage() {
             <div className="text-[11px] text-chrome-text-subtlest">verification debt</div>
           </div>
           <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
-            <div className="text-overline text-chrome-text-subtlest mb-1">Conflict</div>
-            <div className="text-[28px] font-bold" style={{ color: '#a31836' }}>{conflict}</div>
-            <div className="text-[11px] text-chrome-text-subtlest">spec disagrees with source</div>
+            <div className="text-overline text-chrome-text-subtlest mb-1">Figma preview</div>
+            <div className="text-[28px] font-bold" style={{ color: '#4e3bc2' }}>{withFigmaPreview}</div>
+            <div className="text-[11px] text-chrome-text-subtlest">{Math.round((withFigmaPreview / total) * 100)}% have iframe preview</div>
           </div>
         </div>
 

@@ -38,6 +38,14 @@ export interface ComponentSpec {
    *   or no source file located yet. Lower priority for the codemod sweep.
    */
   target: 'newDashboard' | 'sections'
+  /**
+   * Figma library node-id (Plugin API form, `123:456`). When present, the
+   * spec page renders an iframe preview from the Figma library.
+   * Source of truth: docs/figma-manifest-2026-04-29.json.
+   */
+  figmaNodeId?: string
+  /** Figma library page name where this component lives, e.g. "Button". */
+  figmaPage?: string
 }
 
 export const componentSpecs: ComponentSpec[] = [
@@ -1688,20 +1696,8 @@ export const componentSpecs: ComponentSpec[] = [
     verificationStatus: 'inferred',
     conflicts: ['Surfaces DC-005 (brand) + DC-015 (#8a78f9 purple) + e1e2ff = primary/350.'],
   },
-  {
-    name: 'ConfirmClass', slug: 'confirm-class',
-    description: 'Class booking confirmation surface — shows selected slot summary, teacher avatar, course tag, and confirm/cancel CTAs. Documented as an inferred composition; no isolated source folder located in the cloned repo.',
-    variants: ['inline-dialog', 'modal'],
-    tokens: [
-      { property: 'Modal radius',       token: 'radius/container/xl',       cssVar: '--radius-container-xl',      value: '20px' },
-      { property: 'Modal shadow',       token: 'shadow/xl',                  cssVar: '--shadow-xl',                value: '0 16px 32px rgba(13,29,45,.16)' },
-      { property: 'Confirm CTA bg',     token: 'surface/bg/brand',           cssVar: '--surface-bg-brand',         value: 'DC-005' },
-      { property: 'Cancel CTA',         token: 'Button / outlined',          cssVar: '—',                          value: 'border = brand' },
-    ],
-    sourceFile: '— inferred composition; uses DemoSideBarPopup flow + Button molecules',
-    target: 'sections',
-    verificationStatus: 'inferred',
-  },
+  // ConfirmClass entry removed 2026-04-29 — no production folder exists.
+  // The class confirmation flow is composed inline inside DemoSideBarPopup.
   {
     name: 'ClassJoiningCard', slug: 'class-joining-card',
     description: 'Hero card on /my-feed and /demo-dashboard — shows next upcoming class with timer, teacher avatar, and join button. Lives inside FeedLayout templates rather than the molecules folder.',
@@ -1723,7 +1719,7 @@ export const componentSpecs: ComponentSpec[] = [
 
   {
     name: 'RewardCard', slug: 'reward-card',
-    description: 'A single redeemable-reward tile — image / item name / gem cost / disabled-when-locked state. The standalone tile inside RedeemGemsCard\'s grid.',
+    description: 'Sub-component of RedeemGemsCard. Not a standalone molecule. A single redeemable-reward tile — image / item name / gem cost / disabled-when-locked state. The standalone tile inside RedeemGemsCard\'s grid.',
     variants: ['unlocked', 'locked', 'redeeming'],
     tokens: [
       { property: 'Tile bg',            token: 'surface/bg/default',         cssVar: '--surface-bg-default',       value: '#ffffff' },
@@ -1737,7 +1733,7 @@ export const componentSpecs: ComponentSpec[] = [
     verificationStatus: 'inferred',
   },
   {
-    name: 'RewardsTab', slug: 'rewards-tab',
+    name: 'RewardsTabs', slug: 'rewards-tabs',
     description: 'Two-tab switcher between "Available rewards" and "My rewards" within the rewards landing surface. Uses chip-style segmented control.',
     variants: ['available-active', 'mine-active'],
     tokens: [
@@ -1747,7 +1743,7 @@ export const componentSpecs: ComponentSpec[] = [
       { property: 'Tab text active',    token: 'text/brand',                 cssVar: '--text-brand',               value: 'brand purple' },
       { property: 'Tab text inactive',  token: 'text/muted',                  cssVar: '--text-muted',               value: 'neutral-700' },
     ],
-    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/RewardsTabs (note: source folder is plural)',
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/RewardsTabs',
     target: 'newDashboard',
     verificationStatus: 'inferred',
   },
@@ -2114,4 +2110,409 @@ export const componentSpecs: ComponentSpec[] = [
     verificationStatus: 'verified',
     conflicts: ['Three external brand colors (WhatsApp, Facebook, Telegram) are intentionally outside the BrightChamps palette — they MUST match each platform\'s brand guideline. Document them as the only sanctioned non-token colors in the system.'],
   },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // 22 missing SYSTEM components — added 2026-04-29 per coverage audit.
+  // Each has a verified source-file path; verificationStatus is 'inferred'
+  // because token bindings come from a quick header-read of the SCSS,
+  // not an exhaustive prop-by-prop verification.
+  // ═══════════════════════════════════════════════════════════════════
+
+  // ── Overlays ────────────────────────────────────────────────────────
+
+  {
+    name: 'Modal', slug: 'modal',
+    description: 'Base modal overlay used across 58 components — the highest breaking-risk system primitive in the codebase. Backdrop-blur scrim + centered content card. Variants for left/right/center alignment.',
+    variants: ['centered', 'left-aligned', 'right-aligned', 'fullscreen'],
+    tokens: [
+      { property: 'Scrim',          token: 'color/overlay/dark',     cssVar: '--color-overlay-dark',     value: 'rgba(0,0,0,0.5) + 10px blur' },
+      { property: 'Z-index',        token: '—',                       cssVar: '—',                        value: '100 (source-exact)' },
+      { property: 'Content radius', token: 'radius/container/xl',     cssVar: '--radius-container-xl',    value: '20px' },
+      { property: 'Content shadow', token: 'shadow/xl',                cssVar: '--shadow-xl',              value: 'elevated' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/Modal/modal.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'MobileModal', slug: 'mobile-modal',
+    description: 'Mobile-optimized modal — typically renders as a bottom-sheet at <768px. 4 imports across mobile flows.',
+    variants: ['bottom-sheet', 'fullscreen'],
+    tokens: [
+      { property: 'Sheet radius', token: 'radius/container/xl', cssVar: '--radius-container-xl', value: '20px (top corners only)' },
+      { property: 'Sheet bg',     token: 'surface/bg/default',  cssVar: '--surface-bg-default',  value: '#ffffff' },
+      { property: 'Scrim',        token: 'color/overlay/dark',  cssVar: '--color-overlay-dark',  value: 'rgba(0,0,0,0.5)' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/MobileModal',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'Popup', slug: 'popup',
+    description: 'Generic popup overlay — used as tooltip, dropdown, or small modal. 6 imports.',
+    variants: ['tooltip', 'dropdown', 'small-modal'],
+    tokens: [
+      { property: 'Bg',     token: 'surface/bg/default',  cssVar: '--surface-bg-default',  value: '#ffffff' },
+      { property: 'Radius', token: 'radius/control/md',   cssVar: '--radius-control-md',   value: '8px' },
+      { property: 'Shadow', token: 'shadow/lg',           cssVar: '--shadow-lg',           value: 'floating menu' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/Popup/popup.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+
+  // ── Primitives ──────────────────────────────────────────────────────
+
+  {
+    name: 'Text', slug: 'text',
+    description: 'Typography wrapper — renders semantic HTML text elements with type-scale class names. 28 imports. Uses `:where(.heading1)` etc. (low specificity) so consumers can override.',
+    variants: ['heading1', 'heading2', 'heading3', 'body', 'caption', 'label'],
+    tokens: [
+      { property: 'heading1',      token: 'font/heading/medium',  cssVar: '--font-heading-medium',  value: 'Nunito 20 / 800' },
+      { property: 'heading2',      token: 'font/heading/small',   cssVar: '--font-heading-small',   value: 'Nunito 16 / 800' },
+      { property: 'heading3',      token: 'font/heading/xsmall',  cssVar: '--font-heading-xsmall',  value: 'Nunito 12 / 800' },
+      { property: 'Default color', token: 'text/default',         cssVar: '--text-default',         value: 'text-property(text-black)' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/Text/text.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'Gap', slug: 'gap',
+    description: 'Spacing utility component. 11 imports. Renders an empty div with controlled height/width for layout rhythm — use when flex `gap` would interfere with margin collapse.',
+    variants: ['vertical', 'horizontal'],
+    tokens: [
+      { property: 'Default size',  token: 'space/inset/md',  cssVar: '--space-inset-md',  value: '16px (configurable via prop)' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/Gap/',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'Loader', slug: 'loader',
+    description: 'Spinning loader. 15 imports. 50×50px circle, 4px white border with primary-color top ring, 2s linear infinite spin.',
+    variants: ['spinner', 'inline'],
+    tokens: [
+      { property: 'Size',         token: '—',                  cssVar: '—',                       value: '50×50px (source-exact)' },
+      { property: 'Border',       token: '—',                  cssVar: '—',                       value: '4px solid var(--text-white)' },
+      { property: 'Top color',    token: 'surface/bg/brand',   cssVar: '--surface-bg-brand',      value: '$primary-color (DC-005)' },
+      { property: 'Animation',    token: 'animation/spin',     cssVar: '--animation-spin',        value: '2s linear infinite' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/Loader/loader.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+
+  // ── Feedback ────────────────────────────────────────────────────────
+
+  {
+    name: 'Rating', slug: 'rating-legacy',
+    description: 'Star rating display/input — 14 imports. Distinct from newDashboard ShowStarRating atom. White card with orange border + 15px-30px shadow + 14px radius.',
+    variants: ['display', 'interactive'],
+    tokens: [
+      { property: 'Bg',           token: 'surface/bg/default',         cssVar: '--surface-bg-default',         value: '$text-white' },
+      { property: 'Shadow',       token: 'shadow/lg',                   cssVar: '--shadow-lg',                  value: '0px 15px 30px $slight-gray-black' },
+      { property: 'Border',       token: 'border/warning',              cssVar: '--border-warning',             value: '2px solid $orange-border' },
+      { property: 'Radius',       token: 'radius/container/lg',         cssVar: '--radius-container-lg',        value: '14px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/Rating/rating.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'StarRating', slug: 'star-rating',
+    description: 'Plain star-rating input. 6 imports. Distinct from ShowStarRating (newDashboard atom, display-only) and Rating (legacy molecule, full card).',
+    variants: ['interactive', 'readonly'],
+    tokens: [
+      { property: 'Star fill',  token: 'surface/bg/accent',  cssVar: '--surface-bg-accent',  value: 'gold (typically #FFC200)' },
+      { property: 'Star empty', token: 'border/default',     cssVar: '--border-default',     value: 'neutral-200' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/StarRating/starRating.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+
+  // ── Inputs ──────────────────────────────────────────────────────────
+
+  {
+    name: 'Select', slug: 'select-legacy',
+    description: 'Legacy select input with floating-label pattern — 19 imports. Distinct from DropDown (newDashboard) and dropdown atom. The label sits inside the field, then floats up on focus/value.',
+    variants: ['default', 'error', 'disabled'],
+    tokens: [
+      { property: 'Bg',           token: 'surface/bg/default',  cssVar: '--surface-bg-default',  value: 'text-property(text-white)' },
+      { property: 'Label color',  token: 'text/muted',           cssVar: '--text-muted',          value: 'text-property(text-label-color)' },
+      { property: 'Label font',   token: 'font/body/xsmall',     cssVar: '--font-body-xsmall',    value: 'Nunito 10px / 400' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/Select/select.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'DropDown (legacy)', slug: 'dropdown-legacy',
+    description: 'Legacy DropDown component — 8 imports. Distinct from `DropDown (newDashboard)` molecule and `dropdown` atom. Three dropdowns ship in production; this is the oldest.',
+    variants: ['default', 'multiselect'],
+    tokens: [
+      { property: 'Bg',     token: 'surface/bg/default',  cssVar: '--surface-bg-default',  value: '#ffffff' },
+      { property: 'Radius', token: 'radius/control/md',   cssVar: '--radius-control-md',   value: '8px' },
+      { property: 'Shadow', token: 'shadow/md',           cssVar: '--shadow-md',           value: 'raised on open' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/DropDown/',
+    target: 'sections',
+    verificationStatus: 'inferred',
+    conflicts: ['Three dropdowns exist in production: DropDown (legacy), DropDown (newDashboard), dropdown atom. DC-029 candidate — consolidate.'],
+  },
+  {
+    name: 'LanguageSelector', slug: 'language-selector',
+    description: 'Language/locale switcher. 4 imports. Inline button with flag/name + dropdown menu of languages.',
+    variants: ['inline-button', 'dropdown-open'],
+    tokens: [
+      { property: 'Bg',     token: 'surface/bg/default',  cssVar: '--surface-bg-default',  value: '#ffffff' },
+      { property: 'Radius', token: 'radius/pill',          cssVar: '--radius-pill',         value: 'pill' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/LanguageSelector/languageselector.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+
+  // ── Navigation ──────────────────────────────────────────────────────
+
+  {
+    name: 'NavigationBar (legacy)', slug: 'navigation-bar',
+    description: 'Primary desktop navigation source file. 80px collapsed → 280px expanded on hover. Hosts logo, single nav item, BrightBuddy chatbot at bottom. The existing `NavBar` Figma component (page "NavBar", node 28:27) maps to this exact SCSS — they\'re the same component, viewed from two angles. Spec\'d here separately to make the source path explicit for the codemod team.',
+    variants: ['collapsed', 'expanded'],
+    tokens: [
+      { property: 'Width collapsed', token: 'chrome/sidebar-rail',     cssVar: '--chrome-sidebar-rail',     value: '80px (104px in Figma — drift)' },
+      { property: 'Width expanded',  token: 'chrome/sidebar-expanded', cssVar: '--chrome-sidebar-expanded', value: '280px' },
+      { property: 'Padding',         token: 'space/inset/sm',          cssVar: '--space-inset-sm',          value: '18px 12px (source-exact)' },
+      { property: 'Active item bg',  token: 'surface/bg/brand',        cssVar: '--surface-bg-brand',        value: 'DC-005 brand purple' },
+      { property: 'Item radius',     token: 'radius/container/md',     cssVar: '--radius-container-md',     value: '12px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/NavigationBar/navigation.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+    conflicts: ['Source width=80px (collapsed), Figma component=104px. 24px drift on the most-visible chrome dimension. Bind to chrome/sidebar-rail and reconcile.'],
+  },
+  {
+    name: 'NavigationBarMobile', slug: 'navigation-bar-mobile',
+    description: 'Mobile navigation bar. 60px top bar replaces the left rail at <768px. Used on all 7 mobile screen variants.',
+    variants: ['default', 'with-back-button'],
+    tokens: [
+      { property: 'Height',     token: '—',                          cssVar: '—',                          value: '60px (source-exact)' },
+      { property: 'Bg',         token: 'surface/bg/default',          cssVar: '--surface-bg-default',       value: '#ffffff' },
+      { property: 'Border',     token: 'border/default',              cssVar: '--border-default',           value: '1px solid neutral-200' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/NavigationBarMobile/mobileNavigation.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+
+  // ── Legacy (compositional, surface-specific, but still imported in 3+ places) ──
+
+  {
+    name: 'LongTermScheduling', slug: 'long-term-scheduling',
+    description: 'Multi-week class scheduling UI — 12 imports. Date strip + slot grid + summary card. Distinct from LongTermSchedulingV2.',
+    variants: ['view', 'edit'],
+    tokens: [
+      { property: 'Card padding',   token: 'space/inset/lg',           cssVar: '--space-inset-lg',           value: '20px' },
+      { property: 'Card radius',    token: 'radius/container/lg',      cssVar: '--radius-container-lg',      value: '14px' },
+      { property: 'Slot bg',        token: 'surface/bg/sunken',        cssVar: '--surface-bg-sunken',        value: '#f5f4fa (DC-016)' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/LongTermScheduling',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'StudentProfile', slug: 'student-profile',
+    description: 'Student profile display — 11 imports. Avatar + name + course tags + progress summary.',
+    variants: ['full', 'compact'],
+    tokens: [
+      { property: 'Avatar size',  token: 'icon/size/2xl',  cssVar: '--icon-size-2xl',  value: '64px' },
+      { property: 'Card padding', token: 'space/inset/lg', cssVar: '--space-inset-lg', value: '20px' },
+      { property: 'Card radius',  token: 'radius/card',    cssVar: '--radius-card',    value: '10px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/StudentProfile',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'StudentProfileBarMobile', slug: 'student-profile-bar-mobile',
+    description: 'Mobile student profile bar — 10 imports. Compact horizontal strip showing avatar + name at top of mobile screens.',
+    variants: ['default', 'collapsed'],
+    tokens: [
+      { property: 'Height',  token: '—',                  cssVar: '—',                  value: '56px (source-exact)' },
+      { property: 'Bg',      token: 'surface/bg/default', cssVar: '--surface-bg-default', value: '#ffffff' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/StudentProfileBarMobile',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'FlashButton', slug: 'flash-button',
+    description: 'Animated CTA with flash/shimmer effect. 8 imports. 35px radius, #4A41BB bg (note: another purple variant — DC-022 candidate), 14px vertical padding.',
+    variants: ['primary', 'secondary', 'tertiary', 'disabled'],
+    tokens: [
+      { property: 'Bg',          token: 'surface/bg/brand',     cssVar: '--surface-bg-brand',     value: '#4A41BB (variant of brand purple — DC-022 candidate)' },
+      { property: 'Radius',      token: 'radius/pill',           cssVar: '--radius-pill',          value: '35px' },
+      { property: 'Padding',     token: 'space/inset/md',        cssVar: '--space-inset-md',       value: '14px 0' },
+      { property: 'Disabled bg', token: 'surface/bg/disabled',   cssVar: '--surface-bg-disabled',  value: '#CECECE (source-exact)' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/FlashButton/FlashButton.module.scss',
+    target: 'sections',
+    verificationStatus: 'inferred',
+    conflicts: ['Hardcoded #4A41BB — yet another brand-purple variant. Add to DC-022 (Material Design purple proliferation).'],
+  },
+  {
+    name: 'Reschedule', slug: 'reschedule-legacy',
+    description: 'Class rescheduling flow. 8 imports. Composes SlotPicker + ClassesToReschedule + confirm CTA. Distinct from ClassesToReschedule molecule which is just the list.',
+    variants: ['inline', 'modal'],
+    tokens: [
+      { property: 'Bg',            token: 'surface/bg/default', cssVar: '--surface-bg-default',  value: '#ffffff' },
+      { property: 'Section gap',   token: 'space/stack/lg',     cssVar: '--space-stack-lg',      value: '20px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/components/Reschedule/',
+    target: 'sections',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'Badges (section)', slug: 'badges-section',
+    description: 'Badges surface section composition. 7 imports. Composes BadgesCard grid + filter chips + earned/locked separator.',
+    variants: ['grid', 'detail'],
+    tokens: [
+      { property: 'Tile gap',      token: 'space/inline/md', cssVar: '--space-inline-md', value: '12px' },
+      { property: 'Section padding', token: 'space/inset/2xl', cssVar: '--space-inset-2xl', value: '32px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/badges/',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'TeacherSearch', slug: 'teacher-search',
+    description: 'Teacher search and selection — 5 imports. Search input + paginated result list + selected-state indicator.',
+    variants: ['default', 'with-results', 'selected'],
+    tokens: [
+      { property: 'Input bg',     token: 'surface/bg/sunken',   cssVar: '--surface-bg-sunken',   value: '#f5f4fa' },
+      { property: 'Result hover', token: 'surface/bg/brand-subtle', cssVar: '--surface-bg-brand-subtle', value: 'lavender' },
+      { property: 'Selected bg',  token: 'surface/bg/brand',    cssVar: '--surface-bg-brand',    value: 'DC-005 brand' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/TeacherSearch',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'ReferralCard (legacy)', slug: 'referral-card-legacy',
+    description: 'Referral program card — 5 imports. Hero + share buttons + recent referrals list. Distinct from ReferralStatusCard (per-referral row) and RewardsReferralCard (rewards-tab cross-promo).',
+    variants: ['default', 'shared', 'earned'],
+    tokens: [
+      { property: 'Card bg',     token: 'surface/bg/brand',         cssVar: '--surface-bg-brand',         value: 'DC-005 brand purple' },
+      { property: 'Card radius', token: 'radius/container/lg',      cssVar: '--radius-container-lg',      value: '14px' },
+      { property: 'Padding',     token: 'space/inset/lg',           cssVar: '--space-inset-lg',           value: '20px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/ReferralCard',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
+  {
+    name: 'TimeZone (display)', slug: 'time-zone-display',
+    description: 'Timezone display/selector. 4 imports. Distinct from EditTimezone molecule which is the editor surface — this is the display chip used in cards/headers.',
+    variants: ['display', 'edit-trigger'],
+    tokens: [
+      { property: 'Pill bg',     token: 'surface/bg/sunken', cssVar: '--surface-bg-sunken', value: '#f5f4fa' },
+      { property: 'Pill radius', token: 'radius/pill',        cssVar: '--radius-pill',        value: 'pill' },
+      { property: 'Padding',     token: 'space/inset/xs',     cssVar: '--space-inset-xs',     value: '4px 12px' },
+    ],
+    sourceFile: 'repo-cloned/.../src/newDashboard/components/molecules/TimeZone',
+    target: 'newDashboard',
+    verificationStatus: 'inferred',
+  },
 ]
+
+// ════════════════════════════════════════════════════════════════════════
+// Figma library mapping — sourced from docs/figma-manifest-2026-04-29.json.
+// 85 components walked from file 8eNJf875iY9HISEsczDfOh on 2026-04-29.
+// Slugs that match here get a Figma iframe preview on their spec page.
+// Slugs without a match render a "no Figma frame yet" placeholder.
+// ════════════════════════════════════════════════════════════════════════
+
+const FIGMA_MAPPING: Record<string, { nodeId: string; page: string }> = {
+  // Tier 1 chrome
+  'nav-bar':                     { nodeId: '28:27',  page: 'NavBar' },
+  'left-side-bar':               { nodeId: '31:3',   page: 'LeftSideBar' },
+  'right-side-bar':              { nodeId: '32:16',  page: 'RightSideBar' },
+  'dashboard-layout':            { nodeId: '33:55',  page: 'DashboardLayout' },
+  // Tier 2 content
+  'accordion':                   { nodeId: '34:51',  page: 'Accordion' },
+  'progress-bar':                { nodeId: '35:32',  page: 'ProgressBar' },
+  'button':                      { nodeId: '36:13',  page: 'Button' },
+  'card':                        { nodeId: '37:37',  page: 'Card' },
+  'profile-avatar':              { nodeId: '38:23',  page: 'ProfileAvatar' },
+  'feed-layout':                 { nodeId: '39:109', page: 'FeedLayout' },
+  // Tier 3 feature-specific
+  'module-header':               { nodeId: '42:38',  page: 'ModuleHeader' },
+  'locked-module-container':     { nodeId: '42:69',  page: 'LockedModuleContainer' },
+  'toggle-switch':               { nodeId: '43:18',  page: 'ToggleSwitch' },
+  'tray':                        { nodeId: '43:20',  page: 'Tray' },
+  'class-details':               { nodeId: '43:64',  page: 'ClassDetails' },
+  'section-header':              { nodeId: '43:75',  page: 'SectionHeader' },
+  'chip':                        { nodeId: '43:101', page: 'Chip' },
+  'timer':                       { nodeId: '43:112', page: 'Timer' },
+  'right-section-in-list':       { nodeId: '44:17',  page: 'RightSectionInList' },
+  'left-section-in-list':        { nodeId: '44:53',  page: 'LeftSectionInList' },
+  // newDashboard atoms
+  'icon-atom':                   { nodeId: '52:3',   page: 'newDashboard / Atoms' },
+  'loading-indicator':           { nodeId: '52:7',   page: 'newDashboard / Atoms' },
+  'progress-bar-atom':           { nodeId: '52:17',  page: 'newDashboard / Atoms' },
+  'progress-bar-with-star':      { nodeId: '52:19',  page: 'newDashboard / Atoms' },
+  'selected-teacher':            { nodeId: '52:24',  page: 'newDashboard / Atoms' },
+  'show-star-rating':            { nodeId: '52:30',  page: 'newDashboard / Atoms' },
+  'sidebar-popup':               { nodeId: '52:38',  page: 'newDashboard / Atoms' },
+  'speech-bubble':               { nodeId: '54:2',   page: 'newDashboard / Atoms' },
+  'text-truncate':               { nodeId: '54:6',   page: 'newDashboard / Atoms' },
+  'tooltip':                     { nodeId: '54:11',  page: 'newDashboard / Atoms' },
+  'truncate-text':               { nodeId: '54:15',  page: 'newDashboard / Atoms' },
+  'date-dropdown':               { nodeId: '54:19',  page: 'newDashboard / Atoms' },
+  'dropdown-atom':               { nodeId: '54:26',  page: 'newDashboard / Atoms' },
+  'toggle-button':               { nodeId: '54:31',  page: 'newDashboard / Atoms' },
+  // newDashboard molecules
+  'button-nd':                   { nodeId: '55:3',   page: 'newDashboard / Molecules' },
+  'input-nd':                    { nodeId: '55:7',   page: 'newDashboard / Molecules' },
+  'dropdown-nd':                 { nodeId: '55:14',  page: 'newDashboard / Molecules' },
+  'empty-state':                 { nodeId: '55:23',  page: 'newDashboard / Molecules' },
+  'confirmation-modal':          { nodeId: '55:31',  page: 'newDashboard / Molecules' },
+  'badges-card':                 { nodeId: '56:5',   page: 'newDashboard / Molecules' },
+  'card-nd':                     { nodeId: '56:11',  page: 'newDashboard / Molecules' },
+  'class-card-info':             { nodeId: '56:16',  page: 'newDashboard / Molecules' },
+  'calendar-molecule':           { nodeId: '56:26',  page: 'newDashboard / Molecules' },
+  'animated-gems':               { nodeId: '56:110', page: 'newDashboard / Molecules' },
+  'diamond-purchase-header':     { nodeId: '57:6',   page: 'newDashboard / Molecules' },
+  'account-validity-label':      { nodeId: '57:13',  page: 'newDashboard / Molecules' },
+  'edit-contact-information':    { nodeId: '57:18',  page: 'newDashboard / Molecules' },
+  'get-callback':                { nodeId: '57:34',  page: 'newDashboard / Molecules' },
+  'checklist-for-joining-class': { nodeId: '57:41',  page: 'newDashboard / Molecules' },
+  'diamond-reward':              { nodeId: '57:54',  page: 'newDashboard / Molecules' },
+  'add-more-classes':            { nodeId: '57:59',  page: 'newDashboard / Molecules' },
+  'counsellor-card':             { nodeId: '57:66',  page: 'newDashboard / Molecules' },
+  'card-image':                  { nodeId: '57:74',  page: 'newDashboard / Molecules' },
+  'button-tag':                  { nodeId: '57:78',  page: 'newDashboard / Molecules' },
+  // NanoSkills + Practice Zone
+  'harvard-hero':                { nodeId: '68:3',   page: 'newDashboard / NanoSkills' },
+  'self-paced-hero':             { nodeId: '68:18',  page: 'newDashboard / NanoSkills' },
+  'teacher-led-hero':            { nodeId: '68:29',  page: 'newDashboard / NanoSkills' },
+  'nanoskills-skill-card':       { nodeId: '68:40',  page: 'newDashboard / NanoSkills' },
+  'nanoskills-booking-modal':    { nodeId: '68:52',  page: 'newDashboard / NanoSkills' },
+  'nanoskills-onboarding-modal': { nodeId: '68:60',  page: 'newDashboard / NanoSkills' },
+  'worksheet-step':              { nodeId: '69:23',  page: 'newDashboard / Practice Zone' },
+  // Legacy / Components page in Figma
+  'sharing-buttons':             { nodeId: '65:49',  page: 'Legacy / Components' },
+  'subscription-status-banner':  { nodeId: '65:77',  page: 'Legacy / Components' },
+}
+
+// Hydrate at module-load. Mutates each spec in place — no behavioral change
+// for existing consumers (find/filter still work), but `figmaNodeId` /
+// `figmaPage` become readable on every matched spec.
+componentSpecs.forEach(spec => {
+  const mapping = FIGMA_MAPPING[spec.slug]
+  if (mapping) {
+    spec.figmaNodeId = mapping.nodeId
+    spec.figmaPage = mapping.page
+  }
+})

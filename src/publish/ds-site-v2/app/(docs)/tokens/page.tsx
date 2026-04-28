@@ -3,7 +3,7 @@ import { RightTOC } from '@/components/chrome/RightTOC'
 
 export const metadata: Metadata = {
   title: 'Tokens',
-  description: 'Index of all 446 canonical tokens across 12 collections — color, typography, space, radius, shadow, motion.',
+  description: 'Token reference — 444 variables in Figma library, 329 canonical in ledger. Color, typography, space, radius, shadow, motion across 12 collections.',
 }
 
 const TOC = [

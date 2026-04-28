@@ -89,6 +89,44 @@ export const NAV: NavSection[] = [
     ],
   },
   {
+    label: 'Overlays',
+    items: [
+      { href: '/components/overlays/modal/',         label: 'Modal',        badge: 'new' },
+      { href: '/components/overlays/mobile-modal/',  label: 'MobileModal',  badge: 'new' },
+      { href: '/components/overlays/popup/',         label: 'Popup',        badge: 'new' },
+    ],
+  },
+  {
+    label: 'Primitives',
+    items: [
+      { href: '/components/primitives/text/',    label: 'Text',    badge: 'new' },
+      { href: '/components/primitives/gap/',     label: 'Gap',     badge: 'new' },
+      { href: '/components/primitives/loader/',  label: 'Loader',  badge: 'new' },
+    ],
+  },
+  {
+    label: 'Inputs',
+    items: [
+      { href: '/components/inputs/select-legacy/',     label: 'Select',           badge: 'new' },
+      { href: '/components/inputs/dropdown-legacy/',   label: 'DropDown (legacy)', badge: 'new' },
+      { href: '/components/inputs/language-selector/', label: 'LanguageSelector',  badge: 'new' },
+    ],
+  },
+  {
+    label: 'Feedback',
+    items: [
+      { href: '/components/feedback/rating-legacy/',  label: 'Rating',     badge: 'new' },
+      { href: '/components/feedback/star-rating/',    label: 'StarRating', badge: 'new' },
+    ],
+  },
+  {
+    label: 'Navigation',
+    items: [
+      { href: '/components/navigation/navigation-bar/',         label: 'NavigationBar',       badge: 'new' },
+      { href: '/components/navigation/navigation-bar-mobile/',  label: 'NavigationBarMobile', badge: 'new' },
+    ],
+  },
+  {
     label: 'Patterns',
     items: [
       { href: '/patterns/',              label: 'Overview' },
@@ -123,10 +161,11 @@ export const NAV: NavSection[] = [
   {
     label: 'Governance',
     items: [
-      { href: '/whats-new/',             label: 'Changelog' },
-      { href: '/governance/dc-tickets/', label: 'DC tickets',             badge: 'new' },
-      { href: '/tdr/',                   label: 'Token decision records', disabled: true },
-      { href: '/drift-review/',          label: 'Drift review',           disabled: true, badge: 'beta' },
+      { href: '/whats-new/',                    label: 'Changelog' },
+      { href: '/governance/dc-tickets/',        label: 'DC tickets',         badge: 'new' },
+      { href: '/governance/scope-boundary/',    label: 'Scope boundary',     badge: 'new' },
+      { href: '/tdr/',                          label: 'Token decision records', disabled: true },
+      { href: '/drift-review/',                 label: 'Drift review',           disabled: true, badge: 'beta' },
     ],
   },
 ]

@@ -1,11 +1,13 @@
 import { RightTOC } from '@/components/chrome/RightTOC'
 import type { ComponentSpec } from '@/lib/componentSpecs'
+import { getFigmaEmbedUrl, getFigmaLinkUrl, FIGMA_FILE_ID } from '@/lib/figmaEmbed'
 
-const FIGMA_URL = 'https://www.figma.com/design/8eNJf875iY9HISEsczDfOh/'
+const FIGMA_URL = `https://www.figma.com/design/${FIGMA_FILE_ID}/`
 
 const TOC = [
-  { id: 'overview', label: 'Overview',     level: 2 as const },
-  { id: 'variants', label: 'Variants',     level: 2 as const },
+  { id: 'preview',  label: 'Preview',       level: 2 as const },
+  { id: 'overview', label: 'Overview',      level: 2 as const },
+  { id: 'variants', label: 'Variants',      level: 2 as const },
   { id: 'tokens',   label: 'Token mapping', level: 2 as const },
   { id: 'notes',    label: 'Notes & drift', level: 2 as const },
 ]
@@ -29,6 +31,51 @@ export function ComponentSpecPage({ spec, kicker, overview }: { spec: ComponentS
             </span>
           )}
         </div>
+
+        <section id="preview" className="mt-10 scroll-mt-24">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-overline text-chrome-text-subtlest">Preview</h2>
+            {spec.figmaNodeId && (
+              <a
+                href={getFigmaLinkUrl(spec.figmaNodeId)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[12px] text-chrome-accent hover:underline"
+              >
+                Open in Figma →
+              </a>
+            )}
+          </div>
+          {spec.figmaNodeId ? (
+            <>
+              <div className="relative w-full overflow-hidden rounded-card border border-chrome-border" style={{ height: 480 }}>
+                <iframe
+                  src={getFigmaEmbedUrl(spec.figmaNodeId)}
+                  className="w-full h-full"
+                  allowFullScreen
+                  loading="lazy"
+                  title={`${spec.name} component preview`}
+                />
+              </div>
+              {spec.figmaPage && (
+                <p className="mt-2 text-[11px] text-chrome-text-subtlest">
+                  From Figma page: <code className="font-mono">{spec.figmaPage}</code>
+                </p>
+              )}
+            </>
+          ) : (
+            <div className="rounded-card border border-dashed border-chrome-border bg-chrome-surface px-4 py-8 text-center">
+              <p className="text-body-s text-chrome-text-subtle">
+                No Figma frame yet for this component.
+              </p>
+              {spec.sourceFile && (
+                <p className="mt-1 text-[11px] text-chrome-text-subtlest">
+                  Source: <code className="font-mono">{spec.sourceFile}</code>
+                </p>
+              )}
+            </div>
+          )}
+        </section>
 
         <section id="overview" className="mt-12 scroll-mt-24">
           <h2 className="text-h2 text-chrome-text">Overview</h2>

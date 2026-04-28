@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ComponentSpecPage } from '@/components/chrome/ComponentSpecPage'
 import { componentSpecs } from '@/lib/componentSpecs'
 
-const SPEC = componentSpecs.find(c => c.slug === 'rewards-tab')!
+const SPEC = componentSpecs.find(c => c.slug === 'rewards-tabs')!
 
 export const metadata: Metadata = {
   title: SPEC.name,
