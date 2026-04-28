@@ -461,6 +461,114 @@
       "action": "Upload key production assets (LOGO, AVATAR_BOY/GIRL, LEARNING_PATH, badges, course thumbnails, BrightBuddy, Harvard logos) to Figma library. Document the asset → node-id mapping in docs/figma-cdn-asset-map.md. Until then, screen rebuilds in Figma show course-color tints in lieu of real thumbnails.",
       "status": "open",
       "notes": "Surfaced 2026-04-29 during visual-fidelity pass. The figma-mcp sandbox does NOT support createImageAsync or fetch(), so CDN images cannot be programmatically pulled into Figma. Assets must be downloaded and uploaded manually. See ledger/figma-cdn-gap.md for the full gap analysis."
+    },
+    {
+      "id": "DC-039",
+      "title": "Montserrat font in production CTAs — not in DS typography",
+      "designerValue": "Nunito (DS canonical)",
+      "productionValue": "Montserrat (SemiBold 14, used on every CTA + 'View All' link)",
+      "deltaE": null,
+      "severity": "high",
+      "category": "typography",
+      "action": "Decision required: (a) add font/family/secondary = Montserrat to DS typography primitives + 6 sub-tokens, OR (b) codemod every CTA in production to Nunito and reject Montserrat. Block: brand sign-off needed.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during Nano Skills production audit (EznPshYN5XVc49fQSUOSEQ node 10989:8759). Found on: View All Courses CTA, View All link, Most Popular Courses 'Start Now'/'Enroll Now' CTAs. Nunito is used for headings/body — Montserrat appears ONLY on action buttons."
+    },
+    {
+      "id": "DC-040",
+      "title": "Sidebar width 240px — DS has 80/280, prod is third value",
+      "designerValue": "80px collapsed / 280px expanded (DS chrome/sidebar-rail / chrome/sidebar-expanded)",
+      "productionValue": "240px (single static width, no collapse)",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "system",
+      "action": "Add chrome/sidebar-medium = 240px token. Update LeftSideBar component with a 240px variant. Or: pick one canonical (240 vs 280) and codemod.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during Nano Skills audit. Production sidebar shows full labels at 240px; DS collapsed at 80 hides labels, expanded at 280 shows them. The 240 is between the two but with a different layout assumption."
+    },
+    {
+      "id": "DC-041",
+      "title": "DiamondBalanceAlert pattern not in DS library",
+      "designerValue": null,
+      "productionValue": "682×72 banner with diamond icon + title + body + CTA — appears at top of Nano Skills page",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "system",
+      "action": "Build a DiamondBalanceAlert component in newDashboard/Molecules. Tier-5 candidate — likely reused on rewards-purchase upsell flows.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during Nano Skills audit. Production text: 'Low diamond balance alert ⚡' + 'Add more diamonds to continue your journey!' + 'Add Diamonds' CTA. Likely also appears on /rewards and /demo-dashboard."
+    },
+    {
+      "id": "DC-042",
+      "title": "Pure black #000000 for 'Most Popular Courses' h2 — drift from text/default",
+      "designerValue": "#0d1d2d (text/default — neutral-1400)",
+      "productionValue": "#000000",
+      "deltaE": 6,
+      "severity": "medium",
+      "category": "color",
+      "action": "Codemod h2 to use text/default. Pure black on white is harsh and inconsistent with the rest of the system (which uses #0d1d2d for headings).",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during Nano Skills audit. Other h2s on the same page use #222a33 (DC-014) — three different 'dark' values for similar text roles."
+    },
+    {
+      "id": "DC-043",
+      "title": "New gray #8b98a7 for course-card meta text — not in ledger",
+      "designerValue": null,
+      "productionValue": "#8b98a7 (Nunito SemiBold 10, used for '8 LESSONS' card meta)",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "color",
+      "action": "Add to text/muted-light token, OR consolidate with closest neutral (color/neutral/700 = #757575).",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29. One of 3 new grays found: #8b98a7 (course meta), #a8acb1 (Grade 5), #8499ae (calendar inactive day)."
+    },
+    {
+      "id": "DC-044",
+      "title": "New light gray #a8acb1 for 'Grade 5' subtitle — not in ledger",
+      "designerValue": null,
+      "productionValue": "#a8acb1 (Nunito SemiBold 16, used for student-grade label)",
+      "deltaE": null,
+      "severity": "low",
+      "category": "color",
+      "action": "Consolidate with DC-043 candidate token, OR map to color/neutral/600 (#3d4d5d at 50% would render similarly).",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during Nano Skills audit."
+    },
+    {
+      "id": "DC-045",
+      "title": "Decorative ambient-blob backdrop pattern + 394px blur — no DS equivalent",
+      "designerValue": null,
+      "productionValue": "9 blob VECTOR shapes at LAYER_BLUR 394px, opacity 0.30, fills #90adf7/#c1a4ff/#ff945b/#644fe3",
+      "deltaE": null,
+      "severity": "low",
+      "category": "system",
+      "action": "Decision: are these ornaments brand canonical, or scenic? If canonical → add color/decorative/* tokens + effect/blur/2xl. If scenic → flatten as a single SVG asset on the CDN.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29. Ambient blob bg appears on /nano-skills landing — unclear if it's on every authenticated screen or only this one. The 394px blur exceeds Figma's reliable plugin-API range; rebuild caps at 200."
+    },
+    {
+      "id": "DC-046",
+      "title": "Active sidebar item has black 1px stroke — unusual interaction state",
+      "designerValue": "Active state via bg-color only (DC-016 lavender)",
+      "productionValue": "#f8f7fa bg + #000000 1px stroke around active item",
+      "deltaE": null,
+      "severity": "low",
+      "category": "system",
+      "action": "Likely a Figma artifact (black stroke is the editor default). Verify in DOM whether production CSS actually renders this border. If yes → add to interactive/active variant.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29. Black borders on hover/active are not in any DS pattern; suspect Figma-only stylization that didn't make it to CSS."
+    },
+    {
+      "id": "DC-047",
+      "title": "New gray #8499ae for inactive calendar day labels — not in ledger",
+      "designerValue": null,
+      "productionValue": "#8499ae (Nunito Bold 12, used for M/T/W/T/F/S labels in week strip)",
+      "deltaE": null,
+      "severity": "low",
+      "category": "color",
+      "action": "Consolidate with DC-043/DC-044 candidate token. Three slightly-different 'inactive label gray' values within a single page is ledger sprawl.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during Nano Skills audit RightSideBar walk. Active calendar day uses #263238 — a fourth near-black variant."
     }
   ]
 }

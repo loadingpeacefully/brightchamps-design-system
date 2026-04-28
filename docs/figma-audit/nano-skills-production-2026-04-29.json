@@ -1,0 +1,194 @@
+{
+  "source": "Final_Dev_Ready_Screens",
+  "fileId": "EznPshYN5XVc49fQSUOSEQ",
+  "nodeId": "10989:8759",
+  "frameName": "Nano/Default",
+  "fetchedAt": "2026-04-29T00:00:00Z",
+  "dimensions": { "width": 1440, "height": 2868 },
+  "rootFill": "#ffffff",
+  "rootEffect": "DROP_SHADOW 0/4 4 #000000 @ 0.25",
+  "totalLayers": 776,
+  "topLevelSections": [
+    {
+      "id": "10989:8760",
+      "name": "bg",
+      "type": "FRAME",
+      "x": 0, "y": 0, "w": 1440, "h": 3022,
+      "opacity": 0.30,
+      "role": "Ambient blob backdrop — 9 VECTOR shapes with LAYER_BLUR radius 394px",
+      "blobs": [
+        { "color": "#90adf7", "size": "731×826", "blur": 394 },
+        { "color": "#90adf7", "size": "731×826", "blur": 394 },
+        { "color": "#c1a4ff", "size": "731×826", "blur": 394 },
+        { "color": "#c1a4ff", "size": "1219×1378", "blur": 394 },
+        { "color": "#90adf7", "size": "731×826", "blur": 394 },
+        { "color": "#90adf7", "size": "731×826", "blur": 394 },
+        { "color": "#c1a4ff", "size": "1219×1378", "blur": 394 },
+        { "color": "#ff945b", "size": "766×649", "blur": 394, "note": "orange ambient" },
+        { "color": "#644fe3", "size": "1025×981", "blur": 394, "note": "deep purple ambient" }
+      ]
+    },
+    {
+      "id": "10989:8771",
+      "name": "Page header",
+      "type": "FRAME",
+      "x": 404, "y": 40, "w": 490, "h": 59,
+      "layout": "VERTICAL gap 4 align CENTER",
+      "texts": [
+        { "text": "Nano Skills", "font": "Nunito Black", "fontSize": 32, "fontWeight": 900, "lineHeight": "120%", "color": "#4d3bc2", "DC": "DC-008 — typo color, not designer-intent #722ED1" },
+        { "text": "Discover exciting challenges, courses, and competitions to boost your skills.", "font": "Nunito SemiBold", "fontSize": 14, "fontWeight": 600, "lineHeight": "120%", "color": "#3d4d5d", "DC": "DC-013 area — neutral-700" }
+      ]
+    },
+    {
+      "id": "10989:8774",
+      "name": "LeftSideBar",
+      "type": "FRAME",
+      "x": 0, "y": 0, "w": 240, "h": 1015,
+      "fill": "#ffffff at 0% opacity (transparent)",
+      "stroke": "#c9cbce 1px",
+      "shadow": "DROP_SHADOW -7/4 44 #000000 @ 0.10",
+      "navItems": [
+        { "label": "Explore",     "icon": "magnifying glass — orange/yellow accents (#ffa299 + #ffd900)", "active": false },
+        { "label": "Learn",        "icon": "flag (multi-color: #28b326 + #f53138 + #259b24)",            "active": false },
+        { "label": "Assessment",   "icon": "clipboard (#0099cc + #1cb092 + #00bfff)",                    "active": false },
+        { "label": "Nano Skills",  "icon": "(present, vectors)",                                          "active": true,  "activeBg": "#f8f7fa", "activeStroke": "#000000", "boldStyle": true },
+        { "label": "Rewards",      "icon": "trophy/cup (#f7b23b + #f9c56c + #f44336)",                   "active": false }
+      ],
+      "itemDimensions": { "w": 216, "h": 48, "padding": "12 12 12 12", "gap": 8, "radius": 8 },
+      "itemTextStyle": "Nunito SemiBold 16 / 22px / #222a33 (DC-014)",
+      "activeItemTextStyle": "Nunito ExtraBold 16 / 22px / #222a33 (DC-014)",
+      "DRIFT_NOTE": "240px sidebar width — DS NavBar collapsed = 80px, expanded = 280px. Production = 240px (between the two). DC-040 candidate."
+    },
+    {
+      "id": "10989:9066",
+      "name": "Diamond balance alert",
+      "type": "FRAME",
+      "x": 308, "y": 123, "w": 682, "h": 72,
+      "fill": "#ffffff",
+      "texts": [
+        { "text": "Low diamond balance alert ⚡", "font": "Nunito Bold", "fontSize": 18, "fontWeight": 700, "color": "#3d4d5d" },
+        { "text": "Add more diamonds to continue your journey!", "font": "Nunito Medium", "fontSize": 14, "fontWeight": 500, "color": "#51667b", "DC": "NEW lighter gray — not in ledger" },
+        { "text": "Add Diamonds", "font": "Nunito Bold", "fontSize": 12, "fontWeight": 700, "color": "#ffffff", "role": "CTA button label" }
+      ],
+      "DRIFT_NOTE": "DiamondBalanceAlert is NOT a DS component yet — Tier 5 candidate. File DC-041."
+    },
+    {
+      "id": "10989:9074",
+      "name": "Main content (course feeds)",
+      "type": "FRAME",
+      "x": 308, "y": 219, "w": 682, "h": 2462,
+      "subsections": [
+        {
+          "name": "Self-Paced Courses hero",
+          "texts": [
+            { "text": "Self-Paced Courses", "font": "Nunito ExtraBold", "fontSize": 24, "fontWeight": 800, "color": "#ffffff" },
+            { "text": "Build real-world skills at your own pace that go beyond the classroom", "font": "Nunito Regular", "fontSize": 14, "fontWeight": 400, "color": "#ffffff" },
+            { "text": "View All Courses", "font": "MONTSERRAT SemiBold", "fontSize": 14, "fontWeight": 600, "color": "#ffffff", "DC": "DC-039 — Montserrat is NOT in the DS typography system; DS only ships Nunito. NEW finding." }
+          ],
+          "background": "Inferred SelfPacedBanner gradient: linear-gradient(253.85deg, #FFAEC2, #E29ED9, #A86BD1) — DC-034"
+        },
+        {
+          "name": "Most Popular Courses section header",
+          "texts": [
+            { "text": "Most Popular Courses", "font": "Nunito Bold", "fontSize": 24, "fontWeight": 700, "color": "#000000", "DC": "PURE BLACK — drift from text/default #0d1d2d. DC-042 candidate." },
+            { "text": "View All", "font": "MONTSERRAT SemiBold", "fontSize": 14, "fontWeight": 600, "color": "#4d3bc2", "DC": "DC-008 typo + DC-039 Montserrat" }
+          ]
+        },
+        {
+          "name": "Course card — Gen AI",
+          "elements": [
+            { "title": "Gen AI", "font": "Nunito ExtraBold 16 / #222a33" },
+            { "subtitle": "8 LESSONS", "font": "Nunito SemiBold 10 / #8b98a7", "DC": "DC-043 — new gray #8b98a7 not in ledger" },
+            { "rating": "4.5", "font": "Nunito Bold 12 / #222a33" },
+            { "languageChips": ["English", "Vietnamese"], "font": "Nunito Medium 10 / #ffffff" },
+            { "cta": "Start Now / Enroll Now", "font": "MONTSERRAT SemiBold 14 / variable color", "DC": "DC-039" },
+            { "price": "50", "font": "Nunito ExtraBold 14 / #2b3742" }
+          ]
+        },
+        {
+          "name": "Course card — Personal Money Management",
+          "elements": [
+            { "title": "Personal Money\\nManagement", "font": "Nunito ExtraBold 16 / #222a33" },
+            { "subtitle": "8 LESSONS", "font": "Nunito SemiBold 10 / #8b98a7" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10989:9590",
+      "name": "RightSideBar",
+      "type": "FRAME",
+      "x": 1058, "y": 24, "w": 362, "h": 2060,
+      "subsections": [
+        {
+          "name": "Student profile",
+          "texts": [
+            { "text": "Troy Darmawan", "font": "Nunito ExtraBold", "fontSize": 20, "fontWeight": 800, "color": "#222a33" },
+            { "text": "Grade 5", "font": "Nunito SemiBold", "fontSize": 16, "fontWeight": 600, "color": "#a8acb1", "DC": "DC-044 — light gray not in ledger" },
+            { "text": "View Profile", "font": "Nunito Bold", "fontSize": 14, "fontWeight": 700, "color": "#6651e4", "DC": "DC-005 — production-in-progress brand purple variant" }
+          ],
+          "stats": [
+            { "value": "12", "font": "Nunito Medium 14 / #3d4d5d", "role": "stars/awards" },
+            { "value": "24", "font": "Nunito Medium 14 / #3d4d5d", "role": "hearts/favorites" },
+            { "value": "32434", "font": "Nunito Medium 14 / #3d4d5d", "role": "diamonds" }
+          ]
+        },
+        {
+          "name": "Schedule (calendar)",
+          "elements": [
+            { "header": "My Schedule for September", "font": "Nunito ExtraBold 16" },
+            { "moreOptions": "More Scheduling Options", "font": "Nunito Bold 16 / #222a33" },
+            { "weekStrip": [
+                { "day": "M", "date": "03", "active": false, "color": "#8499ae" },
+                { "day": "T", "date": "04", "active": false, "color": "#8499ae" },
+                { "day": "W", "date": "05", "active": true,  "color": "#263238", "DC": "Dark text on active day — pure DC-014-adjacent" },
+                { "day": "T", "date": "06", "active": false, "color": "#8499ae" },
+                { "day": "F", "date": "07", "active": false, "color": "#8499ae" },
+                { "day": "S", "date": "08", "active": false, "color": "#8499ae" },
+                { "day": "S", "date": "09", "active": false, "color": "#8499ae" }
+            ]}
+          ]
+        },
+        {
+          "name": "Upcoming class card (ClassJoiningCard)",
+          "texts": [
+            { "text": "You have 1 Class scheduled today", "font": "Nunito Bold" },
+            { "text": "Coding Class #16", "font": "Nunito Medium 12 / #3d4d5d" },
+            { "text": "Develop the BrightFit App", "font": "Nunito Bold 16 / #222a33" },
+            { "text": "Troy & Teacher Jacob", "font": "Nunito Medium 12 / #3d4d5d" },
+            { "text": "4:30 PM", "font": "Nunito Bold 12 / #263238" }
+          ]
+        },
+        {
+          "name": "My Learning Progress",
+          "courses": [
+            { "title": "Become a YouTuber", "progress": "24/146", "font": "Nunito Bold 16 / #3d4d5d" },
+            { "title": "Anti-Bullying", "font": "Nunito Bold 16 / #3d4d5d" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10989:10091",
+      "name": "Component 147 (NavBar utility)",
+      "type": "FRAME",
+      "x": 904, "y": 24, "w": 88, "h": 36,
+      "fill": "#ffffff"
+    },
+    {
+      "id": "10989:10110",
+      "name": "Pulsing Circle (BrightBuddy mascot)",
+      "type": "RECTANGLE",
+      "x": 964, "y": 5, "w": 40, "h": 40,
+      "fill": "IMAGE — likely chatbot avatar from CDN"
+    }
+  ],
+  "newDriftFindings": [
+    { "id": "DC-039", "category": "typography", "title": "Montserrat font appears in production CTAs — not in DS typography system" },
+    { "id": "DC-040", "category": "system", "title": "Sidebar width 240px in production — DS NavBar = 80/280px collapsed/expanded. 240 is a third value." },
+    { "id": "DC-041", "category": "system", "title": "DiamondBalanceAlert pattern not in DS library" },
+    { "id": "DC-042", "category": "color", "title": "Pure black #000000 used for 'Most Popular Courses' h2 — drift from text/default #0d1d2d" },
+    { "id": "DC-043", "category": "color", "title": "New gray #8b98a7 used for course-card meta text — not in ledger" },
+    { "id": "DC-044", "category": "color", "title": "New light gray #a8acb1 used for 'Grade 5' subtitle — not in ledger" }
+  ]
+}

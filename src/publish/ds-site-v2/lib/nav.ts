@@ -150,6 +150,7 @@ export const NAV: NavSection[] = [
     items: [
       { href: '/surfaces/',                        label: 'Health dashboard',  badge: 'new' },
       { href: '/surfaces/student/',                label: 'Student overview',  badge: 'new' },
+      { href: '/surfaces/nano-skills-audit/',      label: 'Nano Skills audit', badge: 'new' },
       { href: '/surfaces/student/components/',     label: 'Components',        badge: 'new' },
       { href: '/surfaces/student/icons/',          label: 'Icons',             badge: 'new' },
       { href: '/surfaces/student/states/',         label: 'Interactive states', badge: 'new' },
