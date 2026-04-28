@@ -361,38 +361,34 @@ export const componentSpecs: ComponentSpec[] = [
     ],
   },
 
-  // ─── NavBar (verified against real source) ──────────────────────────────
+  // ─── NavBar (Tier 1 chrome — wired to Figma variable library) ───────────
   {
     name: 'NavBar',
     slug: 'nav-bar',
-    description: 'Primary navigation bar — collapsible chrome rail. Appears on every authenticated student dashboard page (7/7).',
+    description: 'Icon rail navigation. Collapses to 80px (icons only), expands to 280px on hover (icons + labels). Appears on every authenticated student dashboard page (7/7). Wired to Figma library 8eNJf875iY9HISEsczDfOh.',
     variants: ['collapsed', 'expanded'],
     tokens: [
-      { property: 'Container width (collapsed)',     token: 'space/sidebar-collapsed', cssVar: '--space-sidebar-collapsed', value: '80px' },
-      { property: 'Container width (expanded)',      token: 'space/sidebar-expanded',  cssVar: '--space-sidebar-expanded',  value: '280px' },
-      { property: 'Container background',            token: 'color/neutral/100',       cssVar: '--color-neutral-100',       value: '#ffffff' },
-      { property: 'Padding (block / inline)',        token: 'space/4 + space/3',       cssVar: '--space-4 / --space-3',     value: '18px 12px' },
-      { property: 'Menu item border-radius',         token: 'radius/md',               cssVar: '--radius-md',               value: '12px' },
-      { property: 'Menu item icon container size',   token: 'space/14',                cssVar: '--space-14',                value: '56px' },
-      { property: 'Menu item gap',                   token: 'space/3',                 cssVar: '--space-3',                 value: '12px' },
-      { property: 'Active item color',               token: 'color/brand/primary',     cssVar: '--color-brand-primary',     value: '#4e3bc2' },
-      { property: 'Font weight (active)',            token: 'font/weight/black',       cssVar: '--font-weight-black',       value: '800' },
-      { property: 'Transition',                      token: '—',                       cssVar: '—',                         value: 'all 0.3s ease-out' },
+      { property: 'Width (collapsed)',         token: 'chrome/sidebar-collapsed', cssVar: '--chrome-sidebar-collapsed', value: '80px' },
+      { property: 'Width (expanded)',          token: 'chrome/sidebar-expanded',  cssVar: '--chrome-sidebar-expanded',  value: '280px' },
+      { property: 'Background',                token: 'surface/bg/default',       cssVar: '--surface-bg-default',       value: '#ffffff (light) / neutral-800 (dark)' },
+      { property: 'Padding (block)',           token: 'space/inset/lg',           cssVar: '--space-inset-lg',           value: '16px (source: 18px)' },
+      { property: 'Padding (inline)',          token: 'space/inset/md',           cssVar: '--space-inset-md',           value: '12px' },
+      { property: 'Menu-item radius',          token: 'radius/control/lg',        cssVar: '--radius-control-lg',        value: '10px (source: 12px)' },
+      { property: 'Menu-item icon container',  token: '—',                        cssVar: '—',                          value: '56×56 (source-exact, no token)' },
+      { property: 'Menu-item gap',             token: 'space/stack/md',           cssVar: '--space-stack-md',           value: '12px' },
+      { property: 'Active item bg',            token: 'surface/bg/brand',         cssVar: '--surface-bg-brand',         value: '#722ED1 (DC-005 designer intent; production ships #4e3bc2)' },
+      { property: 'Active item text',          token: 'text/on/brand',            cssVar: '--text-on-brand',            value: '#ffffff' },
+      { property: 'Active item icon',          token: 'icon/on/brand',            cssVar: '--icon-on-brand',            value: '#ffffff' },
+      { property: 'Default text',              token: 'text/brand',               cssVar: '--text-brand',               value: '#722ED1 / brand-300 (dark)' },
+      { property: 'Font weight (active)',      token: 'typography/body/md/font-weight', cssVar: '--typography-body-md-font-weight', value: '800 (source extra-bold)' },
+      { property: 'Transition',                token: '—',                        cssVar: '—',                          value: 'all 0.3s ease-out (CSS only, not in Figma)' },
     ],
-    usageExample: `<aside
-  className={classes.container}
-  aria-label="Primary"
->
+    usageExample: `<aside className={classes.container} aria-label="Primary">
   {navData.map(item => (
-    <a
-      key={item.href}
-      href={item.href}
-      aria-current={isActive(item.href) ? 'page' : undefined}
-      className={classes.menuItem}
-    >
-      <div className={classes.iconWrapper}>
-        <item.Icon />
-      </div>
+    <a key={item.href} href={item.href}
+       aria-current={isActive(item.href) ? 'page' : undefined}
+       className={classes.menuItem}>
+      <div className={classes.iconWrapper}><item.Icon /></div>
       {expanded && <span>{item.label}</span>}
     </a>
   ))}
@@ -401,48 +397,104 @@ export const componentSpecs: ComponentSpec[] = [
     target: 'newDashboard',
     verificationStatus: 'verified',
     conflicts: [
-      'All values cross-checked against source. ✓ container width 80px (collapsed) / 280px (expanded), white bg, 12px border-radius on items, 56px icon container, brand-primary active color via get-color("primary-color").',
-      'Note: source uses SCSS custom local variables ($nav-padding-x: 12px, $navigation-width: 80px) rather than DS-canonical space tokens. Recommend adding space/sidebar-collapsed (80px) and space/sidebar-expanded (280px) to the ledger as named-spacing tokens.',
+      'Production navData has only one entry: dashboard. The audit/spec listed 7 (learn, feed, badges, certificates, rewards, nano-skills, dashboard) — only dashboard is real. Other items referenced via nameKeyMap exist in i18n but not in navData[]. Figma component honors source.',
+      'Padding 18px does not have an exact token (closest: space/inset/lg = 16px). Bound to space/inset/lg with a +2px production drift — flag for ledger reconciliation.',
+      'Menu-item radius is 12px in source, closest semantic is radius/control/lg = 10px (+2px drift). Flag for ledger reconciliation.',
+      'Active color is #722ED1 (DC-005 designer intent) in the Figma library; production CSS resolves get-color("primary-color") = #4e3bc2. DC-005 description on color/primary/500 documents this.',
+      '56×56 icon container has no matching dimension token — source value used directly.',
     ],
   },
 
-  // ─── LeftSideBar (newDashboard chrome) ──────────────────────────────────
+  // ─── LeftSideBar (Tier 1 chrome — 104px rail wrapper) ───────────────────
   {
     name: 'LeftSideBar',
     slug: 'left-side-bar',
-    description: 'Left chrome shell of the new-dashboard layout. Wraps the NavBar + extras in a vertical column with logo + nav + bottom items.',
-    variants: ['default', 'parent-hub'],
+    description: '104px chrome rail wrapper. Hosts <NavigationBar /> on every student dashboard page. Production-faithful from dashboardLayout.module.scss .leftArea.',
+    variants: ['default'],
     tokens: [
-      { property: 'Display',              token: '—',                  cssVar: '—',                  value: 'flex column, full height' },
-      { property: 'Width',                token: 'space/full',         cssVar: '—',                  value: '100%' },
-      { property: 'Padding-left',         token: 'space/5',            cssVar: '--space-5',          value: '20px' },
-      { property: 'Padding-top',          token: 'space/5',            cssVar: '--space-5',          value: '20px' },
-      { property: 'Gap',                  token: 'space/4',            cssVar: '--space-4',          value: '15px' },
-      { property: 'Section divider',      token: 'color/overlay/black-10', cssVar: '—',              value: 'rgba(0, 0, 0, 0.1)' },
-      { property: 'Logo bottom margin',   token: 'space/10',           cssVar: '--space-10',         value: '2.55rem' },
-      { property: 'Bottom section margin', token: 'space/5',           cssVar: '--space-5',          value: '20px' },
-      { property: 'Height (parent-hub)',  token: '—',                  cssVar: '—',                  value: 'calc(100vh - 48px)' },
+      { property: 'Width',           token: 'chrome/sidebar-rail', cssVar: '--chrome-sidebar-rail', value: '104px' },
+      { property: 'Height',          token: '—',                   cssVar: '—',                     value: '100vh (annotation only)' },
+      { property: 'Background',      token: '—',                   cssVar: '—',                     value: 'transparent (production: no bg, inherits .container white)' },
+      { property: 'Position',        token: '—',                   cssVar: '—',                     value: 'sticky left (annotation only)' },
+      { property: 'Embedded NavBar', token: '—',                   cssVar: '—',                     value: '<NavigationBar /> instance, collapsed variant' },
     ],
-    usageExample: `<aside
-  className={clsx(classes.sidebar, isParentHub && classes.parenHubSidebar)}
-  aria-label="Primary"
->
-  <div>
-    <div className={classes.logo}><img src={LOGO} alt="BrightChamps" /></div>
-    <div className={classes.sideBarNavContainer}>
-      <NavBar />
-    </div>
-  </div>
-  <div className={classes.bottomSectionContaner}>
-    {children}
-  </div>
-</aside>`,
-    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/newDashboard/templates/NewDashboard/LeftSideBar/LeftSideBar.module.scss',
+    usageExample: `<div className={classes.leftArea}>
+  <NavigationBar />
+</div>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/layouts/DashboardLayout/dashboardLayout.module.scss',
     target: 'newDashboard',
     verificationStatus: 'verified',
     conflicts: [
-      'All values match source. Note: typo in class name ".parenHubSidebar" should be ".parentHubSidebar" — file as a separate cleanup ticket.',
-      'No background color in source — transparent over container. The DashboardLayout sets the page bg.',
+      'Previous componentSpecs.ts entry pointed at src/newDashboard/templates/NewDashboard/LeftSideBar/LeftSideBar.module.scss — that is a different layout\'s sidebar. The student dashboard\'s left chrome is dashboardLayout.module.scss .leftArea (104px), now the canonical reference.',
+      'Width 104px > NavigationBar collapsed width 80px. The 24px difference is the rail margin around the navbar. No padding on .leftArea itself in source.',
+    ],
+  },
+
+  // ─── RightSideBar (Tier 1 chrome — 460px context panel) ─────────────────
+  {
+    name: 'RightSideBar',
+    slug: 'right-side-bar',
+    description: '460px right context panel. Appears on every student dashboard page (7/7). Hosts ProfileCard by default; can show class info, teacher profile, or BrightBuddy chat panel.',
+    variants: ['empty', 'class-info'],
+    tokens: [
+      { property: 'Width',                 token: 'chrome/right-panel',     cssVar: '--chrome-right-panel',     value: '460px' },
+      { property: 'Height',                token: '—',                      cssVar: '—',                        value: '100vh (annotation only)' },
+      { property: 'Padding (all sides)',   token: 'space/inset/xl',         cssVar: '--space-inset-xl',         value: '20px' },
+      { property: 'Background',            token: '—',                      cssVar: '—',                        value: 'transparent (inherits app-background #f5f4fa)' },
+      { property: 'Overflow',              token: '—',                      cssVar: '—',                        value: 'overflow-y: scroll (annotation only)' },
+      { property: 'ProfileCard radius',    token: 'radius/container/lg',    cssVar: '--radius-container-lg',    value: '10px (source: 16px = $border-radius-medium, +6px drift)' },
+      { property: 'ProfileCard border',    token: 'border/subtle',          cssVar: '--border-subtle',          value: '1px #ededed' },
+      { property: 'Cover image bg',        token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle', value: '#FAF5FF (primary/50)' },
+      { property: 'Profile pic border',    token: 'surface/bg/default',     cssVar: '--surface-bg-default',     value: '#ffffff, 4px' },
+      { property: 'Switch profile text',   token: 'text/brand',             cssVar: '--text-brand',             value: '#722ED1' },
+      { property: 'Certificate box bg',    token: 'surface/bg/brand/subtle', cssVar: '--surface-bg-brand-subtle', value: '#FAF5FF' },
+      { property: 'Certificate box radius', token: 'radius/container/lg',   cssVar: '--radius-container-lg',    value: '10px (source: 16px)' },
+    ],
+    usageExample: `<div className={classes.rightArea}>
+  <ProfileCard />
+</div>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/layouts/DashboardLayout/dashboardLayout.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'Right-panel ProfileCard composed of many sub-components (cover image, profile pic, switch-profile, certificateBox, homeTab, menuItems, chatbotContainer). Tier 1 build covers the chrome shell + key surfaces — full sub-component breakdown is Tier 2.',
+      'Source $border-radius-medium = 16px does not have an exact token (closest: radius/container/lg = 10px). +6px drift flagged for ledger reconciliation.',
+      'Source $menu-hover-color (#edebf8) does not have an exact token (closest: surface/bg/brand/subtle = #FAF5FF). 5%-lightness drift, visually similar.',
+    ],
+  },
+
+  // ─── DashboardLayout (Tier 1 chrome — 3-column shell) ───────────────────
+  {
+    name: 'DashboardLayout',
+    slug: 'dashboard-layout',
+    description: '3-column shell wrapping all 7 student dashboard pages. 104px nav rail + flex-grow main + 460px right panel. Production-faithful from dashboardLayout.module.scss.',
+    variants: ['rightPanelVisible-true', 'rightPanelVisible-false'],
+    tokens: [
+      { property: 'Page max-width',          token: 'chrome/page-max',          cssVar: '--chrome-page-max',          value: '1440px' },
+      { property: 'LeftArea width',          token: 'chrome/sidebar-rail',      cssVar: '--chrome-sidebar-rail',      value: '104px' },
+      { property: 'RightArea width',         token: 'chrome/right-panel',       cssVar: '--chrome-right-panel',       value: '460px' },
+      { property: 'MainContent max-width',   token: 'chrome/main-content-max',  cssVar: '--chrome-main-content-max',  value: '880px' },
+      { property: 'Page background',         token: 'surface/bg/canvas',        cssVar: '--surface-bg-canvas',        value: '#ffffff (light) / neutral-900 (dark)' },
+      { property: 'MainWrapper bg',          token: 'surface/bg/sunken',        cssVar: '--surface-bg-sunken',        value: '#F2F2F2 (source: $app-background #f5f4fa, ΔE small)' },
+      { property: 'MainWrapper padding (block)', token: 'space/inset/3xl',     cssVar: '--space-inset-3xl',          value: '32px' },
+      { property: 'MainWrapper padding (inline)', token: 'space/inset/2xl',    cssVar: '--space-inset-2xl',          value: '24px' },
+    ],
+    usageExample: `<div className={classes.root}>          {/* max-width: 1440px */}
+  <div className={classes.container}>     {/* flex, 3 columns */}
+    <div className={classes.leftArea}><NavigationBar /></div>
+    <div className={classes.mainWrapper}>
+      <div className={classes.mainContentArea}>{children}</div>
+    </div>
+    <div className={classes.rightArea}><ProfileCard /></div>
+  </div>
+</div>`,
+    sourceFile: 'repo-cloned/brightchamps-brightchamps-student-dashboard-7628991d99a8/src/layouts/DashboardLayout/dashboardLayout.module.scss',
+    target: 'newDashboard',
+    verificationStatus: 'verified',
+    conflicts: [
+      'mainWrapper bg in source is $app-background #f5f4fa — a tinted lavender. Closest semantic token is surface/bg/sunken = #F2F2F2 (neutral/100, no purple tint). Visually similar at thumbnail scale; flag for ledger reconciliation if brand wants the lavender tint preserved.',
+      'Tablet-portrait media query (.media-tab-portrait) hides .leftArea and .rightArea, switches in .mobileNavWrapper. Tier 1 covers the desktop layout only; mobile/tablet variant is Tier 2.',
+      'masWrapper variant (masquerade users) swaps mainWrapper bg to a teacher-impersonation image. Edge-case state, not built as a separate Figma variant.',
     ],
   },
 ]

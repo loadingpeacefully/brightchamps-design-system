@@ -23,6 +23,11 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — Tier 1 chrome components shipped
+  { date: '2026-04-28', version: 'v0.7', kind: 'COMPONENT', title: 'Tier 1 chrome components shipped — NavBar, LeftSideBar, RightSideBar, DashboardLayout', status: 'shipped', note: 'all wired to Figma variable library, production-verified from SCSS source', href: '/components/dashboard-layout/' },
+  { date: '2026-04-28', version: 'v0.7', kind: 'TOKENS',    title: '6 chrome architecture primitives added (sidebar-rail 104, sidebar-collapsed 80, sidebar-expanded 280, right-panel 460, main-content-max 880, page-max 1440)', status: 'shipped', note: 'mirrored as 6 semantic chrome aliases',  href: '/components/dashboard-layout/' },
+  { date: '2026-04-28', version: 'v0.7', kind: 'COMPONENT', title: '/surfaces/student/components/ → 8 of 21 DOCUMENTED (was 5)',                  status: 'shipped', href: '/surfaces/student/components/' },
+
   // 2026-04-26 — Phase 1-6 source analysis pipeline
   { date: '2026-04-26', version: 'v0.6', kind: 'AUDIT',    title: 'Source-code drift analysis — 774 colors, 20% token adoption, 379 files ranked',  status: 'shipped', note: 'static analysis, no Playwright', href: '/surfaces/student/#source' },
   { date: '2026-04-26', version: 'v0.6', kind: 'TOOL',     title: 'Engineering migration guide — 25 copy-paste sed commands, 0 placeholders',       status: 'shipped', note: 'Steps 0-3 zero visual change',  href: '/surfaces/student/#migrate' },

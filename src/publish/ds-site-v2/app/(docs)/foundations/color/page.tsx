@@ -114,6 +114,25 @@ export default function ColorPage() {
           />
         </div>
 
+        <div className="mt-8 rounded-card border border-chrome-border bg-chrome-surface-sunken p-4 text-[13px]">
+          <div className="text-overline text-chrome-text-subtlest mb-1">Figma library — live</div>
+          <p className="text-chrome-text">
+            These tokens are now live in the BrightChamps Figma variable library
+            (<code className="font-mono text-[12.5px]">8eNJf875iY9HISEsczDfOh</code>). 364 variables across 10 collections,
+            light + dark modes, plus 15 text styles and 5 effect styles. Open the library to use them in your designs:
+          </p>
+          <p className="mt-2">
+            <a
+              className="text-chrome-accent hover:underline font-mono text-[12.5px]"
+              href="https://www.figma.com/design/8eNJf875iY9HISEsczDfOh/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              figma.com/design/8eNJf875iY9HISEsczDfOh →
+            </a>
+          </p>
+        </div>
+
         <Section
           id="brand"
           title="Brand"

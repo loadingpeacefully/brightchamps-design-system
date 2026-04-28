@@ -15,11 +15,15 @@ const TOC = [
 // Components that have a fully-built spec page on the DS site. The component
 // inventory shows DOCUMENTED + a link for these instead of NEEDS SPEC.
 const DOCUMENTED: Record<string, string> = {
-  Accordion:    '/components/accordion/',
-  ProgressLine: '/components/progress-line/',
-  GreenLine:    '/components/green-line/',
-  LessonList:   '/components/lesson-list/',
-  Layout:       '/components/layout/',
+  Accordion:       '/components/accordion/',
+  ProgressLine:    '/components/progress-line/',
+  GreenLine:       '/components/green-line/',
+  LessonList:      '/components/lesson-list/',
+  Layout:          '/components/layout/',
+  NavBar:          '/components/nav-bar/',
+  LeftSideBar:     '/components/left-side-bar/',
+  RightSideBar:    '/components/right-side-bar/',
+  DashboardLayout: '/components/dashboard-layout/',
 }
 
 export default function StudentComponentsPage() {
@@ -37,9 +41,10 @@ export default function StudentComponentsPage() {
           elements on 7 student app pages. Each prefix maps to a React component in the student app codebase.
         </p>
         <p className="mt-2 max-w-[62ch] text-body-s text-chrome-text-subtle">
-          <strong className="text-chrome-text">{documentedCount}</strong> of {components.length} have a full spec page on this site
-          (Accordion, ProgressLine, GreenLine, LessonList, Layout). The remaining {components.length - documentedCount} are tracked here as
-          “Needs spec” — these are the next sprint&apos;s targets.
+          <strong className="text-chrome-text">{documentedCount}</strong> of {components.length} have a full spec page on this site.
+          Tier 1 chrome (NavBar, LeftSideBar, RightSideBar, DashboardLayout) is wired to the Figma variable library
+          (file <code className="font-mono text-[12px]">8eNJf875iY9HISEsczDfOh</code>). The remaining {components.length - documentedCount} are tracked here as
+          “Needs spec” — those are the next sprint&apos;s targets.
         </p>
 
         <section id="inventory" className="mt-12 scroll-mt-24">
