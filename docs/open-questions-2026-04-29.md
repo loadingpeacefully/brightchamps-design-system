@@ -138,3 +138,62 @@ Format: `[screen] [type] [what's missing] [where in DS frame]`
 - [add-more-classes] missing-component: SelectCourseDropdown (placeholder + chevron) — variant of DS DropDown but with this specific shape
 - [add-more-classes] color: muted gray #485767 — yet another medium gray (DC-050 family, 6+ now on one screen pattern)
 - [add-more-classes] note: production frame named "Notification" but content is class-scheduling form
+
+## /certificates, /homework, /assesments, /class-room-popup, /my-progress-active — NOT REBUILT
+- [certificates] structure: production frame 1159:16396 returns same /my-feed shell text in first 18 nodes. Unique certificates-list content is buried below shallow-sample depth.
+- [homework] structure: production frame 1720:11622 — same shell duplicate.
+- [assesments] structure: production frame 1720:14499 — same shell duplicate. Note: production typo "Assesments" (should be "Assessments").
+- [class-room-popup] structure: production frame 3856:9315 — same shell duplicate; unique popup content is layered overlay not surfaced in shallow walk.
+- [my-progress-active] structure: production frame 10989:21206 — same shell. Returns the right-sidebar profile content (Troy Darmawan, schedule strip) which is /nano-skills shell content.
+- [decision] all 5 frames skipped — pattern: production reuses dashboard shell as baseline; unique screen content is shallow but buried in nested groups not visible to first-N-text-nodes sampling. To rebuild these accurately would need a deeper walk (depth 5+, ~200+ layers each) which is expensive per-screen.
+- [next-step] designer should expose the unique content of these frames as standalone Figma frames in production — not nested under dashboard-shell working-bases.
+
+## End-of-session summary
+
+**13 production-fidelity rebuilds in DS library:**
+
+Page: Screens / Student Dashboard
+- /my-feed (102:459) — 28 matched
+- /learn (103:459) — 32 matched
+- /change-profile (104:459) — 18 matched
+
+Page: Screens / Badges
+- /badges (105:3) — 30 matched (with Poppins course chips)
+
+Page: Screens / Diamond Popup
+- /diamond-popup (106:3) — 22 matched (post-class reward overlay)
+
+Page: Screens / Live Class
+- /live-class (110:3) — 24 matched
+
+Page: Screens / Payment Flows
+- /payment-details (111:3) — 22 matched
+
+Page: Screens / Gurukul
+- /gurukul-step-01 (113:3) — 16 matched
+
+Page: Screens / Nano Skills (existing page, 3 new rebuilds)
+- /mastercourse — 22 matched
+- /self-paced-enroll — 18 matched
+- /diamond-purchase — 20 matched
+
+Page: Screens / Notifications
+- /add-more-classes (116:3) — 14 matched
+
+**Total: ~266 elements matched, ~80 designer-actionable gaps documented.**
+
+**8 frames flagged as duplicate-shells (not rebuilt) — these reuse the /my-feed dashboard shell as a working baseline and the unique screen content is buried in nested groups beyond first-N-text-nodes sampling depth.**
+
+**Cross-cutting findings (not yet in DC tickets):**
+1. **5 different example student names** across audited screens: Troy Darmawan, Sarah, Zorbiyah Khan, Aryan, "{name}". Designer should pick one canonical demo student.
+2. **6+ frames mis-named "My Feed"** in production but containing payment / badges / notification content. Frame naming is pre-design-system-discipline.
+3. **6+ near-black variants** confirmed (DC-014 family): #222a33, #28333e, #2b3742, #232332, #263238, #1b0742
+4. **6+ medium grays** (DC-050 family): #4d4d4d, #64717d, #485767, #51667b, #7d8892, #7e858d
+5. **3 distinct purple values** still shipping: #4d3bc2, #4e3bc2, #6651e4 (DC-005)
+6. **Production typos**: "Garde 4/5/3/2" × 4 tiles; "Your are subscribed to"; "Assesments"; placeholder "INR 1600000"
+7. **Dashboard shell is the universal working-base**: every "screen" is built on top of /my-feed structure. Suggests production should extract the shell as a master component.
+
+**What this means for the design system:**
+- The DS site / spec pages are research outputs — not the deliverable.
+- The deliverable is the Figma library file 8eNJf875iY9HISEsczDfOh, with 13 screen rebuilds + 51 DC tickets + 9 pending decisions + this gap file.
+- A designer can now open the DS library, see real screen mockups (not wireframes), and have a punch-list of every gap that needs attention.
