@@ -23,6 +23,10 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — v2.1: full screen catalogue
+  { date: '2026-04-28', version: 'v2.1', kind: 'COMPONENT', title: 'All 35 screens rebuilt in Figma — every route is now a composed mockup', status: 'shipped', note: 'Across 7 surface pages: Student Dashboard (7) · Nano Skills (6) · Practice Zone (2) · Onboarding+Auth (6) · Parent Hub (1) · Game Dashboard (1) · Demo+Special (8). Plus 7 mobile screens at 390×844.', href: '/patterns/student-dashboard/' },
+  { date: '2026-04-28', version: 'v2.1', kind: 'COMPONENT', title: 'Mobile screen rebuilds — 7 routes at 390×844 with NavigationBarMobile pattern', status: 'shipped', note: 'my-feed / learn / badges / certificates / rewards / nano-skills / login. NavigationBarMobile (60px top bar) replaces left rail.', href: '/components/nav-bar/' },
+
   // 2026-04-28 — v2.0 milestone: 100% DS-controllable coverage
   { date: '2026-04-28', version: 'v2.0', kind: 'AUDIT',     title: 'v2.0 milestone — DS system overall health 3/10 → 8/10. Everything under DS-team control is shipped.', status: 'shipped', note: '446 variables · 30+ component sets · 100+ spec pages · 7 surfaces tracked · 33 DC tickets · 7 student-dashboard screens fully composed in Figma. Remaining gap is organizational (brand DC-005 + eng codemod + Figma IDs).', href: '/full-system-audit-2026-04-26' },
   { date: '2026-04-28', version: 'v2.0', kind: 'COMPONENT', title: 'Student Dashboard screens — 7 routes rebuilt at 1440×900 with real component instances', status: 'shipped', note: 'my-feed / global-feed / learn / badges / certificates / rewards / nano-skills', href: '/patterns/student-dashboard/' },

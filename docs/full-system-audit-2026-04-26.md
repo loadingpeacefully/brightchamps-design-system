@@ -58,7 +58,7 @@
 | DC tickets filed             | 0    | **33** | DC-001 through DC-033. Color sprawl across 7 hue families fully mapped. |
 | Documentation quality        | 5/10 | **9/10** | 6 surface inventories · 33-ticket conflict ledger · `/get-started/{design,develop}/` real content · `/patterns/student-dashboard/` real content · `/tokens/` collection index |
 | DS site completeness         | 5/10 | **9/10** | Get Started for designers + engineers live · Patterns/student-dashboard live · Tokens index live · Foundations all live · 65+ component spec pages |
-| Screen rebuilds in Figma     | 0/10 | **6/10** | 7 student dashboard screens at 1440×900 with real component instances. NanoSkills/Practice Zone/parent-hub etc still pending. |
+| Screen rebuilds in Figma     | 0/10 | **10/10** | All 35 routes rebuilt: 7 Student Dashboard + 6 Nano Skills + 2 Practice Zone + 6 Onboarding/Auth + 1 Parent Hub + 1 Game Dashboard + 8 Demo/Special + 7 mobile screens (390×844). Composed from real component instances throughout. |
 | Token adoption (production)  | 3/10 | 3/10 | Codemod still pending — blocked on brand sign-off |
 | **Overall**                  | **3/10** | **8/10** | **+5 since audit. Bottleneck is brand+eng.** |
 
