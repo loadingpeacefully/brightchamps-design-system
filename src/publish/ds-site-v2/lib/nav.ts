@@ -17,8 +17,8 @@ export const NAV: NavSection[] = [
     label: 'Get started',
     items: [
       { href: '/get-started/',            label: 'Overview',        badge: 'beta' },
-      { href: '/get-started/design/',     label: 'For designers',   disabled: true },
-      { href: '/get-started/develop/',    label: 'For engineers',   disabled: true },
+      { href: '/get-started/design/',     label: 'For designers',   badge: 'new' },
+      { href: '/get-started/develop/',    label: 'For engineers',   badge: 'new' },
       { href: '/get-started/contribute/', label: 'Contributing',    badge: 'new' },
       { href: '/get-started/decisions/',  label: 'Decisions',       badge: 'new' },
       { href: '/get-started/glossary/',   label: 'Glossary',        badge: 'new' },
@@ -66,7 +66,7 @@ export const NAV: NavSection[] = [
     label: 'Patterns',
     items: [
       { href: '/patterns/',              label: 'Overview' },
-      { href: '/patterns/student-dashboard/', label: 'Student dashboard', disabled: true },
+      { href: '/patterns/student-dashboard/', label: 'Student dashboard', badge: 'new' },
       { href: '/patterns/teacher-grading/',   label: 'Teacher grading',   disabled: true },
       { href: '/patterns/landing-hero/',      label: 'Landing hero',      disabled: true },
     ],

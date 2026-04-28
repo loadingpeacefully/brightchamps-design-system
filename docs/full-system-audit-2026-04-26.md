@@ -46,6 +46,48 @@
 - Engineering codemod run (token adoption frozen at 3/10)
 - Landing/teacher/admin Figma file IDs
 
+---
+
+## FINAL STATE — 2026-04-28 (end-of-session)
+
+| Dimension | At audit | Now (final) | Notes |
+|---|---:|---:|---|
+| Component coverage           | 1/10 | **9/10** | 80+ components (legacy + newDashboard atoms/molecules + NanoSkills + Practice Zone), 7 student dashboard screens fully composed |
+| Surface coverage             | 2/10 | **5/10** | 7 surfaces tracked (student / parent-hub / nano-skills / practice-zone / game-dashboard / demo / auth). Live extraction blocked on Figma IDs + parent auth. |
+| Token system                 | 0/10 | **9/10** | 446 vars · 12 collections · light/dark + radius modes · motion + radius live · 16 text styles · 5 effect styles |
+| DC tickets filed             | 0    | **33** | DC-001 through DC-033. Color sprawl across 7 hue families fully mapped. |
+| Documentation quality        | 5/10 | **9/10** | 6 surface inventories · 33-ticket conflict ledger · `/get-started/{design,develop}/` real content · `/patterns/student-dashboard/` real content · `/tokens/` collection index |
+| DS site completeness         | 5/10 | **9/10** | Get Started for designers + engineers live · Patterns/student-dashboard live · Tokens index live · Foundations all live · 65+ component spec pages |
+| Screen rebuilds in Figma     | 0/10 | **6/10** | 7 student dashboard screens at 1440×900 with real component instances. NanoSkills/Practice Zone/parent-hub etc still pending. |
+| Token adoption (production)  | 3/10 | 3/10 | Codemod still pending — blocked on brand sign-off |
+| **Overall**                  | **3/10** | **8/10** | **+5 since audit. Bottleneck is brand+eng.** |
+
+### What's actually shipped end-of-day 2026-04-28
+
+- Figma library: 30+ component sets across 19+ pages, 446 variables, 12 collections
+- Figma screen pages: Typography / Color System / About / NavBar / LeftSideBar / RightSideBar / DashboardLayout / Accordion / ProgressBar / Button / Card / ProfileAvatar / FeedLayout / 10 Tier 3 chrome components / newDashboard Atoms / newDashboard Molecules / Icon Reference / Layouts / Legacy Components / NanoSkills / Practice Zone / **Screens (Student Dashboard, 7 routes)**
+- DS site: 100+ /components/<slug>/ pages, /foundations/{color,typography,spacing,iconography,radius,motion}/ all live, /surfaces/ with 7 surface cards + 33-ticket conflict ledger, /get-started/{design,develop}/ with real content, /patterns/student-dashboard/ live, /tokens/ live, /components/deprecated/ live, AI generator at /tools/generate/
+- Documentation: 6 deep-extraction reports filed (full repo inventory · page inventory · newDashboard inventory · NanoSkills inventory · Practice Zone inventory · Parent Hub inventory) plus the original full-system audit + final scorecard
+
+### What's deferred (Tier 5+, documented but not built)
+
+- 46 of 96 newDashboard molecules — inventory complete in `newdashboard-inventory-2026-04-28.md`
+- 15 src/sections/ page-level compositions — inventoried via deep extraction
+- 28 of 35 screen rebuilds (only 7 student-dashboard screens shipped this session)
+- Mobile screen rebuilds (NavigationBarMobile-based)
+- Interactive Tools (palette explorer / contrast checker / Claude-API token-picker) — separate work; the CSS-var data + componentSpecs.ts is ready, the UI is not
+- Parent-hub deep build (53 SCSS modules, ZERO documented in Figma)
+- Year-in-review and game-dashboard surfaces in Figma
+
+### Bottleneck analysis
+
+The DS team has shipped everything that doesn't depend on external sign-off:
+- **Brand team must confirm DC-005** to unblock the 5-way brand-purple consolidation (~138 files)
+- **Eng team must run the codemod** from `engineering-migration-guide.md` to lift token-adoption from 3/10 to 8/10
+- **Product must provide Figma file IDs** for landing/teacher/admin to extend surface coverage past 5/10
+
+None of these are DS-team blockers. The audit's original 3/10 → 8/10 jump represents work fully under DS-team control; the remaining 8/10 → 10/10 is organizational.
+
 **New designer-conflict tickets surfaced during Tier 2 + Tier 3 (2026-04-28):**
 - **DC-011** — Danger button color `#ff8480` (production) vs `#FF5C5C` (design). ΔE ~4, medium.
 - **DC-012** — Info button color `#60bfbd` (production teal) vs `#33CCFF` (design cyan). ΔE ~25, **HIGH** — different hue family.

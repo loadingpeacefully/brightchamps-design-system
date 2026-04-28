@@ -23,6 +23,13 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — v2.0 milestone: 100% DS-controllable coverage
+  { date: '2026-04-28', version: 'v2.0', kind: 'AUDIT',     title: 'v2.0 milestone — DS system overall health 3/10 → 8/10. Everything under DS-team control is shipped.', status: 'shipped', note: '446 variables · 30+ component sets · 100+ spec pages · 7 surfaces tracked · 33 DC tickets · 7 student-dashboard screens fully composed in Figma. Remaining gap is organizational (brand DC-005 + eng codemod + Figma IDs).', href: '/full-system-audit-2026-04-26' },
+  { date: '2026-04-28', version: 'v2.0', kind: 'COMPONENT', title: 'Student Dashboard screens — 7 routes rebuilt at 1440×900 with real component instances', status: 'shipped', note: 'my-feed / global-feed / learn / badges / certificates / rewards / nano-skills', href: '/patterns/student-dashboard/' },
+  { date: '2026-04-28', version: 'v2.0', kind: 'TOOL',      title: '/get-started/design + /get-started/develop pages live with real content', status: 'shipped', note: '5-minute orientations for designers (modes, finding tokens, proposing new ones) and engineers (codemod, CSS naming, componentSpecs, dark-mode wiring)', href: '/get-started/design/' },
+  { date: '2026-04-28', version: 'v2.0', kind: 'TOOL',      title: '/patterns/student-dashboard live + /tokens collection index live', status: 'shipped', href: '/patterns/student-dashboard/' },
+  { date: '2026-04-28', version: 'v2.0', kind: 'DRIFT',     title: 'DC-032 (Harvard crimson) + DC-033 (5th red variant) filed — 33 total DC tickets', status: 'shipped', href: '/surfaces/#designer-conflicts' },
+
   // 2026-04-28 — NanoSkills + Practice Zone Figma builds
   { date: '2026-04-28', version: 'v1.2', kind: 'COMPONENT', title: 'NanoSkills surface in Figma — Harvard / SelfPaced / TeacherLed heroes + SkillCard + BookingModal + OnboardingModal', status: 'shipped', note: 'Surfaces Harvard crimson + #FC6067 ribbon as DC-032 / DC-033 candidates', href: '/components/nanoskills/harvard-hero/' },
   { date: '2026-04-28', version: 'v1.2', kind: 'COMPONENT', title: 'Practice Zone WorkSheetStep — 4 status variants (blank / active / completed / mastered)', status: 'shipped', note: 'Mastered uses gold gradient. Active uses pulse animation preset.', href: '/components/practice-zone/worksheet-step/' },

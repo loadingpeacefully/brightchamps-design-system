@@ -377,6 +377,30 @@
       "action": "Consolidate near-blacks to color/neutral/900 or color/neutral/950. #1b0742 is a purple-tinted near-black that may be intentional (dark brand moment) — verify.",
       "status": "open",
       "notes": "5 near-black values across the codebase. DC-014 covers #222a33 (45 uses). This ticket covers the full sprawl of dark values, plus 10+ near-blacks (#181818, #191919, #1a1a1a, etc.) found in parent-hub."
+    },
+    {
+      "id": "DC-032",
+      "title": "Harvard crimson partnership color not in ledger",
+      "designerValue": null,
+      "productionValue": "#a51c30",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "color",
+      "action": "Add as color/partnership/harvard if Harvard collaboration is ongoing. If not, map to surface/bg/error for now.",
+      "status": "open",
+      "notes": "NanoSkills Harvard hero uses Harvard crimson. This is a brand partnership color — not a system color. Needs product decision: permanent or campaign-specific? Surfaced 2026-04-28 during NanoSkills Figma build."
+    },
+    {
+      "id": "DC-033",
+      "title": "Discount ribbon red #FC6067 — 5th red variant",
+      "designerValue": "#FF5C5C (error/500)",
+      "productionValue": "#FC6067",
+      "deltaE": 3,
+      "severity": "low",
+      "category": "color",
+      "action": "Map to color/error/500 (#FF5C5C). ΔE of 3 is barely perceptible — this is drift, not intentional differentiation.",
+      "status": "open",
+      "notes": "Found in NanoSkills discount ribbon. DC-023 covers the full red sprawl — this is the 5th confirmed variant beyond #ff8480 / #f04b4b / #ff6565 / #FF5C5C / #fc373a."
     }
   ]
 }
