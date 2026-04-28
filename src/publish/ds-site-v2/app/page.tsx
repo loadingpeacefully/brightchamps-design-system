@@ -9,6 +9,20 @@ export const metadata: Metadata = {
 
 const WHATS_NEW = [
   {
+    date: '2026-04-29',
+    kind: 'Audit',
+    label: 'v2.8 — Running design audit: 4 of 35 screens audited (avg 79% match)',
+    description: '/my-feed 72%, /learn 90%, /badges 84%, /nano-skills 71%. 51 DC tickets total, 9 open pending decisions blocking DS accuracy. See /surfaces/audit-dashboard/.',
+    href: '/surfaces/audit-dashboard/',
+  },
+  {
+    date: '2026-04-29',
+    kind: 'Governance',
+    label: 'Pending-decisions dashboard live — 9 open questions blocking DS',
+    description: 'PD-001 Montserrat font, PD-002 brand purple canonical, PD-003 sidebar width, PD-009 Poppins. Answer in Slack with "PD-XXX: Option Y" to unblock downstream tokens and codemods.',
+    href: '/governance/pending-decisions/',
+  },
+  {
     date: '2026-04-28',
     kind: 'Tools',
     label: 'v2.2 — Palette explorer + Contrast checker + Token picker live',

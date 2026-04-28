@@ -1,0 +1,46 @@
+{
+  "source": "Final_Dev_Ready_Screens",
+  "fileId": "EznPshYN5XVc49fQSUOSEQ",
+  "nodeId": "9631:11696",
+  "frameName": "Homepage",
+  "page": "Badges New 2025",
+  "fetchedAt": "2026-04-29T00:00:00Z",
+  "dimensions": { "width": 1440, "height": 1767 },
+  "topLevelCount": 45,
+  "totalText": 68,
+  "distinctFontFamilies": ["Nunito", "Poppins"],
+  "distinctTextColors": ["#3d4d5d","#ffffff","#4e3bc2","#b5b5b5","#424242","#8e8e8e","#4360fd","#4bae4f"],
+  "criticalFinding": "Poppins font appears in production. DS only ships Nunito. Pages affected: course chips ('Coding', 'Codimath') on the Badges Homepage.",
+  "topLevelSections": [
+    { "name": "top status bar", "id": "9631:11697", "type": "RECTANGLE", "w": 1440, "h": 44, "fill": "#ffffff" },
+    { "name": "section header 'Your Upcoming Classes'", "id": "9631:11698", "type": "TEXT", "color": "#3d4d5d" },
+    { "name": "ClassCard 1", "id": "9631:11699", "x": 104, "y": 380, "w": 280, "h": 428, "fill": "#ffffff" },
+    { "name": "ClassCard 2", "id": "9631:11727", "x": 404, "y": 380, "w": 280, "h": 428, "fill": "#ffffff" },
+    { "name": "ClassCard 3", "id": "9631:11754", "x": 704, "y": 380, "w": 280, "h": 428, "fill": "#ffffff" },
+    { "name": "page-title", "id": "9631:11783", "x": 104, "y": 32, "w": 227, "h": 54 },
+    { "name": "active-status pill (green)", "id": "9631:11786", "fill": "#57ad5b" },
+    { "name": "left-sidebar (80px collapsed)", "id": "9631:11788", "x": 0, "y": 0, "w": 80, "h": 1767, "fill": "#ffffff" },
+    { "name": "notification banner", "id": "9631:11809", "x": 104, "y": 216, "w": 880, "h": 92, "fill": "#ffffff" }
+  ],
+  "keyContent": {
+    "studentName": "Sarah",
+    "greeting": "Hello Sarah 👋 / Let's gear up to be future ready",
+    "classCards": [
+      { "courseChip": "Coding (Poppins Medium 14 / #ffffff)", "subjectTag": "Codimath (Poppins Medium 12 / #4e3bc2)", "classNumber": "Coding Class #155", "title": "Know the Dimension", "time": "4:30 PM, 13 Mar 2023", "teacher": "Reema Milan", "teacherTitle": "HTML & CSS Expert", "joinCta": "Join in 23 h 33 min" },
+      { "courseChip": "Coding", "classNumber": "Coding Class #155", "title": "Strongest Tower", "joinCta": "Join" },
+      { "courseChip": "Coding", "classNumber": "Coding Class #156", "title": "Chat App", "joinCta": "Join" }
+    ],
+    "viewClassNotes": "Nunito Regular 10 / #4360fd (DC-025 electric blue)",
+    "joinNumber": "Nunito ExtraBold 14 / #8e8e8e (gray sprawl)"
+  },
+  "newDriftFindings": [
+    { "id": "DC-048", "category": "typography", "title": "Poppins font on /badges course chips — second non-Nunito family beyond Montserrat (DC-039)" }
+  ],
+  "alreadyKnownFindings": [
+    "DC-005 (#4e3bc2) — production canonical brand purple on Codimath chip",
+    "DC-024 (#4bae4f) — fifth green variant",
+    "DC-025 (#4360fd) — electric blue 'View Class Notes' link",
+    "Sidebar 80px (matches DS chrome/sidebar-rail) — different from Nano Skills 240px (DC-040)"
+  ],
+  "interpretationNote": "Note: this frame is named 'Homepage' in the Badges New 2025 page, BUT the content shows class-cards typical of the dashboard home. The Badges page may not have a dedicated screen — it shares the home layout."
+}

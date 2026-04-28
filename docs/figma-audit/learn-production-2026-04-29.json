@@ -1,0 +1,45 @@
+{
+  "source": "Final_Dev_Ready_Screens",
+  "fileId": "EznPshYN5XVc49fQSUOSEQ",
+  "nodeId": "9342:63313",
+  "frameName": "2_a (interpreted as /learn — learning-dashboard variant)",
+  "page": "Student Dashboard",
+  "fetchedAt": "2026-04-29T00:00:00Z",
+  "dimensions": { "width": 1440, "height": 2735 },
+  "topLevelCount": 12,
+  "totalText": 80,
+  "distinctFontFamilies": ["Nunito"],
+  "distinctTextColors": ["#222a33","#ffffff","#a8acb1","#6651e4","#3d4d5d","#8499ae","#263238","#7e858d"],
+  "topLevelSections": [
+    { "name": "main scroll wrapper", "id": "9342:63314", "x": 0, "y": 0, "w": 1472, "h": 1086 },
+    { "name": "course-progress card 1", "id": "9342:63319", "fill": "#ffffff", "w": 752, "h": 164 },
+    { "name": "course-progress card 2 (large with image)", "id": "9342:63341", "fill": "#ffffff", "w": 752, "h": 728 },
+    { "name": "course-progress card 3", "id": "9342:63363", "fill": "#ffffff", "w": 752, "h": 164 },
+    { "name": "right-sidebar", "id": "9342:63374", "x": 1058, "y": 24, "w": 362, "h": 1688 },
+    { "name": "page header", "id": "9342:65393", "x": 376, "y": 40, "w": 532, "h": 61 },
+    { "name": "main content group", "id": "9342:65404", "x": 308, "y": 149, "w": 682, "h": 2234 },
+    { "name": "left-sidebar (240px)", "id": "9342:65626", "x": 0, "y": 0, "w": 240, "h": 1015, "fill": "#ffffff" }
+  ],
+  "keyContent": {
+    "courseProgressCards": [
+      { "title": "Coding Fundamentals", "lessons": "12/12", "quiz": "4/6", "assignments": "3/12", "progress": "100%" },
+      { "title": "App Development",     "lessons": "7/24",  "quiz": "0/24", "assignments": "18/23", "progress": "29.17%" },
+      { "title": "Speak/Translate App", "lessons": "6/8", "quiz": "2/4", "assignments": "1/2", "progress": "0%" }
+    ],
+    "rightSidebar": {
+      "studentName": "Troy Darmawan",
+      "grade": "Grade 5",
+      "viewProfileColor": "#6651e4 (DC-005)",
+      "stats": [12, 24]
+    }
+  },
+  "matchSummary": {
+    "exact": 3, "drift": 9, "missing": 4, "cdn": 4, "total": 20,
+    "matchRate": "60%"
+  },
+  "newDriftFindings": [
+    "DC-014 saturation again — every label uses #222a33",
+    "Same color sprawl pattern as /my-feed (sub-screen of same surface)"
+  ],
+  "interpretation": "The frame name '2_a' is a working-name for what appears to be a /learn-flow variant. Confirmed same student name (Troy Darmawan) as /my-feed. Two screens share the same DashboardLayout shell + course-progress card pattern."
+}

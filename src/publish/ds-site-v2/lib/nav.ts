@@ -149,8 +149,12 @@ export const NAV: NavSection[] = [
     label: 'Surfaces',
     items: [
       { href: '/surfaces/',                        label: 'Health dashboard',  badge: 'new' },
+      { href: '/surfaces/audit-dashboard/',        label: 'Audit dashboard',   badge: 'new' },
       { href: '/surfaces/student/',                label: 'Student overview',  badge: 'new' },
       { href: '/surfaces/nano-skills-audit/',      label: 'Nano Skills audit', badge: 'new' },
+      { href: '/surfaces/my-feed-audit/',          label: '/my-feed audit',    badge: 'new' },
+      { href: '/surfaces/learn-audit/',            label: '/learn audit',      badge: 'new' },
+      { href: '/surfaces/badges-audit/',           label: '/badges audit',     badge: 'new' },
       { href: '/surfaces/student/components/',     label: 'Components',        badge: 'new' },
       { href: '/surfaces/student/icons/',          label: 'Icons',             badge: 'new' },
       { href: '/surfaces/student/states/',         label: 'Interactive states', badge: 'new' },
@@ -163,6 +167,7 @@ export const NAV: NavSection[] = [
     label: 'Governance',
     items: [
       { href: '/whats-new/',                    label: 'Changelog' },
+      { href: '/governance/pending-decisions/', label: 'Pending decisions',     badge: 'new' },
       { href: '/governance/dc-tickets/',        label: 'DC tickets',         badge: 'new' },
       { href: '/governance/scope-boundary/',    label: 'Scope boundary',     badge: 'new' },
       { href: '/tdr/',                          label: 'Token decision records', disabled: true },

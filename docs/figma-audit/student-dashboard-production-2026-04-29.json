@@ -1,0 +1,50 @@
+{
+  "source": "Final_Dev_Ready_Screens",
+  "fileId": "EznPshYN5XVc49fQSUOSEQ",
+  "nodeId": "9325:8437",
+  "frameName": "My Feed",
+  "page": "Student Dashboard",
+  "fetchedAt": "2026-04-29T00:00:00Z",
+  "dimensions": { "width": 1440, "height": 1065 },
+  "topLevelCount": 9,
+  "totalText": 80,
+  "distinctFontFamilies": ["Nunito"],
+  "distinctTextColors": ["#222a33","#ffffff","#8499ae","#4d4d4d","#7d8892","#3d4d5d","#4e3bc2","#7e858d","#51667b","#409cf2","#e866ff","#f76969","#28333e","#d227ba"],
+  "topLevelSections": [
+    { "name": "main scroll container", "id": "9325:8438", "x": 0, "y": 0, "w": 1440, "h": 1086 },
+    { "name": "course-progress card 1", "id": "9325:8443", "x": 272, "y": 14306, "w": 752, "h": 164, "fill": "#ffffff" },
+    { "name": "course-progress card 2 (large)", "id": "9325:8465", "x": 272, "y": 14486, "w": 752, "h": 728, "fill": "#ffffff" },
+    { "name": "course-progress card 3", "id": "9325:8487", "x": 272, "y": 15230, "w": 752, "h": 164, "fill": "#ffffff" },
+    { "name": "feed scroll content", "id": "9325:8498", "x": 308, "y": 280, "w": 682, "h": 4798 },
+    { "name": "page header area", "id": "9325:9251", "x": 308, "y": 24, "w": 682, "h": 228 },
+    { "name": "right-sidebar", "id": "9325:9287", "x": 1058, "y": 24, "w": 362, "h": 1755 },
+    { "name": "left-sidebar (240px)", "id": "9325:11343", "x": 0, "y": 0, "w": 240, "h": 1015, "fill": "#ffffff" }
+  ],
+  "keyContent": {
+    "courseProgressCards": [
+      { "title": "Coding Fundamentals", "lessons": "12/12", "quiz": "4/6", "assignments": "3/12", "progress": "100%" },
+      { "title": "App Development",     "lessons": "7/24",  "quiz": "0/24", "assignments": "18/23", "progress": "29.17%" },
+      { "title": "Speak/Translate App", "subtitle": "Coding Fundamentals", "lessons": "6/8", "quiz": "2/4", "assignments": "1/2", "progress": "0%" }
+    ],
+    "comments": {
+      "placeholder": "Comment as Troy Darmawan",
+      "teacherName": "Teacher Jacob",
+      "teacherTitle": "Coding Teacher",
+      "timestamp": "4 min",
+      "body": "Please complete this assignment & quiz before the next class:"
+    },
+    "courseTitleStyle": "Nunito SemiBold 20 / #222a33 (DC-014)",
+    "metaStyle": "Nunito SemiBold 16 / #222a33 (DC-014) for labels; ExtraBold 20 / #222a33 for values"
+  },
+  "newDriftFindings": [
+    { "id": "DC-049", "category": "color", "title": "Hardcoded magenta #d227ba and pink #e866ff in /my-feed feed section — not in DS palette" },
+    { "id": "DC-050", "category": "color", "title": "Multiple grays #7d8892, #7e858d, #4d4d4d, #51667b, #28333e on a single screen — gray sprawl" },
+    { "id": "DC-051", "category": "color", "title": "Electric blue #409cf2 + coral #f76969 used for course-progress accents — neither in DS feedback palette" }
+  ],
+  "alreadyKnownFindings": [
+    "DC-005 (#4e3bc2) confirmed live in production",
+    "DC-014 (#222a33) saturates the page — every text label",
+    "DC-038 CDN images for course thumbnails + avatar",
+    "DC-040 sidebar 240px width matches Nano Skills"
+  ]
+}

@@ -569,6 +569,54 @@
       "action": "Consolidate with DC-043/DC-044 candidate token. Three slightly-different 'inactive label gray' values within a single page is ledger sprawl.",
       "status": "open",
       "notes": "Surfaced 2026-04-29 during Nano Skills audit RightSideBar walk. Active calendar day uses #263238 — a fourth near-black variant."
+    },
+    {
+      "id": "DC-048",
+      "title": "Poppins font on /badges course chips — second non-Nunito family beyond Montserrat",
+      "designerValue": "Nunito (DS canonical)",
+      "productionValue": "Poppins Medium 14 (chip 'Coding') and Poppins Medium 12 (chip 'Codimath')",
+      "deltaE": null,
+      "severity": "high",
+      "category": "typography",
+      "action": "PD-009 — decision required. Add font/family/tertiary = Poppins to DS typography (3 families total: Nunito + Montserrat + Poppins) OR codemod course chips to Nunito.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during /badges audit (Final_Dev_Ready_Screens 9631:11696). Note: Game Dashboard surface ALSO uses Poppins per surfaces.config.ts — this is the second confirmed non-Nunito surface."
+    },
+    {
+      "id": "DC-049",
+      "title": "Hardcoded magenta #d227ba and pink #e866ff on /my-feed — no DS equivalents",
+      "designerValue": null,
+      "productionValue": "#d227ba (magenta accent), #e866ff (pink accent) — used in feed-section accent dots/highlights",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "color",
+      "action": "Either tokenize as accent/magenta + accent/pink (new DS color family for vibrant feed accents), OR map to closest existing brand variant. Brand decision required.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during /my-feed audit (Final_Dev_Ready_Screens 9325:8437). Two distinct vibrant non-purple/non-blue accents — first time these appear in any audited screen."
+    },
+    {
+      "id": "DC-050",
+      "title": "Multiple grays on /my-feed — gray sprawl across single screen",
+      "designerValue": "Single neutral ramp",
+      "productionValue": "#4d4d4d, #7d8892, #7e858d, #51667b, #28333e — five distinct grays on one page",
+      "deltaE": null,
+      "severity": "medium",
+      "category": "color",
+      "action": "Audit which gray belongs to which semantic role (text-default vs text-muted vs text-disabled etc) and consolidate. Likely 3-4 of these 5 should collapse to color/neutral/700-900.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29. /my-feed comment box alone uses 4 different grays for label/timestamp/title/body — pure sprawl, no semantic distinction."
+    },
+    {
+      "id": "DC-051",
+      "title": "Electric blue #409cf2 + coral #f76969 for course-progress accents — not in feedback palette",
+      "designerValue": "info/500 = #33CCFF, error/500 = #FF5C5C",
+      "productionValue": "#409cf2 (course progress), #f76969 (status indicator)",
+      "deltaE": null,
+      "severity": "low",
+      "category": "color",
+      "action": "Codemod or alias. ΔE between #409cf2 and #33CCFF is high; between #f76969 and #FF5C5C is moderate. Could either consolidate or accept as third-party indicator colors.",
+      "status": "open",
+      "notes": "Surfaced 2026-04-29 during /my-feed audit. Course-progress card uses these for status indicators — not in any DC ticket prior to this audit."
     }
   ]
 }
