@@ -9,7 +9,21 @@ export const metadata: Metadata = {
 
 const WHATS_NEW = [
   {
-    date: '2026-04-26',
+    date: '2026-04-28',
+    kind: 'Tools',
+    label: 'v2.2 — Palette explorer + Contrast checker + Token picker live',
+    description: 'Three new browser-based tools: filter/search/copy across 112 canonical colors, WCAG AA/AAA contrast verification with live preview, and AI-recommended canonical tokens for plain-language design intents.',
+    href: '/tools/palette/',
+  },
+  {
+    date: '2026-04-28',
+    kind: 'Tokens',
+    label: 'Five token reference sub-pages live (color · font · space · radius · shadow)',
+    description: 'Machine-readable tables of every canonical token, complementing the visual narrative on /foundations/. Hex / value / CSS-var / usage counts for one-click copy-paste.',
+    href: '/tokens/color/',
+  },
+  {
+    date: '2026-04-28',
     kind: 'Tokens',
     label: 'TDR-0001 shipped — semantic token names live',
     description: 'color.008 → color/primary/500. All 329 canonical tokens now have semantic names. CSS variables emit as --color-primary-500 (legacy --bc-* aliases coexist for 90 days).',

@@ -41,11 +41,11 @@ export const NAV: NavSection[] = [
     label: 'Tokens',
     items: [
       { href: '/tokens/',                label: 'All tokens' },
-      { href: '/tokens/color/',          label: 'Color',          disabled: true },
-      { href: '/tokens/font/',           label: 'Font',           disabled: true },
-      { href: '/tokens/space/',          label: 'Space',          disabled: true },
-      { href: '/tokens/radius/',         label: 'Radius',         disabled: true },
-      { href: '/tokens/shadow/',         label: 'Shadow',         disabled: true },
+      { href: '/tokens/color/',          label: 'Color',          badge: 'new' },
+      { href: '/tokens/font/',           label: 'Font',           badge: 'new' },
+      { href: '/tokens/space/',          label: 'Space',          badge: 'new' },
+      { href: '/tokens/radius/',         label: 'Radius',         badge: 'new' },
+      { href: '/tokens/shadow/',         label: 'Shadow',         badge: 'new' },
     ],
   },
   {
@@ -67,8 +67,8 @@ export const NAV: NavSection[] = [
     items: [
       { href: '/patterns/',              label: 'Overview' },
       { href: '/patterns/student-dashboard/', label: 'Student dashboard', badge: 'new' },
-      { href: '/patterns/teacher-grading/',   label: 'Teacher grading',   disabled: true },
-      { href: '/patterns/landing-hero/',      label: 'Landing hero',      disabled: true },
+      { href: '/patterns/teacher-grading/',   label: 'Teacher grading',   badge: 'caution' },
+      { href: '/patterns/landing-hero/',      label: 'Landing hero',      badge: 'new' },
     ],
   },
   {
@@ -76,9 +76,9 @@ export const NAV: NavSection[] = [
     items: [
       { href: '/tools/',                 label: 'Overview' },
       { href: '/tools/generate/',        label: 'AI Generator',      badge: 'new' },
-      { href: '/tools/palette/',         label: 'Palette generator', disabled: true },
-      { href: '/tools/contrast/',        label: 'Contrast checker',  disabled: true },
-      { href: '/tools/token-picker/',    label: 'Token picker',      disabled: true },
+      { href: '/tools/palette/',         label: 'Palette explorer',  badge: 'new' },
+      { href: '/tools/contrast/',        label: 'Contrast checker',  badge: 'new' },
+      { href: '/tools/token-picker/',    label: 'Token picker',      badge: 'new' },
     ],
   },
   {

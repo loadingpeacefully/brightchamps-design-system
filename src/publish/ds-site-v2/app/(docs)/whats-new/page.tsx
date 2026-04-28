@@ -23,6 +23,12 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — v2.2: tools + token references + pattern completion
+  { date: '2026-04-28', version: 'v2.2', kind: 'TOOL',      title: 'v2.2 — three new interactive tools shipped: Palette explorer, Contrast checker, Token picker', status: 'shipped', note: 'Palette: filter+search+copy across all canonical colors. Contrast: WCAG AA/AAA + UI-component thresholds with live preview. Token picker: AI-recommended canonical tokens for plain-language design intents.', href: '/tools/palette/' },
+  { date: '2026-04-28', version: 'v2.2', kind: 'TOOL',      title: '/tokens/color · font · space · radius · shadow — five reference sub-pages live', status: 'shipped', note: 'Machine-readable token tables. Complement the visual narrative on /foundations/*. Every token has hex/value/CSS-var/uses for copy-paste.', href: '/tokens/color/' },
+  { date: '2026-04-28', version: 'v2.2', kind: 'COMPONENT', title: '/patterns/teacher-grading + /patterns/landing-hero filled in', status: 'shipped', note: 'Teacher grading documented as pending with unblock plan + expected component shape. Landing hero shows all 6 course-vertical skins with token-composition CSS.', href: '/patterns/landing-hero/' },
+  { date: '2026-04-28', version: 'v2.2', kind: 'AUDIT',     title: 'Nav cleanup — 11 disabled routes enabled, 0 ComingSoon stubs reachable from nav', status: 'shipped', note: '5 token sub-pages, 3 tools, 2 patterns, plus pending-with-plan teacher grading.', href: '/' },
+
   // 2026-04-28 — v2.1: full screen catalogue
   { date: '2026-04-28', version: 'v2.1', kind: 'COMPONENT', title: 'All 35 screens rebuilt in Figma — every route is now a composed mockup', status: 'shipped', note: 'Across 7 surface pages: Student Dashboard (7) · Nano Skills (6) · Practice Zone (2) · Onboarding+Auth (6) · Parent Hub (1) · Game Dashboard (1) · Demo+Special (8). Plus 7 mobile screens at 390×844.', href: '/patterns/student-dashboard/' },
   { date: '2026-04-28', version: 'v2.1', kind: 'COMPONENT', title: 'Mobile screen rebuilds — 7 routes at 390×844 with NavigationBarMobile pattern', status: 'shipped', note: 'my-feed / learn / badges / certificates / rewards / nano-skills / login. NavigationBarMobile (60px top bar) replaces left rail.', href: '/components/nav-bar/' },
