@@ -64,13 +64,14 @@ export default function StudentComponentsPage() {
           elements on 7 student app pages. Each prefix maps to a React component in the student app codebase.
         </p>
         <p className="mt-2 max-w-[62ch] text-body-s text-chrome-text-subtle">
-          <strong className="text-chrome-text">{documentedCount}</strong> of {components.length} components documented.
-          Full coverage achieved across Tier 1 chrome (NavBar, LeftSideBar, RightSideBar, DashboardLayout), Tier 2 content
-          (Accordion, ProgressBar, Button, Card, ProfileAvatar, FeedLayout), and Tier 3 feature-specific (ModuleHeader,
+          <strong className="text-chrome-text">{documentedCount}</strong> of {components.length} legacy components documented +{' '}
+          <strong className="text-chrome-text">14 atoms + 20 molecules</strong> from <code className="font-mono">newDashboard/components</code> (added 2026-04-28).
+          Tier 1 chrome (NavBar, LeftSideBar, RightSideBar, DashboardLayout), Tier 2 content
+          (Accordion, ProgressBar, Button, Card, ProfileAvatar, FeedLayout), Tier 3 feature-specific (ModuleHeader,
           ClassDetails, ToggleSwitch, Tray, LockedModuleContainer, RightSectionInList, LeftSectionInList, SectionHeader,
-          Chip, Timer). All wired to the Figma variable library
-          (file <code className="font-mono text-[12px]">8eNJf875iY9HISEsczDfOh</code>) with semantic token bindings and
-          DC-conflict annotations.
+          Chip, Timer), plus newDashboard atomic-design layer (Icon, ProgressBar, Tooltip, Calendar, ConfirmationModal, etc.).
+          All wired to the Figma variable library (file <code className="font-mono text-[12px]">8eNJf875iY9HISEsczDfOh</code>) with
+          semantic token bindings and DC-conflict annotations. <strong>444 variables · 12 collections · 16 text styles · 5 effect styles · 30 component sets across 21+ pages.</strong>
         </p>
 
         <section id="inventory" className="mt-12 scroll-mt-24">

@@ -18,6 +18,7 @@ const TOC = [
   { id: 'landing',             label: 'Landing',             level: 2 as const },
   { id: 'teacher',             label: 'Teacher app',         level: 2 as const },
   { id: 'admin',               label: 'Admin',               level: 2 as const },
+  { id: 'parent-hub',          label: 'Parent Hub',          level: 2 as const },
 ]
 
 function isHex(v: string | null): v is string { return !!v && /^#[0-9a-f]{3,8}$/i.test(v) }
@@ -348,6 +349,7 @@ export default function SurfacesPage() {
           <EmptyCard id="landing" label="Landing pages" description="brightchamps.com · public marketing site" cmd="npm run extract:dom -- --surface=landing" />
           <EmptyCard id="teacher" label="Teacher app" description="Teacher dashboard and lesson management" cmd="npm run extract:dom -- --surface=teacher" />
           <EmptyCard id="admin" label="Admin dashboard" description="Internal admin — no Figma source, DOM is source of truth" cmd="npm run extract:dom -- --surface=admin" />
+          <EmptyCard id="parent-hub" label="Parent Hub" description="src/newDashboard/parentHub · 53 SCSS modules · 8,140 lines · 99 unique colors · second product surface inside the dashboard codebase" cmd="npm run extract:dom -- --surface=parent-hub" />
         </div>
       </article>
       <RightTOC items={TOC} />

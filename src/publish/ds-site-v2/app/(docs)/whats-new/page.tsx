@@ -23,6 +23,11 @@ interface Entry {
 }
 
 const ENTRIES: Entry[] = [
+  // 2026-04-28 — newDashboard atoms + molecules + icon ref + parent-hub
+  { date: '2026-04-28', version: 'v1.0', kind: 'COMPONENT', title: 'newDashboard atomic-design layer — 14 atoms + 20 molecules built and specced', status: 'shipped', note: 'Icon, Calendar, ConfirmationModal, ClassCardInfo, EmptyState, plus 29 more — separate from legacy components/, instance-reused throughout', href: '/components/atoms/icon-atom/' },
+  { date: '2026-04-28', version: 'v1.0', kind: 'TOOL',      title: 'Icon Reference page — 30 most-used CDN icons catalogued in Figma + DS site', status: 'shipped', note: 'images.tsx has 217 _ICON exports, 765 unique CDN URLs total — no SVG library yet (DC-006)', href: '/foundations/iconography/#production-icons' },
+  { date: '2026-04-28', version: 'v1.0', kind: 'SURFACE',   title: 'Parent Hub surface mapped — 53 SCSS modules, 8,140 lines, 99 unique colors',   status: 'shipped', note: 'Second product surface inside the dashboard codebase. ZERO documented previously. Tier 4 candidate.', href: '/surfaces/#parent-hub' },
+
   // 2026-04-28 — Tier 3 feature-specific components shipped → 21/21 coverage
   { date: '2026-04-28', version: 'v0.9', kind: 'COMPONENT', title: 'Tier 3 complete — 21/21 student dashboard components documented. Full coverage achieved.', status: 'shipped', note: 'ModuleHeader, ClassDetails, ToggleSwitch, Tray, LockedModuleContainer, RightSectionInList, LeftSectionInList, SectionHeader, Chip, Timer', href: '/surfaces/student/components/' },
   { date: '2026-04-28', version: 'v0.9', kind: 'DRIFT',     title: 'DC-011 (danger #ff8480 → #FF5C5C, ΔE 4) and DC-012 (info #60bfbd → #33CCFF, ΔE 25 HIGH) added to designer-conflicts ledger', status: 'shipped', note: '12 open tickets total', href: '/surfaces/#designer-conflicts' },
