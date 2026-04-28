@@ -1,20 +1,60 @@
 import type { Metadata } from 'next'
-import { ComponentSpecPage } from '@/components/chrome/ComponentSpecPage'
-import { componentSpecs } from '@/lib/componentSpecs'
-
-const SPEC = componentSpecs.find(c => c.slug === 'button')!
+import { LiveComponentPage } from '@/components/chrome/LiveComponentPage'
 
 export const metadata: Metadata = {
   title: 'Button',
-  description: SPEC.description,
+  description: 'Primary action component. 5 variants: contained, outlined, danger, info, underline.',
 }
 
-export default function ButtonPage() {
+const styleBlock = `
+.bc-btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 8px 24px;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: filter 0.15s ease;
+}
+.bc-btn:hover { filter: brightness(0.95); }
+.bc-btn--contained  { background: #4e3bc2; border-color: #4e3bc2; color: #ffffff; }
+.bc-btn--outlined   { background: transparent; border-color: #4e3bc2; color: #4e3bc2; }
+.bc-btn--danger     { background: transparent; border-color: #FF5C5C; color: #FF5C5C; }
+.bc-btn--info       { background: transparent; border-color: #33CCFF; color: #33CCFF; }
+.bc-btn--underline  { background: transparent; border: none; color: #4e3bc2; text-decoration: underline; padding: 8px 12px; }
+.bc-btn:disabled    { background: #eff3f5; border-color: #eff3f5; color: #8e8e8e; cursor: not-allowed; }
+`
+
+const variants = [
+  { label: 'contained',  css: `.bc-btn { font-family: 'Nunito'; font-weight: 800; font-size: 14px; padding: 8px 24px; border-radius: 9999px; border: 2px solid #4e3bc2; background: #4e3bc2; color: #fff; cursor: pointer; }`, render: <button className="bc-btn bc-btn--contained">Primary action</button> },
+  { label: 'outlined',   css: `.bc-btn { font-family: 'Nunito'; font-weight: 800; font-size: 14px; padding: 8px 24px; border-radius: 9999px; border: 2px solid #4e3bc2; background: transparent; color: #4e3bc2; cursor: pointer; }`, render: <button className="bc-btn bc-btn--outlined">Outlined action</button> },
+  { label: 'danger',     css: `.bc-btn { font-family: 'Nunito'; font-weight: 800; font-size: 14px; padding: 8px 24px; border-radius: 9999px; border: 2px solid #FF5C5C; background: transparent; color: #FF5C5C; cursor: pointer; }`, render: <button className="bc-btn bc-btn--danger">Cancel class</button> },
+  { label: 'info',       css: `.bc-btn { font-family: 'Nunito'; font-weight: 800; font-size: 14px; padding: 8px 24px; border-radius: 9999px; border: 2px solid #33CCFF; background: transparent; color: #33CCFF; cursor: pointer; }`, render: <button className="bc-btn bc-btn--info">Learn more</button> },
+  { label: 'underline',  css: `.bc-btn { font-family: 'Nunito'; font-weight: 800; font-size: 14px; padding: 8px 12px; background: transparent; border: none; color: #4e3bc2; text-decoration: underline; cursor: pointer; }`, render: <button className="bc-btn bc-btn--underline">Forgot password?</button> },
+  { label: 'disabled',   css: `.bc-btn { font-family: 'Nunito'; font-weight: 800; font-size: 14px; padding: 8px 24px; border-radius: 9999px; border: 2px solid #eff3f5; background: #eff3f5; color: #8e8e8e; cursor: not-allowed; }`, render: <button className="bc-btn bc-btn--contained" disabled>Disabled</button> },
+]
+
+const tokens = [
+  { property: 'Background (contained)', token: 'surface/bg/brand', value: '#4e3bc2' },
+  { property: 'Border radius',          token: 'radius/pill',     value: '9999px' },
+  { property: 'Padding',                token: 'space/inset/sm + space/inset/2xl', value: '8px 24px' },
+  { property: 'Font family',            token: 'font/family/primary',  value: 'Nunito' },
+  { property: 'Font weight',            token: 'font/weight/extrabold', value: '800' },
+]
+
+export default function Page() {
   return (
-    <ComponentSpecPage
-      spec={SPEC}
-      kicker="Components · Tier 2 content"
-      overview="Five production button variants from button.module.scss. The earlier primary/secondary/ghost taxonomy was aspirational — production actually ships contained, outlined, danger, info, and underline. All wired to the Figma library with bound semantic tokens. Two color drifts flagged: danger (#ff8480 vs library #FF5C5C) and info (#60bfbd vs library #33CCFF) — recommend new tickets DC-011 / DC-012."
+    <LiveComponentPage
+      name="Button"
+      description="Primary action component. Five variants from production: contained (filled brand), outlined, danger, info, underline. Pill-shaped, Nunito 14/800."
+      styleBlock={styleBlock}
+      variants={variants}
+      tokens={tokens}
     />
   )
 }

@@ -1,256 +1,134 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { RightTOC } from '@/components/chrome/RightTOC'
-import { componentSpecs } from '@/lib/componentSpecs'
 
 export const metadata: Metadata = {
   title: 'Components',
-  description: 'Every component spec in the BrightChamps design system, organized by tier and category. 130+ pages.',
+  description: 'Visual component gallery — every component rendered live with real production token values.',
 }
 
-const TOC = [
-  { id: 'overview',  label: 'Overview',         level: 2 as const },
-  { id: 'tier-1',    label: 'Tier 1 — Chrome',  level: 2 as const },
-  { id: 'tier-2',    label: 'Tier 2 — Content', level: 2 as const },
-  { id: 'tier-3',    label: 'Tier 3 — Feature', level: 2 as const },
-  { id: 'atoms',     label: 'newDashboard atoms', level: 2 as const },
-  { id: 'molecules', label: 'newDashboard molecules', level: 2 as const },
-  { id: 'nano',      label: 'NanoSkills',      level: 2 as const },
-  { id: 'practice',  label: 'Practice Zone',    level: 2 as const },
-  { id: 'overlays',  label: 'Overlays',         level: 2 as const },
-  { id: 'primitives', label: 'Primitives',     level: 2 as const },
-  { id: 'inputs',    label: 'Inputs',           level: 2 as const },
-  { id: 'feedback',  label: 'Feedback',         level: 2 as const },
-  { id: 'navigation', label: 'Navigation',     level: 2 as const },
-  { id: 'legacy',    label: 'Legacy',           level: 2 as const },
-  { id: 'sections',  label: 'Sections',         level: 2 as const },
-  { id: 'layouts',   label: 'Layouts',          level: 2 as const },
+// Production token values used by every preview. Inlined per page for fidelity.
+const styleBlock = `
+.cg-card { font-family: 'Nunito', sans-serif; }
+.cg-preview { display: flex; align-items: center; justify-content: center; height: 120px; padding: 16px; background: #f9fafb; border-bottom: 1px solid #e7e7e7; overflow: hidden; }
+
+/* Button */
+.cg-btn { font-family: 'Nunito'; font-weight: 800; font-size: 13px; padding: 8px 20px; border-radius: 9999px; border: 2px solid #4e3bc2; background: #4e3bc2; color: #ffffff; }
+
+/* Card */
+.cg-card-demo { background: #fff; border-radius: 12px; box-shadow: 0 1px 2px rgba(13,29,45,0.06), 0 4px 8px rgba(13,29,45,0.08); width: 160px; overflow: hidden; }
+.cg-card-demo__img { height: 60px; background: linear-gradient(135deg, #4e3bc2, #7453d7); }
+.cg-card-demo__body { padding: 10px; }
+.cg-card-demo__title { font-size: 12px; font-weight: 800; color: #0d1d2d; }
+.cg-card-demo__meta { font-size: 10px; color: #3d4d5d; }
+
+/* Accordion */
+.cg-acc { width: 200px; background: #fff; border-radius: 8px; box-shadow: 0 1px 2px rgba(13,29,45,0.06); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; }
+.cg-acc__title { font-size: 12px; font-weight: 800; color: #0d1d2d; }
+.cg-acc__pill { font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 9999px; background: rgba(78,59,194,0.12); color: #4e3bc2; }
+
+/* ProgressBar */
+.cg-pb { width: 200px; }
+.cg-pb__track { height: 8px; background: #eff3f5; border-radius: 9999px; overflow: hidden; }
+.cg-pb__fill { width: 60%; height: 100%; background: #6651E4; border-radius: 9999px; }
+
+/* Chip */
+.cg-chip { display: inline-flex; padding: 4px 12px; border-radius: 9999px; font-family: 'Nunito'; font-size: 12px; font-weight: 700; background: rgba(78,59,194,0.12); color: #4e3bc2; }
+
+/* ToggleSwitch */
+.cg-toggle { display: inline-flex; padding: 4px; background: #fff; border-radius: 9999px; border: 1px solid #e7e7e7; gap: 2px; }
+.cg-toggle__seg { padding: 6px 14px; border-radius: 9999px; border: none; cursor: pointer; font-weight: 700; font-size: 11px; }
+.cg-toggle__seg--active { background: #4e3bc2; color: #fff; }
+.cg-toggle__seg--inactive { background: transparent; color: #8499ae; }
+
+/* ProfileAvatar */
+.cg-avatar { width: 56px; height: 56px; border-radius: 9999px; background: #4e3bc2; color: #fff; font-family: 'Nunito'; font-weight: 800; font-size: 18px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* NavBar */
+.cg-navbar { display: flex; height: 36px; padding: 0 12px; background: #fff; border-bottom: 1px solid #e7e7e7; align-items: center; justify-content: space-between; width: 240px; border-radius: 6px; border: 1px solid #e7e7e7; }
+.cg-navbar__brand { display: inline-flex; align-items: center; gap: 4px; font-weight: 900; font-size: 11px; color: #3d4d5d; }
+.cg-navbar__logo { width: 18px; height: 18px; border-radius: 9999px; background: #4e3bc2; color: #fff; font-size: 9px; display: inline-flex; align-items: center; justify-content: center; font-weight: 900; }
+.cg-navbar__pill { padding: 2px 8px; background: #f5f4fa; border-radius: 9999px; font-size: 10px; font-weight: 600; color: #3d4d5d; }
+
+/* LeftSideBar */
+.cg-sb { width: 130px; background: #fff; border: 1px solid #c9cbce; border-radius: 8px; padding: 6px; display: flex; flex-direction: column; gap: 2px; }
+.cg-sb__item { display: flex; gap: 4px; padding: 5px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; color: #222a33; align-items: center; }
+.cg-sb__item--active { background: #f8f7fa; font-weight: 800; border: 1px solid #000; }
+.cg-sb__icon { width: 12px; height: 12px; border-radius: 2px; background: #e7e7e7; }
+.cg-sb__icon--active { background: #4e3bc2; }
+
+/* Input */
+.cg-input { display: flex; flex-direction: column; gap: 3px; width: 180px; }
+.cg-input__label { font-size: 9px; font-weight: 600; color: #485767; }
+.cg-input__field { font-family: 'Nunito'; font-size: 11px; padding: 6px 10px; border-radius: 6px; border: 1.5px solid #e7e7e7; background: #fff; color: #0d1d2d; outline: none; }
+`
+
+interface Item { name: string; href: string; preview: React.ReactNode; tag: string }
+
+const COMPONENTS: Item[] = [
+  { name: 'Button',         href: '/components/button/',         tag: 'Tier 2', preview: <button className="cg-btn">Primary action</button> },
+  { name: 'Card',           href: '/components/card/',           tag: 'Tier 2', preview: (
+    <div className="cg-card-demo"><div className="cg-card-demo__img" /><div className="cg-card-demo__body"><div className="cg-card-demo__title">Coding</div><div className="cg-card-demo__meta">12 lessons</div></div></div>
+  )},
+  { name: 'Accordion',      href: '/components/accordion/',      tag: 'Tier 2', preview: (
+    <div className="cg-acc"><span className="cg-acc__title">Lesson 1</span><span className="cg-acc__pill">Active</span></div>
+  )},
+  { name: 'ProgressBar',    href: '/components/progress-bar/',   tag: 'Tier 2', preview: (
+    <div className="cg-pb"><div className="cg-pb__track"><div className="cg-pb__fill" /></div></div>
+  )},
+  { name: 'Chip',           href: '/components/chip/',           tag: 'Tier 3', preview: <span className="cg-chip">Coding</span> },
+  { name: 'ToggleSwitch',   href: '/components/toggle-switch/',  tag: 'Tier 3', preview: (
+    <div className="cg-toggle"><button className="cg-toggle__seg cg-toggle__seg--active">Earned</button><button className="cg-toggle__seg cg-toggle__seg--inactive">Locked</button></div>
+  )},
+  { name: 'ProfileAvatar',  href: '/components/profile-avatar/', tag: 'Tier 2', preview: <div className="cg-avatar">TD</div> },
+  { name: 'NavBar',         href: '/components/nav-bar/',        tag: 'Tier 1', preview: (
+    <div className="cg-navbar"><div className="cg-navbar__brand"><span className="cg-navbar__logo">B</span> BrightCHAMPS</div><span className="cg-navbar__pill">EN</span></div>
+  )},
+  { name: 'LeftSideBar',    href: '/components/left-side-bar/',  tag: 'Tier 1', preview: (
+    <div className="cg-sb">
+      <div className="cg-sb__item"><span className="cg-sb__icon" />Explore</div>
+      <div className="cg-sb__item cg-sb__item--active"><span className="cg-sb__icon cg-sb__icon--active" />Nano Skills</div>
+      <div className="cg-sb__item"><span className="cg-sb__icon" />Rewards</div>
+    </div>
+  )},
+  { name: 'Input',          href: '/components/molecules/input-nd/', tag: 'Form', preview: (
+    <div className="cg-input"><label className="cg-input__label">Email</label><input className="cg-input__field" placeholder="you@example.com" /></div>
+  )},
 ]
 
-const TIER_1 = [
-  { name: 'NavBar',                slug: 'nav-bar' },
-  { name: 'LeftSideBar',           slug: 'left-side-bar' },
-  { name: 'RightSideBar',          slug: 'right-side-bar' },
-  { name: 'DashboardLayout',       slug: 'dashboard-layout' },
-]
-const TIER_2 = [
-  { name: 'Button',                slug: 'button' },
-  { name: 'Accordion',             slug: 'accordion' },
-  { name: 'Card',                  slug: 'card' },
-  { name: 'ProgressBar',           slug: 'progress-bar' },
-  { name: 'ProgressLine',          slug: 'progress-line' },
-  { name: 'GreenLine',             slug: 'green-line' },
-  { name: 'LessonList',            slug: 'lesson-list' },
-  { name: 'Layout',                slug: 'layout' },
-  { name: 'ProfileAvatar',         slug: 'profile-avatar' },
-  { name: 'FeedLayout',            slug: 'feed-layout' },
-]
-const TIER_3 = [
-  { name: 'ModuleHeader',          slug: 'module-header' },
-  { name: 'LockedModuleContainer', slug: 'locked-module-container' },
-  { name: 'ToggleSwitch',          slug: 'toggle-switch' },
-  { name: 'Tray',                  slug: 'tray' },
-  { name: 'ClassDetails',          slug: 'class-details' },
-  { name: 'SectionHeader',         slug: 'section-header' },
-  { name: 'Chip',                  slug: 'chip' },
-  { name: 'Timer',                 slug: 'timer' },
-  { name: 'RightSectionInList',    slug: 'right-section-in-list' },
-  { name: 'LeftSectionInList',     slug: 'left-section-in-list' },
-]
-const ATOMS = [
-  { name: 'DateDropdown',          slug: 'atoms/date-dropdown' },
-  { name: 'dropdown',              slug: 'atoms/dropdown-atom' },
-  { name: 'Icon',                  slug: 'atoms/icon-atom' },
-  { name: 'LoadingIndicator',      slug: 'atoms/loading-indicator' },
-  { name: 'ProgressBar',           slug: 'atoms/progress-bar-atom' },
-  { name: 'ProgressbarWithStar',   slug: 'atoms/progress-bar-with-star' },
-  { name: 'SelectedTeacher',       slug: 'atoms/selected-teacher' },
-  { name: 'ShowStarRating',        slug: 'atoms/show-star-rating' },
-  { name: 'SideBarPopup',          slug: 'atoms/sidebar-popup' },
-  { name: 'SpeechBubble',          slug: 'atoms/speech-bubble' },
-  { name: 'TextTruncate',          slug: 'atoms/text-truncate' },
-  { name: 'togglebutton',          slug: 'atoms/toggle-button' },
-  { name: 'Tooltip',               slug: 'atoms/tooltip' },
-  { name: 'TruncateText',          slug: 'atoms/truncate-text' },
-]
-const NANO = [
-  { name: 'HarvardHero',           slug: 'nanoskills/harvard-hero' },
-  { name: 'SelfPacedHero',         slug: 'nanoskills/self-paced-hero' },
-  { name: 'TeacherLedHero',        slug: 'nanoskills/teacher-led-hero' },
-  { name: 'SkillCard',             slug: 'nanoskills/nanoskills-skill-card' },
-  { name: 'BookingModal',          slug: 'nanoskills/nanoskills-booking-modal' },
-  { name: 'OnboardingModal',       slug: 'nanoskills/nanoskills-onboarding-modal' },
-]
-const PRACTICE = [
-  { name: 'WorkSheetStep',         slug: 'practice-zone/worksheet-step' },
-]
-const OVERLAYS = [
-  { name: 'Modal',                 slug: 'overlays/modal' },
-  { name: 'MobileModal',           slug: 'overlays/mobile-modal' },
-  { name: 'Popup',                 slug: 'overlays/popup' },
-]
-const PRIMITIVES = [
-  { name: 'Text',                  slug: 'primitives/text' },
-  { name: 'Gap',                   slug: 'primitives/gap' },
-  { name: 'Loader',                slug: 'primitives/loader' },
-]
-const INPUTS = [
-  { name: 'Select',                slug: 'inputs/select-legacy' },
-  { name: 'DropDown (legacy)',     slug: 'inputs/dropdown-legacy' },
-  { name: 'LanguageSelector',      slug: 'inputs/language-selector' },
-]
-const FEEDBACK = [
-  { name: 'Rating',                slug: 'feedback/rating-legacy' },
-  { name: 'StarRating',            slug: 'feedback/star-rating' },
-]
-const NAVIGATION = [
-  { name: 'NavigationBar',         slug: 'navigation/navigation-bar' },
-  { name: 'NavigationBarMobile',   slug: 'navigation/navigation-bar-mobile' },
-]
-const LEGACY = [
-  { name: 'Badges (section)',          slug: 'legacy/badges-section' },
-  { name: 'FlashButton',                slug: 'legacy/flash-button' },
-  { name: 'LongTermScheduling',         slug: 'legacy/long-term-scheduling' },
-  { name: 'ReferralCard (legacy)',      slug: 'legacy/referral-card-legacy' },
-  { name: 'Reschedule',                  slug: 'legacy/reschedule-legacy' },
-  { name: 'StudentProfile',              slug: 'legacy/student-profile' },
-  { name: 'StudentProfileBarMobile',     slug: 'legacy/student-profile-bar-mobile' },
-  { name: 'TeacherSearch',               slug: 'legacy/teacher-search' },
-  { name: 'TimeZone (display)',          slug: 'legacy/time-zone-display' },
-]
-const SECTIONS = [
-  { name: 'WelcomeKit',                  slug: 'sections/welcome-kit' },
-  { name: 'SelectProfile',               slug: 'sections/select-profile' },
-  { name: 'onboarding-new',              slug: 'sections/onboarding-new' },
-  { name: 'TeacherProfileSection',       slug: 'sections/teacher-profile-section' },
-  { name: 'ReferralSection',             slug: 'sections/referral-section' },
-  { name: 'GameDashboardPage',           slug: 'sections/game-dashboard-page' },
-]
-const LAYOUTS = [
-  { name: 'pageLayoutConfig',            slug: 'layouts/page-layout-config' },
-  { name: 'AppLayout',                    slug: 'layouts/app-layout' },
-  { name: 'DashboardLayout (3-col)',     slug: 'layouts/dashboard-layout-v2' },
-  { name: 'DemoDashboardLayout',         slug: 'layouts/demo-dashboard-layout' },
-  { name: 'FullScreenLayout',             slug: 'layouts/full-screen-layout' },
-  { name: 'FullWidthLayout',              slug: 'layouts/full-width-layout' },
-  { name: 'GameDashboardLayout',         slug: 'layouts/game-dashboard-layout' },
-  { name: 'LoginLayout',                  slug: 'layouts/login-layout' },
-  { name: 'OnboardingLayout',             slug: 'layouts/onboarding-layout' },
-]
-
-// Molecules — 49 newDashboard molecule pages from componentSpecs.ts
-const MOLECULES_RAW = componentSpecs
-  .filter(s => s.slug.startsWith('') && (s.target === 'newDashboard' || s.target === 'sections'))
-  .filter(s => /molecules\//.test('/' + s.slug) === false) // we'll match by directory existence below
-  .map(s => ({ name: s.name, slug: s.slug }))
-
-// Hard list since the molecule spec pages live under /components/molecules/<slug>/
-const MOLECULES = [
-  'account-validity-label','add-more-classes','add-more-classes-v2','animated-gems','badges-card',
-  'button-nd','button-tag','calendar-molecule','card-image','card-nd','checklist-for-joining-class',
-  'class-card-info','class-joining-card','class-rating-feedback','classes-to-reschedule',
-  'confirmation-modal','counsellor-card','demo-sidebar-popup','diamond-purchase-header',
-  'diamond-reward','dropdown-nd','edit-contact-information','edit-demo-user-form','edit-timezone',
-  'empty-state','get-callback','get-certificate-callback-pre-demo','input-nd','my-rewards-card',
-  'redeem-gems-card','redeem-rewards-modal','referral-status-card','response-picker','reward-card',
-  'rewards-referral-card','rewards-tabs','rewards-walkthrough-card','sharing-buttons','slot-picker',
-  'slot-selector','subscription-banner','subscription-status-banner','summer-camp-banner',
-  'summer-camp-card','switch-profile-item-card','teacher-detail','trustpilot-popup',
-  'trustpilot-sidebar','upcoming-certificate-card',
-].map(slug => {
-  const spec = componentSpecs.find(s => s.slug === slug)
-  return { name: spec?.name ?? slug, slug: 'molecules/' + slug }
-})
-
-interface Item { name: string; slug: string }
-
-function Section({ id, title, count, items, hint }: { id: string; title: string; count?: number; items: Item[]; hint?: string }) {
-  if (items.length === 0) return null
+export default function ComponentsIndex() {
   return (
-    <section id={id} className="mt-12 scroll-mt-24">
-      <div className="flex items-baseline justify-between gap-3 flex-wrap">
-        <h2 className="text-h2 text-chrome-text">{title}</h2>
-        <span className="font-mono text-[11px] text-chrome-text-subtlest tabular-nums">{count ?? items.length} pages</span>
-      </div>
-      {hint && <p className="mt-2 max-w-[62ch] text-body-s text-chrome-text-subtle">{hint}</p>}
-      <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map(it => (
+    <article className="min-w-0 flex-1 max-w-[1200px]">
+      <style dangerouslySetInnerHTML={{ __html: styleBlock }} />
+
+      <div className="text-overline text-chrome-text-subtlest mb-2">Components</div>
+      <h1 className="text-h1 text-chrome-text">Components</h1>
+      <p className="mt-3 max-w-[62ch] text-body-l text-chrome-text-subtle">
+        Live component gallery. Every preview below is rendered with the exact production token values.
+        Click a card to see all variants, copy-paste CSS, and the key tokens for each.
+      </p>
+
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {COMPONENTS.map(c => (
           <Link
-            key={it.slug}
-            href={`/components/${it.slug}/`}
-            className="rounded-md border border-chrome-border bg-chrome-surface-raised hover:bg-chrome-surface-sunken hover:border-chrome-accent px-3 py-2 text-[13px] text-chrome-text font-mono transition-colors"
+            key={c.href}
+            href={c.href}
+            className="cg-card overflow-hidden rounded-card border border-chrome-border bg-chrome-surface-raised hover:border-chrome-accent hover:shadow-lg transition-all block"
           >
-            {it.name}
-            <span className="block font-mono text-[10.5px] text-chrome-text-subtlest mt-0.5 truncate">/{it.slug}/</span>
+            <div className="cg-preview">
+              {c.preview}
+            </div>
+            <div className="px-4 py-3 flex items-center justify-between">
+              <span className="text-body-m font-bold text-chrome-text">{c.name}</span>
+              <span className="text-[10px] font-mono text-chrome-text-subtlest uppercase">{c.tag}</span>
+            </div>
           </Link>
         ))}
       </div>
-    </section>
-  )
-}
 
-export default function ComponentsIndex() {
-  const totalPages = TIER_1.length + TIER_2.length + TIER_3.length + ATOMS.length + MOLECULES.length + NANO.length + PRACTICE.length + OVERLAYS.length + PRIMITIVES.length + INPUTS.length + FEEDBACK.length + NAVIGATION.length + LEGACY.length + SECTIONS.length + LAYOUTS.length
-
-  return (
-    <div className="flex">
-      <article className="min-w-0 flex-1 max-w-[1120px]">
-        <div className="text-overline text-chrome-text-subtlest mb-2">Components</div>
-        <h1 className="text-h1 text-chrome-text">Component index</h1>
-        <p className="mt-3 max-w-[62ch] text-body-l text-chrome-text-subtle">
-          Every component spec in the BrightChamps design system. {totalPages} pages organized by tier and category.
-          Each spec page shows the production source, token bindings, variants, and (where built) the live Figma frame.
-        </p>
-
-        <section id="overview" className="mt-10 grid gap-3 grid-cols-2 sm:grid-cols-4">
-          <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
-            <div className="text-overline text-chrome-text-subtlest mb-1">Total spec pages</div>
-            <div className="text-[28px] font-bold text-chrome-text">{totalPages}</div>
-          </div>
-          <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
-            <div className="text-overline text-chrome-text-subtlest mb-1">In-scope SYSTEM</div>
-            <div className="text-[28px] font-bold" style={{ color: '#0e6a32' }}>117</div>
-            <div className="text-[11px] text-chrome-text-subtlest"><Link className="text-chrome-accent hover:underline" href="/governance/scope-boundary/">scope boundary</Link></div>
-          </div>
-          <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
-            <div className="text-overline text-chrome-text-subtlest mb-1">Health</div>
-            <div className="text-[28px] font-bold text-chrome-text">95<span className="text-chrome-text-subtlest text-[14px] font-mono ml-1">/ 117</span></div>
-            <div className="text-[11px] text-chrome-text-subtlest"><Link className="text-chrome-accent hover:underline" href="/components/health/">health dashboard</Link></div>
-          </div>
-          <div className="rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
-            <div className="text-overline text-chrome-text-subtlest mb-1">DC tickets</div>
-            <div className="text-[28px] font-bold" style={{ color: '#a31836' }}>51</div>
-            <div className="text-[11px] text-chrome-text-subtlest"><Link className="text-chrome-accent hover:underline" href="/governance/dc-tickets/">tickets</Link></div>
-          </div>
-        </section>
-
-        <Section id="tier-1"  title="Tier 1 — Chrome"   items={TIER_1}  hint="The shell every authenticated route mounts inside." />
-        <Section id="tier-2"  title="Tier 2 — Content"  items={TIER_2}  hint="Reusable content primitives — buttons, cards, progress." />
-        <Section id="tier-3"  title="Tier 3 — Feature"  items={TIER_3}  hint="Feature-specific molecules used by the student app shell." />
-        <Section id="atoms"   title="newDashboard atoms" items={ATOMS}  hint="14 atomic primitives from src/newDashboard/components/atoms/." />
-        <Section id="molecules" title="newDashboard molecules" items={MOLECULES} hint="49 molecule patterns from src/newDashboard/components/molecules/." />
-        <Section id="nano"    title="NanoSkills"        items={NANO}    hint="The Nano Skills surface — Harvard, self-paced, teacher-led." />
-        <Section id="practice" title="Practice Zone"   items={PRACTICE} hint="Practice surface — worksheet step pattern." />
-        <Section id="overlays" title="Overlays"        items={OVERLAYS} hint="Modal, MobileModal, Popup." />
-        <Section id="primitives" title="Primitives"   items={PRIMITIVES} hint="System primitives — Text, Gap, Loader." />
-        <Section id="inputs"  title="Inputs"           items={INPUTS}   hint="Form input components." />
-        <Section id="feedback" title="Feedback"       items={FEEDBACK}  hint="Rating + StarRating display patterns." />
-        <Section id="navigation" title="Navigation"   items={NAVIGATION} hint="NavigationBar (desktop) + NavigationBarMobile." />
-        <Section id="legacy"  title="Legacy"           items={LEGACY}   hint="Pre-DS components still used in 3+ places — pending migration to newDashboard." />
-        <Section id="sections" title="Sections"       items={SECTIONS}  hint="Page-level compositions — onboarding, profile, welcome kit." />
-        <Section id="layouts" title="Layouts"          items={LAYOUTS}  hint="Outer-shell layouts that AppLayout dispatches against." />
-
-        <section className="mt-12 rounded-card border border-chrome-border bg-chrome-surface-raised p-5">
-          <h2 className="text-h3 text-chrome-text">Other entry points</h2>
-          <ul className="mt-3 ml-4 list-disc space-y-1 text-body-m text-chrome-text">
-            <li><Link className="text-chrome-accent hover:underline" href="/components/health/">Health dashboard</Link> — verification status of every spec</li>
-            <li><Link className="text-chrome-accent hover:underline" href="/components/deprecated/">Deprecated components</Link> — flagged for removal, still in production</li>
-            <li><Link className="text-chrome-accent hover:underline" href="/governance/scope-boundary/">Scope boundary</Link> — what's in vs out of DS scope</li>
-            <li><Link className="text-chrome-accent hover:underline" href="/tools/generate/">AI Generator</Link> — generate components from prompts</li>
-          </ul>
-        </section>
-      </article>
-      <RightTOC items={TOC} />
-    </div>
+      <p className="mt-10 max-w-[62ch] text-body-s text-chrome-text-subtle">
+        Looking for atoms, molecules, layouts, or sections? Expand the corresponding nav section in the sidebar
+        — every spec page lists tokens, source path, and (where built) a Figma frame.
+      </p>
+    </article>
   )
 }
